@@ -65,14 +65,6 @@ a {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 /* ==========================================================================
    Buttons
    ========================================================================== */
@@ -552,27 +544,1044 @@ a {
 }
 
 /* ==========================================================================
-   Footer
+   Footer (Packers & Movers Theme: Red, Black, White, Yellow)
    ========================================================================== */
 .site-footer {
-  background: var(--dark);
+  background: linear-gradient(180deg, #0b0e17 0%, #06070a 100%);
   color: #94a3b8;
-  padding: 60px 0 25px;
   margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
 }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
-  gap: 40px;
-  margin-bottom: 45px;
+.footer-top-accent {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--pm-red) 30%, var(--pm-yellow) 70%, transparent 100%);
 }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 20px;
+.footer-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.12;
+}
+.footer-glow-red {
+  top: -40px;
+  left: 10%;
+  width: 450px;
+  height: 320px;
+  background: var(--pm-red);
+}
+.footer-glow-yellow {
+  bottom: 40px;
+  right: 5%;
+  width: 400px;
+  height: 320px;
+  background: var(--pm-yellow);
+}
+
+/* Prebar (Callout Strip) */
+.footer-prebar {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 28px 0;
+  position: relative;
+  z-index: 2;
+}
+.footer-callout-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 16px 20px;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+.footer-callout-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+.footer-callout-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  flex-shrink: 0;
+}
+.footer-callout-icon.callout-yellow {
+  background: rgba(250, 204, 21, 0.12);
+  color: var(--pm-yellow);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  box-shadow: 0 4px 14px rgba(250, 204, 21, 0.15);
+}
+.footer-callout-icon.callout-red {
+  background: rgba(230, 25, 25, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(230, 25, 25, 0.25);
+  box-shadow: 0 4px 14px rgba(230, 25, 25, 0.15);
+}
+.callout-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--pm-yellow);
+  display: block;
+  margin-bottom: 2px;
+}
+.callout-heading {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+.callout-desc {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+.callout-phone-link {
+  color: var(--pm-yellow);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+.callout-phone-link:hover {
+  color: #fde047;
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+}
+
+.btn-footer-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px var(--pm-red-glow);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-footer-quote:hover {
+  background: linear-gradient(135deg, #ef4444 0%, var(--pm-red) 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(230, 25, 25, 0.5);
+}
+.btn-quote-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.btn-quote-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.15;
+}
+.btn-quote-sub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+.btn-quote-main {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.btn-quote-arrow {
+  font-size: 1.35rem;
+  transition: transform 0.2s ease;
+}
+.btn-footer-quote:hover .btn-quote-arrow {
+  transform: translateX(4px);
+}
+
+/* Main Footer Content */
+.footer-main-content {
+  padding: 60px 0 45px;
+  position: relative;
+  z-index: 2;
+}
+/* Brand Column Enhancements */
+.footer-brand-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Brand Emblem (Designed Typography & Icon) */
+.footer-brand-emblem {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  margin-bottom: 4px;
+  transition: transform 0.25s ease;
+}
+.footer-brand-emblem:hover {
+  transform: translateX(4px);
+}
+.brand-emblem-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: #ffffff;
+  font-size: 1.35rem;
+  box-shadow: 0 6px 18px var(--pm-red-glow);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+.footer-brand-emblem:hover .brand-emblem-icon {
+  background: linear-gradient(135deg, var(--pm-yellow) 0%, #eab308 100%);
+  color: #08090c;
+  border-color: var(--pm-yellow);
+  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
+  transform: rotate(-6deg) scale(1.05);
+}
+.brand-emblem-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.brand-text-name {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: baseline;
+}
+.brand-dot-pulse {
+  color: var(--pm-yellow);
+  font-size: 1.8rem;
+  line-height: 0;
+  margin-left: 2px;
+}
+.brand-text-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--pm-yellow);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  opacity: 0.95;
+}
+.footer-iso-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.4px;
+  width: fit-content;
+}
+.footer-bio {
   font-size: 0.88rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  border-left: 2.5px solid var(--pm-red);
+  padding-left: 12px;
+}
+
+/* Trust Chips */
+.footer-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: all 0.25s ease;
+}
+.trust-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(250, 204, 21, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Social Buttons */
+.footer-social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-social-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+}
+.footer-social-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social-btn.fb-btn:hover {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.4);
+  transform: translateY(-3px);
+}
+.footer-social-btn.tw-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #555;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+.footer-social-btn.ig-btn:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.4);
+  transform: translateY(-3px);
+}
+.footer-social-btn.in-btn:hover {
+  background: #0a66c2;
+  color: #ffffff;
+  border-color: #0a66c2;
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Column Header */
+.footer-col-header {
+  margin-bottom: 20px;
+}
+.footer-col-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--pm-yellow);
+  display: block;
+  margin-bottom: 4px;
+}
+.footer-col-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0;
+  position: relative;
+  display: inline-block;
+}
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 34px;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--pm-red), var(--pm-yellow));
+  border-radius: 2px;
+}
+
+/* Modern Interactive Links with Icons */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-links-list li {
+  margin: 0;
+}
+.footer-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.link-icon-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.84rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+.link-icon-quick {
+  color: var(--pm-yellow);
+}
+.link-icon-srv {
+  color: #f87171;
+}
+.link-title {
+  flex-grow: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.link-arrow {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.25);
+  opacity: 0.4;
+  transition: all 0.25s ease;
+  transform: translateX(-3px);
+}
+.footer-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(250, 204, 21, 0.25);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.footer-nav-link:hover .link-title {
+  color: #ffffff;
+}
+.footer-nav-link:hover .link-arrow {
+  opacity: 1;
+  color: var(--pm-yellow);
+  transform: translateX(2px);
+}
+.footer-nav-link:hover .link-icon-quick {
+  background: linear-gradient(135deg, var(--pm-red), #b81414);
+  color: #ffffff;
+  border-color: var(--pm-red);
+  box-shadow: 0 0 10px rgba(230, 25, 25, 0.4);
+  transform: scale(1.08);
+}
+.footer-nav-link:hover .link-icon-srv {
+  background: linear-gradient(135deg, var(--pm-yellow), #eab308);
+  color: #08090c;
+  border-color: var(--pm-yellow);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+  transform: scale(1.08);
+}
+
+/* Contact Cards */
+.footer-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 14px;
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-contact-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(250, 204, 21, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.contact-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.footer-contact-card:hover .contact-card-icon {
+  transform: scale(1.08);
+}
+.contact-card-icon.icon-yellow {
+  background: rgba(250, 204, 21, 0.12);
+  color: var(--pm-yellow);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+}
+.contact-card-icon.icon-red {
+  background: rgba(230, 25, 25, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(230, 25, 25, 0.25);
+}
+.contact-card-icon.icon-dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.contact-card-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.contact-card-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+.contact-card-val {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-card-val:hover {
+  color: var(--pm-yellow) !important;
+}
+.highlight-phone {
+  color: var(--pm-yellow);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* WhatsApp Live Chat */
+.footer-whatsapp-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.25s ease;
+  position: relative;
+}
+.footer-whatsapp-pill:hover {
+  background: linear-gradient(135deg, #2ae06e 0%, #17a392 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+}
+.wa-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  animation: waPulse 1.8s infinite;
+}
+@keyframes waPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+/* Bottom Strip */
+.footer-bottom {
+  background: rgba(4, 5, 8, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 0;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer-bottom-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(230, 25, 25, 0.45) 25%, rgba(250, 204, 21, 0.55) 75%, transparent 100%);
+}
+.footer-copy-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.86rem;
+  color: #94a3b8;
+}
+.footer-copyright-text {
+  color: #94a3b8;
+}
+.footer-brand-pill {
+  color: #ffffff;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+.footer-copy-divider {
+  color: rgba(255, 255, 255, 0.2);
+}
+.footer-copy-sub {
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+
+/* Legal Pills & Actions on Right */
+.footer-bottom-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-legal-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.legal-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.legal-pill-btn i {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s ease;
+}
+.legal-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(250, 204, 21, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.legal-pill-btn:hover i {
+  color: var(--pm-yellow);
+}
+
+
+/* Responsive Footer Tweaks */
+@media (max-width: 991.98px) {
+  .footer-callout-card {
+    margin-bottom: 6px;
+  }
+  .btn-footer-quote {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-main-content {
+    padding: 45px 0 30px;
+  }
+  .footer-bottom-actions {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer-main-content {
+    padding: 35px 16px 25px;
+  }
+}
+@media (max-width: 575.98px) {
+  .footer-glow-red, .footer-glow-yellow {
+    display: none;
+  }
+  .footer-copy-wrap {
+    justify-content: center;
+  }
+  .footer-legal-pills {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Floating Action Docks (Left: Call & WhatsApp | Right: Get Quote)
+   ========================================================================== */
+.pm-floating-dock {
+  position: fixed;
+  bottom: 26px;
+  z-index: 1045;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+.pm-floating-dock-left {
+  left: 22px;
+}
+.pm-floating-dock-right {
+  right: 22px;
+}
+
+.pm-float-btn {
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip on Desktop Hover for Left Dock (Expands to Right) */
+.pm-floating-dock-left .pm-float-btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  background: rgba(10, 14, 23, 0.92);
+  color: #ffffff;
+  padding: 5px 11px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+.pm-floating-dock-left .pm-float-btn::after {
+  content: '';
+  position: absolute;
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(10, 14, 23, 0.92) transparent transparent;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pm-floating-dock-left .pm-float-btn:hover::before,
+.pm-floating-dock-left .pm-float-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Tooltip on Desktop Hover for Right Dock (Expands to Left) */
+.pm-floating-dock-right .pm-float-btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: rgba(10, 14, 23, 0.92);
+  color: #ffffff;
+  padding: 5px 11px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+.pm-floating-dock-right .pm-float-btn::after {
+  content: '';
+  position: absolute;
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(10, 14, 23, 0.92);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pm-floating-dock-right .pm-float-btn:hover::before,
+.pm-floating-dock-right .pm-float-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ==========================================================================
+   Floating Action Buttons (Animated FABs)
+   ========================================================================== */
+
+/* Shared Pulse Ring Base */
+.float-pulse-ring {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Pause animations on hover for steady click interaction */
+.pm-float-btn:hover,
+.pm-float-btn:hover i {
+  animation-play-state: paused !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. Call Button Animation (Phone Ring Shake + Yellow Radar Pulse)
+   -------------------------------------------------------------------------- */
+.pm-float-btn.float-call {
+  background: linear-gradient(135deg, #0e1219 0%, #1a2233 100%);
+  color: var(--pm-yellow);
+  font-size: 1.25rem;
+  border: 1.5px solid rgba(250, 204, 21, 0.45);
+}
+.pm-float-btn.float-call i {
+  display: inline-block;
+  animation: callPhoneRing 2.8s ease-in-out infinite;
+  transform-origin: center center;
+}
+@keyframes callPhoneRing {
+  0%, 60%, 100% { transform: rotate(0); }
+  6%, 18%, 30% { transform: rotate(-16deg); }
+  12%, 24%, 36% { transform: rotate(16deg); }
+  40% { transform: rotate(-6deg); }
+  44% { transform: rotate(6deg); }
+  48% { transform: rotate(0); }
+}
+.ring-call {
+  animation: callPulseWave 2.4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+@keyframes callPulseWave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(250, 204, 21, 0);
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+    opacity: 0;
+  }
+}
+.pm-float-btn.float-call:hover {
+  background: linear-gradient(135deg, var(--pm-yellow) 0%, #eab308 100%);
+  color: #08090c;
+  border-color: var(--pm-yellow);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 28px rgba(250, 204, 21, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   2. WhatsApp Button Animation (Floating Bobbing + Green Radar Pulse)
+   -------------------------------------------------------------------------- */
+.pm-float-btn.float-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  font-size: 1.45rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  animation: waFloatBounce 2.8s ease-in-out infinite;
+}
+@keyframes waFloatBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.ring-wa {
+  animation: waPulseWave 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+@keyframes waPulseWave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.75);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    opacity: 0;
+  }
+}
+.pm-float-btn.float-whatsapp:hover {
+  background: linear-gradient(135deg, #2ee06f 0%, #15a190 100%);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   3. Get Quote Button Animation (Heartbeat Pulse + Red Radar Pulse)
+   -------------------------------------------------------------------------- */
+.pm-float-btn.float-quote {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: #ffffff;
+  font-size: 1.25rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  animation: quoteHeartbeat 3s ease-in-out infinite;
+}
+@keyframes quoteHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(230, 25, 25, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  14% {
+    transform: scale(1.09);
+    box-shadow: 0 12px 30px rgba(230, 25, 25, 0.6), 0 0 15px rgba(230, 25, 25, 0.4);
+  }
+  28% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(230, 25, 25, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  42% {
+    transform: scale(1.07);
+    box-shadow: 0 12px 30px rgba(230, 25, 25, 0.6), 0 0 15px rgba(230, 25, 25, 0.4);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+.pm-float-btn.float-quote i {
+  display: inline-block;
+  animation: quoteIconNudge 3s ease-in-out infinite;
+}
+@keyframes quoteIconNudge {
+  0%, 100% { transform: translateY(0); }
+  14%, 42% { transform: translateY(-2px); }
+}
+.ring-quote {
+  animation: quotePulseWave 2.2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+@keyframes quotePulseWave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 25, 25, 0.8);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(230, 25, 25, 0);
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 25, 25, 0);
+    opacity: 0;
+  }
+}
+.pm-float-btn.float-quote:hover {
+  background: linear-gradient(135deg, #ef4444 0%, var(--pm-red) 100%);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 12px 30px var(--pm-red-glow), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive Floating Docks */
+@media (max-width: 767.98px) {
+  /* On mobile, stack Call & WhatsApp on the right above Get Quote so left-side text is 100% clear */
+  .pm-floating-dock-left {
+    left: auto;
+    right: 14px;
+    bottom: 74px;
+    gap: 10px;
+  }
+  .pm-floating-dock-right {
+    right: 14px;
+    bottom: 18px;
+    gap: 10px;
+  }
+  .pm-float-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .pm-float-btn.float-call { font-size: 1.1rem; }
+  .pm-float-btn.float-whatsapp { font-size: 1.25rem; }
+  .pm-float-btn.float-quote { font-size: 1.1rem; }
+  .pm-float-btn::before,
+  .pm-float-btn::after {
+    display: none;
+  }
 }
 
 @media (max-width: 1199.98px) {

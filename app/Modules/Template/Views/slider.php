@@ -32,12 +32,10 @@
                         <i class="bi bi-chat-dots-fill"></i>
                         <span>Contact Us</span>
                     </a>
-                    <?php if (!empty($phone)): ?>
-                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $phone) ?>" class="btn btn-pm-yellow px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto">
+                    <a <?= $phonehtml ?> class="btn btn-pm-yellow px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto">
                         <i class="bi bi-telephone-fill"></i>
-                        <span><?= esc($phone) ?></span>
+                        <span><?= $phone ?></span>
                     </a>
-                    <?php endif; ?>
                 </div>
 
                 <!-- Trust Metrics -->

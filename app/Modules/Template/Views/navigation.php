@@ -119,7 +119,7 @@
 
         <div class="nav-actions">
             <?php if (!empty($phone)): ?>
-            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $phone) ?>" class="nav-phone-chip d-none d-lg-inline-flex">
+            <a <?= $phonehtml ?> class="nav-phone-chip d-none d-lg-inline-flex">
                 <div class="phone-chip-icon">
                     <i class="bi bi-telephone-fill"></i>
                 </div>
