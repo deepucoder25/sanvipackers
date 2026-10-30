@@ -38,7 +38,10 @@ class Logger extends BaseConfig
      *
      * @var int|list<int>
      */
-    public $threshold = (ENVIRONMENT === 'production') ? 4 : 9;
+    /**
+     * Set to 0 to completely disable error logging during website design/development
+     */
+    public $threshold = 0;
 
     /**
      * --------------------------------------------------------------------------

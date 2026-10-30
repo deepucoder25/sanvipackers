@@ -50,8 +50,9 @@
     <meta name="revisit-after" content="weekly" />
     <meta name="distribution" content="global" />
     <meta name="language" content="en" />
-    <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png') ?>">
-    <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo/favicon.png') ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/logo/favicon.png') ?>">
+    <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/img/logo/favicon.png') ?>">
+    <link rel="apple-touch-icon" href="<?= base_url('assets/img/logo/favicon.png') ?>">
 
     <!-- Schema 1: Organization -->
     <script type="application/ld+json">

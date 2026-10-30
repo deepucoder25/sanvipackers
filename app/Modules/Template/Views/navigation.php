@@ -26,10 +26,6 @@
                 <i class="bi bi-shield-check text-warning"></i>
                 <span>Verified & Insured Movers</span>
             </span>
-            <a href="<?= site_url('admin') ?>" class="topbar-admin-link">
-                <i class="bi bi-lock-fill"></i>
-                <span>Admin</span>
-            </a>
         </div>
     </div>
 </div>
@@ -38,15 +34,31 @@
 <nav class="site-navbar">
     <div class="container navbar-flex">
         <a href="<?= site_url('/') ?>" class="brand-logo">
-            <div class="brand-icon">
-                <i class="bi bi-box-seam-fill"></i>
-            </div>
-            <div class="brand-content">
-                <div class="brand-name">
-                    <?= esc($company3) ?><span class="brand-dot">.</span>
+            <?php
+            $logoFile = null;
+            $candidateExts = ['logo.png', 'logo.webp', 'logo.jpg', 'logo.svg', 'logo.jpeg'];
+            foreach ($candidateExts as $file) {
+                if (is_file(FCPATH . 'assets/img/logo/' . $file) || 
+                    (defined('ROOTPATH') && is_file(ROOTPATH . 'assets/img/logo/' . $file)) || 
+                    (defined('ROOTPATH') && is_file(ROOTPATH . 'public/assets/img/logo/' . $file))) {
+                    $logoFile = 'assets/img/logo/' . $file;
+                    break;
+                }
+            }
+            ?>
+            <?php if (!empty($logoFile)): ?>
+                <img src="<?= base_url($logoFile) ?>" alt="<?= esc($company3) ?>" class="site-logo-img">
+            <?php else: ?>
+                <div class="brand-icon">
+                    <i class="bi bi-box-seam-fill"></i>
                 </div>
-                <div class="brand-tagline">Packers & Movers</div>
-            </div>
+                <div class="brand-content">
+                    <div class="brand-name">
+                        <?= esc($company3) ?><span class="brand-dot">.</span>
+                    </div>
+                    <div class="brand-tagline">Packers & Movers</div>
+                </div>
+            <?php endif; ?>
         </a>
 
         <button class="mobile-btn" type="button" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -54,18 +66,60 @@
         </button>
 
         <ul class="nav-links">
-            <li><a href="<?= site_url('/') ?>" class="<?= ($page === 'home') ? 'active' : '' ?>">Home</a></li>
-            <li><a href="<?= site_url('about') ?>" class="<?= ($page === 'about') ? 'active' : '' ?>">About Us</a></li>
-            <li><a href="<?= site_url('services') ?>" class="<?= ($page === 'services') ? 'active' : '' ?>">Services</a></li>
-            <li><a href="<?= site_url('city') ?>" class="<?= ($page === 'city') ? 'active' : '' ?>">States</a></li>
-            <li><a href="<?= site_url('tracking') ?>" class="<?= ($page === 'tracking') ? 'active' : '' ?>">Tracking</a></li>
-            <li><a href="<?= site_url('blog') ?>" class="<?= (strpos($page, 'blog') === 0) ? 'active' : '' ?>">Blog</a></li>
-            <li><a href="<?= site_url('contact') ?>" class="<?= ($page === 'contact') ? 'active' : '' ?>">Contact Us</a></li>
+            <li>
+                <a href="<?= site_url('/') ?>" class="<?= ($page === 'home') ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-house-door-fill"></i></span>
+                    <span class="nav-link-text">Home</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('about') ?>" class="<?= ($page === 'about') ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-info-circle-fill"></i></span>
+                    <span class="nav-link-text">About Us</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('services') ?>" class="<?= ($page === 'services') ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-truck"></i></span>
+                    <span class="nav-link-text">Services</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('city') ?>" class="<?= ($page === 'city') ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-geo-alt-fill"></i></span>
+                    <span class="nav-link-text">States</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('tracking') ?>" class="<?= ($page === 'tracking') ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-pin-map-fill"></i></span>
+                    <span class="nav-link-text">Tracking</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('blog') ?>" class="<?= (strpos($page, 'blog') === 0) ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-newspaper"></i></span>
+                    <span class="nav-link-text">Blog</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
+            <li>
+                <a href="<?= site_url('contact') ?>" class="<?= ($page === 'contact') ? 'active' : '' ?>">
+                    <span class="nav-link-icon"><i class="bi bi-chat-dots-fill"></i></span>
+                    <span class="nav-link-text">Contact Us</span>
+                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                </a>
+            </li>
         </ul>
 
         <div class="nav-actions">
             <?php if (!empty($phone)): ?>
-            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $phone) ?>" class="nav-phone-chip">
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $phone) ?>" class="nav-phone-chip d-none d-lg-inline-flex">
                 <div class="phone-chip-icon">
                     <i class="bi bi-telephone-fill"></i>
                 </div>
