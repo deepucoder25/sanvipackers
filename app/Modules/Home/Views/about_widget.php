@@ -1,41 +1,120 @@
-<section class="section" style="background: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center;">
-            <div style="background: linear-gradient(135deg, #0284c7, #0f172a); border-radius: 20px; padding: 45px 35px; color: #fff;">
-                <span style="display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: 50px; font-size: 0.82rem; font-weight: 700; margin-bottom: 16px;">About Our Brand</span>
-                <h3 style="font-size: 2rem; font-weight: 800; line-height: 1.25; margin-bottom: 16px;">Reliable & Careful Moving For 15+ Years</h3>
-                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 25px;">
-                    We believe moving should be exciting, not exhausting. Our trained crew, hydraulic lifters, and certified bubble packaging ensure zero-scratch delivery every time.
-                </p>
-                <div style="display: flex; gap: 30px;">
-                    <div>
-                        <div style="font-size: 1.8rem; font-weight: 800; color: #38bdf8;">25,000+</div>
-                        <div style="font-size: 0.82rem; color: #94a3b8;">Happy Customers</div>
+<section class="py-5 pm-about-section">
+    <div class="container py-lg-4">
+        <!-- Main About Grid -->
+        <div class="row g-4 g-lg-5 align-items-center">
+            <!-- Left Column: 2-3 Multi-Image Bento Box with Floating Trust Badges -->
+            <div class="col-lg-6">
+                <div class="position-relative pm-about-media pe-lg-3">
+                    <!-- 3-Image Collage Grid -->
+                    <div class="row g-3 pm-about-gallery">
+                        <!-- Main Large Featured Image (Image 1) -->
+                        <div class="col-7">
+                            <div class="rounded-4 overflow-hidden shadow-sm pm-about-img-box pm-img-box-lg position-relative">
+                                <img src="<?= base_url('assets/img/about/about-1.jpg') ?>" 
+                                     alt="Safe Home Relocation" 
+                                     class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
+                                     loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- 2 Stacked Supporting Images (Image 2 & 3) -->
+                        <div class="col-5 d-flex flex-column gap-3">
+                            <!-- Image 2: Packing Crew / Materials -->
+                            <div class="rounded-4 overflow-hidden shadow-sm pm-about-img-box pm-img-box-sm position-relative">
+                                <img src="<?= base_url('assets/img/about/about-2.jpg') ?>" 
+                                     alt="Expert Packing Crew and Material" 
+                                     class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
+                                     loading="lazy">
+                            </div>
+                            <!-- Image 3: Transport Truck / Logistics Fleet -->
+                            <div class="rounded-4 overflow-hidden shadow-sm pm-about-img-box pm-img-box-sm position-relative">
+                                <img src="<?= base_url('assets/img/about/about-3.jpg') ?>" 
+                                     alt="Dedicated Moving Trucks Fleet" 
+                                     class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
+                                     loading="lazy">
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <div style="font-size: 1.8rem; font-weight: 800; color: #fb923c;">500+</div>
-                        <div style="font-size: 0.82rem; color: #94a3b8;">Cities Connected</div>
+
+                    <!-- Floating ISO Certified Pill (Top-Right) -->
+                    <div class="position-absolute pm-about-iso-pill badge rounded-pill bg-white shadow-sm border py-2 px-3 text-dark d-flex align-items-center gap-2">
+                        <i class="bi bi-patch-check-fill text-danger fs-6"></i>
+                        <span class="fw-bold small">ISO 9001:2015 Certified</span>
                     </div>
                 </div>
             </div>
-            <div>
-                <span class="section-badge">Our Mission & Values</span>
-                <h2 class="section-title" style="margin-bottom: 16px;">Dedicated To Complete Customer Satisfaction</h2>
-                <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; margin-bottom: 20px;">
-                    Whether moving a single room or shifting an entire commercial headquarters, our dedicated relocation coordinators manage every milestone smoothly.
-                </p>
-                <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
-                    <li style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; font-weight: 600;">
-                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Free in-home or virtual pre-move survey
-                    </li>
-                    <li style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; font-weight: 600;">
-                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> High grade corrugated bubble wrapping
-                    </li>
-                    <li style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; font-weight: 600;">
-                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> On-time guaranteed doorstep delivery
-                    </li>
-                </ul>
-                <a href="<?= site_url('about') ?>" class="btn btn-primary">Read More About Us &rarr;</a>
+
+            <!-- Right Column: Story, 4 Value Pillars & Quick Actions -->
+            <div class="col-lg-6">
+                <div class="ps-lg-2">
+                    <span class="text-uppercase fw-bold pm-about-tag small d-inline-flex align-items-center gap-1 mb-2">
+                        <i class="bi bi-lightning-charge-fill text-warning"></i> Fast, Reliable &amp; Insured
+                    </span>
+                    <h3 class="h2 fw-bold text-dark mb-3 pm-about-heading">
+                        Making Relocations <span class="pm-text-red">Smooth, Safe</span> &amp; Stress-Free
+                    </h3>
+                    <p class="text-muted mb-4 pm-about-desc">
+                        Founded with a mission to eliminate moving stress, <?= esc($company ?? 'Sanvi Packers & Movers') ?> provides comprehensive home shifting, office relocation, warehousing, and vehicle transport across 500+ Indian cities. Our certified crew, heavy-duty 5-layer bubble packaging, and dedicated move coordinators ensure your valuables arrive in pristine condition.
+                    </p>
+
+                    <!-- 4 Key Value Pillars (2x2 Grid) -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3 bg-white border shadow-sm d-flex align-items-center gap-3 pm-pillar-card h-100">
+                                <span class="pm-pillar-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                </span>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-0 text-dark">Zero-Damage Move</h4>
+                                    <span class="text-muted small">Transit insurance cover</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3 bg-white border shadow-sm d-flex align-items-center gap-3 pm-pillar-card h-100">
+                                <span class="pm-pillar-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-box-seam-fill"></i>
+                                </span>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-0 text-dark">5-Layer Packaging</h4>
+                                    <span class="text-muted small">Bubble wrap &amp; cartons</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3 bg-white border shadow-sm d-flex align-items-center gap-3 pm-pillar-card h-100">
+                                <span class="pm-pillar-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-clock-history"></i>
+                                </span>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-0 text-dark">On-Time Shifting</h4>
+                                    <span class="text-muted small">Punctual doorstep delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3 bg-white border shadow-sm d-flex align-items-center gap-3 pm-pillar-card h-100">
+                                <span class="pm-pillar-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </span>
+                                <div>
+                                    <h4 class="h6 fw-bold mb-0 text-dark">GPS Live Tracking</h4>
+                                    <span class="text-muted small">Real-time status updates</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons Row -->
+                    <div class="pt-3 d-flex flex-wrap align-items-center gap-2 border-top pm-about-action-row">
+                        <a href="<?= site_url('about') ?>" class="btn btn-outline-dark rounded-pill px-4 fw-bold pm-about-btn">
+                            Know More <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                        <button type="button" class="btn btn-danger rounded-pill px-4 fw-bold pm-btn-red" data-bs-toggle="modal" data-bs-target="#qteModal">
+                            Get Free Quote
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

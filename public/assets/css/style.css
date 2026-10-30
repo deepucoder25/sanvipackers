@@ -461,68 +461,1290 @@ a {
 .breadcrumbs a { color: #38bdf8; }
 
 /* ==========================================================================
-   Section Layouts
+   Section Layouts & General
    ========================================================================== */
 .section { padding: 65px 0; }
 .section-header { text-align: center; margin-bottom: 45px; }
-.section-badge {
-  display: inline-block;
-  background: var(--primary-light);
-  color: var(--primary);
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 4px 14px;
-  border-radius: 50px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.section-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--dark);
-  margin-bottom: 12px;
-  line-height: 1.25;
-}
-.section-subtitle {
-  color: var(--text-muted);
-  max-width: 650px;
-  margin: 0 auto;
-  font-size: 1rem;
-}
 
 /* ==========================================================================
-   Card Grids & Services
+   Services Widget (Packers & Movers Theme: Red, Black, White, Yellow)
    ========================================================================== */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+.pm-services-container {
+  max-width: 1540px;
+  margin: 0 auto;
 }
-.service-box {
-  background: #ffffff;
-  padding: 32px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+
+.pm-services-section {
+  background-color: #f8fafc;
   position: relative;
 }
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-  border-color: var(--primary-light);
+
+.pm-service-badge {
+  background: rgba(230, 25, 25, 0.08);
+  color: var(--pm-red);
+  border: 1px solid rgba(230, 25, 25, 0.2);
+  letter-spacing: 0.8px;
+  font-size: 0.78rem;
 }
-.service-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--primary-light);
-  color: var(--primary);
+
+.pm-text-red {
+  color: var(--pm-red);
+}
+
+.pm-section-subtitle {
+  max-width: 620px;
+}
+
+/* Service Pod Card (Clean Modern Symmetrical Layout) */
+.pm-pod-card {
+  background: var(--pm-white);
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top Accent Bar */
+.pm-pod-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pm-red) 0%, var(--pm-yellow) 100%);
+  opacity: 0.9;
+  transition: height 0.3s ease;
+  z-index: 2;
+}
+
+.pm-pod-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(230, 25, 25, 0.25) !important;
+  border-color: rgba(230, 25, 25, 0.35) !important;
+}
+
+.pm-pod-card:hover::before {
+  height: 5px;
+}
+
+/* Step Number Badge */
+.pm-pod-num {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.pm-pod-card:hover .pm-pod-num {
+  background: var(--pm-red);
+  color: var(--pm-white);
+}
+
+/* Category Perk Tag */
+.pm-pod-tag {
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid var(--border-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.pm-pod-tag i {
+  color: var(--pm-yellow-dark);
+}
+
+.pm-pod-card:hover .pm-pod-tag {
+  background: rgba(250, 204, 21, 0.14);
+  border-color: rgba(250, 204, 21, 0.45);
+  color: var(--dark);
+}
+
+/* Center Hero Icon Container */
+.pm-pod-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(230, 25, 25, 0.07) 0%, rgba(250, 204, 21, 0.12) 100%);
+  border: 2px dashed rgba(230, 25, 25, 0.25);
+  color: var(--pm-red);
+  font-size: 1.75rem;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.pm-pod-card:hover .pm-pod-icon-wrap {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  border-style: solid;
+  border-color: var(--pm-red);
+  color: var(--pm-white);
+  transform: translateY(-4px) scale(1.08) rotate(-4deg);
+  box-shadow: 0 10px 22px var(--pm-red-glow);
+}
+
+/* Card Title */
+.pm-pod-title {
+  color: var(--dark);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  min-height: 2.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  transition: color 0.25s ease;
+}
+
+.pm-pod-card:hover .pm-pod-title {
+  color: var(--pm-red);
+}
+
+/* Feature Chips */
+.pm-pod-chips {
+  width: 100%;
+}
+
+.pm-pod-chip {
+  background: #f8fafc;
+  border: 1px solid #eef2f6;
+  border-radius: 50px;
+  padding: 5px 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.pm-pod-card:hover .pm-pod-chip {
+  background: var(--pm-white);
+  border-color: rgba(230, 25, 25, 0.2);
+  color: var(--dark);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+/* Action Button */
+.pm-pod-btn {
+  background: #f1f5f9;
+  color: var(--dark);
+  border: 1px solid var(--border-color);
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pm-btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.pm-pod-card:hover .pm-pod-btn {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: var(--pm-white);
+  border-color: var(--pm-red);
+  box-shadow: 0 6px 16px var(--pm-red-glow);
+}
+
+.pm-pod-card:hover .pm-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Bottom Assistance Strip */
+.pm-service-bottom-strip {
+  background: var(--pm-white) !important;
+  border: 1px solid var(--border-color) !important;
+  border-left: 5px solid var(--pm-red) !important;
+}
+
+.pm-strip-icon-box {
+  width: 52px;
+  height: 52px;
+  background: rgba(250, 204, 21, 0.16);
+  color: var(--pm-yellow-dark);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  flex-shrink: 0;
+}
+
+.pm-btn-red {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  border: none;
+  box-shadow: 0 4px 14px var(--pm-red-glow);
+  transition: all 0.25s ease;
+}
+
+.pm-btn-red:hover {
+  background: linear-gradient(135deg, #ef4444 0%, var(--pm-red) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--pm-red-glow);
+}
+
+/* Bottom Assistance Strip - Mobile 1-Row Only (Desktop Size Unchanged) */
+@media (max-width: 767.98px) {
+  .pm-strip-btn-group {
+    width: 100% !important;
+  }
+  .pm-strip-btn {
+    flex: 1 1 0 !important;
+    padding: 8px 10px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ==========================================================================
+   About Widget (Packers & Movers Theme)
+   ========================================================================== */
+.pm-about-section {
+  background-color: var(--pm-white);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+}
+
+.pm-about-media {
+  position: relative;
+}
+
+/* Multi-Image Bento Box */
+.pm-about-img-box {
+  background-color: #f1f5f9;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.pm-img-box-lg {
+  height: 420px;
+}
+
+.pm-img-box-sm {
+  height: 202px;
+}
+
+.pm-about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pm-about-img-box:hover .pm-about-img {
+  transform: scale(1.05);
+}
+
+.pm-about-badge-card {
+  bottom: -22px;
+  left: 20px;
+  background: var(--pm-white);
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14) !important;
+  z-index: 3;
+}
+
+.pm-about-badge-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(250, 204, 21, 0.16);
+  color: var(--pm-yellow-dark);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  flex-shrink: 0;
+}
+
+.pm-about-iso-pill {
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08) !important;
+}
+
+.pm-about-tag {
+  color: var(--pm-red);
+  letter-spacing: 0.5px;
+}
+
+.pm-about-heading {
+  line-height: 1.3;
+}
+
+.pm-about-desc {
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+.pm-pillar-card {
+  transition: all 0.25s ease;
+}
+
+.pm-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(230, 25, 25, 0.3) !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08) !important;
+}
+
+.pm-pillar-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(230, 25, 25, 0.08);
+  color: var(--pm-red);
+  font-size: 1.25rem;
+  border: 1px solid rgba(230, 25, 25, 0.18);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pm-pillar-card:hover .pm-pillar-icon {
+  background: var(--pm-red);
+  color: var(--pm-white);
+}
+
+.pm-text-yellow-dark {
+  color: var(--pm-yellow-dark);
+}
+
+.pm-about-action-row {
+  border-color: var(--border-color) !important;
+}
+
+@media (max-width: 767.98px) {
+  .pm-img-box-lg {
+    height: 280px;
+  }
+  .pm-img-box-sm {
+    height: 132px;
+  }
+  .pm-about-badge-card {
+    position: static !important;
+    margin-top: 15px;
+  }
+  .pm-about-iso-pill {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* ==========================================================================
+   Process Widget (From Start to Settle - Hexagon Flow)
+   ========================================================================== */
+.pm-process-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Master Flow Wrap */
+.pm-process-flow-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.pm-flow-track {
+  position: relative;
+}
+
+/* Dashed Baseline Timeline Track (Desktop) */
+.pm-steps-baseline-track {
+  position: absolute;
+  bottom: 5px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  border-top: 2px dashed rgba(230, 25, 25, 0.35);
+  z-index: 1;
+}
+
+/* Single Step Column */
+.pm-flow-step {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 6px;
+}
+
+/* Hexagon Box & Badge */
+.pm-hex-wrapper {
+  position: relative;
+  width: 130px;
+  height: 90px;
+  margin: 14px auto 0 auto;
+}
+
+.pm-hex-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: var(--pm-white);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 2px 12px;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px var(--pm-red-glow);
+  z-index: 3;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pm-flow-step:hover .pm-hex-badge {
+  background: var(--pm-yellow);
+  color: var(--pm-black);
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 4px 12px var(--pm-yellow-glow);
+}
+
+.pm-hex-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.pm-hex-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.pm-hex-shape {
+  fill: #ffffff;
+  stroke: var(--pm-red);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 6px 14px rgba(230, 25, 25, 0.12));
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pm-flow-step:hover .pm-hex-shape {
+  fill: #fff5f5;
+  stroke: var(--pm-red-hover);
+  filter: drop-shadow(0 10px 22px var(--pm-red-glow));
+}
+
+.pm-hex-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2.1rem;
+  color: var(--pm-red);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pm-flow-step:hover .pm-hex-icon {
+  transform: scale(1.12);
+  color: var(--pm-red-hover);
+}
+
+/* Directional Arrow Between Hexagons (Desktop Only) */
+.pm-hex-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 90px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-arrow-shape {
+  fill: var(--pm-red);
+  transition: all 0.3s ease;
+}
+
+.pm-flow-step:hover + .pm-hex-arrow .pm-arrow-shape {
+  fill: var(--pm-yellow-dark);
+  transform: translateX(3px);
+}
+
+/* Step Typography */
+.pm-step-title {
+  color: var(--dark);
+  font-size: 1.05rem;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  transition: color 0.25s ease;
+}
+
+.pm-flow-step:hover .pm-step-title {
+  color: var(--pm-red);
+}
+
+.pm-step-desc {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+  min-height: 48px;
+}
+
+/* Vertical Guideline & Baseline Dot */
+.pm-step-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.pm-step-guideline {
+  width: 1px;
+  height: 24px;
+  border-left: 2px dashed rgba(230, 25, 25, 0.35);
+}
+
+.pm-step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--pm-red);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--pm-red);
+  transition: all 0.3s ease;
+}
+
+.pm-flow-step:hover .pm-step-dot {
+  background: var(--pm-yellow);
+  box-shadow: 0 0 0 2px var(--pm-yellow-dark), 0 0 8px var(--pm-yellow-glow);
+  transform: scale(1.25);
+}
+
+/* Mobile & Tablet Flow Layout (2 items per row, 5th odd item centered in middle) */
+@media (max-width: 991.98px) {
+  .pm-flow-steps-wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 24px !important;
+    column-gap: 12px !important;
+  }
+
+  .pm-flow-step {
+    flex: 0 0 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+    width: calc(50% - 10px) !important;
+    margin: 0 !important;
+    padding: 0 4px !important;
+  }
+
+  /* One odd (5th step) in the middle */
+  .pm-flow-step.pm-flow-step-odd,
+  .pm-flow-step:last-child {
+    flex: 0 0 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+    width: calc(50% - 10px) !important;
+    margin: 0 auto !important;
+  }
+
+  /* Compact Hexagon sizing on mobile */
+  .pm-hex-wrapper {
+    width: 110px !important;
+    height: 76px !important;
+    margin: 10px auto 0 auto !important;
+  }
+
+  .pm-hex-icon {
+    font-size: 1.75rem !important;
+  }
+
+  .pm-hex-badge {
+    font-size: 0.7rem !important;
+    padding: 1px 10px !important;
+    top: -10px !important;
+  }
+
+  .pm-step-title {
+    font-size: 0.95rem !important;
+    margin-top: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .pm-step-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+    min-height: auto !important;
+  }
+
+  .pm-hex-arrow {
+    display: none !important;
+  }
+
+  .pm-step-footer {
+    display: none !important;
+  }
+
+  .pm-steps-baseline-track {
+    display: none !important;
+  }
+}
+
+/* Bottom Assistance Strip */
+.pm-process-cta-box {
+  background: var(--pm-white) !important;
+  border: 1px solid var(--border-color) !important;
+  border-left: 5px solid var(--pm-red) !important;
+}
+
+.pm-bottom-buttons-wrap {
+  width: auto;
+}
+
+@media (max-width: 767.98px) {
+  .pm-bottom-buttons-wrap {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+  .pm-bottom-buttons-wrap .btn {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ==========================================================================
+   Testimonial Widget (Spiral Notebook / Ruled Notepad Design)
+   ========================================================================== */
+.pm-testimonial-section {
+  background-color: #111318;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Typography & Trust Badges */
+.pm-testi-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.pm-testi-title-accent {
+  color: var(--pm-red);
+}
+
+.pm-testi-desc {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+.pm-testi-chip {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  letter-spacing: 0.3px;
+}
+
+.pm-testi-stat-sub {
+  font-size: 0.78rem;
+}
+
+.pm-testi-prompt {
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Pagination / Navigation Buttons */
+.pm-btn-page-prev {
+  background: #fbf9f2 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  padding: 10px 24px !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+.pm-btn-page-prev:hover {
+  background: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.pm-btn-page-next {
+  background: var(--pm-red) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  padding: 10px 24px !important;
+  border: none !important;
+  box-shadow: 0 4px 14px var(--pm-red-glow) !important;
+  transition: all 0.25s ease !important;
+}
+
+.pm-btn-page-next:hover {
+  background: var(--pm-red-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--pm-red-glow) !important;
+}
+
+/* Spiral Notebook / Notepad Container */
+.pm-notebook-wrapper {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.pm-notebook-paper {
+  background-color: #fbf8f0;
+  background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent 37px, #e5ddcb 37px, #e5ddcb 38px);
+  border-radius: 22px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  padding: 2.6rem 2.2rem 2.6rem 4.8rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+/* Red Margin Rule on Notepad */
+.pm-notebook-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 66px;
+  width: 2px;
+  background: rgba(239, 68, 68, 0.35);
+  z-index: 2;
+}
+
+/* Folded Dog-Ear Page Curl Corner (Top-Right) */
+.pm-notebook-paper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 26px 26px 0;
+  border-color: transparent #e2dac9 transparent transparent;
+  filter: drop-shadow(-2px 2px 3px rgba(0, 0, 0, 0.12));
+  transition: all 0.3s ease;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.pm-notebook-paper:hover::after {
+  border-width: 0 34px 34px 0;
+  border-color: transparent #d4cbb8 transparent transparent;
+}
+
+/* 3D Realistic Page-Turn Animation (Hinged to Spiral Spine) */
+.pm-carousel-pageflip {
+  perspective: 1600px;
+}
+
+.pm-carousel-pageflip .carousel-inner {
+  perspective: 1600px;
+  transform-style: preserve-3d;
+}
+
+.pm-carousel-pageflip .carousel-item {
+  transform-origin: 0% 50%;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.55s ease, filter 0.6s ease;
+  backface-visibility: hidden;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
+
+/* Page Turning Forward (Next Page) */
+.pm-carousel-pageflip .carousel-item-next:not(.carousel-item-start) {
+  transform: rotateY(85deg) scale(0.96);
+  opacity: 0;
+  filter: drop-shadow(-15px 0 25px rgba(0, 0, 0, 0.35));
+}
+
+.pm-carousel-pageflip .active.carousel-item-start {
+  transform: rotateY(-85deg) scale(0.96);
+  opacity: 0;
+  filter: drop-shadow(15px 0 25px rgba(0, 0, 0, 0.35));
+}
+
+.pm-carousel-pageflip .carousel-item-next.carousel-item-start {
+  transform: rotateY(0deg) scale(1);
+  opacity: 1;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
+
+/* Page Turning Backward (Prev Page) */
+.pm-carousel-pageflip .carousel-item-prev:not(.carousel-item-end) {
+  transform: rotateY(-85deg) scale(0.96);
+  opacity: 0;
+  filter: drop-shadow(15px 0 25px rgba(0, 0, 0, 0.35));
+}
+
+.pm-carousel-pageflip .active.carousel-item-end {
+  transform: rotateY(85deg) scale(0.96);
+  opacity: 0;
+  filter: drop-shadow(-15px 0 25px rgba(0, 0, 0, 0.35));
+}
+
+.pm-carousel-pageflip .carousel-item-prev.carousel-item-end {
+  transform: rotateY(0deg) scale(1);
+  opacity: 1;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
+
+/* Spiral Binder Spine */
+.pm-notebook-spine {
+  position: absolute;
+  left: 14px;
+  top: 26px;
+  bottom: 26px;
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.pm-spiral-hole {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #111318;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.9);
+  position: relative;
+  margin-left: 12px;
+}
+
+.pm-spiral-ring {
+  position: absolute;
+  left: -14px;
+  top: 2px;
+  width: 24px;
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f8fafc 0%, #94a3b8 50%, #334155 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: rotate(-8deg);
+}
+
+/* Page Counter on Top Right */
+.pm-notebook-counter {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  font-family: monospace, sans-serif;
+  letter-spacing: 1px;
+  z-index: 3;
+}
+
+/* Testimonial Quote on Ruled Paper */
+.pm-notebook-quote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: #1e293b;
+  font-size: 1.08rem;
+  line-height: 38px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Author Details */
+.pm-notebook-author {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 24px;
+  position: relative;
+  z-index: 3;
+}
+
+.pm-notebook-role {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Mobile Responsiveness for Testimonials */
+@media (max-width: 991.98px) {
+  .pm-testi-title {
+    font-size: 2.2rem;
+  }
+  .pm-notebook-wrapper {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pm-notebook-paper {
+    padding: 2.2rem 1.2rem 2.2rem 3.8rem;
+    border-radius: 16px;
+  }
+  .pm-notebook-paper::before {
+    left: 52px;
+  }
+  .pm-notebook-spine {
+    left: 8px;
+  }
+  .pm-notebook-quote {
+    font-size: 0.95rem;
+    line-height: 38px;
+  }
+}
+
+/* ==========================================================================
+   FAQs Widget (Modern Split Accordion Layout)
+   ========================================================================== */
+.pm-faqs-section {
+  background-color: #f8fafc;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+}
+
+/* Modern Support Concierge Card */
+.pm-faq-help-card {
+  background: var(--pm-white);
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  box-shadow: 0 14px 35px -10px rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+  position: sticky;
+  top: 110px;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.pm-faq-help-card:hover {
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12);
+  border-color: rgba(230, 25, 25, 0.25);
+}
+
+/* Live Status Badge */
+.pm-faq-live-tag {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  display: inline-block;
+  animation: pm-live-pulse 1.8s infinite;
+}
+
+@keyframes pm-live-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Headset Hub with Online Status (Inline with Title) */
+.pm-faq-avatar-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 0;
+}
+
+.pm-faq-avatar-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: var(--pm-white);
+  font-size: 1.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 16px var(--pm-red-glow);
+}
+
+.pm-online-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ Action Row (Call Box & Quote Button in 1 Row) */
+.pm-faq-action-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.pm-help-call-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+  flex: 1 1 0;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.pm-help-call-box:hover {
+  background: #ffffff;
+  border-color: var(--pm-red);
+  box-shadow: 0 6px 18px rgba(230, 25, 25, 0.12);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.pm-help-call-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(230, 25, 25, 0.08);
+  color: var(--pm-red);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pm-help-call-box:hover .pm-help-call-icon {
+  background: var(--pm-red);
+  color: var(--pm-white);
+}
+
+.pm-help-call-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  line-height: 1.1;
+}
+
+.pm-help-call-number {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.pm-help-quote-btn {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  box-shadow: 0 4px 14px var(--pm-red-glow) !important;
+  transition: all 0.25s ease !important;
+  text-decoration: none !important;
+}
+
+.pm-help-quote-btn:hover {
+  background: var(--pm-red-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--pm-red-glow) !important;
+  color: #ffffff !important;
+}
+
+.pm-help-quote-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.1;
+}
+
+.pm-help-quote-text {
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Micro Guarantee Checklist */
+.pm-help-checklist {
+  border-top: 1px solid var(--border-color);
+  padding-top: 14px;
+  margin-top: 14px;
+}
+
+.pm-help-check-item {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Custom Accordion Styling */
+.pm-faq-accordion .accordion-item {
+  background: var(--pm-white);
+  border: 1px solid var(--border-color);
+  border-radius: 14px !important;
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s ease;
+}
+
+.pm-faq-accordion .accordion-item:hover {
+  border-color: rgba(230, 25, 25, 0.3);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.pm-faq-accordion .accordion-button {
+  background: var(--pm-white);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 1.2rem 1.4rem;
+  border: none;
+  box-shadow: none;
+  gap: 12px;
+}
+
+.pm-faq-accordion .accordion-button:not(.collapsed) {
+  background: rgba(230, 25, 25, 0.03);
+  color: var(--pm-red);
+  box-shadow: none;
+  border-bottom: 1px solid rgba(230, 25, 25, 0.12);
+}
+
+.pm-faq-accordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e61919'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transition: transform 0.3s ease;
+}
+
+.pm-faq-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.pm-faq-accordion .accordion-button:not(.collapsed) .pm-faq-num {
+  background: var(--pm-red);
+  color: var(--pm-white);
+}
+
+.pm-faq-accordion .accordion-body {
+  padding: 1.2rem 1.4rem 1.4rem 4.1rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 767.98px) {
+  .pm-faq-help-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .pm-faq-action-row {
+    gap: 8px !important;
+  }
+
+  .pm-help-call-box {
+    padding: 8px 6px !important;
+    gap: 6px !important;
+    border-radius: 12px !important;
+  }
+
+  .pm-help-call-icon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .pm-help-call-label {
+    font-size: 0.58rem !important;
+  }
+
+  .pm-help-call-number {
+    font-size: 0.76rem !important;
+  }
+
+  .pm-help-quote-btn {
+    padding: 8px 6px !important;
+    border-radius: 12px !important;
+  }
+
+  .pm-help-quote-label {
+    font-size: 0.58rem !important;
+  }
+
+  .pm-help-quote-text {
+    font-size: 0.76rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pm-faq-accordion .accordion-body {
+    padding-left: 1.4rem;
+  }
 }
 
 /* ==========================================================================
