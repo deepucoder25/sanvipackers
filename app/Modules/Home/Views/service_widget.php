@@ -147,12 +147,12 @@ $serviceMeta = [
                     <i class="bi bi-shield-check fs-4"></i>
                 </div>
                 <div>
-                    <h5 class="fw-bold mb-1">Need a Customized Moving Plan?</h5>
+                    <div class="h5 fw-bold mb-1">Need a Customized Moving Plan?</div>
                     <p class="text-muted small mb-0">Our relocation specialists provide free on-site survey &amp; accurate quotes.</p>
                 </div>
             </div>
             <div class="d-flex gap-2 flex-nowrap justify-content-center pm-strip-btn-group">
-                <a <?= $phonehtml ?> class="btn btn-outline-dark rounded-pill px-4 fw-bold pm-strip-btn">
+                <a <?= $phonehtml ?> class="btn btn-outline-dark rounded-pill px-4 fw-bold pm-strip-btn" aria-label="Call relocation specialist for customized moving plan">
                     <i class="bi bi-telephone-fill me-1"></i> Call Specialist
                 </a>
                 <button type="button" class="btn btn-danger rounded-pill px-4 fw-bold pm-btn-red pm-strip-btn" data-bs-toggle="modal" data-bs-target="#qteModal">

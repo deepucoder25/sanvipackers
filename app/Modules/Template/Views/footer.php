@@ -64,7 +64,7 @@
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="footer-col-header">
                     <span class="footer-col-eyebrow">EXPLORE</span>
-                    <h5 class="footer-col-title">Quick Links</h5>
+                    <h3 class="footer-col-title h5">Quick Links</h3>
                 </div>
                 <ul class="footer-links-list">
                     <li>
@@ -123,7 +123,7 @@
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="footer-col-header">
                     <span class="footer-col-eyebrow">SOLUTIONS</span>
-                    <h5 class="footer-col-title">Our Services</h5>
+                    <h3 class="footer-col-title h5">Our Services</h3>
                 </div>
                 <ul class="footer-links-list">
                     <li>
@@ -175,7 +175,7 @@
             <div class="col-lg-3 col-md-6 col-12">
                 <div class="footer-col-header">
                     <span class="footer-col-eyebrow">CONNECT</span>
-                    <h5 class="footer-col-title">Get In Touch</h5>
+                    <h3 class="footer-col-title h5">Get In Touch</h3>
                 </div>
                 <div class="footer-contact-items">
                     <?php if (!empty($address)): ?>

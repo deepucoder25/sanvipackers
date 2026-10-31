@@ -1,7 +1,7 @@
 <div class="hero-quote-card-container" data-bs-theme="dark" itemscope itemtype="https://schema.org/QuoteAction">
     <!-- Card Header -->
     <div class="hero-quote-header">
-        <h3 class="hero-quote-title" itemprop="name">Get Your Best Moving Quote</h3>
+        <h2 class="hero-quote-title" itemprop="name">Get Your Best Moving Quote</h2>
         <p class="hero-quote-subtitle" itemprop="description">Quick, Fast & Free Estimates</p>
     </div>
 

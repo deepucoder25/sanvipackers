@@ -50,9 +50,9 @@
                     <span class="text-uppercase fw-bold pm-about-tag small d-inline-flex align-items-center gap-1 mb-2">
                         <i class="bi bi-lightning-charge-fill text-warning"></i> Fast, Reliable &amp; Insured
                     </span>
-                    <h3 class="h2 fw-bold text-dark mb-3 pm-about-heading">
+                    <h2 class="h2 fw-bold text-dark mb-3 pm-about-heading">
                         Making Relocations <span class="pm-text-red">Smooth, Safe</span> &amp; Stress-Free
-                    </h3>
+                    </h2>
                     <p class="text-muted mb-4 pm-about-desc">
                         Founded with a mission to eliminate moving stress, <?= esc($company ?? 'Sanvi Packers & Movers') ?> provides comprehensive home shifting, office relocation, warehousing, and vehicle transport across 500+ Indian cities. Our certified crew, heavy-duty 5-layer bubble packaging, and dedicated move coordinators ensure your valuables arrive in pristine condition.
                     </p>
@@ -65,7 +65,7 @@
                                     <i class="bi bi-shield-fill-check"></i>
                                 </span>
                                 <div>
-                                    <h4 class="h6 fw-bold mb-0 text-dark">Zero-Damage Move</h4>
+                                    <h3 class="h6 fw-bold mb-0 text-dark">Zero-Damage Move</h3>
                                     <span class="text-muted small">Transit insurance cover</span>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                     <i class="bi bi-box-seam-fill"></i>
                                 </span>
                                 <div>
-                                    <h4 class="h6 fw-bold mb-0 text-dark">5-Layer Packaging</h4>
+                                    <h3 class="h6 fw-bold mb-0 text-dark">5-Layer Packaging</h3>
                                     <span class="text-muted small">Bubble wrap &amp; cartons</span>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                                     <i class="bi bi-clock-history"></i>
                                 </span>
                                 <div>
-                                    <h4 class="h6 fw-bold mb-0 text-dark">On-Time Shifting</h4>
+                                    <h3 class="h6 fw-bold mb-0 text-dark">On-Time Shifting</h3>
                                     <span class="text-muted small">Punctual doorstep delivery</span>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                     <i class="bi bi-geo-alt-fill"></i>
                                 </span>
                                 <div>
-                                    <h4 class="h6 fw-bold mb-0 text-dark">GPS Live Tracking</h4>
+                                    <h3 class="h6 fw-bold mb-0 text-dark">GPS Live Tracking</h3>
                                     <span class="text-muted small">Real-time status updates</span>
                                 </div>
                             </div>

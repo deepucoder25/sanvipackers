@@ -480,9 +480,9 @@ a {
 }
 
 .pm-service-badge {
-  background: rgba(230, 25, 25, 0.08);
-  color: var(--pm-red);
-  border: 1px solid rgba(230, 25, 25, 0.2);
+  background: rgba(185, 28, 28, 0.08);
+  color: #b91c1c;
+  border: 1px solid rgba(185, 28, 28, 0.22);
   letter-spacing: 0.8px;
   font-size: 0.78rem;
 }
@@ -1132,6 +1132,12 @@ a {
   overflow: hidden;
 }
 
+.pm-testimonial-section .pm-service-badge {
+  background: rgba(230, 25, 25, 0.22);
+  color: #ff9494;
+  border-color: rgba(255, 148, 148, 0.35);
+}
+
 /* Left Typography & Trust Badges */
 .pm-testi-title {
   font-family: Georgia, "Times New Roman", serif;
@@ -1142,7 +1148,7 @@ a {
 }
 
 .pm-testi-title-accent {
-  color: var(--pm-red);
+  color: #ff3b3b;
 }
 
 .pm-testi-desc {
@@ -1167,7 +1173,7 @@ a {
 }
 
 .pm-testi-prompt {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.75);
   font-family: Georgia, serif;
   font-style: italic;
   font-size: 0.95rem;
@@ -1450,9 +1456,9 @@ a {
 
 /* Live Status Badge */
 .pm-faq-live-tag {
-  background: rgba(16, 185, 129, 0.1);
-  color: #059669;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(4, 120, 87, 0.09);
+  color: #047857;
+  border: 1px solid rgba(4, 120, 87, 0.25);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -1567,7 +1573,7 @@ a {
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: var(--text-muted);
+  color: #475569;
   line-height: 1.1;
 }
 
@@ -1660,14 +1666,14 @@ a {
 }
 
 .pm-faq-accordion .accordion-button:not(.collapsed) {
-  background: rgba(230, 25, 25, 0.03);
-  color: var(--pm-red);
+  background: rgba(185, 28, 28, 0.04);
+  color: #991b1b;
   box-shadow: none;
-  border-bottom: 1px solid rgba(230, 25, 25, 0.12);
+  border-bottom: 1px solid rgba(185, 28, 28, 0.14);
 }
 
 .pm-faq-accordion .accordion-button::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e61919'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23991b1b'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   transition: transform 0.3s ease;
 }
 
@@ -1687,7 +1693,7 @@ a {
 }
 
 .pm-faq-accordion .accordion-button:not(.collapsed) .pm-faq-num {
-  background: var(--pm-red);
+  background: #991b1b;
   color: var(--pm-white);
 }
 

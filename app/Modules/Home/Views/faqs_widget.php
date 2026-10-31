@@ -73,7 +73,7 @@ $faqs = [
                     <!-- Action Row: Call Box & Quote Button in One Row -->
                     <div class="pm-faq-action-row mb-3">
                         <!-- Direct Call Box -->
-                        <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="pm-help-call-box">
+                        <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="pm-help-call-box" aria-label="Call moving direct helpline at <?= esc($phone1 ?? '+91 98765 43210') ?>">
                             <div class="pm-help-call-icon">
                                 <i class="bi bi-telephone-fill"></i>
                             </div>

@@ -101,12 +101,12 @@ $steps = [
                     <i class="bi bi-shield-check fs-4"></i>
                 </div>
                 <div>
-                    <h5 class="fw-bold mb-1">Planning Your Move This Weekend?</h5>
+                    <div class="h5 fw-bold mb-1">Planning Your Move This Weekend?</div>
                     <p class="text-muted small mb-0">Book your shifting slot today and get free on-site survey with upfront pricing.</p>
                 </div>
             </div>
             <div class="d-flex gap-2 pm-bottom-buttons-wrap">
-                <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="btn rounded-pill px-4 fw-bold pm-btn-dark">
+                <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="btn rounded-pill px-4 fw-bold pm-btn-dark" aria-label="Call relocation specialist for weekend moving slots">
                     <i class="bi bi-telephone-fill me-1"></i> Call Specialist
                 </a>
                 <button type="button" class="btn btn-danger rounded-pill px-4 fw-bold pm-btn-red" data-bs-toggle="modal" data-bs-target="#qteModal">
