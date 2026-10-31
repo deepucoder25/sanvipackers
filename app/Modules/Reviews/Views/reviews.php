@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>Reviews</span>
-        </div>
-        <h1>Customer Reviews & Ratings</h1>
-        <p>Read verified feedback and ratings from our customers.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Customer Reviews & Ratings',
+    'subtitle'    => 'Read verified feedback and ratings from our customers.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Reviews'],
+    ],
+]) ?>
 
 <section class="section" id="reviewsContainer">
     <div class="container">

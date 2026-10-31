@@ -1,12 +1,12 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <a href="<?= site_url('services') ?>">Services</a> / <span><?= esc($service['title']) ?></span>
-        </div>
-        <h1><?= esc($service['title']) ?></h1>
-        <p><?= esc($service['desc']) ?></p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => $service['title'] ?? 'Relocation Service',
+    'subtitle'    => $service['desc'] ?? '',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Services', 'url' => site_url('services')],
+        ['title' => $service['title'] ?? 'Service'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

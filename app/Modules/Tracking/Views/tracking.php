@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>Tracking</span>
-        </div>
-        <h1>Track Your Shipment</h1>
-        <p>Enter your tracking number below to check current status and updates.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Track Your Shipment',
+    'subtitle'    => 'Enter your tracking number below to check current status and updates.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Tracking'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

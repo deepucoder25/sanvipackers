@@ -1,13 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Terms & Conditions</span>
-        </div>
-        <h1>Terms & Conditions</h1>
-        <p>Operational terms, moving guidelines, and service agreements governing
-            <?= esc($comp['company3'] ?? 'QuickRelocation') ?>.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Terms & Conditions',
+    'subtitle'    => 'Operational terms, moving guidelines, and service agreements governing ' . esc($comp['company3'] ?? 'QuickRelocation') . '.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Terms & Conditions'],
+    ],
+]) ?>
 
         <section class="section" style="background: #f8fafc; padding: 50px 0 80px 0;">
             <div class="container" style="max-width: 960px;">

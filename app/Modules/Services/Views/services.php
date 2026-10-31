@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Services</span>
-        </div>
-        <h1>Our Relocation Services</h1>
-        <p>Complete packing, moving, vehicle transport, and safe warehouse storage under one roof.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Our Relocation Services',
+    'subtitle'    => 'Complete packing, moving, vehicle transport, and safe warehouse storage under one roof.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Services'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

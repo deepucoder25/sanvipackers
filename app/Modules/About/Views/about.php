@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>About Us</span>
-        </div>
-        <h1>About Our Company</h1>
-        <p>Learn about our journey, certified team, and commitment to delivering peace of mind on every move.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'About Our Company',
+    'subtitle'    => 'Learn about our journey, certified team, and commitment to delivering peace of mind on every move.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'About Us'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

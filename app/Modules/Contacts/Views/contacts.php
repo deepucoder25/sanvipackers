@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Contact Us</span>
-        </div>
-        <h1>Contact Us For A Free Quote</h1>
-        <p>Have questions about moving dates, packing material, or pricing? Our team is available 24/7 to assist you.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Contact Us For A Free Quote',
+    'subtitle'    => 'Have questions about moving dates, packing material, or pricing? Our team is available 24/7 to assist you.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Contact Us'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

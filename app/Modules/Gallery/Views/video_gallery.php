@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / <span>Video Gallery</span>
-        </div>
-        <h1>Video Gallery</h1>
-        <p>Explore our latest videos and highlights.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Video Gallery',
+    'subtitle'    => 'Explore our latest videos and highlights.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Video Gallery'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

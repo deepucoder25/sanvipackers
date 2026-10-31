@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>FAQs</span>
-        </div>
-        <h1>Frequently Asked Questions</h1>
-        <p>Common questions about shifting process, pricing, packaging, and transit insurance.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Frequently Asked Questions',
+    'subtitle'    => 'Common questions about shifting process, pricing, packaging, and transit insurance.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'FAQs'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container" style="max-width: 900px;">

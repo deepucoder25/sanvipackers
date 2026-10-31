@@ -5,16 +5,14 @@ $imgSrc = (!empty($post->image) && file_exists(FCPATH . 'uploads/blogs/' . $post
     ? base_url('uploads/blogs/' . $post->image)
     : base_url('assets/images/about/packers_movers.jpg');
 ?>
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="bi bi-house-door-fill"></i> Home</a> / 
-            <a href="<?= site_url('blog') ?>">Blog</a> / 
-            <span>Article Details</span>
-        </div>
-        <h1><?= esc($post->title ?? 'Blog Article') ?></h1>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => $post->title ?? 'Blog Article',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Blog', 'url' => site_url('blog')],
+        ['title' => 'Article Details'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

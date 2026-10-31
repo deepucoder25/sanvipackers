@@ -1,15 +1,13 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / 
-            <a href="<?= site_url('city') ?>">All States</a> / 
-            <a href="<?= site_url('city/' . $stateSlug) ?>"><?= esc($stateName) ?></a> / 
-            <span><?= esc($cityName) ?></span>
-        </div>
-        <h1>Best Packers and Movers in <?= esc($cityName) ?>, <?= esc($stateName) ?></h1>
-        <p>Reliable, hassle-free household shifting, office moving & vehicle transport with 100% transit insurance in <?= esc($cityName) ?>.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Best Packers and Movers in ' . esc($cityName) . ', ' . esc($stateName),
+    'subtitle'    => 'Reliable, hassle-free household shifting, office moving & vehicle transport with 100% transit insurance in ' . esc($cityName) . '.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'All States', 'url' => site_url('city')],
+        ['title' => $stateName, 'url' => site_url('city/' . $stateSlug)],
+        ['title' => $cityName],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">

@@ -1,12 +1,11 @@
-<div class="page-banner">
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="<?= site_url('/') ?>"><i class="fa-solid fa-house"></i> Home</a> / <span>Testimonials</span>
-        </div>
-        <h1>Customer Testimonials & Reviews</h1>
-        <p>See why thousands of families and businesses trust <?= esc($comp['company3']) ?>.</p>
-    </div>
-</div>
+<?= view('Modules\About\Views\dynamic_breadcrumb', [
+    'title'       => 'Customer Testimonials & Reviews',
+    'subtitle'    => 'See why thousands of families and businesses trust ' . esc($comp['company3'] ?? 'Sanvi Packers & Movers') . '.',
+    'breadcrumbs' => [
+        ['title' => 'Home', 'url' => site_url('/')],
+        ['title' => 'Testimonials'],
+    ],
+]) ?>
 
 <section class="section">
     <div class="container">
