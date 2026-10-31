@@ -10,7 +10,7 @@
  *
  *---------------------------------------------------------------
  */
-define('MY_ENVIRONMENT', 'development');   // <- change only this line
+define('MY_ENVIRONMENT', 'production');   // <- change only this line
 
 // Override the CI_ENVIRONMENT value set in .env file
 putenv('CI_ENVIRONMENT=' . MY_ENVIRONMENT);

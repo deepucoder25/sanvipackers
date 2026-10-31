@@ -49,7 +49,7 @@ if (!empty($breadcrumbs) && is_array($breadcrumbs)) {
 
 $lastIdx = count($trail) - 1;
 ?>
-<div class="page-banner mb-4">
+<div class="page-banner">
     <div class="container position-relative z-1">
         <!-- Stylish Segmented Breadcrumb Ribbon -->
         <nav aria-label="breadcrumb" class="mb-2">

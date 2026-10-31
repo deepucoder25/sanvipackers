@@ -197,7 +197,7 @@
                         </div>
                         <div class="contact-card-info">
                             <span class="contact-card-label">CALL ANYTIME (24/7)</span>
-                            <a <?= $phonehtml?> class="contact-card-val highlight-phone">
+                            <a <?= $phonehtml?> class="contact-card-val highlight-phone" aria-label="Call Now" title="Call Now">
                                 <?= $phone ?>
                             </a>
                         </div>
@@ -220,7 +220,7 @@
 
                     <?php if (!empty($whatsapphtml)): ?>
                     <div class="pt-2">
-                        <a href="<?= esc($whatsapphtml) ?>" target="_blank" class="footer-whatsapp-pill">
+                        <a href="<?= esc($whatsapphtml) ?>" target="_blank" rel="noopener noreferrer" class="footer-whatsapp-pill" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
                             <div class="wa-pulse-dot"></div>
                             <i class="bi bi-whatsapp"></i>
                             <span>Chat Live on WhatsApp</span>
@@ -277,14 +277,14 @@
 <!-- Floating Quick Action Buttons (Left: Call & WhatsApp | Right: Get Quote) -->
 <aside class="pm-floating-dock pm-floating-dock-left" aria-label="Quick Contact Actions">
     <!-- Call Float Button -->
-    <a <?= $phonehtml ?> class="pm-float-btn float-call" data-tooltip="Call Now" aria-label="Call Now">
-        <i class="bi bi-telephone-fill"></i>
+    <a <?= $phonehtml ?> class="pm-float-btn float-call" data-tooltip="Call Now" title="Call Now" aria-label="Call Now">
+        <i class="bi bi-telephone-fill" aria-hidden="true"></i>
         <span class="float-pulse-ring ring-call"></span>
     </a>
 
     <!-- WhatsApp Float Button -->
-    <a href="<?=$whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-float-btn float-whatsapp" data-tooltip="WhatsApp" aria-label="Chat on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
+    <a href="<?=$whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-float-btn float-whatsapp" data-tooltip="WhatsApp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
         <span class="float-pulse-ring ring-wa"></span>
     </a>
 </aside>
