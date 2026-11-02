@@ -584,6 +584,270 @@ class CI3_Form_Validation_Bridge
     }
 }
 
+class CI3_Upload_Bridge
+{
+    protected $config = [];
+    protected $data = [];
+    protected $errors = [];
+
+    public function __construct(array $config = [])
+    {
+        $this->initialize($config);
+    }
+
+    public function initialize(array $config = [])
+    {
+        $this->config = array_merge([
+            'upload_path'   => './assets/temp',
+            'allowed_types' => 'gif|jpg|png|jpeg|webp|jfif|WEBP|JFIF|pdf',
+            'overwrite'     => false,
+            'file_name'     => null,
+            'max_size'      => 10240, // 10MB
+        ], $config);
+        $this->errors = [];
+        return $this;
+    }
+
+    protected function resolvePath($path)
+    {
+        if (empty($path)) return FCPATH;
+        if (strpos($path, ':\\') !== false || strpos($path, ':/') !== false || (isset($path[0]) && ($path[0] === '/' || $path[0] === '\\'))) {
+            return $path;
+        }
+        $rel = ltrim($path, './\\');
+        return rtrim(FCPATH, '/\\') . DIRECTORY_SEPARATOR . str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $rel);
+    }
+
+    public function do_upload($field = 'userfile')
+    {
+        $this->errors = [];
+        $fileObj = null;
+
+        if (function_exists('service')) {
+            try {
+                $request = service('request');
+                if ($request) {
+                    $fileObj = $request->getFile($field);
+                }
+            } catch (\Throwable $e) {}
+        }
+
+        if (!$fileObj && !isset($_FILES[$field])) {
+            $this->errors[] = "You did not select a file to upload.";
+            return false;
+        }
+
+        if (!$fileObj && isset($_FILES[$field])) {
+            $err = $_FILES[$field]['error'] ?? UPLOAD_ERR_NO_FILE;
+            if ($err !== UPLOAD_ERR_OK) {
+                $this->errors[] = "File upload failed with error code: " . $err;
+                return false;
+            }
+        } elseif ($fileObj && !$fileObj->isValid()) {
+            $this->errors[] = $fileObj->getErrorString();
+            return false;
+        }
+
+        $uploadPath = $this->resolvePath($this->config['upload_path'] ?? './assets/temp');
+        if (!is_dir($uploadPath)) {
+            @mkdir($uploadPath, 0777, true);
+        }
+        if (!is_writable($uploadPath)) {
+            @chmod($uploadPath, 0777);
+        }
+
+        // Determine filename and extension
+        if ($fileObj && $fileObj->isValid()) {
+            $origName = $fileObj->getClientName();
+            $ext = strtolower($fileObj->getClientExtension() ?: pathinfo($origName, PATHINFO_EXTENSION));
+            $tmpPath = $fileObj->getTempName();
+            $fileSize = $fileObj->getSize();
+            $mimeType = $fileObj->getClientMimeType();
+        } else {
+            $origName = $_FILES[$field]['name'];
+            $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+            $tmpPath = $_FILES[$field]['tmp_name'];
+            $fileSize = $_FILES[$field]['size'];
+            $mimeType = $_FILES[$field]['type'] ?? '';
+        }
+
+        // Validate allowed types
+        $allowed = explode('|', strtolower($this->config['allowed_types'] ?? '*'));
+        if ($this->config['allowed_types'] !== '*' && !in_array($ext, $allowed, true)) {
+            $this->errors[] = "The file type '$ext' is not allowed.";
+            return false;
+        }
+
+        $targetName = !empty($this->config['file_name']) 
+            ? (pathinfo($this->config['file_name'], PATHINFO_EXTENSION) ? $this->config['file_name'] : ($this->config['file_name'] . '.' . $ext))
+            : (time() . '_' . mt_rand(100, 999) . '.' . $ext);
+
+        $targetPath = rtrim($uploadPath, '/\\') . DIRECTORY_SEPARATOR . $targetName;
+
+        if (is_uploaded_file($tmpPath)) {
+            if (!@move_uploaded_file($tmpPath, $targetPath)) {
+                $this->errors[] = "Could not move uploaded file to destination: " . $targetPath;
+                return false;
+            }
+        } else {
+            if (!@copy($tmpPath, $targetPath)) {
+                $this->errors[] = "Could not copy temporary file to destination: " . $targetPath;
+                return false;
+            }
+        }
+
+        // Read image dimensions if applicable
+        $width = 0;
+        $height = 0;
+        if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'], true)) {
+            $info = @getimagesize($targetPath);
+            if ($info) {
+                $width = $info[0];
+                $height = $info[1];
+            }
+        }
+
+        $this->data = [
+            'file_name'      => $targetName,
+            'file_type'      => $mimeType,
+            'file_path'      => rtrim($uploadPath, '/\\') . '/',
+            'full_path'      => $targetPath,
+            'raw_name'       => pathinfo($targetName, PATHINFO_FILENAME),
+            'orig_name'      => $origName,
+            'client_name'    => $origName,
+            'file_ext'       => '.' . $ext,
+            'file_size'      => round($fileSize / 1024, 2),
+            'is_image'       => ($width > 0),
+            'image_width'    => $width,
+            'image_height'   => $height,
+            'image_type'     => $ext,
+            'image_size_str' => ($width > 0) ? "width=\"{$width}\" height=\"{$height}\"" : '',
+        ];
+
+        return true;
+    }
+
+    public function data($key = null)
+    {
+        if ($key !== null) {
+            return $this->data[$key] ?? null;
+        }
+        return $this->data;
+    }
+
+    public function display_errors($open = '<p>', $close = '</p>')
+    {
+        if (empty($this->errors)) return '';
+        return $open . implode($close . $open, $this->errors) . $close;
+    }
+}
+
+class CI3_Image_Lib_Bridge
+{
+    protected $config = [];
+    protected $errors = [];
+
+    public function __construct(array $config = [])
+    {
+        $this->initialize($config);
+    }
+
+    public function initialize(array $config = [])
+    {
+        $this->config = array_merge([
+            'source_image'   => null,
+            'new_image'      => null,
+            'width'          => null,
+            'height'         => null,
+            'maintain_ratio' => true,
+            'overwrite'      => false,
+        ], $config);
+        $this->errors = [];
+        return $this;
+    }
+
+    protected function resolvePath($path)
+    {
+        if (empty($path)) return '';
+        if (strpos($path, ':\\') !== false || strpos($path, ':/') !== false || (isset($path[0]) && ($path[0] === '/' || $path[0] === '\\'))) {
+            return $path;
+        }
+        $rel = ltrim($path, './\\');
+        return rtrim(FCPATH, '/\\') . DIRECTORY_SEPARATOR . str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $rel);
+    }
+
+    public function resize()
+    {
+        $source = $this->resolvePath($this->config['source_image'] ?? '');
+        if (!file_exists($source)) {
+            $this->errors[] = "Source image not found: " . ($this->config['source_image'] ?? '');
+            return false;
+        }
+
+        $newImage = $this->config['new_image'] ?? null;
+        if (!empty($newImage)) {
+            $resolvedDest = $this->resolvePath($newImage);
+            if (substr(str_replace('\\', '/', $newImage), -1) === '/' || is_dir($resolvedDest)) {
+                if (!is_dir($resolvedDest)) {
+                    @mkdir($resolvedDest, 0777, true);
+                }
+                $targetFile = rtrim($resolvedDest, '/\\') . DIRECTORY_SEPARATOR . basename($source);
+            } else {
+                $dir = dirname($resolvedDest);
+                if (!is_dir($dir)) {
+                    @mkdir($dir, 0777, true);
+                }
+                $targetFile = $resolvedDest;
+            }
+        } else {
+            $targetFile = $source;
+        }
+
+        $targetDir = dirname($targetFile);
+        if (!is_dir($targetDir)) {
+            @mkdir($targetDir, 0777, true);
+        }
+
+        try {
+            if (class_exists('\Config\Services')) {
+                $imageService = \Config\Services::image('gd', null, false);
+                if ($imageService) {
+                    $imageService->withFile($source);
+                    $w = (int)($this->config['width'] ?? 0);
+                    $h = (int)($this->config['height'] ?? 0);
+                    if ($w > 0 || $h > 0) {
+                        $imageService->resize($w ?: 800, $h ?: 600, (bool)($this->config['maintain_ratio'] ?? true), 'auto');
+                    }
+                    $imageService->save($targetFile);
+                    return true;
+                }
+            }
+        } catch (\Throwable $e) {}
+
+        if ($source !== $targetFile) {
+            if (!@copy($source, $targetFile)) {
+                $this->errors[] = "Failed to copy image to target: " . $targetFile;
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public function clear()
+    {
+        $this->config = [];
+        $this->errors = [];
+        return $this;
+    }
+
+    public function display_errors($open = '<p>', $close = '</p>')
+    {
+        if (empty($this->errors)) return '';
+        return $open . implode($close . $open, $this->errors) . $close;
+    }
+}
+
 class CI3_Loader_Bridge
 {
     protected $controller;
@@ -698,8 +962,18 @@ class CI3_Loader_Bridge
         }
     }
 
-    public function library($library)
+    public function library($library, $config = [])
     {
+        $lib = strtolower(is_string($library) ? $library : '');
+        if ($lib === 'upload') {
+            $this->controller->upload = new CI3_Upload_Bridge(is_array($config) ? $config : []);
+        } elseif ($lib === 'image_lib') {
+            $this->controller->image_lib = new CI3_Image_Lib_Bridge(is_array($config) ? $config : []);
+        } elseif ($lib === 'form_validation') {
+            if (!isset($this->controller->form_validation)) {
+                $this->controller->form_validation = new CI3_Form_Validation_Bridge();
+            }
+        }
         return true;
     }
 
@@ -747,6 +1021,8 @@ class MX_Controller extends \App\Controllers\BaseController
     public $input;
     public $output;
     public $form_validation;
+    public $upload;
+    public $image_lib;
 
     public function __construct()
     {
@@ -759,5 +1035,7 @@ class MX_Controller extends \App\Controllers\BaseController
         $this->input           = new CI3_Input_Bridge();
         $this->output          = new CI3_Output_Bridge();
         $this->form_validation = new CI3_Form_Validation_Bridge();
+        $this->upload          = new CI3_Upload_Bridge();
+        $this->image_lib       = new CI3_Image_Lib_Bridge();
     }
 }

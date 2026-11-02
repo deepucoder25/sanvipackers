@@ -40,15 +40,9 @@ class About extends BaseController
         return Template::layout2($data);
     }
 
-    public function testimonials(): string
+    public function testimonials()
     {
-        $data['title']       = "Customer Reviews & Testimonials | " . $this->comp['company3'];
-        $data['description'] = "Read genuine client testimonials and feedback about " . $this->comp['company3'] . " home shifting, vehicle transportation, and office relocation services.";
-        $data['page']        = 'testimonials';
-        $data['module']      = 'about';
-        $data['view_file']   = 'Modules\About\Views\testimonials';
-
-        return Template::layout2($data);
+        return redirect()->to(site_url('reviews'), 301);
     }
 
     public function privacy(): string

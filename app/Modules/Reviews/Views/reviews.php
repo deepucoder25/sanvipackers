@@ -1,32 +1,60 @@
+<?php
+$companyName   = esc($company3 ?? ($site->name ?? 'Sanvi Packers & Movers'));
+$helplinePhone = $phone ?? '+91 70217 10594';
+$cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
+$phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPhone) . '"';
+?>
+
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Customer Reviews & Ratings',
-    'subtitle'    => 'Read verified feedback and ratings from our customers.',
+    'subtitle'    => 'Real experiences from 25,000+ verified relocations across India.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Reviews'],
     ],
 ]) ?>
 
-<section class="section" id="reviewsContainer">
+<div class="pm-reviews-page-wrap" id="reviewsContainer">
     <div class="container">
-        <!-- Header & Action Row -->
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pb-3 mb-4 border-bottom">
-            <div>
-                <h2 class="fw-bold fs-3 mb-1"><i class="bi bi-chat-quote-fill text-primary me-2"></i> Client Feedback</h2>
-                <p class="text-muted small mb-0">Showing verified customer feedback and star ratings.</p>
+        <!-- Hero / Scoreboard Showcase Bar -->
+        <div class="pm-reviews-hero-bar mb-4">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="pm-reviews-score-badge">
+                            <span class="pm-reviews-score-num">4.9</span>
+                            <div class="pm-reviews-score-stars">
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                <i class="bi bi-star-fill" aria-hidden="true"></i>
+                                <i class="bi bi-star-half" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge pm-service-badge mb-1">
+                                <i class="bi bi-patch-check-fill text-success me-1"></i> Verified Customer Feedback
+                            </span>
+                            <h2 class="pm-reviews-hero-title mb-1">Customer Reviews &amp; Ratings</h2>
+                            <p class="pm-reviews-hero-sub mb-0">Genuine ratings and moving experiences shared by our clients across India.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <button type="button" class="pm-btn-red" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                        <i class="bi bi-pencil-square" aria-hidden="true"></i> Write a Review
+                    </button>
+                </div>
             </div>
-            <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">
-                <i class="bi bi-pencil-square me-1"></i> Write a Review
-            </button>
         </div>
 
-        <!-- Star Filter Tabs (Instant switching without page reload) -->
-        <div class="d-flex flex-wrap gap-2 mb-4">
-            <button type="button" class="btn btn-sm rounded-pill star-tab-btn <?= empty($star_filter) ? 'btn-primary active' : 'btn-light border' ?>" data-star="all" onclick="filterReviewsTab('all', this)">
+        <!-- Star Filter Tabs -->
+        <div class="pm-star-filter-pills">
+            <button type="button" class="pm-star-filter-pill <?= empty($star_filter) ? 'active' : '' ?>" data-star="all" onclick="filterReviewsTab('all', this)">
                 All Reviews
             </button>
             <?php for ($s = 5; $s >= 1; $s--): ?>
-                <button type="button" class="btn btn-sm rounded-pill star-tab-btn <?= ($star_filter == $s) ? 'btn-primary active' : 'btn-light border' ?>" data-star="<?= $s ?>" onclick="filterReviewsTab(<?= $s ?>, this)">
+                <button type="button" class="pm-star-filter-pill <?= ($star_filter == $s) ? 'active' : '' ?>" data-star="<?= $s ?>" onclick="filterReviewsTab(<?= $s ?>, this)">
                     <?= $s ?> <i class="bi bi-star-fill text-warning"></i>
                 </button>
             <?php endfor; ?>
@@ -54,12 +82,14 @@
         <?php endif; ?>
 
         <!-- Empty state for filtered tabs -->
-        <div id="noReviewsMatch" class="alert alert-info text-center py-5 rounded-4 d-none">
-            <i class="bi bi-star fs-1 d-block mb-2 text-warning"></i>
-            <h4 class="fw-bold">No Reviews In This Rating</h4>
-            <p class="text-muted mb-3">Be the first to share your experience with this rating.</p>
-            <button class="btn btn-primary rounded-pill px-4 fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal">
-                Write a Review
+        <div id="noReviewsMatch" class="pm-reviews-empty-card d-none">
+            <div class="pm-reviews-empty-icon-wrap">
+                <i class="bi bi-star-fill" aria-hidden="true"></i>
+            </div>
+            <h3 class="pm-reviews-empty-title">No Reviews In This Rating</h3>
+            <p class="pm-reviews-empty-sub">Be the first to share your moving experience with this rating.</p>
+            <button type="button" class="pm-btn-red" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                <i class="bi bi-pencil-square" aria-hidden="true"></i> Write a Review
             </button>
         </div>
 
@@ -85,64 +115,69 @@
                     $photos = !empty($r->r_img) ? explode(',', $r->r_img) : [];
                 ?>
                     <div class="col-lg-4 col-md-6 review-card-item" data-stars="<?= $starsCount ?>">
-                        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 d-flex flex-column" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                        <div class="pm-review-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
                             <meta itemprop="name" content="<?= esc($r->r_title ?: 'Customer Review') ?>" />
                             <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
                                 <meta itemprop="name" content="<?= esc($company3 ?? '') ?>" />
                             </div>
 
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div class="rating text-warning fs-6" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <div class="pm-review-card-top">
+                                <div class="pm-review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
                                     <meta itemprop="ratingValue" content="<?= $starsCount ?>" />
                                     <?php for ($i = 1; $i <= 5; $i++): ?>
                                         <i class="bi bi-star<?= ($i <= $starsCount) ? '-fill' : '' ?>"></i>
                                     <?php endfor; ?>
                                 </div>
-                                <span class="text-muted small"><?= esc($pDate) ?></span>
+                                <span class="pm-review-date"><i class="bi bi-clock-history me-1"></i><?= esc($pDate) ?></span>
                             </div>
 
                             <?php if (!empty($r->r_title) || !empty($r->city)): ?>
-                                <h6 class="fw-bold text-primary mb-2 fs-6">
-                                    <i class="bi bi-geo-alt-fill me-1"></i> <?= esc($r->city ?: $r->r_title) ?>
-                                </h6>
+                                <span class="pm-review-city-chip">
+                                    <i class="bi bi-geo-alt-fill text-danger me-1"></i> <?= esc($r->city ?: $r->r_title) ?>
+                                </span>
                             <?php endif; ?>
 
-                            <p class="text-secondary small flex-grow-1 mb-3" itemprop="reviewBody">
-                                "<?= nl2br(esc($r->r_desc ?? '')) ?>"
+                            <p class="pm-review-text" itemprop="reviewBody">
+                                &ldquo;<?= nl2br(esc($r->r_desc ?? '')) ?>&rdquo;
                             </p>
 
                             <?php if (!empty($photos)): ?>
                                 <div class="d-flex gap-2 mb-3 overflow-hidden">
                                     <?php foreach ($photos as $ph): ?>
                                         <?php if (!empty(trim($ph))): ?>
-                                            <img src="<?= base_url(trim($ph)) ?>" class="rounded-3 border" style="width: 55px; height: 55px; object-fit: cover;" alt="Review photo">
+                                            <img src="<?= base_url(trim($ph)) ?>" class="border pm-review-thumb" alt="Review photo">
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
 
-                            <div class="pt-3 border-top d-flex align-items-center gap-2">
-                                <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold" style="width: 38px; height: 38px; font-size: 0.9rem;">
-                                    <?= strtoupper(substr($r->name ?? 'C', 0, 1)) ?>
+                            <div class="pm-review-footer">
+                                <div class="pm-review-author-wrap">
+                                    <div class="pm-review-avatar">
+                                        <?= strtoupper(substr($r->name ?? 'C', 0, 1)) ?>
+                                    </div>
+                                    <div>
+                                        <strong class="pm-review-author-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                            <span itemprop="name"><?= esc($r->name ?? 'Customer') ?></span>
+                                        </strong>
+                                        <span class="pm-review-author-email"><?= esc($maskedEmail) ?></span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <strong class="d-block text-dark small" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                        <span itemprop="name"><?= esc($r->name ?? 'Customer') ?></span>
-                                    </strong>
-                                    <span class="text-muted small"><?= esc($maskedEmail) ?></span>
-                                </div>
+                                <span class="pm-review-verified-pill"><i class="bi bi-patch-check-fill text-success"></i> Verified</span>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="col-12" id="initialEmptyAlert">
-                    <div class="alert alert-info text-center py-5 rounded-4">
-                        <i class="bi bi-star fs-1 d-block mb-2 text-warning"></i>
-                        <h4 class="fw-bold">No Reviews Yet</h4>
-                        <p class="text-muted mb-3">Be the first to share your experience with us.</p>
-                        <button class="btn btn-primary rounded-pill px-4 fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal">
-                            Write a Review
+                    <div class="pm-reviews-empty-card">
+                        <div class="pm-reviews-empty-icon-wrap">
+                            <i class="bi bi-star-fill" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="pm-reviews-empty-title">No Reviews Yet</h3>
+                        <p class="pm-reviews-empty-sub">Be the first to share your moving experience with Sanvi Packers.</p>
+                        <button type="button" class="pm-btn-red" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                            <i class="bi bi-pencil-square" aria-hidden="true"></i> Write a Review
                         </button>
                     </div>
                 </div>
@@ -151,7 +186,7 @@
 
         <!-- Pagination -->
         <?php if ($total_rows > $per_page): ?>
-            <div class="d-flex justify-content-center mt-5" id="reviewsPagination">
+            <div class="d-flex justify-content-center mt-5 pm-reviews-pagination" id="reviewsPagination">
                 <ul class="pagination">
                     <?php 
                     $totalPages = ceil($total_rows / $per_page);
@@ -167,21 +202,45 @@
                 </ul>
             </div>
         <?php endif; ?>
+
+        <!-- Bottom Action Banner (CTA) -->
+        <div class="pm-about-cta-banner mt-5">
+            <div class="row align-items-center g-4 position-relative z-2">
+                <div class="col-lg-7">
+                    <h2 class="pm-about-cta-title">Ready for a 5-Star Moving Experience?</h2>
+                    <p class="pm-about-cta-desc">
+                        Join 25,000+ satisfied families and corporate teams. Get a transparent quote with zero hidden charges today.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="pm-about-cta-actions justify-content-lg-end">
+                        <a <?= $phoneHref ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
+                            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Call <?= esc($helplinePhone) ?></span>
+                            <span class="d-md-none">Call Now</span>
+                        </a>
+                        <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+                            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                            <span class="d-none d-md-inline">Chat on WhatsApp</span>
+                            <span class="d-md-none">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
 <?= view('Modules\Reviews\Views\reviewmodal') ?>
 
 <script>
 // Filter tabs without refreshing page
 function filterReviewsTab(star, btnEl) {
-    document.querySelectorAll('.star-tab-btn').forEach(b => {
-        b.classList.remove('btn-primary', 'active');
-        b.classList.add('btn-light', 'border');
+    document.querySelectorAll('.pm-star-filter-pill').forEach(b => {
+        b.classList.remove('active');
     });
     if (btnEl) {
-        btnEl.classList.remove('btn-light', 'border');
-        btnEl.classList.add('btn-primary', 'active');
+        btnEl.classList.add('active');
     }
 
     const items = document.querySelectorAll('.review-card-item');
@@ -190,10 +249,10 @@ function filterReviewsTab(star, btnEl) {
     items.forEach(card => {
         const cardStar = card.getAttribute('data-stars');
         if (star === 'all' || cardStar === String(star)) {
-            card.style.display = '';
+            card.classList.remove('d-none');
             visibleCount++;
         } else {
-            card.style.display = 'none';
+            card.classList.add('d-none');
         }
     });
 
@@ -208,9 +267,6 @@ function filterReviewsTab(star, btnEl) {
             emptyBox.classList.add('d-none');
         }
     }
-
-    const newUrl = (star === 'all') ? '<?= site_url('reviews') ?>' : ('<?= site_url('reviews') ?>?star=' + star);
-    window.history.pushState({ star: star }, '', newUrl);
 }
 
 // Add newly submitted review without page reload
@@ -242,28 +298,31 @@ function prependReviewCard(r) {
     const firstLetter = (r.name || 'C').charAt(0).toUpperCase();
 
     card.innerHTML = `
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 d-flex flex-column border-start border-4 border-success">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="rating text-warning fs-6">
+        <div class="pm-review-card">
+            <div class="pm-review-card-top">
+                <div class="pm-review-stars">
                     ${starIcons}
                 </div>
-                <span class="badge bg-success-subtle text-success small">Just now</span>
+                <span class="badge bg-success-subtle text-success rounded-pill small">Just now</span>
             </div>
 
-            ${r.city ? `<h6 class="fw-bold text-primary mb-2 fs-6"><i class="bi bi-geo-alt-fill me-1"></i> ${r.city}</h6>` : ''}
+            ${r.city ? `<span class="pm-review-city-chip"><i class="bi bi-geo-alt-fill text-danger me-1"></i> ${r.city}</span>` : ''}
 
-            <p class="text-secondary small flex-grow-1 mb-3">
-                "${r.r_desc || ''}"
+            <p class="pm-review-text">
+                &ldquo;${r.r_desc || ''}&rdquo;
             </p>
 
-            <div class="pt-3 border-top d-flex align-items-center gap-2">
-                <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold" style="width: 38px; height: 38px; font-size: 0.9rem;">
-                    ${firstLetter}
+            <div class="pm-review-footer">
+                <div class="pm-review-author-wrap">
+                    <div class="pm-review-avatar">
+                        ${firstLetter}
+                    </div>
+                    <div>
+                        <strong class="pm-review-author-name">${r.name || 'Customer'}</strong>
+                        <span class="pm-review-author-email">${maskedEmail}</span>
+                    </div>
                 </div>
-                <div>
-                    <strong class="d-block text-dark small">${r.name || 'Customer'}</strong>
-                    <span class="text-muted small">${maskedEmail}</span>
-                </div>
+                <span class="pm-review-verified-pill"><i class="bi bi-patch-check-fill text-success"></i> Verified</span>
             </div>
         </div>
     `;

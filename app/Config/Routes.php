@@ -15,7 +15,7 @@ $routes->get('home', '\Modules\Home\Controllers\Home::index');
 $routes->get('about-us', '\Modules\About\Controllers\About::index');
 $routes->get('about', '\Modules\About\Controllers\About::index');
 $routes->get('faqs', '\Modules\About\Controllers\About::faqs');
-$routes->get('testimonials', '\Modules\About\Controllers\About::testimonials');
+$routes->addRedirect('testimonials', 'reviews', 301);
 $routes->get('privacy-policy', '\Modules\About\Controllers\About::privacy');
 $routes->get('privacy', '\Modules\About\Controllers\About::privacy');
 $routes->get('terms-and-conditions', '\Modules\About\Controllers\About::terms');

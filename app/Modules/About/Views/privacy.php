@@ -1,181 +1,266 @@
+<?php
+$companyName   = esc($comp['company3'] ?? ($site->name ?? 'Sanvi Packers'));
+$helplinePhone = $phone ?? ($comp['phone'] ?? '+91 70217 10594');
+$cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
+$companyEmail  = $mail ?? ($comp['mail'] ?? 'info@sanvipackers.com');
+$companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar, Mumbai - 400705, Maharashtra, India');
+?>
+
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Privacy Policy',
-    'subtitle'    => 'How ' . esc($comp['company3'] ?? 'QuickRelocation') . ' protects, manages, and safeguards your personal information.',
+    'subtitle'    => 'How ' . $companyName . ' protects, manages, and safeguards your personal data.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Privacy Policy'],
     ],
 ]) ?>
 
-        <section class="section" style="background: #f8fafc; padding: 50px 0 80px 0;">
-            <div class="container" style="max-width: 960px;">
+<div class="pm-legal-page-wrap">
+    <div class="container">
 
-                <!-- Policy Meta Card -->
-                <div
-                    style="background: #ffffff; border-radius: var(--radius-md); border: 1px solid var(--border-color); padding: 20px 28px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-                    <div>
-                        <span
-                            style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--primary);">Document
-                            Policy</span>
-                        <div style="font-size: 1.05rem; font-weight: 800; color: var(--dark); margin-top: 2px;">Data
-                            Protection & User Privacy Commitment</div>
-                    </div>
-                    <div
-                        style="font-size: 0.85rem; color: var(--text-muted); background: #f1f5f9; padding: 6px 14px; border-radius: 20px; font-weight: 600;">
-                        <i class="fa-regular fa-calendar-check" style="color: var(--primary);"></i> Last Updated:
-                        October 2026
-                    </div>
-                </div>
+        <!-- Policy Meta / Document Header Bar -->
+        <div class="pm-legal-meta-bar">
+            <div>
+                <span class="pm-legal-meta-badge">
+                    <i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Document Policy
+                </span>
+                <h1 class="pm-legal-meta-title">Data Protection &amp; User Privacy Commitment</h1>
+            </div>
+            <div>
+                <span class="pm-legal-updated-pill">
+                    <i class="bi bi-calendar-check text-danger" aria-hidden="true"></i> Last Updated: October 2026
+                </span>
+            </div>
+        </div>
 
-                <!-- Main Policy Content Card -->
-                <div
-                    style="background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); font-size: 0.95rem; line-height: 1.8; color: #334155;">
+        <div class="row g-4">
+            <!-- Main Legal Content -->
+            <div class="col-lg-8">
+                <div class="pm-legal-card">
 
-                    <div
-                        style="background: #eff6ff; border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 6px; margin-bottom: 35px;">
-                        <p style="margin: 0; color: #1e3a8a; font-size: 0.95rem;">
-                            <strong>Privacy Commitment:</strong> At
-                            <strong><?= esc($comp['company3'] ?? 'QuickRelocation') ?></strong>, we are committed to
-                            respecting and protecting the privacy of all our clients, website visitors, and corporate
-                            partners. This Privacy Policy details how we collect, handle, store, and protect your
-                            information when booking our relocation, storage, and transport services.
+                    <!-- Privacy Commitment Callout -->
+                    <div class="pm-legal-callout">
+                        <p>
+                            <strong>Privacy Commitment:</strong> At <strong><?= $companyName ?></strong>, we are committed to respecting and protecting the personal privacy of all our clients, website visitors, and corporate logistics partners. This Privacy Policy outlines how we collect, handle, store, and safeguard your data during home shifting, office relocation, vehicle transit, and warehousing services.
                         </p>
                     </div>
 
                     <!-- Section 1 -->
-                    <div style="margin-bottom: 35px;">
-                        <h2
-                            style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span
-                                style="width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem;">1</span>
+                    <div class="pm-legal-section" id="sec-1">
+                        <h2 class="pm-legal-sec-title">
+                            <span class="pm-legal-num-badge">1</span>
                             Information We Collect
                         </h2>
-                        <p style="margin-bottom: 12px;">When you request a quotation, book a survey, or engage our
-                            relocation services, we may collect the following personal and logistics details:</p>
-                        <ul style="padding-left: 20px; margin-bottom: 16px;">
-                            <li><strong>Contact Identifiers:</strong> Full name, phone number, mobile number, and email
-                                address.</li>
-                            <li><strong>Relocation Coordinates:</strong> Origin pickup address, floor details,
-                                destination delivery address, and preferred moving dates.</li>
-                            <li><strong>Consignment Inventory:</strong> List of household goods, fragile items, vehicle
-                                registration numbers (for car/bike transport), and declared valuations.</li>
-                            <li><strong>Billing Information:</strong> GST numbers (for corporate clients), payment
-                                confirmations, and transit invoice details.</li>
-                            <li><strong>Technical Analytics:</strong> Browser type, IP address, and anonymized usage
-                                logs to ensure website performance and prevent malicious submissions.</li>
+                        <p>When you request a relocation quote, schedule a doorstep survey, or book our shifting services, we may collect the following operational details:</p>
+                        <ul class="pm-legal-list">
+                            <li><strong>Contact Identifiers:</strong> Full legal name, mobile number, alternate phone number, and verified email address.</li>
+                            <li><strong>Relocation Coordinates:</strong> Origin pickup address with floor/elevator details, destination address, and preferred relocation schedule.</li>
+                            <li><strong>Consignment Inventory:</strong> Comprehensive list of household articles, delicate glassware, declared valuations, and vehicle registration details (for car/bike carrier transit).</li>
+                            <li><strong>Billing &amp; Tax Information:</strong> GSTIN (for corporate and commercial billing), invoice records, and digital payment transaction confirmations.</li>
+                            <li><strong>Technical Analytics:</strong> Anonymized device telemetry, IP address, and browser cookies to maintain portal security and prevent automated form spam.</li>
                         </ul>
                     </div>
 
                     <!-- Section 2 -->
-                    <div style="margin-bottom: 35px;">
-                        <h2
-                            style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span
-                                style="width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem;">2</span>
+                    <div class="pm-legal-section" id="sec-2">
+                        <h2 class="pm-legal-sec-title">
+                            <span class="pm-legal-num-badge">2</span>
                             How We Use Your Data
                         </h2>
-                        <p style="margin-bottom: 12px;">We utilize collected customer information solely for legitimate
-                            business operations, including:</p>
-                        <ul style="padding-left: 20px; margin-bottom: 16px;">
-                            <li>Generating transparent moving estimates and scheduling pre-move physical or virtual
-                                surveys.</li>
-                            <li>Dispatching certified packing staff, specialized vehicles, and moving coordinators to
-                                your location.</li>
-                            <li>Facilitating transit insurance coverage with certified general insurance partners.</li>
-                            <li>Sending critical SMS/WhatsApp notifications regarding consignment dispatch, live
-                                tracking milestones, and delivery updates.</li>
-                            <li>Resolving client queries, feedback, and post-delivery assistance.</li>
+                        <p>Collected customer records are utilized exclusively for legitimate relocation operations and logistics fulfillment:</p>
+                        <ul class="pm-legal-list">
+                            <li>Generating transparent moving estimates and organizing pre-move physical or virtual video surveys.</li>
+                            <li>Assigning certified packing supervisors, dedicated trucks, and regional loading teams to your premises.</li>
+                            <li>Underwriting comprehensive all-risk transit insurance policies with licensed general insurance underwriters.</li>
+                            <li>Transmitting real-time SMS and WhatsApp milestone notifications regarding consignment loading, highway transit checkpoints, and destination delivery schedules.</li>
+                            <li>Addressing post-delivery inquiries, claim evaluations, and client satisfaction feedback.</li>
                         </ul>
                     </div>
 
                     <!-- Section 3 -->
-                    <div style="margin-bottom: 35px;">
-                        <h2
-                            style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span
-                                style="width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem;">3</span>
-                            Strict No-Spam & Zero Third-Party Sale Policy
+                    <div class="pm-legal-section" id="sec-3">
+                        <h2 class="pm-legal-sec-title">
+                            <span class="pm-legal-num-badge">3</span>
+                            Strict No-Spam &amp; Zero Third-Party Sale Policy
                         </h2>
-                        <p style="margin-bottom: 12px;">
-                            <strong>We do not sell, rent, trade, or monetize your personal information to third-party
-                                marketing agencies or external telemarketers.</strong> Your data is accessed solely by
-                            authorized operations personnel involved in fulfilling your relocation.
+                        <p>
+                            <strong>We never sell, rent, monetize, or trade your personal information to third-party telemarketers or marketing agencies.</strong> Your data is accessed strictly by verified operations coordinators and logistics crews assigned to your relocation contract.
                         </p>
-                        <p>Third-party service sharing is strictly limited to essential operational partners such as
-                            verified transit drivers, insurance adjusters, or compliance with judicial and law
-                            enforcement authorities when legally mandatory.</p>
+                        <div class="pm-legal-warning-box">
+                            <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+                            <div>
+                                <strong>Zero Commercial Data Sharing:</strong> Data sharing occurs only with essential regulatory entities, verified transit drivers, insurance adjusters, or judicial authorities when mandated by Indian statutory regulations.
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Section 4 -->
-                    <div style="margin-bottom: 35px;">
-                        <h2
-                            style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span
-                                style="width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem;">4</span>
-                            Data Security & Storage
+                    <div class="pm-legal-section" id="sec-4">
+                        <h2 class="pm-legal-sec-title">
+                            <span class="pm-legal-num-badge">4</span>
+                            Data Security &amp; Storage Protocols
                         </h2>
-                        <p style="margin-bottom: 12px;">
-                            We employ robust digital and physical security protocols to prevent unauthorized access,
-                            accidental alteration, or disclosure of customer records:
-                        </p>
-                        <ul style="padding-left: 20px; margin-bottom: 16px;">
-                            <li>High-grade SSL/TLS 256-bit cryptographic encryption on all web forms and data endpoints.
-                            </li>
-                            <li>Restricted administrative database access restricted by role-based authorization keys.
-                            </li>
-                            <li>Routine server maintenance and vulnerability assessments to safeguard client databases.
-                            </li>
+                        <p>We deploy enterprise-grade digital and administrative safeguards to protect your personal information against unauthorized access, loss, or manipulation:</p>
+                        <ul class="pm-legal-list">
+                            <li>End-to-end 256-bit SSL/TLS cryptographic encryption across all website quote requests and contact endpoints.</li>
+                            <li>Role-based access management ensuring only vetted moving coordinators can view client consignment files.</li>
+                            <li>Automated cloud backups with strict data retention cycles in compliance with statutory Indian accounting and transport standards.</li>
                         </ul>
                     </div>
 
                     <!-- Section 5 -->
-                    <div style="margin-bottom: 35px;">
-                        <h2
-                            style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span
-                                style="width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem;">5</span>
-                            Your Privacy Rights
+                    <div class="pm-legal-section" id="sec-5">
+                        <h2 class="pm-legal-sec-title">
+                            <span class="pm-legal-num-badge">5</span>
+                            Your Privacy Rights &amp; Consent Control
                         </h2>
-                        <p style="margin-bottom: 12px;">As a valued client, you retain full rights regarding your data:
-                        </p>
-                        <ul style="padding-left: 20px; margin-bottom: 16px;">
-                            <li><strong>Review & Rectify:</strong> You may request a summary of your stored personal
-                                details or ask us to correct inaccurate contact details.</li>
-                            <li><strong>Data Erasure:</strong> Upon settlement of your relocation and statutory audit
-                                retention periods, you may request the permanent removal of your contact information.
-                            </li>
-                            <li><strong>Opt-Out:</strong> You can unsubscribe from non-critical newsletters or
-                                promotional alerts at any time.</li>
+                        <p>As our valued client, you retain absolute authority over how your personal details are processed:</p>
+                        <ul class="pm-legal-list">
+                            <li><strong>Right of Access &amp; Correction:</strong> You may request a summary of your stored client profile or update contact numbers at any point.</li>
+                            <li><strong>Data Erasure:</strong> Following the successful completion of your move and statutory audit retention windows, you may request permanent deletion of your records.</li>
+                            <li><strong>Communication Preferences:</strong> You can opt out of non-transactional informational updates or newsletters at any time.</li>
                         </ul>
                     </div>
 
-                    <!-- Section 6: Contact & Grievances -->
-                    <div
-                        style="background: #f8fafc; border-radius: var(--radius-md); border: 1px solid var(--border-color); padding: 25px; margin-top: 40px;">
-                        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 10px;">Have
-                            Privacy Questions or Concerns?</h3>
-                        <p style="margin-bottom: 14px; color: var(--text-muted); font-size: 0.9rem;">If you have any
-                            questions about this Privacy Policy or wish to exercise your data rights, please contact our
-                            privacy compliance desk:</p>
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.9rem;">
-                            <div><strong>Organization:</strong> <?= esc($comp['company3'] ?? 'QuickRelocation') ?></div>
-                            <div><strong>Support Email:</strong> <a
-                                    href="mailto:<?= esc($comp['mail'] ?? 'info@relocationservices.com') ?>"
-                                    style="color: var(--primary);"><?= esc($comp['mail'] ?? 'info@relocationservices.com') ?></a>
+                    <!-- Section 6: Contact & Compliance Desk -->
+                    <div class="pm-legal-contact-card" id="sec-6">
+                        <h3 class="pm-legal-contact-title">Privacy Grievance &amp; Compliance Desk</h3>
+                        <p class="text-muted small mb-3">If you have questions regarding this Privacy Policy or wish to exercise your data rights, please reach our dedicated compliance officer:</p>
+                        
+                        <div class="pm-legal-contact-grid">
+                            <div class="pm-legal-contact-item">
+                                <span class="pm-legal-contact-label">Organization</span>
+                                <div class="pm-legal-contact-val"><?= $companyName ?></div>
                             </div>
-                            <div><strong>Helpline:</strong> <a
-                                    href="tel:<?= esc($comp['phone'] ?? '+91 98765 43210') ?>"
-                                    style="color: var(--primary);"><?= esc($comp['phone'] ?? '+91 98765 43210') ?></a>
+                            <div class="pm-legal-contact-item">
+                                <span class="pm-legal-contact-label">Compliance Email</span>
+                                <div class="pm-legal-contact-val">
+                                    <a href="mailto:<?= esc($companyEmail) ?>"><?= esc($companyEmail) ?></a>
+                                </div>
                             </div>
-                            <?php if (!empty($comp['address'])): ?>
-                                <div style="grid-column: 1 / -1;"><strong>Address:</strong> <?= esc($comp['address']) ?>
+                            <div class="pm-legal-contact-item">
+                                <span class="pm-legal-contact-label">24/7 Helpline</span>
+                                <div class="pm-legal-contact-val">
+                                    <a href="tel:+<?= esc($cleanPhone) ?>"><?= esc($helplinePhone) ?></a>
+                                </div>
+                            </div>
+                            <?php if (!empty($companyAddr)): ?>
+                                <div class="pm-legal-contact-item">
+                                    <span class="pm-legal-contact-label">Head Office</span>
+                                    <div class="pm-legal-contact-val small"><?= esc($companyAddr) ?></div>
                                 </div>
                             <?php endif; ?>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 pt-2">
+                            <a href="tel:+<?= esc($cleanPhone) ?>" class="pm-btn-red" title="Call Helpline" aria-label="Call Helpline">
+                                <i class="bi bi-telephone-fill" aria-hidden="true"></i> Call Helpline
+                            </a>
+                            <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="WhatsApp Support" aria-label="WhatsApp Support">
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Support
+                            </a>
                         </div>
                     </div>
 
                 </div>
-
             </div>
-        </section>
+
+            <!-- Sticky Sidebar -->
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="pm-legal-sidebar-sticky">
+                    <!-- Quick Table of Contents -->
+                    <div class="pm-legal-toc-card">
+                        <div class="pm-legal-toc-header">
+                            <i class="bi bi-list-nested text-danger" aria-hidden="true"></i> Document Sections
+                        </div>
+                        <ul class="pm-legal-toc-list">
+                            <li>
+                                <a href="#sec-1" class="pm-legal-toc-link active">
+                                    <span class="pm-legal-toc-num">1</span> Information We Collect
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sec-2" class="pm-legal-toc-link">
+                                    <span class="pm-legal-toc-num">2</span> How We Use Data
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sec-3" class="pm-legal-toc-link">
+                                    <span class="pm-legal-toc-num">3</span> Strict No-Spam Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sec-4" class="pm-legal-toc-link">
+                                    <span class="pm-legal-toc-num">4</span> Data Security Protocols
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sec-5" class="pm-legal-toc-link">
+                                    <span class="pm-legal-toc-num">5</span> Your Privacy Rights
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sec-6" class="pm-legal-toc-link">
+                                    <span class="pm-legal-toc-num">6</span> Compliance &amp; Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Trust Showcase Box -->
+                    <div class="pm-legal-trust-card">
+                        <h3 class="pm-legal-trust-title">Why Trust <?= $companyName ?>?</h3>
+                        <p class="pm-legal-trust-sub">Over a decade of relocation excellence built on transparency and customer security.</p>
+                        <div class="pm-legal-trust-item">
+                            <i class="bi bi-patch-check-fill" aria-hidden="true"></i>
+                            <span>ISO 9001:2015 Certified Movers</span>
+                        </div>
+                        <div class="pm-legal-trust-item">
+                            <i class="bi bi-shield-check" aria-hidden="true"></i>
+                            <span>100% Insured Transit Moves</span>
+                        </div>
+                        <div class="pm-legal-trust-item">
+                            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                            <span>500+ Connected Indian Cities</span>
+                        </div>
+                        <div class="pm-legal-trust-item">
+                            <i class="bi bi-clock-history" aria-hidden="true"></i>
+                            <span>24/7 Live Tracking Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.pm-legal-section, .pm-legal-contact-card');
+    const navLinks = document.querySelectorAll('.pm-legal-toc-link');
+
+    if ('IntersectionObserver' in window && sections.length && navLinks.length) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-15% 0px -65% 0px'
+        });
+
+        sections.forEach(sec => observer.observe(sec));
+    }
+});
+</script>

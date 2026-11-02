@@ -73,9 +73,9 @@ if (empty($cityImgSrc)) {
                         <i class="bi bi-chat-dots-fill"></i>
                         <span>Contact Us</span>
                     </a>
-                    <a <?= $phonehtml ?> class="btn btn-pm-yellow px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto">
+                    <a <?= $phonehtml ?> class="btn btn-pm-yellow px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto" title="Call Now" aria-label="Call Now">
                         <i class="bi bi-telephone-fill"></i>
-                        <span><?=phone ?></span>
+                        <span><?= $phone ?></span>
                     </a>
                 </div>
 
@@ -143,7 +143,7 @@ if (empty($cityImgSrc)) {
                     <div class="pm-cd-hero-actions">
                         <a <?= $phonehtml ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
                             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                            <span class="d-none d-sm-inline">Call <?=phone ?></span>
+                            <span class="d-none d-sm-inline">Call <?= $phone ?></span>
                             <span class="d-sm-none">Call Now</span>
                         </a>
                         <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
@@ -233,9 +233,9 @@ if (empty($cityImgSrc)) {
                             <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> 3-Layer Cartons + Bubble</span>
                         </div>
                         <div class="pm-cpt-col-action">
-                            <a <?= $phonehtml ?> class="pm-cpt-btn" title="Book 1 BHK Move">
+                            <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 1 BHK Move">
                                 <span>Book</span> <i class="bi bi-arrow-right"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -258,9 +258,9 @@ if (empty($cityImgSrc)) {
                             <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Heavy 5-Layer + Foam</span>
                         </div>
                         <div class="pm-cpt-col-action">
-                            <a <?= $phonehtml ?> class="pm-cpt-btn" title="Book 2 BHK Move">
+                            <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 2 BHK Move">
                                 <span>Book</span> <i class="bi bi-arrow-right"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -282,9 +282,9 @@ if (empty($cityImgSrc)) {
                             <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Full Wooden Crating + Film</span>
                         </div>
                         <div class="pm-cpt-col-action">
-                            <a <?= $phonehtml ?> class="pm-cpt-btn" title="Book 3 BHK Move">
+                            <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 3 BHK Move">
                                 <span>Book</span> <i class="bi bi-arrow-right"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -306,9 +306,9 @@ if (empty($cityImgSrc)) {
                             <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Custom Crate + Scratch Wrap</span>
                         </div>
                         <div class="pm-cpt-col-action">
-                            <a <?= $phonehtml ?> class="pm-cpt-btn" title="Book Bike Transport">
+                            <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book Bike Transport">
                                 <span>Book</span> <i class="bi bi-arrow-right"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -330,9 +330,9 @@ if (empty($cityImgSrc)) {
                             <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Enclosed Carrier + Locks</span>
                         </div>
                         <div class="pm-cpt-col-action">
-                            <a <?= $phonehtml ?> class="pm-cpt-btn" title="Book Car Transport">
+                            <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book Car Transport">
                                 <span>Book</span> <i class="bi bi-arrow-right"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -801,7 +801,7 @@ if (empty($cityImgSrc)) {
             <div class="pm-cta-actions-wrap">
                 <a <?= $phonehtml ?> class="pm-cta-btn-call" title="Call Now" aria-label="Call Now">
                     <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                    <span class="d-none d-sm-inline"><?=phone ?></span>
+                    <span class="d-none d-sm-inline"><?= $phone ?></span>
                     <span class="d-sm-none">Call Now</span>
                 </a>
                 <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-cta-btn-whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">

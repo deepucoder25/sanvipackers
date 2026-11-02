@@ -107,16 +107,18 @@ class Blog extends MX_Controller
         {
             
             $this->db->where('b_id', $_GET['id']);
-            foreach ($this->db->get("blog")->result() as $row)
-            {
-                $image_delete_path1="./assets/uploads/blog/$row->image";
-                 $image_delete_path2="./assets/uploads/blog/thumb/$row->image";
-            }
-            if (!empty($image_delete_path1) && file_exists($image_delete_path1)) {
-                unlink($image_delete_path1);
-            }
-            if (!empty($image_delete_path2) && file_exists($image_delete_path2)) {
-                unlink($image_delete_path2);
+            $items = $this->db->get("blog")->result();
+            if (!empty($items)) {
+                foreach ($items as $row) {
+                    if (!empty($row->image)) {
+                        $img = basename(trim($row->image));
+                        if (!empty($img)) {
+                            foreach ([FCPATH . "assets/uploads/blog/" . $img, FCPATH . "assets/uploads/blog/thumb/" . $img, "./assets/uploads/blog/" . $img, "./assets/uploads/blog/thumb/" . $img] as $p) {
+                                if (is_file($p)) { @unlink($p); }
+                            }
+                        }
+                    }
+                }
             }
            
             $where['b_id']=$_GET['id'];

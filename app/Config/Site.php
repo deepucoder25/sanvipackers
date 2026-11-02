@@ -12,7 +12,7 @@ class Site extends BaseConfig
      * Sirf is EK jagah details change kijiye, pure project (Controller, Views, Header, Footer, Schema) me apply ho jayega!
      */
     public $comp = [
-        'company3'      => 'Sanvi Packers',
+        'company3'      => 'Sanvi Packers and Movers',
         'companydomain' => 'sanvipackers.com',
         'phone'         => '+91 70217 10594',
         'phonehtml'     => 'href="tel:+917021710594"',

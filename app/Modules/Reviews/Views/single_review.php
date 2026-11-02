@@ -9,7 +9,7 @@ $photos = !empty($r->r_img) ? explode(',', $r->r_img) : [];
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Reviews', 'url' => site_url('reviews')],
-        ['title' => 'Customer Testimonial'],
+        ['title' => 'Review Details'],
     ],
 ]) ?>
 
@@ -17,7 +17,7 @@ $photos = !empty($r->r_img) ? explode(',', $r->r_img) : [];
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                <div class="pm-review-detail-card p-4 p-md-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="rating text-warning fs-5">
                             <?php for ($i = 1; $i <= 5; $i++): ?>
@@ -28,9 +28,9 @@ $photos = !empty($r->r_img) ? explode(',', $r->r_img) : [];
                     </div>
 
                     <?php if (!empty($r->r_title) || !empty($r->city)): ?>
-                        <h4 class="fw-bold text-primary mb-3">
-                            <i class="bi bi-geo-alt-fill me-1"></i> <?= esc($r->city ?: $r->r_title) ?>
-                        </h4>
+                        <span class="pm-review-city-chip mb-3">
+                            <i class="bi bi-geo-alt-fill text-danger me-1"></i> <?= esc($r->city ?: $r->r_title) ?>
+                        </span>
                     <?php endif; ?>
 
                     <p class="fs-5 text-secondary lh-lg mb-4">
@@ -41,7 +41,7 @@ $photos = !empty($r->r_img) ? explode(',', $r->r_img) : [];
                         <div class="d-flex gap-3 mb-4 flex-wrap">
                             <?php foreach ($photos as $ph): ?>
                                 <?php if (!empty(trim($ph))): ?>
-                                    <img src="<?= base_url(trim($ph)) ?>" class="rounded-3 border shadow-sm" style="max-width: 140px; height: 100px; object-fit: cover;" alt="Review photo">
+                                    <img src="<?= base_url(trim($ph)) ?>" class="rounded-3 border shadow-sm pm-review-detail-img" alt="Review photo">
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
@@ -49,15 +49,15 @@ $photos = !empty($r->r_img) ? explode(',', $r->r_img) : [];
 
                     <div class="pt-4 border-top d-flex justify-content-between align-items-center flex-wrap gap-3">
                         <div class="d-flex align-items-center gap-3">
-                            <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 48px; height: 48px;">
+                            <div class="pm-review-avatar-lg">
                                 <?= strtoupper(substr($r->name ?? 'C', 0, 1)) ?>
                             </div>
                             <div>
-                                <h6 class="fw-bold mb-0 text-dark"><?= esc($r->name ?? 'Customer') ?></h6>
-                                <span class="text-muted small">Verified Client</span>
+                                <strong class="d-block fw-bold text-dark fs-6"><?= esc($r->name ?? 'Customer') ?></strong>
+                                <span class="pm-review-verified-pill"><i class="bi bi-patch-check-fill text-success"></i> Verified Move</span>
                             </div>
                         </div>
-                        <a href="<?= site_url('reviews') ?>" class="btn btn-outline-primary rounded-pill">
+                        <a href="<?= site_url('reviews') ?>" class="pm-btn-red" title="View All Reviews">
                             <i class="bi bi-arrow-left me-1"></i> View All Reviews
                         </a>
                     </div>

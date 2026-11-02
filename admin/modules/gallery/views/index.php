@@ -101,7 +101,11 @@
             <div class="gallery-cards-grid">
                 <div class="photo-3d-card" dir-paginate="x in datadb | filter: search_text | itemsPerPage: 8" paginate-id="gallery">
                     <div class="photo-img-wrap">
-                        <img ng-src="<?=base_url("assets/uploads/gallery/thumb")?>/{{x.image}}" class="photo-card-img" alt="{{x.title}}">
+                        <img ng-if="x.image" ng-src="<?=base_url("assets/uploads/gallery/thumb")?>/{{x.image}}" class="photo-card-img" alt="{{x.title || 'Photo'}}" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\' viewBox=\'0 0 300 200\'><rect fill=\'%23f1f5f9\' width=\'300\' height=\'200\'/><text fill=\'%2394a3b8\' font-family=\'sans-serif\' font-size=\'14\' dy=\'5\' font-weight=\'bold\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\'>Image Not Found</text></svg>';">
+                        <div ng-if="!x.image" class="photo-card-no-img">
+                            <i class="fa fa-picture-o"></i>
+                            <span>No File</span>
+                        </div>
                         
                         <!-- Floating Action Pill Overlay -->
                         <div class="photo-overlay-actions">
@@ -545,6 +549,25 @@
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
+}
+
+.photo-card-no-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.photo-card-no-img i {
+    font-size: 24px;
+    color: #cbd5e1;
 }
 
 .photo-3d-card:hover .photo-card-img {

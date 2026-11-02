@@ -73,12 +73,55 @@
                     <i class="bi bi-chevron-right nav-link-arrow"></i>
                 </a>
             </li>
-            <li>
-                <a href="<?= site_url('about') ?>" class="<?= ($page === 'about') ? 'active' : '' ?>">
+            <?php 
+            $aboutPages = ['about', 'faqs', 'reviews', 'single-review', 'privacy', 'privacy-policy', 'terms', 'terms-and-conditions', 'photo-gallery', 'gallery'];
+            $isAboutActive = in_array($page, $aboutPages);
+            ?>
+            <li class="nav-item-dropdown">
+                <a href="<?= site_url('about') ?>" class="nav-link-dropdown-toggle <?= $isAboutActive ? 'active' : '' ?>" role="button" aria-expanded="false" aria-haspopup="true">
                     <span class="nav-link-icon"><i class="bi bi-info-circle-fill"></i></span>
                     <span class="nav-link-text">About Us</span>
-                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                    <i class="bi bi-chevron-down nav-link-chevron" aria-hidden="true"></i>
+                    <i class="bi bi-chevron-right nav-link-arrow" aria-hidden="true"></i>
                 </a>
+                <ul class="nav-dropdown-menu" aria-label="About Us Submenu">
+                    <li>
+                        <a href="<?= site_url('about') ?>" class="nav-dropdown-item <?= ($page === 'about') ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-info-circle-fill"></i></span>
+                            <span class="nav-dropdown-text">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('faqs') ?>" class="nav-dropdown-item <?= ($page === 'faqs') ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-question-circle-fill"></i></span>
+                            <span class="nav-dropdown-text">FAQs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('reviews') ?>" class="nav-dropdown-item <?= in_array($page, ['reviews', 'single-review']) ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-star-fill"></i></span>
+                            <span class="nav-dropdown-text">Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('privacy-policy') ?>" class="nav-dropdown-item <?= in_array($page, ['privacy', 'privacy-policy']) ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-shield-lock-fill"></i></span>
+                            <span class="nav-dropdown-text">Privacy Policy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('terms-and-conditions') ?>" class="nav-dropdown-item <?= in_array($page, ['terms', 'terms-and-conditions']) ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-file-text-fill"></i></span>
+                            <span class="nav-dropdown-text">Terms &amp; Conditions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('photo-gallery') ?>" class="nav-dropdown-item <?= in_array($page, ['photo-gallery', 'gallery']) ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-images"></i></span>
+                            <span class="nav-dropdown-text">Photo Gallery</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="<?= site_url('services') ?>" class="<?= ($page === 'services') ? 'active' : '' ?>">
@@ -119,7 +162,7 @@
 
         <div class="nav-actions">
             <?php if (!empty($phone)): ?>
-            <a <?= $phonehtml ?> class="nav-phone-chip d-none d-lg-inline-flex">
+            <a <?= $phonehtml ?> class="nav-phone-chip d-none d-lg-inline-flex" title="Call Now" aria-label="Call Now">
                 <div class="phone-chip-icon">
                     <i class="bi bi-telephone-fill"></i>
                 </div>
@@ -137,3 +180,30 @@
     </div>
     <div class="navbar-accent-line"></div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.nav-link-dropdown-toggle');
+    const dropdownItem = document.querySelector('.nav-item-dropdown');
+    
+    if (dropdownToggle && dropdownItem) {
+        dropdownToggle.addEventListener('click', function (e) {
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                dropdownItem.classList.toggle('open');
+                const isExpanded = dropdownItem.classList.contains('open');
+                dropdownToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            }
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.site-navbar')) {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks && navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        }
+    });
+});
+</script>

@@ -17,7 +17,13 @@ class Gallery extends MX_Controller
     {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('title', 'Title', 'trim');
-        
+
+        // Prevent inserting records without an image on new uploads
+        if (empty($_POST['auto_id']) && (empty($_FILES['image']['name']) || empty($_FILES['image']['tmp_name']))) {
+            echo "Please select an image file to upload.";
+            return;
+        }
+
         if (empty($_FILES['image']['name']) && empty($_POST['auto_id'])) {
             $this->form_validation->set_rules('image', 'Image', 'required');
         }
@@ -31,7 +37,7 @@ class Gallery extends MX_Controller
             if (!empty($_FILES['image']['name'])) {
                 // upload coder starts here
                 $config['upload_path'] = './assets/temp';
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg|webp|jfif|WEBP|JFIF|pdf';
                 $config['new_image'] = './assets/uploads/gallery/';
                 $config['min_width']=200;
              
@@ -77,7 +83,7 @@ class Gallery extends MX_Controller
                     }
                     else 
                     {             
-                        unlink($config['source_image']);
+                        if (!empty($config['source_image']) && is_file($config['source_image'])) { @unlink($config['source_image']); }
                         $data['image'] = $image['file_name'];
                     }
                 }
@@ -108,23 +114,43 @@ class Gallery extends MX_Controller
         $return=$this->gallery_mdl->view_data($where,$select);
         $this->output->set_content_type('application/json')->set_output(json_encode($return->result_array()));
     }
+
     function delete_data()
     {
         if (isset($_GET['id']) && $_GET['id'])
         {
-            
-            $this->db->where('auto_id', $_GET['id']);
-            foreach ($this->db->get("gallery")->result() as $row)
-            {
-                $image_delete_path1="./assets/uploads/gallery/$row->image";
-                $image_delete_path2="./assets/uploads/gallery/thumb/$row->image";
+            $id = (int)$_GET['id'];
+            $this->db->where('auto_id', $id);
+            $query = $this->db->get("gallery");
+            if ($query && method_exists($query, 'result')) {
+                foreach ($query->result() as $row)
+                {
+                    if (!empty($row->image)) {
+                        $img = basename(trim($row->image));
+                        if (!empty($img)) {
+                            $paths = [
+                                FCPATH . 'assets/uploads/gallery/' . $img,
+                                FCPATH . 'assets/uploads/gallery/thumb/' . $img,
+                                './assets/uploads/gallery/' . $img,
+                                './assets/uploads/gallery/thumb/' . $img,
+                            ];
+                            foreach ($paths as $path) {
+                                if (is_file($path)) {
+                                    @unlink($path);
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            if(file_exists($image_delete_path1)) unlink($image_delete_path1);
-            if(file_exists($image_delete_path2)) unlink($image_delete_path2);
-            $where['auto_id']=$_GET['id'];
-            echo $this->gallery_mdl->delete_data($where);
-        }else echo "Not Deleted";
+            $where = ['auto_id' => $id];
+            $deleted = $this->gallery_mdl->delete_data($where);
+            echo $deleted ? "1" : "0";
+        } else {
+            echo "Not Deleted";
+        }
     }
+
     function update_status()
     {
         if (isset($_GET['id']) && $_GET['id'] && isset($_GET['status']))
@@ -134,6 +160,7 @@ class Gallery extends MX_Controller
             echo $this->gallery_mdl->update_data($where,$data);
         }else echo "invalid Request";
     }
+
     function update_album_names($where,$name)
     {
         $data['album_name']=$name;

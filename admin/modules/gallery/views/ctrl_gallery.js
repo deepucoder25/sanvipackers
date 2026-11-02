@@ -15,12 +15,20 @@ app.controller('ctrl_gallery',function($scope,$http){
 	}
 	
 	$scope.edit_data=function(x){
-		$scope.x=x;
+		$scope.x=angular.copy(x);
 		$("#btnsubmit").html('<u><b>U</b></u>pdate');
 		window.scrollTo(0, 0);
 	}
 	
 	$scope.insert_data=function(){
+		var fileInput = document.getElementById('file');
+
+		// If new entry (no auto_id), require selecting a file
+		if ((!$scope.x || !$scope.x.auto_id) && (!fileInput || !fileInput.files || fileInput.files.length === 0)) {
+			$("#validation").html("<div class='alert alert-danger'>Please select an image file to upload.</div>");
+			return;
+		}
+
 		$("#btnsubmit").html('Please Wait...');
 		$("#btnsubmit").prop('disabled',true);
 		$('#webprogress').css('display','inline');
@@ -32,8 +40,7 @@ app.controller('ctrl_gallery',function($scope,$http){
 		if ($scope.x && $scope.x.auto_id) {
 		    formData.append('auto_id', $scope.x.auto_id);
 		}
-		var fileInput = document.getElementById('file');
-		if (fileInput.files.length > 0) {
+		if (fileInput && fileInput.files && fileInput.files.length > 0) {
 		    formData.append('image', fileInput.files[0]);
 		}
 
@@ -42,17 +49,19 @@ app.controller('ctrl_gallery',function($scope,$http){
             headers: {'Content-Type': undefined}
         }).success(function(data){
 			console.log(data);
-			if(data=="1")
+			if(data=="1" || data==1)
 			{
 				$("#result").html("<div class='alert alert-success'>Image Uploaded Successfully</div>");
 				$http.get("gallery/view_data").success(function(data){
 					$scope.datadb=data;
 				});
 				$scope.x={};
-				fileInput.value = "";
+				if (fileInput) fileInput.value = "";
+				var previewBox = document.getElementById('galleryPreviewBox');
+				if (previewBox) previewBox.style.display = 'none';
 				$("#validation").html("");
 			}
-			else if(data=="0")
+			else if(data=="0" || data==0)
 			{
 				$("#result").html("<div class='alert alert-info'>No Data Affected</div>");
 				$("#validation").html("");
@@ -75,6 +84,11 @@ app.controller('ctrl_gallery',function($scope,$http){
 	
 	$scope.filter_new=function(){
 		$scope.x={};
+		var fileInput = document.getElementById('file');
+		if (fileInput) fileInput.value = "";
+		var previewBox = document.getElementById('galleryPreviewBox');
+		if (previewBox) previewBox.style.display = 'none';
+		$("#btnsubmit").html('<u><b>U</b></u>pload');
 	}
 	
 	$scope.delete_data=function(x)
@@ -82,20 +96,26 @@ app.controller('ctrl_gallery',function($scope,$http){
 		if(confirm("Are you Sure to DELETE ??"))
 		{
 			$http.get("gallery/delete_data?id="+x.auto_id).success(function(data){
-				if(data=="1")
+				if(data=="1" || data==1)
 				{
 					$("#result").html("<div class='alert alert-success'>Image Deleted Successfully</div>");
 				}
 				else
 				{
-					$("#result").html("<div class='alert alert-danger'>Image not Deleted</div>");
+					$("#result").html("<div class='alert alert-danger'>Image not Deleted: "+data+"</div>");
 				}
 				$http.get("gallery/view_data").success(function(data){
 					$scope.datadb=data;
-				})
-			})
+				});
+			}).error(function(err) {
+				$("#result").html("<div class='alert alert-danger'>Server error occurred while deleting.</div>");
+				$http.get("gallery/view_data").success(function(data){
+					$scope.datadb=data;
+				});
+			});
 		}
 	}
+
 	$scope.toggle_status=function(x){
 		var newStatus = (x.status=='1' || x.status==1) ? 0 : 1;
 		$http.get("gallery/update_status?id="+x.auto_id+"&status="+newStatus).success(function(data){

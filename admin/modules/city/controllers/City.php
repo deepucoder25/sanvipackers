@@ -120,16 +120,18 @@ class City extends MX_Controller
         {
             
             $this->db->where('b_id', $_GET['id']);
-            foreach ($this->db->get("city")->result() as $row)
-            {
-                $image_delete_path1="./assets/uploads/branches/$row->image";
-                 $image_delete_path2="./assets/uploads/branches/thumb/$row->image";
-            }
-            if (!empty($image_delete_path1) && file_exists($image_delete_path1)) {
-                unlink($image_delete_path1);
-            }
-            if (!empty($image_delete_path2) && file_exists($image_delete_path2)) {
-                unlink($image_delete_path2);
+            $items = $this->db->get("city")->result();
+            if (!empty($items)) {
+                foreach ($items as $row) {
+                    if (!empty($row->image)) {
+                        $img = basename(trim($row->image));
+                        if (!empty($img)) {
+                            foreach ([FCPATH . "assets/uploads/branches/" . $img, FCPATH . "assets/uploads/branches/thumb/" . $img, "./assets/uploads/branches/" . $img, "./assets/uploads/branches/thumb/" . $img] as $p) {
+                                if (is_file($p)) { @unlink($p); }
+                            }
+                        }
+                    }
+                }
             }
            
             $where['b_id']=$_GET['id'];

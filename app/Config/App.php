@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public $baseURL = 'http://127.0.0.1/ci4_template/';
+    public $baseURL = 'http://127.0.0.1/sanvi_packers/';
 
     public function __construct()
     {
