@@ -1,14 +1,6 @@
-<?php
-$companyName   = esc($comp['company3'] ?? ($site->name ?? 'Sanvi Packers'));
-$helplinePhone = $phone ?? ($comp['phone'] ?? '+91 70217 10594');
-$cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
-$companyEmail  = $mail ?? ($comp['mail'] ?? 'info@sanvipackers.com');
-$companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar, Mumbai - 400705, Maharashtra, India');
-?>
-
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Privacy Policy',
-    'subtitle'    => 'How ' . $companyName . ' protects, manages, and safeguards your personal data.',
+    'subtitle'    => 'How ' . $company3 . ' protects, manages, and safeguards your personal data.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Privacy Policy'],
@@ -41,7 +33,7 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
                     <!-- Privacy Commitment Callout -->
                     <div class="pm-legal-callout">
                         <p>
-                            <strong>Privacy Commitment:</strong> At <strong><?= $companyName ?></strong>, we are committed to respecting and protecting the personal privacy of all our clients, website visitors, and corporate logistics partners. This Privacy Policy outlines how we collect, handle, store, and safeguard your data during home shifting, office relocation, vehicle transit, and warehousing services.
+                            <strong>Privacy Commitment:</strong> At <strong><?= $company3 ?></strong>, we are committed to respecting and protecting the personal privacy of all our clients, website visitors, and corporate logistics partners. This Privacy Policy outlines how we collect, handle, store, and safeguard your data during home shifting, office relocation, vehicle transit, and warehousing services.
                         </p>
                     </div>
 
@@ -130,33 +122,31 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
                         <div class="pm-legal-contact-grid">
                             <div class="pm-legal-contact-item">
                                 <span class="pm-legal-contact-label">Organization</span>
-                                <div class="pm-legal-contact-val"><?= $companyName ?></div>
+                                <div class="pm-legal-contact-val"><?= $company3 ?></div>
                             </div>
                             <div class="pm-legal-contact-item">
                                 <span class="pm-legal-contact-label">Compliance Email</span>
                                 <div class="pm-legal-contact-val">
-                                    <a href="mailto:<?= esc($companyEmail) ?>"><?= esc($companyEmail) ?></a>
+                                    <a href="<?= $mailhtml ?>"><?= $mail ?></a>
                                 </div>
                             </div>
                             <div class="pm-legal-contact-item">
                                 <span class="pm-legal-contact-label">24/7 Helpline</span>
                                 <div class="pm-legal-contact-val">
-                                    <a href="tel:+<?= esc($cleanPhone) ?>"><?= esc($helplinePhone) ?></a>
+                                    <a <?= $phonehtml ?>><?= $phone ?></a>
                                 </div>
                             </div>
-                            <?php if (!empty($companyAddr)): ?>
                                 <div class="pm-legal-contact-item">
                                     <span class="pm-legal-contact-label">Head Office</span>
-                                    <div class="pm-legal-contact-val small"><?= esc($companyAddr) ?></div>
+                                    <div class="pm-legal-contact-val small"><?= $address ?></div>
                                 </div>
-                            <?php endif; ?>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 pt-2">
-                            <a href="tel:+<?= esc($cleanPhone) ?>" class="pm-btn-red" title="Call Helpline" aria-label="Call Helpline">
+                            <a <?= $phonehtml ?> class="pm-btn-red" title="Call Helpline" aria-label="Call Helpline">
                                 <i class="bi bi-telephone-fill" aria-hidden="true"></i> Call Helpline
                             </a>
-                            <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="WhatsApp Support" aria-label="WhatsApp Support">
+                            <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="WhatsApp Support" aria-label="WhatsApp Support">
                                 <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Support
                             </a>
                         </div>
@@ -209,7 +199,7 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
 
                     <!-- Trust Showcase Box -->
                     <div class="pm-legal-trust-card">
-                        <h3 class="pm-legal-trust-title">Why Trust <?= $companyName ?>?</h3>
+                        <h3 class="pm-legal-trust-title">Why Trust <?= $company3 ?>?</h3>
                         <p class="pm-legal-trust-sub">Over a decade of relocation excellence built on transparency and customer security.</p>
                         <div class="pm-legal-trust-item">
                             <i class="bi bi-patch-check-fill" aria-hidden="true"></i>

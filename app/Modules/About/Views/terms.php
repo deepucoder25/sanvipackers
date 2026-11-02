@@ -1,14 +1,6 @@
-<?php
-$companyName   = esc($comp['company3'] ?? ($site->name ?? 'Sanvi Packers'));
-$helplinePhone = $phone ?? ($comp['phone'] ?? '+91 70217 10594');
-$cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
-$companyEmail  = $mail ?? ($comp['mail'] ?? 'info@sanvipackers.com');
-$companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar, Mumbai - 400705, Maharashtra, India');
-?>
-
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Terms & Conditions',
-    'subtitle'    => 'Operational standards, moving guidelines, and service agreements governing ' . $companyName . '.',
+    'subtitle'    => 'Operational standards, moving guidelines, and service agreements governing ' . $company3 . '.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Terms & Conditions'],
@@ -41,7 +33,7 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
                     <!-- Terms Agreement Callout -->
                     <div class="pm-legal-callout">
                         <p>
-                            <strong>Service Agreement:</strong> By booking a moving quotation, signing a consignment note (G.R. / Bilty), or engaging the packing, shifting, vehicle transit, and warehousing services of <strong><?= $companyName ?></strong>, you agree to comply with and be bound by the operational terms and conditions set forth below.
+                            <strong>Service Agreement:</strong> By booking a moving quotation, signing a consignment note (G.R. / Bilty), or engaging the packing, shifting, vehicle transit, and warehousing services of <strong><?= $company3 ?></strong>, you agree to comply with and be bound by the operational terms and conditions set forth below.
                         </p>
                     </div>
 
@@ -99,7 +91,7 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
                         </h2>
                         <p>Transit risk protection underwrites unforeseen external collision, overturn, transit fire, or non-delivery incidents during intercity transport:</p>
                         <ul class="pm-legal-list">
-                            <li><strong>Reporting Window:</strong> Any noticeable exterior damage must be formally endorsed on the delivery copy of the consignment bill and reported to <?= $companyName ?> within <strong>48 hours of delivery</strong>.</li>
+                            <li><strong>Reporting Window:</strong> Any noticeable exterior damage must be formally endorsed on the delivery copy of the consignment bill and reported to <?= $company3 ?> within <strong>48 hours of delivery</strong>.</li>
                             <li><strong>Documentation Requirements:</strong> Claims assessment necessitates photographic proof of damaged goods, declared valuation receipts, and the countersigned pre-move inventory manifest.</li>
                             <li><strong>Exclusions:</strong> Internal mechanical or digital malfunctions of electronic equipment not resulting from physical exterior transit impact, or boxes packed independently by the client, fall outside transit insurance coverage.</li>
                         </ul>
@@ -124,7 +116,7 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
                             Force Majeure &amp; Transit Timelines
                         </h2>
                         <p>
-                            While our fleet consistently maintains punctual transit records, <?= $companyName ?> is not held liable for highway schedule disruptions stemming from events beyond reasonable operational control, including severe weather disruptions, landslides, regional curfews, unexpected bridge repairs, or statutory road blockades.
+                            While our fleet consistently maintains punctual transit records, <?= $company3 ?> is not held liable for highway schedule disruptions stemming from events beyond reasonable operational control, including severe weather disruptions, landslides, regional curfews, unexpected bridge repairs, or statutory road blockades.
                         </p>
                     </div>
 
@@ -136,33 +128,31 @@ $companyAddr   = $address ?? ($comp['address'] ?? 'Plot No. 42, Transport Nagar,
                         <div class="pm-legal-contact-grid">
                             <div class="pm-legal-contact-item">
                                 <span class="pm-legal-contact-label">Company</span>
-                                <div class="pm-legal-contact-val"><?= $companyName ?></div>
+                                <div class="pm-legal-contact-val"><?= $company3 ?></div>
                             </div>
                             <div class="pm-legal-contact-item">
                                 <span class="pm-legal-contact-label">Customer Support</span>
                                 <div class="pm-legal-contact-val">
-                                    <a href="mailto:<?= esc($companyEmail) ?>"><?= esc($companyEmail) ?></a>
+                                    <a href="<?= $mailhtml ?>"><?= $mail ?></a>
                                 </div>
                             </div>
                             <div class="pm-legal-contact-item">
                                 <span class="pm-legal-contact-label">Direct Helpline</span>
                                 <div class="pm-legal-contact-val">
-                                    <a href="tel:+<?= esc($cleanPhone) ?>"><?= esc($helplinePhone) ?></a>
+                                    <a <?= $phonehtml ?>><?= $phone ?></a>
                                 </div>
                             </div>
-                            <?php if (!empty($companyAddr)): ?>
                                 <div class="pm-legal-contact-item">
                                     <span class="pm-legal-contact-label">Registered Office</span>
-                                    <div class="pm-legal-contact-val small"><?= esc($companyAddr) ?></div>
+                                    <div class="pm-legal-contact-val small"><?= $address ?></div>
                                 </div>
-                            <?php endif; ?>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 pt-2">
-                            <a href="tel:+<?= esc($cleanPhone) ?>" class="pm-btn-red" title="Call Customer Care" aria-label="Call Customer Care">
+                            <a <?= $phonehtml ?> class="pm-btn-red" title="Call Customer Care" aria-label="Call Customer Care">
                                 <i class="bi bi-telephone-fill" aria-hidden="true"></i> Call Helpline
                             </a>
-                            <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="WhatsApp Support" aria-label="WhatsApp Support">
+                            <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="WhatsApp Support" aria-label="WhatsApp Support">
                                 <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Support
                             </a>
                         </div>

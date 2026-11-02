@@ -1,8 +1,4 @@
 <?php
-$companyName   = esc($company3 ?? ($site->name ?? 'Sanvi Packers & Movers'));
-$helplinePhone = $phone ?? '+91 70217 10594';
-$cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
-$phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPhone) . '"';
 
 $faqs = [
     [
@@ -13,7 +9,7 @@ $faqs = [
     [
         'category' => 'Transit & Insurance',
         'q'        => 'Is comprehensive transit insurance provided for all my goods?',
-        'a'        => 'Yes, ' . $companyName . ' provides 100% comprehensive all-India transit insurance covering unforeseen physical loss, road mishaps, or transit damage during intercity and intracity relocation. In the rare event of damage, our dedicated claims desk facilitates swift cashless settlement assistance.',
+        'a'        => 'Yes, ' . $company3 . ' provides 100% comprehensive all-India transit insurance covering unforeseen physical loss, road mishaps, or transit damage during intercity and intracity relocation. In the rare event of damage, our dedicated claims desk facilitates swift cashless settlement assistance.',
     ],
     [
         'category' => 'Booking & Scheduling',
@@ -93,12 +89,12 @@ $faqs = [
 
                     <!-- Direct Action Buttons -->
                     <div class="pm-faq-concierge-actions">
-                        <a <?= $phoneHref ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
+                        <a <?= $phonehtml ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
                             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                            <span class="d-none d-md-inline">Call <?= esc($helplinePhone) ?></span>
+                            <span class="d-none d-md-inline">Call <?= $phone ?></span>
                             <span class="d-md-none">Call Now</span>
                         </a>
-                        <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+                        <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
                             <i class="bi bi-whatsapp" aria-hidden="true"></i>
                             <span class="d-none d-md-inline">Chat on WhatsApp</span>
                             <span class="d-md-none">WhatsApp</span>
@@ -185,12 +181,12 @@ $faqs = [
                 </div>
                 <div class="col-lg-5">
                     <div class="pm-about-cta-actions justify-content-lg-end">
-                        <a <?= $phoneHref ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
+                        <a <?= $phonehtml ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
                             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                            <span class="d-none d-md-inline">Call <?= esc($helplinePhone) ?></span>
+                            <span class="d-none d-md-inline">Call <?= $phone ?></span>
                             <span class="d-md-none">Call Now</span>
                         </a>
-                        <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+                        <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
                             <i class="bi bi-whatsapp" aria-hidden="true"></i>
                             <span class="d-none d-md-inline">Chat on WhatsApp</span>
                             <span class="d-md-none">WhatsApp</span>

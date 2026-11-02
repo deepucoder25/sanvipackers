@@ -1,10 +1,3 @@
-<?php
-$companyName   = esc($company3 ?? ($site->name ?? 'Sanvi Packers & Movers'));
-$helplinePhone = $phone ?? '+91 70217 10594';
-$cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
-$phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPhone) . '"';
-?>
-
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'About Our Company',
     'subtitle'    => 'Learn about our journey, certified team, and commitment to delivering peace of mind on every move.',
@@ -26,7 +19,7 @@ $phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPho
                     <h2 class="section-title mb-3">Redefining Moving Standards Across India</h2>
                     
                     <p class="pm-about-lead">
-                        Founded with a mission to make packing and shifting completely transparent, predictable, and stress-free, <strong><?= $companyName ?></strong> has grown into one of India’s most trusted logistics networks.
+                        Founded with a mission to make packing and shifting completely transparent, predictable, and stress-free, <strong><?= $company3 ?></strong> has grown into one of India’s most trusted logistics networks.
                     </p>
                     
                     <p class="pm-about-body">
@@ -190,19 +183,19 @@ $phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPho
         <div class="pm-about-cta-banner">
             <div class="row align-items-center g-4 position-relative z-2">
                 <div class="col-lg-7">
-                    <h2 class="pm-about-cta-title">Ready for a Smooth Move with <?= $companyName ?>?</h2>
+                    <h2 class="pm-about-cta-title">Ready for a Smooth Move with <?= $company3 ?>?</h2>
                     <p class="pm-about-cta-desc">
                         Get in touch with our moving coordinators for an upfront estimate with zero hidden fees. Experience India’s most reliable relocation service.
                     </p>
                 </div>
                 <div class="col-lg-5">
                     <div class="pm-about-cta-actions justify-content-lg-end">
-                        <a <?= $phoneHref ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
+                        <a <?= $phonehtml ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
                             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                            <span class="d-none d-md-inline">Call <?= esc($helplinePhone) ?></span>
+                            <span class="d-none d-md-inline">Call <?= $phone ?></span>
                             <span class="d-md-none">Call Now</span>
                         </a>
-                        <a href="https://wa.me/<?= esc($cleanPhone) ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+                        <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
                             <i class="bi bi-whatsapp" aria-hidden="true"></i>
                             <span class="d-none d-md-inline">Chat on WhatsApp</span>
                             <span class="d-md-none">WhatsApp</span>
