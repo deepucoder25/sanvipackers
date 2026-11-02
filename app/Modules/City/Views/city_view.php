@@ -5,23 +5,6 @@ $city = !empty($city) ? $city : ($cityName ?? '');
 if (file_exists(__DIR__ . '/city_content.php')) {
     include __DIR__ . '/city_content.php';
 }
-
-// Look for city image first, then state image, then fallback
-$cityImgSrc = '';
-foreach (['webp', 'jpg', 'jpeg', 'png'] as $ext) {
-    if (file_exists(FCPATH . 'assets/img/city/' . $citySlug . '.' . $ext)) {
-        $cityImgSrc = base_url('assets/img/city/' . $citySlug . '.' . $ext);
-        break;
-    }
-}
-if (empty($cityImgSrc)) {
-    foreach (['webp', 'jpg', 'jpeg', 'png'] as $ext) {
-        if (file_exists(FCPATH . 'assets/img/state/' . $stateSlug . '.' . $ext)) {
-            $cityImgSrc = base_url('assets/img/state/' . $stateSlug . '.' . $ext);
-            break;
-        }
-    }
-}
 ?>
 
 <!-- Packers & Movers Hero Banner Section -->
@@ -157,22 +140,19 @@ if (empty($cityImgSrc)) {
                 <!-- Right Side: Image -->
                 <div class="col-lg-5">
                     <div class="pm-cd-hero-img-wrap">
-                        <?php if (!empty($cityImgSrc)): ?>
-                            <img src="<?= $cityImgSrc ?>" 
+                            <img src="<?= base_url('assets/img/city_about.jpg') ?>" 
                                  alt="Packers and Movers in <?= esc($cityName) ?>, <?= esc($stateName) ?>" 
                                  class="pm-cd-hero-img" 
                                  loading="lazy" 
                                  decoding="async" 
                                  width="600" 
                                  height="400">
-                        <?php else: ?>
                             <div class="pm-state-placeholder">
                                 <div class="pm-state-placeholder-icon">
                                     <i class="bi bi-buildings"></i>
                                 </div>
                                 <span class="pm-state-watermark"><?= esc($stateSlug) ?></span>
                             </div>
-                        <?php endif; ?>
                         <div class="pm-cd-hero-img-overlay"></div>
                         <div class="pm-cd-hero-floating-badge">
                             <i class="bi bi-award-fill"></i> #1 Mover in <?= esc($cityName) ?>

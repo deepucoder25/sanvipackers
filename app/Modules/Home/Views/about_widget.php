@@ -10,7 +10,7 @@
                         <!-- Main Large Featured Image (Image 1) -->
                         <div class="col-7">
                             <div class="rounded-4 overflow-hidden shadow-sm pm-about-img-box pm-img-box-lg position-relative">
-                                <img src="<?= base_url('assets/img/about/about-1.jpg') ?>" 
+                                <img src="<?= base_url('assets/img/about1.jpg') ?>" 
                                      alt="Safe Home Relocation" 
                                      class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
                                      loading="lazy">
@@ -21,14 +21,14 @@
                         <div class="col-5 d-flex flex-column gap-3">
                             <!-- Image 2: Packing Crew / Materials -->
                             <div class="rounded-4 overflow-hidden shadow-sm pm-about-img-box pm-img-box-sm position-relative">
-                                <img src="<?= base_url('assets/img/about/about-2.jpg') ?>" 
+                                <img src="<?= base_url('assets/img/about2.jpg') ?>" 
                                      alt="Expert Packing Crew and Material" 
                                      class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
                                      loading="lazy">
                             </div>
                             <!-- Image 3: Transport Truck / Logistics Fleet -->
                             <div class="rounded-4 overflow-hidden shadow-sm pm-about-img-box pm-img-box-sm position-relative">
-                                <img src="<?= base_url('assets/img/about/about-3.jpg') ?>" 
+                                <img src="<?= base_url('assets/img/about3.jpg') ?>" 
                                      alt="Dedicated Moving Trucks Fleet" 
                                      class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
                                      loading="lazy">

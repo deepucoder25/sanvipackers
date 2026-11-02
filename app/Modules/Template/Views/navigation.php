@@ -253,10 +253,10 @@
                 </div>
             </a>
             <?php endif; ?>
-            <a href="<?= site_url('contact') ?>" class="btn-nav-quote">
+            <button type="button" class="btn-nav-quote" data-bs-toggle="modal" data-bs-target="#qteModal">
                 <span>Get Free Quote</span>
                 <i class="bi bi-arrow-right-short"></i>
-            </a>
+            </button>
         </div>
     </div>
     <div class="navbar-accent-line"></div>
