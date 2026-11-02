@@ -123,12 +123,93 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="<?= site_url('services') ?>" class="<?= ($page === 'services') ? 'active' : '' ?>">
+            <?php 
+            $serviceSlugs = [
+                'household-moving', 
+                'office-relocation', 
+                'vehicle-transportation', 
+                'warehouse-storage', 
+                'packing-moving', 
+                'loading-unloading'
+            ];
+            $currentReqUri = $_SERVER['REQUEST_URI'] ?? '';
+            $activeServiceSlug = $service['slug'] ?? '';
+            
+            $isServicesActive = ($page === 'services') 
+                || (strpos($currentReqUri, '/services') !== false)
+                || (strpos($currentReqUri, '/our-services') !== false)
+                || (!empty($activeServiceSlug));
+
+            $servicesDropdown = [
+                [
+                    'slug'  => 'all-services',
+                    'title' => 'All Relocation Services',
+                    'icon'  => 'bi-grid-fill',
+                    'url'   => site_url('services'),
+                ],
+                [
+                    'slug'  => 'household-moving',
+                    'title' => 'Household Moving',
+                    'icon'  => 'bi-house-heart-fill',
+                    'url'   => site_url('services/household-moving'),
+                ],
+                [
+                    'slug'  => 'office-relocation',
+                    'title' => 'Office Relocation',
+                    'icon'  => 'bi-buildings-fill',
+                    'url'   => site_url('services/office-relocation'),
+                ],
+                [
+                    'slug'  => 'vehicle-transportation',
+                    'title' => 'Car & Bike Shifting',
+                    'icon'  => 'bi-car-front-fill',
+                    'url'   => site_url('services/vehicle-transportation'),
+                ],
+                [
+                    'slug'  => 'warehouse-storage',
+                    'title' => 'Warehouse Storage',
+                    'icon'  => 'bi-archive-fill',
+                    'url'   => site_url('services/warehouse-storage'),
+                ],
+                [
+                    'slug'  => 'packing-moving',
+                    'title' => 'Packing & Moving',
+                    'icon'  => 'bi-box-seam-fill',
+                    'url'   => site_url('services/packing-moving'),
+                ],
+                [
+                    'slug'  => 'loading-unloading',
+                    'title' => 'Loading & Unloading',
+                    'icon'  => 'bi-truck-front-fill',
+                    'url'   => site_url('services/loading-unloading'),
+                ],
+            ];
+            ?>
+            <li class="nav-item-dropdown">
+                <a href="<?= site_url('services') ?>" class="nav-link-dropdown-toggle <?= $isServicesActive ? 'active' : '' ?>" role="button" aria-expanded="false" aria-haspopup="true">
                     <span class="nav-link-icon"><i class="bi bi-truck"></i></span>
                     <span class="nav-link-text">Services</span>
-                    <i class="bi bi-chevron-right nav-link-arrow"></i>
+                    <i class="bi bi-chevron-down nav-link-chevron" aria-hidden="true"></i>
+                    <i class="bi bi-chevron-right nav-link-arrow" aria-hidden="true"></i>
                 </a>
+                <ul class="nav-dropdown-menu" aria-label="Services Submenu">
+                    <?php foreach ($servicesDropdown as $srvItem): ?>
+                        <?php 
+                        $isItemActive = false;
+                        if ($srvItem['slug'] === 'all-services') {
+                            $isItemActive = ($page === 'services' && empty($activeServiceSlug) && (strpos($currentReqUri, '/services/') === false));
+                        } else {
+                            $isItemActive = ($activeServiceSlug === $srvItem['slug']) || (strpos($currentReqUri, $srvItem['slug']) !== false);
+                        }
+                        ?>
+                        <li>
+                            <a href="<?= $srvItem['url'] ?>" class="nav-dropdown-item <?= $isItemActive ? 'active' : '' ?>">
+                                <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi <?= esc($srvItem['icon']) ?>"></i></span>
+                                <span class="nav-dropdown-text"><?= esc($srvItem['title']) ?></span>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </li>
             <li>
                 <a href="<?= site_url('city') ?>" class="<?= ($page === 'city') ? 'active' : '' ?>">
@@ -183,19 +264,28 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggle = document.querySelector('.nav-link-dropdown-toggle');
-    const dropdownItem = document.querySelector('.nav-item-dropdown');
+    const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
     
-    if (dropdownToggle && dropdownItem) {
-        dropdownToggle.addEventListener('click', function (e) {
-            if (window.innerWidth < 992) {
-                e.preventDefault();
-                dropdownItem.classList.toggle('open');
-                const isExpanded = dropdownItem.classList.contains('open');
-                dropdownToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-            }
-        });
-    }
+    dropdownItems.forEach(function (item) {
+        const toggle = item.querySelector('.nav-link-dropdown-toggle');
+        if (toggle) {
+            toggle.addEventListener('click', function (e) {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    dropdownItems.forEach(function (other) {
+                        if (other !== item) {
+                            other.classList.remove('open');
+                            const otherToggle = other.querySelector('.nav-link-dropdown-toggle');
+                            if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    item.classList.toggle('open');
+                    const isExpanded = item.classList.contains('open');
+                    toggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+                }
+            });
+        }
+    });
 
     document.addEventListener('click', function (e) {
         if (!e.target.closest('.site-navbar')) {
@@ -203,6 +293,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (navLinks && navLinks.classList.contains('show')) {
                 navLinks.classList.remove('show');
             }
+            dropdownItems.forEach(function (item) {
+                item.classList.remove('open');
+                const toggle = item.querySelector('.nav-link-dropdown-toggle');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            });
         }
     });
 });

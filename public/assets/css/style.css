@@ -8036,6 +8036,485 @@ a.pm-cta-btn-whatsapp:hover {
   line-height: 1.55;
 }
 
+/* ====================================================================
+   SANVI PACKERS & MOVERS - SERVICES PAGE STYLING
+   ==================================================================== */
+.pm-srv-page-wrap {
+  background: #f8fafc;
+}
+
+.pm-srv-hero-badge {
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: 1px solid #fca5a5;
+}
+
+.pm-srv-hero-title {
+  letter-spacing: -0.02em;
+}
+
+.pm-srv-hero-sub {
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.pm-srv-pill-stat {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+/* Bento Service Cards */
+.pm-srv-bento-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pm-srv-bento-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(230, 25, 25, 0.35) !important;
+  box-shadow: 0 20px 38px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(230, 25, 25, 0.2) !important;
+}
+
+.pm-srv-card-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pm-red) 0%, var(--pm-yellow) 100%);
+  opacity: 0.9;
+  transition: height 0.3s ease;
+}
+
+.pm-srv-bento-card:hover .pm-srv-card-topbar {
+  height: 6px;
+}
+
+.pm-srv-step-pill {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.pm-srv-bento-card:hover .pm-srv-step-pill {
+  background: var(--pm-red);
+  color: #ffffff;
+}
+
+.pm-srv-tag-pill {
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.pm-srv-tag-pill i {
+  color: var(--pm-yellow-dark);
+}
+
+.pm-srv-bento-card:hover .pm-srv-tag-pill {
+  background: rgba(250, 204, 21, 0.14);
+  border-color: rgba(250, 204, 21, 0.45);
+  color: #0f172a;
+}
+
+.pm-srv-icon-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(230, 25, 25, 0.08) 0%, rgba(250, 204, 21, 0.14) 100%);
+  border: 2px dashed rgba(230, 25, 25, 0.25);
+  color: var(--pm-red);
+  font-size: 1.85rem;
+  transition: all 0.35s ease;
+}
+
+.pm-srv-bento-card:hover .pm-srv-icon-box {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  border-style: solid;
+  border-color: var(--pm-red);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.08) rotate(-4deg);
+  box-shadow: 0 10px 24px var(--pm-red-glow);
+}
+
+.pm-srv-title {
+  font-size: 1.22rem;
+  letter-spacing: -0.01em;
+}
+
+.pm-srv-title a {
+  color: #0f172a;
+  transition: color 0.25s ease;
+}
+
+.pm-srv-bento-card:hover .pm-srv-title a {
+  color: var(--pm-red);
+}
+
+.pm-srv-desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  min-height: 48px;
+}
+
+.pm-srv-feature-list {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid #f1f5f9;
+}
+
+.pm-srv-feature-row {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.pm-srv-feature-row i {
+  font-size: 0.85rem;
+}
+
+.pm-srv-btn-details {
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #fff5f5 0%, #fee2e2 100%);
+  border: 1.5px solid #fca5a5;
+  color: var(--pm-red);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(230, 25, 25, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pm-srv-btn-details .pm-details-arrow-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(230, 25, 25, 0.12);
+  color: var(--pm-red);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  transition: all 0.25s ease;
+}
+
+.pm-srv-btn-details:hover {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  border-color: var(--pm-red);
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px var(--pm-red-glow);
+  transform: translateY(-2px);
+}
+
+.pm-srv-btn-details:hover .pm-details-arrow-icon {
+  background: #ffffff;
+  color: var(--pm-red);
+  transform: translateX(3px);
+}
+
+.pm-srv-bento-card:hover .pm-srv-btn-details {
+  border-color: var(--pm-red);
+  box-shadow: 0 4px 12px rgba(230, 25, 25, 0.16);
+}
+
+.pm-srv-btn-book {
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  border: 1px solid var(--pm-red);
+  box-shadow: 0 4px 12px var(--pm-red-glow);
+  transition: all 0.25s ease;
+}
+
+.pm-srv-btn-book:hover {
+  background: linear-gradient(135deg, #cc1414 0%, #991010 100%);
+  box-shadow: 0 6px 18px var(--pm-red-glow);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Pillar Boxes */
+.pm-pillar-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.pm-pillar-box:hover {
+  background: #ffffff;
+  border-color: rgba(230, 25, 25, 0.3);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transform: translateY(-3px);
+}
+
+.pm-pillar-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(230, 25, 25, 0.08);
+  color: var(--pm-red);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.pm-srv-pillars-sub {
+  max-width: 650px;
+}
+
+/* Bottom Assistance Strip */
+.pm-srv-bottom-cta {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--pm-red);
+}
+
+.pm-srv-cta-icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(230, 25, 25, 0.08);
+}
+
+.pm-srv-cta-buttons a {
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .pm-srv-cta-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+  .pm-srv-cta-buttons a {
+    font-size: 0.78rem;
+    padding: 6px 12px !important;
+  }
+}
+
+/* ====================================================================
+   SANVI PACKERS & MOVERS - SERVICE DETAIL PAGES STYLING (SHARED)
+   ==================================================================== */
+.pm-srv-page-wrapper {
+  background: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+.pm-srv-hero-sec {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+}
+
+.pm-srv-pill-badge {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.pm-srv-hero-title {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.pm-srv-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.pm-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.pm-srv-btn-primary {
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  border: 1px solid var(--pm-red);
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px var(--pm-red-glow);
+  transition: all 0.25s ease;
+}
+
+.pm-srv-btn-primary:hover {
+  background: linear-gradient(135deg, #cc1414 0%, #991010 100%);
+  box-shadow: 0 8px 22px var(--pm-red-glow);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+/* Hero Quick Quote Card */
+.pm-srv-quote-card {
+  border: 1px solid #e2e8f0 !important;
+}
+
+.pm-quote-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pm-red) 0%, #ff6b6b 50%, var(--pm-yellow) 100%);
+}
+
+/* Stats Box */
+.pm-stat-box {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.pm-stat-box:hover {
+  background: #ffffff;
+  border-color: rgba(230, 25, 25, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.pm-srv-card {
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+  border-color: rgba(230, 25, 25, 0.3) !important;
+}
+
+.pm-srv-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff5f5 0%, #fee2e2 100%);
+  border: 1px solid #fecaca;
+  color: var(--pm-red);
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Process Step Box */
+.pm-process-step-box {
+  transition: all 0.2s ease;
+}
+
+.pm-process-step-box:hover {
+  background: #ffffff !important;
+  border-color: rgba(230, 25, 25, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transform: translateY(-3px);
+}
+
+.pm-step-num-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px var(--pm-red-glow);
+}
+
+/* Pricing Tier Cards */
+.pm-tier-card {
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.pm-tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Other Services Horizontal Cards */
+.pm-other-srv-card {
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.2s ease;
+}
+
+.pm-other-srv-card:hover {
+  background: #ffffff !important;
+  border-color: var(--pm-red) !important;
+}
+
+.pm-other-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: var(--pm-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.pm-other-srv-link {
+  color: #991b1b !important;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.pm-other-srv-card:hover .pm-other-srv-link {
+  color: #7f1d1d !important;
+  text-decoration: underline !important;
+}
+
+/* Shared Subtitle Width Utility Classes */
+.pm-srv-section-sub {
+  max-width: 680px;
+}
+
+.pm-srv-section-sub-650 {
+  max-width: 650px;
+}
+
+.pm-srv-section-sub-600 {
+  max-width: 600px;
+}
+
 
 
 

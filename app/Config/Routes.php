@@ -31,17 +31,35 @@ $routes->get('contacts/quoteform', '\Modules\Contacts\Controllers\Contacts::quot
 $routes->get('contacts/quotemodal', '\Modules\Contacts\Controllers\Contacts::quotemodal');
 $routes->get('contacts/review_modal', '\Modules\Contacts\Controllers\Contacts::review_modal');
 
-// Services Routes
+// Services Routes - Dedicated Service Methods
 $routes->get('our-services', '\Modules\Services\Controllers\Services::index');
 $routes->get('services', '\Modules\Services\Controllers\Services::index');
+
+// Direct Single Service Routes
+$routes->get('services/household-moving', '\Modules\Services\Controllers\Services::household_moving');
+$routes->get('services/office-relocation', '\Modules\Services\Controllers\Services::office_relocation');
+$routes->get('services/vehicle-transportation', '\Modules\Services\Controllers\Services::vehicle_transportation');
+$routes->get('services/warehouse-storage', '\Modules\Services\Controllers\Services::warehouse_storage');
+$routes->get('services/packing-moving', '\Modules\Services\Controllers\Services::packing_moving');
+$routes->get('services/loading-unloading', '\Modules\Services\Controllers\Services::loading_unloading');
+
+// Direct Keyword & Legacy Aliases
+$routes->get('household-moving', '\Modules\Services\Controllers\Services::household_moving');
+$routes->get('home-relocation', '\Modules\Services\Controllers\Services::household_moving');
+$routes->get('home-shifting', '\Modules\Services\Controllers\Services::household_moving');
+$routes->get('office-relocation', '\Modules\Services\Controllers\Services::office_relocation');
+$routes->get('corporate-relocation', '\Modules\Services\Controllers\Services::office_relocation');
+$routes->get('vehicle-transportation', '\Modules\Services\Controllers\Services::vehicle_transportation');
+$routes->get('car-transportation', '\Modules\Services\Controllers\Services::vehicle_transportation');
+$routes->get('bike-transportation', '\Modules\Services\Controllers\Services::vehicle_transportation');
+$routes->get('warehouse-storage', '\Modules\Services\Controllers\Services::warehouse_storage');
+$routes->get('storage-services', '\Modules\Services\Controllers\Services::warehouse_storage');
+$routes->get('packing-moving', '\Modules\Services\Controllers\Services::packing_moving');
+$routes->get('packing-and-moving', '\Modules\Services\Controllers\Services::packing_moving');
+$routes->get('loading-unloading', '\Modules\Services\Controllers\Services::loading_unloading');
+
+// Dynamic / Fallback route
 $routes->get('services/(:segment)', '\Modules\Services\Controllers\Services::detail/$1');
-$routes->get('home-relocation', '\Modules\Services\Controllers\Services::detail/household-moving');
-$routes->get('office-relocation', '\Modules\Services\Controllers\Services::detail/office-relocation');
-$routes->get('bike-transportation', '\Modules\Services\Controllers\Services::detail/vehicle-transportation');
-$routes->get('car-transportation', '\Modules\Services\Controllers\Services::detail/vehicle-transportation');
-$routes->get('packing-and-moving', '\Modules\Services\Controllers\Services::detail/packing-moving');
-$routes->get('loading-unloading', '\Modules\Services\Controllers\Services::detail/loading-unloading');
-$routes->get('storage-services', '\Modules\Services\Controllers\Services::detail/warehouse-storage');
 
 // Branch / City Routes (Packers & Movers)
 $routes->get('our-branches', '\Modules\City\Controllers\City::index');

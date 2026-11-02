@@ -125,49 +125,32 @@
                     <span class="footer-col-eyebrow">SOLUTIONS</span>
                     <h3 class="footer-col-title h5">Our Services</h3>
                 </div>
+                <?php
+                $footerServices = [
+                    ['slug' => 'household-moving',       'title' => 'Household Moving',     'icon' => 'bi-house-heart-fill'],
+                    ['slug' => 'office-relocation',      'title' => 'Office Relocation',    'icon' => 'bi-buildings-fill'],
+                    ['slug' => 'vehicle-transportation', 'title' => 'Car & Bike Shifting',  'icon' => 'bi-car-front-fill'],
+                    ['slug' => 'warehouse-storage',      'title' => 'Warehouse Storage',    'icon' => 'bi-archive-fill'],
+                    ['slug' => 'packing-moving',         'title' => 'Packing & Moving',     'icon' => 'bi-box-seam-fill'],
+                    ['slug' => 'loading-unloading',      'title' => 'Loading & Unloading',  'icon' => 'bi-truck-front-fill'],
+                ];
+                if (class_exists('\Modules\Services\Controllers\Services')) {
+                    $dynServices = \Modules\Services\Controllers\Services::getServicesList();
+                    if (!empty($dynServices)) {
+                        $footerServices = $dynServices;
+                    }
+                }
+                ?>
                 <ul class="footer-links-list">
-                    <li>
-                        <a href="<?= site_url('services') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-srv"><i class="bi bi-house-heart-fill"></i></span>
-                            <span class="link-title">Household Shifting</span>
-                            <i class="bi bi-chevron-right link-arrow"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= site_url('services') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-srv"><i class="bi bi-buildings-fill"></i></span>
-                            <span class="link-title">Office Relocation</span>
-                            <i class="bi bi-chevron-right link-arrow"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= site_url('services') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-srv"><i class="bi bi-car-front-fill"></i></span>
-                            <span class="link-title">Car &amp; Bike Transport</span>
-                            <i class="bi bi-chevron-right link-arrow"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= site_url('services') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-srv"><i class="bi bi-archive-fill"></i></span>
-                            <span class="link-title">Warehouse Storage</span>
-                            <i class="bi bi-chevron-right link-arrow"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= site_url('services') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-srv"><i class="bi bi-box-seam-fill"></i></span>
-                            <span class="link-title">Packaging &amp; Crating</span>
-                            <i class="bi bi-chevron-right link-arrow"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= site_url('services') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-srv"><i class="bi bi-gear-wide-connected"></i></span>
-                            <span class="link-title">Heavy Machinery Move</span>
-                            <i class="bi bi-chevron-right link-arrow"></i>
-                        </a>
-                    </li>
+                    <?php foreach ($footerServices as $fSrv): ?>
+                        <li>
+                            <a href="<?= site_url('services/' . $fSrv['slug']) ?>" class="footer-nav-link">
+                                <span class="link-icon-box link-icon-srv"><i class="bi <?= esc($fSrv['icon'] ?? 'bi-box-seam') ?>"></i></span>
+                                <span class="link-title"><?= esc($fSrv['title']) ?></span>
+                                <i class="bi bi-chevron-right link-arrow"></i>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
 
