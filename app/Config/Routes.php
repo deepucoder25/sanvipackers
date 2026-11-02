@@ -118,3 +118,8 @@ if (is_file(ROOTPATH . 'admin/routes.php')) {
     require ROOTPATH . 'admin/routes.php';
 }
 
+// 404 Page Override - Loads Template module error page on incorrect URLs
+$routes->set404Override('\Modules\Template\Controllers\Template::error_404');
+$routes->get('404', '\Modules\Template\Controllers\Template::error_404');
+
+

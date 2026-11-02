@@ -53,4 +53,30 @@ class Template extends BaseController
             . view('Modules\Template\Views\body', $data)
             . view('Modules\Template\Views\footer', $data);
     }
+
+    /**
+     * 404 Error Page Handler
+     * Automatically invoked by CodeIgniter 4 whenever an invalid URL or route is requested.
+     */
+    public function error_404(string $message = ''): string
+    {
+        $site = config('Site');
+        $comp = $site ? $site->getComp() : [];
+
+        $data = [
+            'title'       => "404 - Page Not Found | " . ($comp['company3'] ?? 'Sanvi Packers and Movers'),
+            'description' => "Sorry, the page you are looking for does not exist, has been removed, or is temporarily unavailable.",
+            'page'        => '404',
+            'module'      => 'template',
+            'view_file'   => 'Modules\Template\Views\error_404',
+            'errorMessage'=> $message,
+        ];
+
+        // Ensure HTTP 404 Not Found header is returned
+        if (function_exists('response')) {
+            response()->setStatusCode(404);
+        }
+
+        return self::layout2($data);
+    }
 }
