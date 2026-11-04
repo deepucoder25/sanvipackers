@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $allServicesList = $allServices ?? \Modules\Services\Controllers\Services::getServicesList();
 // Filter out current service for the "Other Services" section
 $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !== 'vehicle-transportation');
@@ -88,8 +88,8 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                 </div>
                 <div class="col-6 col-lg-3">
                     <div class="pm-stat-box p-3 rounded-4">
-                        <div class="h2 fw-bold text-danger mb-0">500+</div>
-                        <div class="small text-muted fw-semibold">Direct Destination Hubs</div>
+                        <div class="h2 fw-bold text-danger mb-0">100%</div>
+                        <div class="small text-muted fw-semibold">Doorstep Delivery Hubs</div>
                     </div>
                 </div>
             </div>

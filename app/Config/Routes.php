@@ -73,6 +73,7 @@ $states = [
     'delhi',
     'west-bengal',
     'gujarat',
+    'pune',
     'punjab',
     'maharashtra',
     'haryana',

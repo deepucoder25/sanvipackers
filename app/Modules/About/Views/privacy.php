@@ -211,7 +211,7 @@
                         </div>
                         <div class="pm-legal-trust-item">
                             <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                            <span>500+ Connected Indian Cities</span>
+                            <span>Doorstep Relocation Network</span>
                         </div>
                         <div class="pm-legal-trust-item">
                             <i class="bi bi-clock-history" aria-hidden="true"></i>

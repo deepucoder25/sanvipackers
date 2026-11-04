@@ -2,7 +2,7 @@
 $faqs = [
     [
         'q' => 'How are moving charges calculated? Are there any hidden costs?',
-        'a' => 'Our pricing is 100% upfront and transparent with zero hidden fees. Estimates are based on total volume of goods, transport distance between origin and destination, packaging tier (5-layer bubble wrap, foam, crates), floor levels, and optional transit insurance. You receive a guaranteed written quote before booking.',
+        'a' => 'Our pricing is 100% upfront and transparent with zero hidden fees. Estimates are based on total volume of goods, transport distance between origin and destination, packaging tier (3-layer bubble wrap, foam, crates), floor levels, and optional transit insurance. You receive a guaranteed written quote before booking.',
     ],
     [
         'q' => 'Is comprehensive transit insurance provided for all my goods?',
@@ -14,7 +14,7 @@ $faqs = [
     ],
     [
         'q' => 'What packing materials are used for delicate glassware and TVs?',
-        'a' => 'We utilize heavy-duty 5-layer certified bubble wrap, corrugated sheets, edge protectors, and specialized wooden crates for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright red fragile tags and loaded with hydraulic cushioning.',
+        'a' => 'We utilize heavy-duty 3-layer certified bubble wrap, corrugated sheets, edge protectors, and specialized wooden crates for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright red fragile tags and loaded with hydraulic cushioning.',
     ],
     [
         'q' => 'Can you transport my car or two-wheeler safely across cities?',
@@ -40,7 +40,7 @@ $faqs = [
                         Frequently Asked <span class="pm-text-red">Questions</span>
                     </h2>
                     <p class="lead text-muted mb-0 pm-section-subtitle">
-                        Everything you need to know about our relocation process, transparent pricing, 5-layer packaging, and transit insurance.
+                        Everything you need to know about our relocation process, transparent pricing, 3-layer packaging, and transit insurance.
                     </p>
                 </div>
 
@@ -73,13 +73,13 @@ $faqs = [
                     <!-- Action Row: Call Box & Quote Button in One Row -->
                     <div class="pm-faq-action-row mb-3">
                         <!-- Direct Call Box -->
-                        <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="pm-help-call-box" aria-label="Call moving direct helpline at <?= esc($phone1 ?? '+91 98765 43210') ?>">
+                        <a <?= $phonehtml ?> class="pm-help-call-box" aria-label="Call moving direct helpline at <?= $phone ?>">
                             <div class="pm-help-call-icon">
                                 <i class="bi bi-telephone-fill"></i>
                             </div>
                             <div class="text-start">
                                 <div class="pm-help-call-label text-uppercase">Direct Line</div>
-                                <div class="pm-help-call-number"><?= esc($phone1 ?? '+91 98765 43210') ?></div>
+                                <div class="pm-help-call-number"><?= $phone ?></div>
                             </div>
                         </a>
 

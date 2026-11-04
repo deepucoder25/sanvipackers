@@ -4,7 +4,7 @@ $faqs = [
     [
         'category' => 'Pricing & Estimates',
         'q'        => 'How are moving charges calculated? Are there any hidden costs?',
-        'a'        => 'Our shifting charges are 100% upfront and transparent with zero hidden costs. The exact quotation is based on total cargo volume, moving distance between origin and destination cities, floor levels and elevator availability, packaging tier (3-layer or heavy 5-layer foam & bubble), and transit insurance coverage. You receive a guaranteed written invoice before pickup.',
+        'a'        => 'Our shifting charges are 100% upfront and transparent with zero hidden costs. The exact quotation is based on total cargo volume, moving distance between origin and destination cities, floor levels and elevator availability, packaging tier (customized 3-layer foam & bubble), and transit insurance coverage. You receive a guaranteed written invoice before pickup.',
     ],
     [
         'category' => 'Transit & Insurance',
@@ -19,7 +19,7 @@ $faqs = [
     [
         'category' => 'Packing & Safety',
         'q'        => 'What packing materials are used for delicate glassware, electronics, and LED TVs?',
-        'a'        => 'We utilize heavy-duty 5-layer certified bubble wrap, corrugated sheets, foam rolls, edge protectors, and specialized wooden crates for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright red warning tags and loaded with hydraulic cushioning.',
+        'a'        => 'We utilize heavy-duty 3-layer certified bubble wrap, corrugated sheets, foam rolls, edge protectors, and specialized wooden crates for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright red warning tags and loaded with hydraulic cushioning.',
     ],
     [
         'category' => 'Vehicle Transport',
@@ -46,7 +46,7 @@ $faqs = [
 
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Frequently Asked Questions (FAQs)',
-    'subtitle'    => 'Instant answers to common queries regarding moving charges, 5-layer packing, insurance, and vehicle transport.',
+    'subtitle'    => 'Instant answers to common queries regarding moving charges, 3-layer packing, insurance, and vehicle transport.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'FAQs'],
@@ -139,7 +139,7 @@ $faqs = [
                     </div>
 
                     <p class="text-muted small mb-4">
-                        Click on any question below to see detailed information regarding our pricing structure, 5-layer packing materials, delivery timelines, and transit insurance policies.
+                        Click on any question below to see detailed information regarding our pricing structure, 3-layer packing materials, delivery timelines, and transit insurance policies.
                     </p>
 
                     <!-- Bootstrap Accordion -->

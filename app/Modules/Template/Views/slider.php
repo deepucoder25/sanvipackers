@@ -12,7 +12,7 @@
                 <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill pm-badge-glass mb-3">
                     <span class="pm-pulse-dot"></span>
                     <i class="bi bi-shield-check pm-text-accent-yellow"></i>
-                    <span class="fw-semibold small text-uppercase">India's Trusted Relocation Partner</span>
+                    <span class="fw-semibold small text-uppercase">Mumbai's Trusted Relocation Partner</span>
                 </div>
 
                 <h1 class="display-5 fw-bold text-white lh-sm mb-3">
@@ -20,7 +20,7 @@
                 </h1>
 
                 <p class="lead pm-text-muted mb-4">
-                    Professional packaging with 5-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee across 500+ Indian cities.
+                    Professional packaging with 3-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee across Mumbai, Navi Mumbai and Thane.
                 </p>
 
                 <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-4">

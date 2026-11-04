@@ -22,8 +22,8 @@ class Services extends BaseController
                 'chip1_icon' => 'bi-shield-check text-danger',
                 'chip1_text' => 'Zero Damage Move',
                 'chip2_icon' => 'bi-box-seam text-warning',
-                'chip2_text' => '5-Layer Bubble Pack',
-                'desc'       => 'Complete door-to-door home relocation with 5-layer bubble packaging, specialized wardrobe boxes, and careful furniture assembly.',
+                'chip2_text' => '3-Layer Bubble Pack',
+                'desc'       => 'Complete door-to-door home relocation with 3-layer bubble packaging, specialized wardrobe boxes, and careful furniture assembly.',
                 'features'   => [
                     'Zero damage guarantee on glassware & delicate decor',
                     'Customized wooden crating for crockery & LED TVs',
@@ -97,7 +97,7 @@ class Services extends BaseController
                 'chip2_text' => 'Item Label Tagging',
                 'desc'       => 'Heavy duty double-wall corrugated cartons, air bubble rolls, foam corners, stretch wrap, and edge protectors for total safety.',
                 'features'   => [
-                    '5-layer heavy duty corrugated carton boxes & foam edge guards',
+                    '3-layer heavy duty corrugated carton boxes & foam edge guards',
                     'Multi-ply bubble wrap, stretch film & specialized tape sealing',
                     'Color-coded box labeling & itemized packing list generation',
                     'Moisture & dust-proof mattress covers and sofa slipcovers'
@@ -145,7 +145,7 @@ class Services extends BaseController
     public function household_moving(): string
     {
         $data['title']       = "Household Moving & Home Relocation Services | " . $this->comp['company3'];
-        $data['description'] = "Complete door-to-door home relocation with 5-layer bubble packaging, specialized wardrobe boxes, and careful furniture assembly by " . $this->comp['company3'] . ".";
+        $data['description'] = "Complete door-to-door home relocation with 3-layer bubble packaging, specialized wardrobe boxes, and careful furniture assembly by " . $this->comp['company3'] . ".";
         $data['page']        = 'services';
         $data['serviceSlug'] = 'household-moving';
         $data['module']      = 'services';

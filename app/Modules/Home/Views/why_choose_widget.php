@@ -4,7 +4,7 @@ $advantages = [
     ['icon' => 'fa-clock', 'title' => 'On-Time Guarantee', 'desc' => 'Strict schedule compliance with live GPS updates and committed delivery windows.'],
     ['icon' => 'fa-tags', 'title' => 'Transparent Rates', 'desc' => 'Zero hidden charges, upfront transparent quotes with no surprise toll or packaging costs.'],
     ['icon' => 'fa-user-tie', 'title' => 'Trained & Verified Crew', 'desc' => 'Background-checked movers who handle delicate electronics, antiques, and heavy furniture.'],
-    ['icon' => 'fa-truck-fast', 'title' => 'Nationwide Container Fleet', 'desc' => 'Modern fleet of weatherproof enclosed container trucks connecting 500+ Indian cities.'],
+    ['icon' => 'fa-truck-fast', 'title' => 'Safe Container Fleet', 'desc' => 'Modern fleet of weatherproof enclosed container trucks for local and domestic shifting.'],
     ['icon' => 'fa-headset', 'title' => '24x7 Personal Support', 'desc' => 'A dedicated relocation officer assigned to guide you from pickup survey until final unboxing.'],
 ];
 ?>

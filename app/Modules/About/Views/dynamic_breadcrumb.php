@@ -112,7 +112,7 @@ $lastIdx = count($trail) - 1;
             </span>
             <span class="pm-trust-dot">•</span>
             <span class="pm-trust-pill">
-                <i class="bi bi-geo-alt-fill text-danger me-1"></i> 500+ Indian Cities
+                <i class="bi bi-geo-alt-fill text-danger me-1"></i> Doorstep Relocation
             </span>
         </div>
     </div>

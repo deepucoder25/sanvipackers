@@ -1,6 +1,6 @@
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'All India Packers & Movers Locations',
-    'subtitle'    => 'Door-to-door household relocation, office moving, and vehicle transport across 500+ Indian cities in all major states.',
+    'subtitle'    => 'Door-to-door household relocation, office moving, and vehicle transport across all major states and localities.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'All India Service Locations'],

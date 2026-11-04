@@ -8,7 +8,7 @@ $serviceMeta = [
         'chip1_icon' => 'bi-shield-check text-danger',
         'chip1_text' => 'Zero Damage Move',
         'chip2_icon' => 'bi-box-seam text-warning',
-        'chip2_text' => '5-Layer Bubble Pack',
+        'chip2_text' => '3-Layer Bubble Pack',
     ],
     'office-relocation' => [
         'title'      => 'Office Relocation',

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $allServicesList = $allServices ?? \Modules\Services\Controllers\Services::getServicesList();
 // Filter out current service for the "Other Services" section
 $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !== 'packing-moving');
@@ -33,12 +33,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </h1>
 
                     <p class="lead text-muted mb-4 pm-srv-hero-desc">
-                        Over 90% of relocation damages happen because of substandard or lightweight packaging. At <strong><?= $company3 ?></strong>, we engineer packaging as an exact science. Our specialized crew utilizes heavy-duty 5-layer corrugated cartons, thick air bubble wrap, high-density foam corners, waterproof stretch film, and custom wooden crates to safeguard your assets against vibrations, impacts, and dust.
+                        Over 90% of relocation damages happen because of substandard or lightweight packaging. At <strong><?= $company3 ?></strong>, we engineer packaging as an exact science. Our specialized crew utilizes heavy-duty 3-layer corrugated cartons, thick air bubble wrap, high-density foam corners, waterproof stretch film, and custom wooden crates to safeguard your assets against vibrations, impacts, and dust.
                     </p>
 
                     <!-- Key Advantage Chips -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="pm-hero-chip"><i class="bi bi-layers-fill text-danger me-1"></i> 5-Layer Corrugated Cartons</span>
+                        <span class="pm-hero-chip"><i class="bi bi-layers-fill text-danger me-1"></i> 3-Layer Corrugated Cartons</span>
                         <span class="pm-hero-chip"><i class="bi bi-tags-fill text-warning me-1"></i> Color-Coded Room Tagging</span>
                         <span class="pm-hero-chip"><i class="bi bi-water text-primary me-1"></i> Waterproof Stretch Wrapping</span>
                         <span class="pm-hero-chip"><i class="bi bi-shield-check text-success me-1"></i> Zero Damage Guarantee</span>
@@ -70,7 +70,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
             <div class="row g-3 text-center align-items-center">
                 <div class="col-6 col-lg-3">
                     <div class="pm-stat-box p-3 rounded-4">
-                        <div class="h2 fw-bold text-dark mb-0">5-Layer</div>
+                        <div class="h2 fw-bold text-dark mb-0">3-Layer</div>
                         <div class="small text-muted fw-semibold">Heavy Duty Multi-Ply Kraft</div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             <div class="pm-srv-card-icon flex-shrink-0">
                                 <i class="bi bi-box-seam-fill"></i>
                             </div>
-                            <h3 class="h5 fw-bold text-dark mb-0">5-Layer Virgin Kraft Cartons</h3>
+                            <h3 class="h5 fw-bold text-dark mb-0">3-Layer Virgin Kraft Cartons</h3>
                         </div>
                         <p class="text-muted small mb-0">
                             High-bursting-test double-wall corrugated cartons capable of stacking without crushing or buckling under weight.
@@ -300,7 +300,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
                         <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">5-Layer Bubble Pack</h3>
+                        <h3 class="h5 fw-bold text-dark mb-2">3-Layer Bubble Pack</h3>
                         <p class="text-muted small mb-3">Full apartment packaging with bubble wrap and furniture stretch film.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -310,7 +310,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             <li><i class="bi bi-check-circle-fill text-danger me-2"></i> Master Manifest Logging</li>
                         </ul>
                         <button type="button" class="btn pm-srv-btn-primary w-100 rounded-pill fw-bold text-white" data-bs-toggle="modal" data-bs-target="#qteModal">
-                            Choose 5-Layer
+                            Choose 3-Layer
                         </button>
                     </div>
                 </div>
@@ -449,7 +449,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             </h3>
                             <div id="faqPackCollapse4" class="accordion-collapse collapse" data-bs-parent="#packingFaqAccordion">
                                 <div class="accordion-body text-muted small">
-                                    We strictly use brand-new, fresh virgin-kraft 5-layer corrugated carton boxes. We never use recycled, weakened, or unhygienic grocery boxes.
+                                    We strictly use brand-new, fresh virgin-kraft 3-layer corrugated carton boxes. We never use recycled, weakened, or unhygienic grocery boxes.
                                 </div>
                             </div>
                         </div>

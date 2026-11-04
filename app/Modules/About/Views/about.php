@@ -23,7 +23,7 @@
                     </p>
                     
                     <p class="pm-about-body">
-                        From our humble beginnings with 2 dedicated transport trucks, we now manage a nationwide fleet, climate-controlled warehousing facilities, and over 150+ trained packing professionals serving residential and commercial clients across 500+ Indian cities.
+                        From our humble beginnings with 2 dedicated transport trucks, we now manage a nationwide fleet, climate-controlled warehousing facilities, and over 150+ trained packing professionals serving residential and commercial clients across Mumbai, Navi Mumbai, Thane, and all major routes.
                     </p>
 
                     <!-- Mission & Vision Bento Cards -->
@@ -58,7 +58,7 @@
                             <i class="bi bi-shield-check" aria-hidden="true"></i> 100% Insured Moves
                         </span>
                         <span class="pm-about-trust-pill">
-                            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> 500+ Cities Covered
+                            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Doorstep Moving Service
                         </span>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             <div class="pm-pillar-icon-box" aria-hidden="true">
                                 <i class="bi bi-layers-fill"></i>
                             </div>
-                            <h3 class="pm-pillar-title">5-Layer Smart Packing</h3>
+                            <h3 class="pm-pillar-title">3-Layer Smart Packing</h3>
                         </div>
                         <p class="pm-pillar-text">Heavy-duty bubble wrap, corrugated sheets, foam rolls, and stretch film guarantee scratch-free protection for fragile goods.</p>
                     </div>

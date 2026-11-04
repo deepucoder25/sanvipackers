@@ -16,7 +16,7 @@ if (strtolower($city) == "") {
 } else {
    $htmlcontent = "<p class='pm-cd-lead-text mb-3'>
                         Looking for trusted, certified, and affordable shifting services in <strong>$cityName, $stateName</strong>? 
-                        <strong>$company3</strong> is your comprehensive packing and moving partner. Whether you are shifting your home within $cityName or moving long-distance across India, our dedicated local team guarantees 5-layer bubble packaging, containerized transit, and punctual doorstep delivery.
+                        <strong>$company3</strong> is your comprehensive packing and moving partner. Whether you are shifting your home within $cityName or moving long-distance across India, our dedicated local team guarantees 3-layer bubble packaging, containerized transit, and punctual doorstep delivery.
                     </p>
    ";
 

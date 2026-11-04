@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $allServicesList = $allServices ?? \Modules\Services\Controllers\Services::getServicesList();
 // Filter out current service for the "Other Services" section
 $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !== 'household-moving');
@@ -7,7 +7,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 <!-- Dynamic Breadcrumb -->
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Household Moving Services',
-    'subtitle'    => 'Complete door-to-door home relocation with 5-layer bubble packaging, specialized wardrobe cartons, and careful furniture assembly.',
+    'subtitle'    => 'Complete door-to-door home relocation with 3-layer bubble packaging, specialized wardrobe cartons, and careful furniture assembly.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Services', 'url' => site_url('services')],
@@ -33,12 +33,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </h1>
 
                     <p class="lead text-muted mb-4 pm-srv-hero-desc">
-                        Relocating your home means entrusting your memories, fragile glassware, and precious furniture to dependable hands. At <strong><?= $company3 ?></strong>, our dedicated residential relocation crew manages everything from 5-layer bubble packaging and custom wooden crating to GPS-tracked container transport and doorstep unpacking at your new destination.
+                        Relocating your home means entrusting your memories, fragile glassware, and precious furniture to dependable hands. At <strong><?= $company3 ?></strong>, our dedicated residential relocation crew manages everything from 3-layer bubble packaging and custom wooden crating to GPS-tracked container transport and doorstep unpacking at your new destination.
                     </p>
 
                     <!-- Key Advantage Chips -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="pm-hero-chip"><i class="bi bi-box-seam text-danger me-1"></i> 5-Layer Bubble Packing</span>
+                        <span class="pm-hero-chip"><i class="bi bi-box-seam text-danger me-1"></i> 3-Layer Bubble Packing</span>
                         <span class="pm-hero-chip"><i class="bi bi-check-circle-fill text-success me-1"></i> Zero Damage Guarantee</span>
                         <span class="pm-hero-chip"><i class="bi bi-truck text-warning me-1"></i> All-Weather Container Fleet</span>
                         <span class="pm-hero-chip"><i class="bi bi-people-fill text-danger me-1"></i> Police-Verified Packing Crew</span>
@@ -82,8 +82,8 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                 </div>
                 <div class="col-6 col-lg-3">
                     <div class="pm-stat-box p-3 rounded-4">
-                        <div class="h2 fw-bold text-dark mb-0">500+</div>
-                        <div class="small text-muted fw-semibold">Indian Cities Covered</div>
+                        <div class="h2 fw-bold text-dark mb-0">15+</div>
+                        <div class="small text-muted fw-semibold">Years of Relocation Service</div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
@@ -119,7 +119,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             <div class="pm-srv-card-icon flex-shrink-0">
                                 <i class="bi bi-box-seam-fill"></i>
                             </div>
-                            <h3 class="h5 fw-bold text-dark mb-0">5-Layer Bubble Cushioning</h3>
+                            <h3 class="h5 fw-bold text-dark mb-0">3-Layer Bubble Cushioning</h3>
                         </div>
                         <p class="text-muted small mb-0">
                             Double-wall virgin kraft cartons, heavy air-bubble rolls, stretch wrap, and foam edge protectors shield furniture and appliances from transit impact.
@@ -230,7 +230,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <div class="p-4 rounded-4 h-100 bg-light border pm-process-step-box position-relative text-start">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <div class="pm-step-num-badge flex-shrink-0">2</div>
-                            <h3 class="h6 fw-bold text-dark mb-0">5-Layer Bubble Packing</h3>
+                            <h3 class="h6 fw-bold text-dark mb-0">3-Layer Bubble Packing</h3>
                         </div>
                         <p class="text-muted small mb-0">
                             Certified packing team arrives with premium cartons, bubble wrap rolls, and custom labels to safely pack every room.

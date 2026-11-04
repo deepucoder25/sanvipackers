@@ -30,7 +30,7 @@
                 </div>
 
                 <p class="footer-bio mb-3">
-                    <?= !empty($tagline) ? esc($tagline) : "India's premier relocation partner delivering certified multi-layer packing, GPS-tracked fleet, and 100% damage-free delivery guarantee across 500+ Indian cities." ?>
+                    <?= !empty($tagline) ? esc($tagline) : "India's premier relocation partner delivering certified multi-layer packing, GPS-tracked fleet, and 100% damage-free delivery guarantee for local and domestic moves." ?>
                 </p>
 
                 <!-- Trust Metric Chips -->

@@ -50,7 +50,7 @@ $servicesList = [
                 <i class="bi bi-patch-check-fill text-warning"></i> ISO 9001:2015 Certified
             </span>
             <span class="pm-contact-trust-pill">
-                <i class="bi bi-geo-alt-fill text-danger"></i> 500+ Indian Cities
+                <i class="bi bi-geo-alt-fill text-danger"></i> Doorstep Pickup &amp; Delivery
             </span>
         </div>
 

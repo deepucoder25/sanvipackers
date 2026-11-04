@@ -44,7 +44,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                 </h1>
 
                 <p class="lead pm-text-muted mb-4">
-                    Professional packaging with 5-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee in <?= esc($cityName) ?> and across 500+ Indian cities.
+                    Professional packaging with 3-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee in <?= esc($cityName) ?>.
                 </p>
 
                 <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-4">
@@ -116,7 +116,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
 
                     <!-- Feature Tags (One Row) -->
                     <div class="pm-cd-feature-pills">
-                        <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> 5-Layer Packing</span>
+                        <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> 3-Layer Packing</span>
                         <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> 100% Transit Insurance</span>
                         <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> GPS Tracked Fleet</span>
                         <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> Zero Hidden Costs</span>
@@ -235,7 +235,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             <span class="pm-cpt-price-domestic">₹13,500 – ₹24,000</span>
                         </div>
                         <div class="pm-cpt-col-pack">
-                            <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Heavy 5-Layer + Foam</span>
+                            <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Heavy 3-Layer + Foam</span>
                         </div>
                         <div class="pm-cpt-col-action">
                             <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 2 BHK Move">
@@ -464,7 +464,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <p class="pm-journey-desc">Certified packers arrive on-time with high-density bubble roll, corrugated cartons, and anti-static wrapping.</p>
                     <div class="pm-journey-footer">
                         <span class="pm-journey-tag">
-                            <i class="bi bi-check2-circle text-success"></i> 5-Layer Materials
+                            <i class="bi bi-check2-circle text-success"></i> 3-Layer Materials
                         </span>
                     </div>
                 </div>
@@ -585,7 +585,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 </div>
                                 <span class="pm-review-badge"><i class="bi bi-patch-check-fill"></i> Verified Move</span>
                             </div>
-                            <p class="pm-review-text">"Relocated our 3 BHK within <?= esc($cityName) ?> seamlessly. The team was punctual, handled delicate glassware with 5-layer bubble packing, and reassembled all furniture before evening. Zero damages!"</p>
+                            <p class="pm-review-text">"Relocated our 3 BHK within <?= esc($cityName) ?> seamlessly. The team was punctual, handled delicate glassware with 3-layer bubble packing, and reassembled all furniture before evening. Zero damages!"</p>
                             <div class="pm-review-footer">
                                 <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Household Relocation</span>
                                 <span class="pm-review-stars small"><i class="bi bi-star-fill" aria-hidden="true"></i> 5.0</span>
@@ -690,7 +690,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             </h4>
                             <div id="cfaq1" class="accordion-collapse collapse show" aria-labelledby="cfaqHead1" data-bs-parent="#cityFaqAccordion">
                                 <div class="accordion-body">
-                                    Moving costs depend on total volume of household items, packaging tier (standard 3-layer vs premium 5-layer), vehicle carrier size, elevator availability/floor levels, and total transit distance. We provide a guaranteed, written quote with zero hidden charges after a quick survey.
+                                    Moving costs depend on total volume of household items, packaging tier (customized 3-layer protective packing), vehicle carrier size, elevator availability/floor levels, and total transit distance. We provide a guaranteed, written quote with zero hidden charges after a quick survey.
                                 </div>
                             </div>
                         </div>
@@ -735,7 +735,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             </h4>
                             <div id="cfaq4" class="accordion-collapse collapse" aria-labelledby="cfaqHead4" data-bs-parent="#cityFaqAccordion">
                                 <div class="accordion-body">
-                                    We utilize heavy-duty 5-layer certified bubble wrap, corrugated sheets, edge guards, and specialized wooden crating for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright fragile tags and loaded with hydraulic cushioning.
+                                    We utilize heavy-duty 3-layer certified bubble wrap, corrugated sheets, edge guards, and specialized wooden crating for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright fragile tags and loaded with hydraulic cushioning.
                                 </div>
                             </div>
                         </div>

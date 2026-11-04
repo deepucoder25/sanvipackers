@@ -1,7 +1,7 @@
 <?php
 $testimonials = [
     [
-        'quote'    => 'I was relocating my 3BHK household from Delhi to Bangalore and terrified of fragile glassware damage. Sanvi Packers team packed everything with 5-layer certified bubble wrap without a single scratch. The container truck arrived on schedule with live GPS tracking on WhatsApp. Doorstep unpacking and reassembly was completely smooth and stress-free. Best relocation service I have ever experienced!',
+        'quote'    => 'I was relocating my 3BHK household from Delhi to Bangalore and terrified of fragile glassware damage. Sanvi Packers team packed everything with 3-layer certified bubble wrap without a single scratch. The container truck arrived on schedule with live GPS tracking on WhatsApp. Doorstep unpacking and reassembly was completely smooth and stress-free. Best relocation service I have ever experienced!',
         'name'     => 'Rajesh Sharma',
         'role'     => 'Software Architect, Delhi to Bangalore',
     ],
@@ -61,7 +61,7 @@ $testimonials = [
                         <i class="bi bi-shield-check text-warning me-1"></i> 100% Insured
                     </span>
                     <span class="badge rounded-pill pm-testi-chip">
-                        <i class="bi bi-geo-alt-fill text-danger me-1"></i> 500+ Cities
+                        <i class="bi bi-geo-alt-fill text-danger me-1"></i> Verified Movers
                     </span>
                     <span class="badge rounded-pill pm-testi-chip">
                         <i class="bi bi-patch-check-fill text-warning me-1"></i> IBA Approved

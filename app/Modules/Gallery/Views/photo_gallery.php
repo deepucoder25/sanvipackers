@@ -69,7 +69,7 @@ $cleanPhone    = preg_replace('/[^0-9]/', '', $helplinePhone);
                                 </div>
                                 <h2 class="pm-gallery-empty-title">Photos Updating Soon</h2>
                                 <p class="pm-gallery-empty-sub">
-                                    Our field operations crew is curating high-definition pictures of 5-layer corrugated packing, specialized bike crating, and safe intercity relocations. You can also view live move photos instantly on WhatsApp.
+                                    Our field operations crew is curating high-definition pictures of 3-layer corrugated packing, specialized bike crating, and safe intercity relocations. You can also view live move photos instantly on WhatsApp.
                                 </p>
                                 <div class="d-flex justify-content-center flex-wrap gap-2">
                                     <a href="https://wa.me/<?= esc($cleanPhone) ?>?text=<?= urlencode('Hello Sanvi Packers, please share recent photos of your packing and moving service.') ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">

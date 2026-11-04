@@ -10,9 +10,10 @@ class City extends BaseController
     private $allStates = [
         ['slug' => 'delhi',           'name' => 'Delhi',           'code' => 'DL', 'cities_count' => '10+', 'image' => 'assets/img/state/delhi.png'],
         ['slug' => 'maharashtra',     'name' => 'Maharashtra',     'code' => 'MH', 'cities_count' => '15+', 'image' => 'assets/img/state/maharashtra.png'],
+        ['slug' => 'pune',            'name' => 'Pune',            'code' => 'PN', 'cities_count' => '10+', 'image' => 'assets/img/city/pune.png'],
        // ['slug' => 'uttar-pradesh',   'name' => 'Uttar Pradesh',   'code' => 'UP', 'cities_count' => '85+', 'image' => 'assets/img/state/uttar-pradesh.svg'],
        // ['slug' => 'bihar',           'name' => 'Bihar',           'code' => 'BR', 'cities_count' => '45+', 'image' => ''],
-        ['slug' => 'west-bengal',     'name' => 'West Bengal',     'code' => 'WB', 'cities_count' => '20+', 'image' => 'assets/img/state/west-bengal.png'],
+       // ['slug' => 'west-bengal',     'name' => 'West Bengal',     'code' => 'WB', 'cities_count' => '20+', 'image' => 'assets/img/state/west-bengal.png'],
        // ['slug' => 'gujarat',         'name' => 'Gujarat',         'code' => 'GJ', 'cities_count' => '50+', 'image' => ''],
        // ['slug' => 'karnataka',       'name' => 'Karnataka',       'code' => 'KA', 'cities_count' => '45+', 'image' => ''],
        // ['slug' => 'tamil-nadu',      'name' => 'Tamil Nadu',      'code' => 'TN', 'cities_count' => '48+', 'image' => ''],
