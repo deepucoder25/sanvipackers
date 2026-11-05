@@ -5418,6 +5418,72 @@ a.pm-btn-whatsapp-pill:hover {
   margin-top: 14px;
 }
 
+/* ==========================================================================
+   Clean Single-Line Rate Chart Table (No Desktop Scroll, Responsive on Mobile)
+   ========================================================================== */
+.pm-clean-rate-table {
+  width: 100%;
+  border-color: #dee2e6;
+  font-size: 0.9rem;
+}
+
+.pm-clean-rate-table thead th {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.pm-clean-rate-table td,
+.pm-clean-rate-table th {
+  padding: 9px 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.pm-clean-rate-table tbody tr:hover {
+  background-color: #fef2f2 !important;
+}
+
+@media (min-width: 992px) {
+  .pm-clean-rate-wrapper {
+    overflow-x: hidden !important;
+  }
+  .pm-clean-rate-wrapper .table-responsive-lg {
+    overflow-x: visible !important;
+  }
+  .pm-clean-rate-table {
+    width: 100% !important;
+    table-layout: auto;
+  }
+  .pm-clean-rate-table thead th,
+  .pm-clean-rate-table tbody td {
+    padding: 10px 8px;
+    font-size: 0.88rem;
+  }
+  .pm-clean-rate-table .btn-sm {
+    padding: 3px 12px;
+    font-size: 0.82rem;
+  }
+}
+
+.pm-pricing-feature-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
 @media (max-width: 767.98px) {
   .pm-pricing-note-strip {
     flex-direction: column;
