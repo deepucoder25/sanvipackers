@@ -69,6 +69,9 @@ $routes->get('city/(:segment)/(:segment)', '\Modules\City\Controllers\City::city
 
 // State Direct Routes (CI3 Pattern)
 $states = [
+    'mumbai',
+    'navi-mumbai',
+    'thane',
     'bihar',
     'delhi',
     'west-bengal',

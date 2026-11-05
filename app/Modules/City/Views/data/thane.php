@@ -1,0 +1,30 @@
+<?php
+//SELECT name as nm,latitude as lat,longitude as lon,state_code as sc FROM `cities` WHERE state_code='MH'
+$cities = array(
+
+    array('nm' => 'Thane West','lat' => '19.21830000','lon' => '72.97810000','sc' => 'MH'),
+    array('nm' => 'Thane East','lat' => '19.18500000','lon' => '72.97800000','sc' => 'MH'),
+    array('nm' => 'Majiwada','lat' => '19.20700000','lon' => '72.99800000','sc' => 'MH'),
+    array('nm' => 'Ghodbunder Road','lat' => '19.26300000','lon' => '72.97200000','sc' => 'MH'),
+    array('nm' => 'Wagle Estate','lat' => '19.20200000','lon' => '72.96300000','sc' => 'MH'),
+    array('nm' => 'Naupada','lat' => '19.19700000','lon' => '72.97100000','sc' => 'MH'),
+    array('nm' => 'Kolshet','lat' => '19.22000000','lon' => '72.99200000','sc' => 'MH'),
+    array('nm' => 'Manpada','lat' => '19.23500000','lon' => '72.97500000','sc' => 'MH'),
+    // array('nm' => 'Kasarvadavali','lat' => '19.27000000','lon' => '72.97000000','sc' => 'MH'),
+    // array('nm' => 'Balkum','lat' => '19.21600000','lon' => '73.00100000','sc' => 'MH'),
+    // array('nm' => 'Kalwa','lat' => '19.19400000','lon' => '72.99900000','sc' => 'MH'),
+    // array('nm' => 'Mumbra','lat' => '19.17500000','lon' => '73.02200000','sc' => 'MH'),
+    // array('nm' => 'Diva','lat' => '19.18700000','lon' => '73.04300000','sc' => 'MH'),
+    // array('nm' => 'Vartak Nagar','lat' => '19.21500000','lon' => '72.95600000','sc' => 'MH'),
+    // array('nm' => 'Hiranandani Estate','lat' => '19.25600000','lon' => '72.97100000','sc' => 'MH'),
+    // array('nm' => 'Pokhran Road','lat' => '19.22600000','lon' => '72.96300000','sc' => 'MH'),
+    // array('nm' => 'Kavesar','lat' => '19.26700000','lon' => '72.97000000','sc' => 'MH'),
+    // array('nm' => 'Owale','lat' => '19.25000000','lon' => '72.96500000','sc' => 'MH'),
+    // array('nm' => 'Kapurbawdi','lat' => '19.21600000','lon' => '72.98200000','sc' => 'MH'),
+    // array('nm' => 'Khopat','lat' => '19.19600000','lon' => '72.96600000','sc' => 'MH'),
+    // array('nm' => 'Lokmanya Nagar','lat' => '19.22800000','lon' => '72.95200000','sc' => 'MH'),
+    // array('nm' => 'Brahmand','lat' => '19.25300000','lon' => '72.96900000','sc' => 'MH'),
+    // array('nm' => 'Patlipada','lat' => '19.25100000','lon' => '72.97600000','sc' => 'MH'),
+    // array('nm' => 'Anand Nagar','lat' => '19.28000000','lon' => '72.97100000','sc' => 'MH'),
+    // array('nm' => 'Yeoor','lat' => '19.23900000','lon' => '72.94300000','sc' => 'MH'),
+);

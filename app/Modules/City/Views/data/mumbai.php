@@ -1,0 +1,35 @@
+<?php
+//SELECT name as nm,latitude as lat,longitude as lon,state_code as sc FROM `cities` WHERE state_code='MH'
+$cities = array(
+    
+    array('nm' => 'Andheri','lat' => '19.11970000','lon' => '72.84640000','sc' => 'MH'),
+    array('nm' => 'Bandra','lat' => '19.05440000','lon' => '72.84050000','sc' => 'MH'),
+    array('nm' => 'Borivali','lat' => '19.23070000','lon' => '72.85670000','sc' => 'MH'),
+    array('nm' => 'Dadar','lat' => '19.01780000','lon' => '72.84780000','sc' => 'MH'),
+    array('nm' => 'Juhu','lat' => '19.10750000','lon' => '72.82630000','sc' => 'MH'),
+    array('nm' => 'Malad','lat' => '19.18740000','lon' => '72.84840000','sc' => 'MH'),
+    array('nm' => 'Goregaon','lat' => '19.16630000','lon' => '72.85260000','sc' => 'MH'),
+    // array('nm' => 'Kandivali','lat' => '19.20430000','lon' => '72.85180000','sc' => 'MH'),
+    // array('nm' => 'Khar','lat' => '19.06970000','lon' => '72.83970000','sc' => 'MH'),
+    // array('nm' => 'Santacruz','lat' => '19.08180000','lon' => '72.84160000','sc' => 'MH'),
+    // array('nm' => 'Vile Parle','lat' => '19.10000000','lon' => '72.84400000','sc' => 'MH'),
+    // array('nm' => 'Powai','lat' => '19.11760000','lon' => '72.90600000','sc' => 'MH'),
+    // array('nm' => 'Ghatkopar','lat' => '19.08650000','lon' => '72.90800000','sc' => 'MH'),
+    // array('nm' => 'Vikhroli','lat' => '19.11110000','lon' => '72.92780000','sc' => 'MH'),
+    // array('nm' => 'Mulund','lat' => '19.17260000','lon' => '72.95650000','sc' => 'MH'),
+    // array('nm' => 'Bhandup','lat' => '19.14560000','lon' => '72.93700000','sc' => 'MH'),
+    // array('nm' => 'Kurla','lat' => '19.07260000','lon' => '72.88450000','sc' => 'MH'),
+    // array('nm' => 'Chembur','lat' => '19.05220000','lon' => '72.90050000','sc' => 'MH'),
+    // array('nm' => 'Wadala','lat' => '19.01760000','lon' => '72.85620000','sc' => 'MH'),
+    // array('nm' => 'Colaba','lat' => '18.90670000','lon' => '72.81470000','sc' => 'MH'),
+    // array('nm' => 'Fort','lat' => '18.93220000','lon' => '72.83540000','sc' => 'MH'),
+    // array('nm' => 'Lower Parel','lat' => '18.99500000','lon' => '72.83020000','sc' => 'MH'),
+    // array('nm' => 'Worli','lat' => '19.01760000','lon' => '72.81750000','sc' => 'MH'),
+    // array('nm' => 'Byculla','lat' => '18.97660000','lon' => '72.83280000','sc' => 'MH'),
+    // array('nm' => 'Mahim','lat' => '19.03770000','lon' => '72.84680000','sc' => 'MH'),
+    // array('nm' => 'Parel','lat' => '19.00960000','lon' => '72.83760000','sc' => 'MH'),
+    // array('nm' => 'Sion','lat' => '19.03900000','lon' => '72.86190000','sc' => 'MH'),
+    // array('nm' => 'Mira Road','lat' => '19.28130000','lon' => '72.85690000','sc' => 'MH'),
+    // array('nm' => 'Dahisar','lat' => '19.25460000','lon' => '72.85980000','sc' => 'MH'),
+
+);
