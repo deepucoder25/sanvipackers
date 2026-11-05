@@ -257,6 +257,16 @@
     </div>
 </footer>
 
+<!-- Mobile Sticky Call Bar (Full-Width col-12 always fixed at screen bottom on Mobile) -->
+<div class="pm-mobile-bottom-bar d-md-none" aria-label="Mobile Quick Call Bar">
+    <div class="container-fluid p-0">
+        <a <?= !empty($phonehtml) ? $phonehtml : 'href="tel:' . preg_replace('/[^0-9+]/', '', $phone ?? '+919930444433') . '"' ?> class="pm-mobile-bottom-call-btn" aria-label="Call Now">
+            <span class="pm-phone-ring-icon"><i class="bi bi-telephone-fill"></i></span>
+            <span class="pm-phone-number-val"><?= esc($phone ?? '+91 99304 44433') ?></span>
+        </a>
+    </div>
+</div>
+
 <!-- Floating Quick Action Buttons (Left: Call & WhatsApp | Right: Get Quote) -->
 <aside class="pm-floating-dock pm-floating-dock-left" aria-label="Quick Contact Actions">
     <!-- Call Float Button -->

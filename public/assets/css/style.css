@@ -2917,31 +2917,146 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   box-shadow: 0 12px 30px var(--pm-red-glow), 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile Responsive Floating Docks */
+/* ==========================================================================
+   Mobile Sticky Call Bar (Full-Width Always-Fixed Bottom CTA on Mobile)
+   ========================================================================== */
+.pm-mobile-bottom-bar {
+  display: none;
+}
+
 @media (max-width: 767.98px) {
-  /* On mobile, stack Call & WhatsApp on the right above Get Quote so left-side text is 100% clear */
-  .pm-floating-dock-left {
-    left: auto;
+  body {
+    padding-bottom: 68px !important;
+  }
+
+  .pm-mobile-bottom-bar {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1040;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.12), 0 -1px 3px rgba(15, 23, 42, 0.06);
+  }
+
+  .pm-mobile-bottom-call-btn {
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 1.08rem;
+    letter-spacing: 0.3px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45), 0 2px 6px rgba(0, 0, 0, 0.12);
+    animation: pmBottomBarPulse 2.4s infinite ease-in-out;
+  }
+
+  .pm-mobile-bottom-call-btn:active,
+  .pm-mobile-bottom-call-btn:hover {
+    color: #000000;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  }
+
+  /* Shimmer Sweep Effect */
+  .pm-mobile-bottom-call-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: skewX(-20deg);
+    animation: pmShimmerSweep 3s infinite ease-in-out;
+    pointer-events: none;
+  }
+
+  /* Phone Icon Ringing Animation */
+  .pm-mobile-bottom-call-btn .pm-phone-ring-icon {
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+    animation: pmPhoneWobble 2.4s infinite ease-in-out;
+  }
+
+  .pm-mobile-bottom-call-btn .pm-phone-number-val {
+    font-weight: 800;
+    font-size: 1.08rem;
+    letter-spacing: 0.4px;
+  }
+
+  /* Hide the round floating call button inside dock on mobile (replaced by full-width bottom bar) */
+  .pm-floating-dock-left .float-call {
+    display: none !important;
+  }
+
+  /* Stack remaining Floating Action Buttons (WhatsApp & Calculator) cleanly on the bottom right above the call bar */
+  .pm-floating-dock-right {
     right: 14px;
     bottom: 74px;
     gap: 10px;
   }
-  .pm-floating-dock-right {
+
+  .pm-floating-dock-left {
+    left: auto;
     right: 14px;
-    bottom: 18px;
+    bottom: 128px;
     gap: 10px;
   }
+
   .pm-float-btn {
     width: 44px;
     height: 44px;
   }
-  .pm-float-btn.float-call { font-size: 1.1rem; }
   .pm-float-btn.float-whatsapp { font-size: 1.25rem; }
   .pm-float-btn.float-quote { font-size: 1.1rem; }
   .pm-float-btn::before,
   .pm-float-btn::after {
     display: none;
   }
+}
+
+/* Keyframe Animations for Mobile Call Bar */
+@keyframes pmPhoneWobble {
+  0%, 60%, 100% { transform: rotate(0) scale(1); }
+  6%, 18%, 30% { transform: rotate(-18deg) scale(1.18); }
+  12%, 24%, 36% { transform: rotate(18deg) scale(1.18); }
+  42% { transform: rotate(-8deg) scale(1.08); }
+  46% { transform: rotate(8deg) scale(1.08); }
+  50% { transform: rotate(0) scale(1); }
+}
+
+@keyframes pmBottomBarPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45), 0 2px 6px rgba(0, 0, 0, 0.12);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(245, 158, 11, 0.7), 0 0 16px rgba(245, 158, 11, 0.4);
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes pmShimmerSweep {
+  0% { left: -100%; }
+  30%, 100% { left: 160%; }
 }
 
 @media (max-width: 1199.98px) {
