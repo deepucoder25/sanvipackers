@@ -9,17 +9,16 @@ if (file_exists(__DIR__ . '/city_content.php')) {
 
 <!-- Packers & Movers Hero Banner Section -->
 <section class="pm-hero-section">
-    <!-- Atmospheric Glow Orbs -->
-    <div class="pm-glow-orb pm-glow-orb-red"></div>
-    <div class="pm-glow-orb pm-glow-orb-yellow"></div>
-    <div class="pm-glow-orb pm-glow-orb-center"></div>
+    <!-- Soft Decorative Ambient Shapes -->
+    <div class="pm-hero-shape pm-hero-shape-gold"></div>
+    <div class="pm-hero-shape pm-hero-shape-red"></div>
 
-    <div class="container py-5 position-relative z-2">
-        <div class="row align-items-center g-4 py-lg-4">
+    <div class="container py-3 py-md-4 position-relative z-2">
+        <div class="row align-items-center g-3 g-lg-4">
             <!-- Left Column: Content -->
             <div class="col-lg-6">
                 <!-- Hero Breadcrumb Navigation -->
-                <nav aria-label="breadcrumb" class="mb-3">
+                <nav aria-label="breadcrumb" class="mb-2 mb-md-3">
                     <ol class="pm-hero-breadcrumb-pill">
                         <li class="pm-hb-item">
                             <a href="<?= site_url('/') ?>" class="pm-hb-link"><i class="bi bi-house-door-fill me-1 text-danger"></i>Home</a>
@@ -39,48 +38,52 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     </ol>
                 </nav>
 
-                <h1 class="display-5 fw-bold text-white lh-sm mb-3">
-                    Best Packers and Movers in <span class="pm-text-gradient"><?= esc($cityName) ?>, <?= esc($stateName) ?></span>
+                <h1 class="pm-hero-title mb-2 mb-md-3">
+                    Best Packers and Movers in <span class="pm-text-accent-red"><?= esc($cityName) ?>, <?= esc($stateName) ?></span>
                 </h1>
 
-                <p class="lead pm-text-muted mb-4">
+                <p class="lead pm-hero-lead mb-3">
                     Professional packaging with 3-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee in <?= esc($cityName) ?>.
                 </p>
 
-                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-4">
-                    <a href="<?= site_url('about') ?>" class="btn btn-pm-outline px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
-                        <i class="bi bi-info-circle-fill pm-text-accent-yellow"></i>
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-3">
+                    <a href="<?= site_url('about') ?>" class="btn pm-hero-btn-outline px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
+                        <i class="bi bi-info-circle-fill text-danger"></i>
                         <span>About Us</span>
                     </a>
-                    <a href="<?= site_url('contact') ?>" class="btn btn-pm-outline px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
-                        <i class="bi bi-chat-dots-fill"></i>
+                    <a href="<?= site_url('contact') ?>" class="btn pm-hero-btn-outline px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
+                        <i class="bi bi-envelope-fill text-danger"></i>
                         <span>Contact Us</span>
                     </a>
-                    <a <?= $phonehtml ?> class="btn btn-pm-yellow px-3 py-2 py-md-3 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto" title="Call Now" aria-label="Call Now">
+                    <a <?= $phonehtml ?> class="btn pm-hero-btn-phone px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto" title="Call Now" aria-label="Call Now">
                         <i class="bi bi-telephone-fill"></i>
                         <span><?= $phone ?></span>
                     </a>
                 </div>
 
                 <!-- Trust Metrics -->
-                <div class="d-flex flex-wrap align-items-center gap-4 pt-3 border-top border-secondary border-opacity-25">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="d-flex text-warning">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                <div class="pm-hero-trust-bar">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center gap-1">
+                            <div class="d-flex text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span class="text-dark fw-bold ms-1">4.9/5</span>
                         </div>
-                        <span class="text-white fw-bold">4.9/5</span>
-                        <span class="pm-text-muted small">(1,500+ Happy Moves in <?= esc($cityName) ?>)</span>
+                        <span class="pm-hero-trust-subtext small">(1,500+ Happy Moves in <?= esc($cityName) ?>)</span>
                     </div>
-                    <div class="d-flex align-items-center gap-2 text-white small">
-                        <i class="bi bi-patch-check-fill pm-text-accent-red"></i>
+                    <div class="pm-hero-trust-divider d-none d-sm-block"></div>
+                    <div class="pm-hero-trust-item">
+                        <i class="bi bi-shield-fill-check text-danger fs-5"></i>
                         <span>100% Transit Insured</span>
                     </div>
-                    <div class="d-flex align-items-center gap-2 text-white small">
-                        <i class="bi bi-clock-history pm-text-accent-yellow"></i>
+                    <div class="pm-hero-trust-divider d-none d-sm-block"></div>
+                    <div class="pm-hero-trust-item">
+                        <i class="bi bi-clock-history text-danger fs-5"></i>
                         <span>On-Time in <?= esc($cityName) ?></span>
                     </div>
                 </div>
