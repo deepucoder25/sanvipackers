@@ -1,10 +1,35 @@
 <footer class="site-footer">
-    <!-- Atmospheric Ambient Glows -->
-    <div class="footer-glow footer-glow-red"></div>
-    <div class="footer-glow footer-glow-yellow"></div>
-
-    <!-- Top Accent Gradient Line -->
     <div class="footer-top-accent"></div>
+
+
+
+
+
+
+    <!-- Soft Decorative Ambient Glow Shapes -->
+    <div class="footer-ambient-shape footer-shape-gold"></div>
+    <div class="footer-ambient-shape footer-shape-red"></div>
+
+    <!-- Decorative Logistics SVG Wave Backdrop -->
+    <div class="footer-svg-backdrop" aria-hidden="true">
+        <svg class="footer-wave-svg" viewBox="0 0 1440 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path opacity="0.35" d="M0 60C240 140 480 20 720 80C960 140 1200 40 1440 90V280H0V60Z" fill="url(#footerGrad1)"/>
+            <path opacity="0.25" d="M0 120C320 40 640 180 960 110C1200 60 1360 140 1440 130V280H0V120Z" fill="url(#footerGrad2)"/>
+            <defs>
+                <linearGradient id="footerGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+                    <stop offset="50%" stop-color="#dc2626" stop-opacity="0.18"/>
+                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.22"/>
+                </linearGradient>
+                <linearGradient id="footerGrad2" x1="100%" y1="0%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#dc2626" stop-opacity="0.2"/>
+                    <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.15"/>
+                    <stop offset="100%" stop-color="#dc2626" stop-opacity="0.18"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+
 
     <!-- Main Footer Content -->
     <div class="container footer-main-content">

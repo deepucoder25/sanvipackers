@@ -49,6 +49,11 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--light-bg);
   color: var(--text-main);
@@ -713,14 +718,21 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 
 @media (max-width: 576px) {
   .page-banner {
-    padding: 20px 0 18px;
+    padding: 16px 0 14px;
   }
   .pm-banner-title,
   .page-banner h1 {
-    font-size: 1.6rem;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .pm-banner-subtitle,
+  .page-banner p {
+    font-size: 0.82rem;
+    line-height: 1.4;
   }
   .pm-bc-ribbon {
-    padding: 3px;
+    padding: 3px 6px;
     gap: 3px;
   }
   .pm-bc-chip {
@@ -728,8 +740,9 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
     font-size: 0.74rem;
   }
   .pm-banner-trust-strip {
-    gap: 6px !important;
+    gap: 4px 8px !important;
     font-size: 0.72rem;
+    margin-top: 6px;
   }
 }
 
@@ -1396,93 +1409,120 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 }
 
 /* ==========================================================================
-   Testimonial Widget (Spiral Notebook / Ruled Notepad Design)
+   Testimonial Widget (Spiral Notebook / Ruled Notepad Design - Light Theme)
    ========================================================================== */
 .pm-testimonial-section {
-  background-color: #111318;
-  color: #ffffff;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.7) 0%, transparent 45%),
+    radial-gradient(circle at 92% 25%, rgba(254, 226, 226, 0.7) 0%, transparent 48%),
+    radial-gradient(circle at 50% 90%, rgba(241, 245, 249, 0.85) 0%, transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcfe 50%, #f8fafc 100%);
+  color: #334155;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Subtle Logistics Dot Grid Pattern Overlay */
+.pm-testimonial-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.055) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .pm-testimonial-section .pm-service-badge {
-  background: rgba(230, 25, 25, 0.22);
-  color: #ff9494;
-  border-color: rgba(255, 148, 148, 0.35);
+  background: rgba(220, 38, 38, 0.08);
+  color: var(--pm-red);
+  border: 1px solid rgba(220, 38, 38, 0.22);
 }
 
 /* Left Typography & Trust Badges */
 .pm-testi-title {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.15;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .pm-testi-title-accent {
-  color: #ff3b3b;
+  color: var(--pm-red);
 }
 
 .pm-testi-desc {
-  color: rgba(255, 255, 255, 0.72);
+  color: #475569;
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 440px;
 }
 
 .pm-testi-chip {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 6px 14px;
   letter-spacing: 0.3px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .pm-testi-stat-sub {
   font-size: 0.78rem;
+  color: #64748b;
 }
 
 .pm-testi-prompt {
-  color: rgba(255, 255, 255, 0.75);
+  color: #64748b;
   font-family: Georgia, serif;
   font-style: italic;
   font-size: 0.95rem;
 }
 
-/* Pagination / Navigation Buttons */
+/* Pagination / Navigation Buttons Placed Above Testimonial Box */
+.pm-testi-top-toolbar {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
 .pm-btn-page-prev {
-  background: #fbf9f2 !important;
+  background: #ffffff !important;
   color: #0f172a !important;
   font-weight: 700 !important;
-  font-size: 0.9rem !important;
-  padding: 10px 24px !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  font-size: 0.88rem !important;
+  padding: 8px 18px !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
   transition: all 0.25s ease !important;
 }
 
 .pm-btn-page-prev:hover {
-  background: #ffffff !important;
+  background: #f8fafc !important;
+  border-color: var(--pm-red) !important;
+  color: var(--pm-red) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.12) !important;
 }
 
 .pm-btn-page-next {
-  background: var(--pm-red) !important;
+  background: linear-gradient(135deg, var(--pm-red) 0%, #b81414 100%) !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  font-size: 0.9rem !important;
-  padding: 10px 24px !important;
-  border: none !important;
+  font-size: 0.88rem !important;
+  padding: 8px 20px !important;
+  border: 1.5px solid transparent !important;
   box-shadow: 0 4px 14px var(--pm-red-glow) !important;
   transition: all 0.25s ease !important;
 }
 
 .pm-btn-page-next:hover {
-  background: var(--pm-red-hover) !important;
+  background: linear-gradient(135deg, #ff2626 0%, #cc1616 100%) !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px var(--pm-red-glow) !important;
 }
@@ -1498,7 +1538,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   background-color: #fbf8f0;
   background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent 37px, #e5ddcb 37px, #e5ddcb 38px);
   border-radius: 22px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.14), 0 4px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(226, 218, 201, 0.8);
   padding: 2.6rem 2.2rem 2.6rem 4.8rem;
   position: relative;
   overflow: hidden;
@@ -2047,43 +2087,92 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 /* ==========================================================================
    Footer (Packers & Movers Theme: Red, Black, White, Yellow)
    ========================================================================== */
+/* ==========================================================================
+   Modern Clean Light Footer Theme with Warm Ambient Colors & SVG Graphics
+   ========================================================================== */
 .site-footer {
-  background: linear-gradient(180deg, #0b0e17 0%, #06070a 100%);
-  color: #94a3b8;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.7) 0%, transparent 45%),
+    radial-gradient(circle at 92% 25%, rgba(254, 226, 226, 0.7) 0%, transparent 48%),
+    radial-gradient(circle at 50% 90%, rgba(241, 245, 249, 0.85) 0%, transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcfe 50%, #f8fafc 100%);
+  color: #475569;
   margin-top: auto;
   position: relative;
   overflow: hidden;
-  border-top: 2px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #e2e8f0;
 }
+
+/* Modern Logistics Network Dot Grid Pattern Overlay (matching Hero) */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.055) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 50%, #000 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 50%, #000 40%, transparent 95%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .footer-top-accent {
   height: 3px;
   background: linear-gradient(90deg, transparent 0%, var(--pm-red) 30%, var(--pm-yellow) 70%, transparent 100%);
+  position: relative;
+  z-index: 3;
 }
-.footer-glow {
+
+/* Soft Decorative Ambient Shapes */
+.footer-ambient-shape {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(100px);
-  opacity: 0.12;
+  filter: blur(65px);
+  z-index: 1;
+  opacity: 0.75;
 }
-.footer-glow-red {
-  top: -40px;
-  left: 10%;
-  width: 450px;
-  height: 320px;
-  background: var(--pm-red);
+
+.footer-shape-gold {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+  top: -60px;
+  left: -40px;
 }
-.footer-glow-yellow {
-  bottom: 40px;
-  right: 5%;
+
+.footer-shape-red {
   width: 400px;
-  height: 320px;
-  background: var(--pm-yellow);
+  height: 400px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.18) 0%, transparent 70%);
+  bottom: 0;
+  right: -50px;
+}
+
+/* Decorative Logistics SVG Wave Backdrop */
+.footer-svg-backdrop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.footer-wave-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Main Footer Content */
 .footer-main-content {
-  padding: 60px 0 45px;
+  padding: 55px 0 40px;
   position: relative;
   z-index: 2;
 }
@@ -2116,7 +2205,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   color: #ffffff;
   font-size: 1.35rem;
   box-shadow: 0 6px 18px var(--pm-red-glow);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(220, 38, 38, 0.25);
   flex-shrink: 0;
   transition: all 0.25s ease;
 }
@@ -2135,14 +2224,14 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 .brand-text-name {
   font-size: 1.45rem;
   font-weight: 900;
-  color: #ffffff;
+  color: #0f172a;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   display: inline-flex;
   align-items: baseline;
 }
 .brand-dot-pulse {
-  color: var(--pm-yellow);
+  color: var(--pm-red);
   font-size: 1.8rem;
   line-height: 0;
   margin-left: 2px;
@@ -2150,7 +2239,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 .brand-text-tag {
   font-size: 0.68rem;
   font-weight: 800;
-  color: var(--pm-yellow);
+  color: var(--pm-red);
   letter-spacing: 1.2px;
   text-transform: uppercase;
   margin-top: 3px;
@@ -2160,20 +2249,21 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: #334155;
   letter-spacing: 0.4px;
   width: fit-content;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 .footer-bio {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: #94a3b8;
+  color: #64748b;
   border-left: 2.5px solid var(--pm-red);
   padding-left: 12px;
 }
@@ -2188,20 +2278,22 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   padding: 6px 12px;
   border-radius: 50px;
   font-size: 0.76rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #334155;
   transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 .trust-chip:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(250, 204, 21, 0.35);
+  background: #fffafa;
+  border-color: rgba(220, 38, 38, 0.35);
   transform: translateY(-2px);
-  color: #ffffff;
+  color: var(--pm-red);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
 }
 
 /* Social Buttons */
@@ -2226,15 +2318,16 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  color: #cbd5e1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.05rem;
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 .footer-social-btn.fb-btn:hover {
   background: #1877f2;
@@ -2246,8 +2339,8 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 .footer-social-btn.tw-btn:hover {
   background: #000000;
   color: #ffffff;
-  border-color: #555;
-  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+  border-color: #000000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
 }
 .footer-social-btn.ig-btn:hover {
@@ -2271,15 +2364,15 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 }
 .footer-col-eyebrow {
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: var(--pm-yellow);
+  color: var(--pm-red);
   display: block;
   margin-bottom: 4px;
 }
 .footer-col-title {
-  color: #ffffff;
+  color: #0f172a;
   font-size: 1.15rem;
   font-weight: 800;
   margin-bottom: 0;
@@ -2297,122 +2390,119 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   border-radius: 2px;
 }
 
-/* Modern Interactive Links with Icons */
+/* Clean Natural Footer Links (No Box) */
 .footer-links-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .footer-links-list li {
   margin: 0;
 }
 .footer-nav-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  color: #94a3b8;
-  font-size: 0.88rem;
+  padding: 4px 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #334155;
+  font-size: 0.92rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  box-shadow: none;
+  width: fit-content;
 }
 .link-icon-box {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   flex-shrink: 0;
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 .link-icon-quick {
-  color: var(--pm-yellow);
+  color: #d97706;
 }
 .link-icon-srv {
-  color: #f87171;
+  color: var(--pm-red);
 }
 .link-title {
-  flex-grow: 1;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 .link-arrow {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.25);
-  opacity: 0.4;
-  transition: all 0.25s ease;
-  transform: translateX(-3px);
+  color: var(--pm-red);
+  opacity: 0;
+  transition: all 0.2s ease;
+  transform: translateX(-4px);
 }
 .footer-nav-link:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(250, 204, 21, 0.25);
+  background: transparent;
+  border-color: transparent;
   transform: translateX(4px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
+  color: var(--pm-red);
 }
 .footer-nav-link:hover .link-title {
-  color: #ffffff;
+  color: var(--pm-red);
+  font-weight: 600;
 }
 .footer-nav-link:hover .link-arrow {
   opacity: 1;
-  color: var(--pm-yellow);
-  transform: translateX(2px);
+  transform: translateX(0);
 }
 .footer-nav-link:hover .link-icon-quick {
-  background: linear-gradient(135deg, var(--pm-red), #b81414);
-  color: #ffffff;
-  border-color: var(--pm-red);
-  box-shadow: 0 0 10px rgba(230, 25, 25, 0.4);
-  transform: scale(1.08);
+  transform: scale(1.15);
+  color: var(--pm-red);
 }
 .footer-nav-link:hover .link-icon-srv {
-  background: linear-gradient(135deg, var(--pm-yellow), #eab308);
-  color: #08090c;
-  border-color: var(--pm-yellow);
-  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
-  transform: scale(1.08);
+  transform: scale(1.15);
+  color: var(--pm-red);
 }
 
-/* Contact Cards */
+/* Contact Cards (Clean, Unboxed) */
 .footer-contact-items {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 .footer-contact-card {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 12px 14px;
-  border-radius: 12px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border: none;
+  padding: 2px 0;
+  border-radius: 0;
+  transition: transform 0.2s ease;
+  box-shadow: none;
 }
 .footer-contact-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(250, 204, 21, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border-color: transparent;
+  transform: translateX(3px);
+  box-shadow: none;
 }
 .contact-card-icon {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  font-size: 1rem;
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
@@ -2420,19 +2510,19 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   transform: scale(1.08);
 }
 .contact-card-icon.icon-yellow {
-  background: rgba(250, 204, 21, 0.12);
-  color: var(--pm-yellow);
-  border: 1px solid rgba(250, 204, 21, 0.25);
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 .contact-card-icon.icon-red {
-  background: rgba(230, 25, 25, 0.12);
-  color: #f87171;
-  border: 1px solid rgba(230, 25, 25, 0.25);
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--pm-red);
+  border: 1px solid rgba(220, 38, 38, 0.2);
 }
 .contact-card-icon.icon-dark {
-  background: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
 }
 .contact-card-info {
   display: flex;
@@ -2441,7 +2531,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 }
 .contact-card-label {
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   color: #64748b;
@@ -2449,17 +2539,18 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 }
 .contact-card-val {
   font-size: 0.88rem;
-  color: #cbd5e1;
+  color: #0f172a;
+  font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 .contact-card-val:hover {
-  color: var(--pm-yellow) !important;
+  color: var(--pm-red) !important;
 }
 .highlight-phone {
-  color: var(--pm-yellow);
+  color: var(--pm-red);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 /* WhatsApp Live Chat */
@@ -2503,13 +2594,11 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 
 /* Bottom Strip */
 .footer-bottom {
-  background: rgba(4, 5, 8, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #f1f5f9;
   padding: 16px 0;
   position: relative;
   z-index: 2;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #e2e8f0;
 }
 .footer-bottom-accent {
   position: absolute;
@@ -2517,7 +2606,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(230, 25, 25, 0.45) 25%, rgba(250, 204, 21, 0.55) 75%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(220, 38, 38, 0.35) 25%, rgba(245, 158, 11, 0.45) 75%, transparent 100%);
 }
 .footer-copy-wrap {
   display: inline-flex;
@@ -2525,27 +2614,23 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   gap: 10px;
   flex-wrap: wrap;
   font-size: 0.86rem;
-  color: #94a3b8;
+  color: #64748b;
 }
 .footer-copyright-text {
-  color: #94a3b8;
+  color: #64748b;
 }
 .footer-brand-pill {
-  color: #ffffff;
+  color: #0f172a;
   font-weight: 800;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 2px 8px;
-  border-radius: 6px;
   letter-spacing: 0.3px;
 }
 .footer-copy-divider {
-  color: rgba(255, 255, 255, 0.2);
+  color: #cbd5e1;
 }
 .footer-copy-sub {
-  color: #cbd5e1;
+  color: #475569;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
 }
@@ -2561,36 +2646,34 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 .footer-legal-pills {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 .legal-pill-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: #94a3b8;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  padding: 2px 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 .legal-pill-btn i {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: #94a3b8;
   transition: color 0.2s ease;
 }
 .legal-pill-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(250, 204, 21, 0.35);
-  color: #ffffff;
+  background: transparent;
+  color: var(--pm-red);
   transform: translateY(-1px);
 }
 .legal-pill-btn:hover i {
-  color: var(--pm-yellow);
+  color: var(--pm-red);
 }
 
 /* Responsive Footer Tweaks */
@@ -3007,26 +3090,32 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
     display: none !important;
   }
 
-  /* Stack remaining Floating Action Buttons (WhatsApp & Calculator) cleanly on the bottom right above the call bar */
-  .pm-floating-dock-right {
-    right: 14px;
-    bottom: 74px;
-    gap: 10px;
+  /* Floating Action Buttons on Mobile:
+     - Left Dock (WhatsApp): positioned at bottom-left corner just above the sticky call bar
+     - Right Dock (Get Quote): positioned at bottom-right corner just above the sticky call bar
+     Separating them prevents stacking into a 180px-high tower that blocks interactive page elements (like star filters) */
+  .pm-floating-dock-left {
+    left: 12px;
+    right: auto;
+    bottom: 66px;
+    gap: 8px;
+    z-index: 1030;
   }
 
-  .pm-floating-dock-left {
+  .pm-floating-dock-right {
+    right: 12px;
     left: auto;
-    right: 14px;
-    bottom: 128px;
-    gap: 10px;
+    bottom: 66px;
+    gap: 8px;
+    z-index: 1030;
   }
 
   .pm-float-btn {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
-  .pm-float-btn.float-whatsapp { font-size: 1.25rem; }
-  .pm-float-btn.float-quote { font-size: 1.1rem; }
+  .pm-float-btn.float-whatsapp { font-size: 1.2rem; }
+  .pm-float-btn.float-quote { font-size: 1.05rem; }
   .pm-float-btn::before,
   .pm-float-btn::after {
     display: none;
@@ -3267,8 +3356,8 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
     border-radius: 50%;
   }
   .btn-nav-quote {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    padding: 7px 12px;
+    font-size: 0.78rem;
   }
   .brand-name {
     font-size: 1.15rem;
@@ -3279,9 +3368,27 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
     font-size: 1.15rem;
   }
   .mobile-btn {
-    width: 42px;
-    height: 42px;
-    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-nav-quote {
+    padding: 6px 9px;
+    font-size: 0.74rem;
+  }
+  .btn-nav-quote i {
+    display: none;
+  }
+  .mobile-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+  .brand-name {
+    font-size: 1.02rem;
   }
 }
 
@@ -6425,38 +6532,58 @@ a.pm-cta-btn-whatsapp:hover {
   margin: 0;
 }
 
-/* CTA Banner */
+/* CTA Banner (Light Background Theme) */
 .pm-about-cta-banner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-radius: 20px;
-  padding: 40px 36px;
-  color: #ffffff;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 12% 20%, rgba(254, 243, 199, 0.65) 0%, transparent 48%),
+    radial-gradient(circle at 88% 75%, rgba(254, 226, 226, 0.65) 0%, transparent 48%),
+    linear-gradient(135deg, #ffffff 0%, #fffdfa 50%, #fff5f5 100%);
+  border: 1px solid #fee2e2;
+  border-left: 5px solid var(--pm-red);
+  border-radius: 24px;
+  padding: 42px 38px;
+  color: #0f172a;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 32px rgba(230, 25, 25, 0.06), 0 2px 8px rgba(15, 23, 42, 0.03);
 }
 
 .pm-about-cta-banner::before {
   content: '';
   position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(230, 25, 25, 0.25) 0%, transparent 70%);
+  inset: 0;
+  background-image: radial-gradient(rgba(230, 25, 25, 0.06) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pm-about-cta-banner::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
+  z-index: 1;
 }
 
 .pm-about-cta-title {
-  font-size: 1.7rem;
+  font-size: 1.75rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .pm-about-cta-desc {
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: #475569;
   margin: 0;
   line-height: 1.6;
 }
@@ -6519,8 +6646,19 @@ a.pm-cta-btn-whatsapp:hover {
   }
 
   .pm-about-cta-banner {
-    padding: 28px 20px;
+    padding: 28px 18px;
+    border-radius: 18px;
+    border-left-width: 4px;
     text-align: center;
+  }
+  .pm-about-cta-title {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+  }
+  .pm-about-cta-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
   }
 }
 
@@ -6622,6 +6760,26 @@ a.pm-cta-btn-whatsapp:hover {
   border-radius: 20px;
   padding: 24px 28px;
   box-shadow: 0 4px 24px rgba(230, 25, 25, 0.05);
+}
+
+.pm-reviews-hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pm-reviews-hero-text {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.pm-verified-feedback-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.76rem;
+  letter-spacing: 0.5px;
 }
 
 .pm-reviews-score-badge {
@@ -7126,6 +7284,200 @@ a.pm-cta-btn-whatsapp:hover {
   border-color: var(--pm-red) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 12px var(--pm-red-glow) !important;
+}
+
+/* ==========================================================================
+   Reviews Page Responsive Styles (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .pm-reviews-page-wrap {
+    padding: 32px 0 60px;
+  }
+  .pm-reviews-hero-bar {
+    padding: 20px 20px;
+  }
+  .pm-reviews-hero-bar .col-lg-4 {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pm-reviews-page-wrap {
+    padding: 20px 0 45px;
+  }
+  .pm-reviews-hero-bar {
+    padding: 20px 16px;
+    border-radius: 18px;
+    border-left: 4px solid var(--pm-red);
+    margin-bottom: 22px !important;
+    overflow: visible !important;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  }
+  .pm-reviews-hero-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    width: 100%;
+  }
+  .pm-reviews-hero-text {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+  .pm-reviews-score-badge {
+    min-width: 78px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    margin: 0 auto;
+    box-shadow: 0 6px 16px var(--pm-red-glow);
+  }
+  .pm-reviews-score-num {
+    font-size: 1.65rem;
+    margin-bottom: 2px;
+  }
+  .pm-reviews-score-stars {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+  }
+  .pm-verified-feedback-badge {
+    white-space: normal !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 14px;
+    font-size: 0.74rem;
+    line-height: 1.35;
+    max-width: 100%;
+    border-radius: 50px;
+    margin: 0 auto 4px;
+    text-align: center;
+  }
+  .pm-reviews-hero-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.3;
+    word-break: break-word;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .pm-reviews-hero-sub {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #64748b;
+    margin: 0 auto;
+  }
+  .pm-write-review-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 20px;
+    font-size: 0.92rem;
+    margin-top: 6px;
+    border-radius: 999px;
+  }
+
+  /* Star Filter Pills - Fully Visible, Centered, Natural Responsive Wrap, ZERO Cut-offs */
+  .pm-star-filter-pills {
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 0;
+    overflow: visible !important;
+    width: 100%;
+  }
+  .pm-star-filter-pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 50px;
+  }
+
+  /* Review Bento Cards */
+  .pm-review-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+  .pm-review-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .pm-review-footer {
+    padding-top: 12px;
+  }
+  .pm-review-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .pm-review-author-name {
+    font-size: 0.88rem;
+  }
+  .pm-review-author-email {
+    font-size: 0.72rem;
+  }
+  .pm-review-verified-pill {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+
+  /* Empty State Card */
+  .pm-reviews-empty-card {
+    padding: 35px 16px;
+    border-radius: 16px;
+  }
+  .pm-reviews-empty-icon-wrap {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+  }
+  .pm-reviews-empty-title {
+    font-size: 1.2rem;
+  }
+  .pm-reviews-empty-sub {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+  .pm-reviews-empty-card .pm-btn-red {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+
+  /* Reviews Pagination */
+  .pm-reviews-pagination .page-item .page-link {
+    padding: 6px 11px;
+    font-size: 0.82rem;
+    margin: 0 2px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pm-reviews-hero-bar {
+    padding: 18px 12px;
+  }
+  .pm-reviews-score-badge {
+    min-width: 72px;
+    padding: 8px 14px;
+  }
+  .pm-reviews-score-num {
+    font-size: 1.5rem;
+  }
+  .pm-reviews-hero-title {
+    font-size: 1.15rem;
+  }
+  .pm-star-filter-pill {
+    padding: 6px 11px;
+    font-size: 0.78rem;
+  }
 }
 
 /* ==========================================================================

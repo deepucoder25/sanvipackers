@@ -71,7 +71,14 @@ $postTitle = $post->title ?? 'Blog Article';
 
                     <!-- Article Body Content -->
                     <div class="pm-blog-content lh-lg mb-4">
-                        <?= nl2br($post->description ?? '') ?>
+                        <?php 
+                        $desc = $post->description ?? '';
+                        if (strip_tags($desc) !== $desc) {
+                            echo $desc;
+                        } else {
+                            echo nl2br(esc($desc));
+                        }
+                        ?>
                     </div>
 
                     <!-- Relocation Callout Banner -->

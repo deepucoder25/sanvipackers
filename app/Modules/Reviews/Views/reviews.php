@@ -20,7 +20,7 @@ $phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPho
         <div class="pm-reviews-hero-bar mb-4">
             <div class="row align-items-center g-3">
                 <div class="col-lg-8">
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="pm-reviews-hero-flex">
                         <div class="pm-reviews-score-badge">
                             <span class="pm-reviews-score-num">4.9</span>
                             <div class="pm-reviews-score-stars">
@@ -31,17 +31,19 @@ $phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPho
                                 <i class="bi bi-star-half" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <div>
-                            <span class="badge pm-service-badge mb-1">
-                                <i class="bi bi-patch-check-fill text-success me-1"></i> Verified Customer Feedback
-                            </span>
+                        <div class="pm-reviews-hero-text">
+                            <div class="mb-1">
+                                <span class="badge pm-service-badge pm-verified-feedback-badge">
+                                    <i class="bi bi-patch-check-fill text-success me-1"></i> Verified Customer Feedback
+                                </span>
+                            </div>
                             <h2 class="pm-reviews-hero-title mb-1">Customer Reviews &amp; Ratings</h2>
                             <p class="pm-reviews-hero-sub mb-0">Genuine ratings and moving experiences shared by our clients across India.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 text-lg-end">
-                    <button type="button" class="pm-btn-red" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                <div class="col-lg-4 text-center text-lg-end">
+                    <button type="button" class="pm-btn-red pm-write-review-btn" data-bs-toggle="modal" data-bs-target="#reviewModal">
                         <i class="bi bi-pencil-square" aria-hidden="true"></i> Write a Review
                     </button>
                 </div>

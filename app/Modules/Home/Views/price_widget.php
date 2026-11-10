@@ -3,8 +3,8 @@ $priceRates = [
     [
         'sno'      => '1',
         'type'     => '1 RK / Studio Shifting',
-        'packing'  => 'Cartons + Bubble Wrap',
         'local'    => '₹2,500 – ₹4,500',
+        'upto50'   => '₹4,000 – ₹6,500',
         'domestic' => '₹6,000 – ₹11,000',
         'crew'     => '2 Handlers (2–3h)',
         'popular'  => false,
@@ -12,8 +12,8 @@ $priceRates = [
     [
         'sno'      => '2',
         'type'     => '1 BHK Complete Shifting',
-        'packing'  => '3-Layer + Bubble Wrap',
         'local'    => '₹3,500 – ₹6,500',
+        'upto50'   => '₹5,500 – ₹9,000',
         'domestic' => '₹8,500 – ₹16,000',
         'crew'     => '3 Handlers (3–4h)',
         'popular'  => false,
@@ -21,8 +21,8 @@ $priceRates = [
     [
         'sno'      => '3',
         'type'     => '2 BHK Complete Shifting',
-        'packing'  => 'Heavy 3-Layer + Foam',
         'local'    => '₹6,000 – ₹11,500',
+        'upto50'   => '₹8,500 – ₹15,000',
         'domestic' => '₹13,500 – ₹24,000',
         'crew'     => '4 Handlers (4–6h)',
         'popular'  => false,
@@ -30,8 +30,8 @@ $priceRates = [
     [
         'sno'      => '4',
         'type'     => '3 BHK / Villa Shifting',
-        'packing'  => 'Wooden Crates + Film',
         'local'    => '₹10,500 – ₹18,000',
+        'upto50'   => '₹13,500 – ₹22,000',
         'domestic' => '₹19,000 – ₹35,000',
         'crew'     => '5 Handlers (6–8h)',
         'popular'  => false,
@@ -39,8 +39,8 @@ $priceRates = [
     [
         'sno'      => '5',
         'type'     => 'Bike / Two-Wheeler',
-        'packing'  => 'Scratch Wrap + Stand',
         'local'    => '₹1,500 – ₹3,000',
+        'upto50'   => '₹2,500 – ₹4,500',
         'domestic' => '₹3,500 – ₹8,000',
         'crew'     => 'Covered Carrier',
         'popular'  => false,
@@ -48,8 +48,8 @@ $priceRates = [
     [
         'sno'      => '6',
         'type'     => 'Car Transportation',
-        'packing'  => 'Enclosed Carrier',
         'local'    => '₹3,000 – ₹6,000',
+        'upto50'   => '₹4,500 – ₹8,000',
         'domestic' => '₹8,000 – ₹18,500',
         'crew'     => 'GPS Tracked',
         'popular'  => false,
@@ -57,8 +57,8 @@ $priceRates = [
     [
         'sno'      => '7',
         'type'     => 'Office Relocation',
-        'packing'  => 'Anti-Static IT Wrap',
         'local'    => '₹8,000 – ₹16,000',
+        'upto50'   => '₹12,000 – ₹22,000',
         'domestic' => '₹18,000 – ₹38,000',
         'crew'     => 'Corporate Team',
         'popular'  => false,
@@ -74,7 +74,7 @@ $priceRates = [
                 Packers and Movers <span class="text-danger">Rate Chart</span>
             </h2>
             <p class="text-muted small mb-0">
-                Transparent standard rates for local shifting and domestic intercity relocation
+                Transparent standard rates for local shifting, upto 50 km and domestic intercity relocation
             </p>
         </div>
 
@@ -93,15 +93,15 @@ $priceRates = [
                         <tr>
                             <th scope="col" class="text-center" style="width: 45px;">#</th>
                             <th scope="col">Shifting Requirement</th>
-                            <th scope="col">Packing Standard</th>
                             <th scope="col" class="text-center">Local Moving</th>
+                            <th scope="col" class="text-center">Upto 50 Km</th>
                             <th scope="col" class="text-center">Domestic Moving</th>
                             <th scope="col" class="text-center">Crew &amp; Time</th>
                             <th scope="col" class="text-center" style="width: 110px;">Action</th>
                         </tr>
                     </thead>
 
-                    <!-- Table Body with Strict Single-Line Rows -->
+                    <!-- Table Body with Strict Single-Line Rows & Normal Black Text -->
                     <tbody>
                         <?php foreach ($priceRates as $row): ?>
                             <tr class="<?= $row['popular'] ? 'table-warning bg-opacity-25' : '' ?>">
@@ -112,9 +112,9 @@ $priceRates = [
                                         <span class="badge bg-danger rounded-pill ms-1 small">Popular</span>
                                     <?php endif; ?>
                                 </td>
-                                <td><?= esc($row['packing']) ?></td>
                                 <td class="text-center fw-bold text-dark"><?= esc($row['local']) ?></td>
-                                <td class="text-center fw-bold text-danger"><?= esc($row['domestic']) ?></td>
+                                <td class="text-center fw-bold text-dark"><?= esc($row['upto50']) ?></td>
+                                <td class="text-center fw-bold text-dark"><?= esc($row['domestic']) ?></td>
                                 <td class="text-center text-secondary"><?= esc($row['crew']) ?></td>
                                 <td class="text-center">
                                     <button type="button" 

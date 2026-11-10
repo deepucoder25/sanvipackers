@@ -24,9 +24,9 @@ $testimonials = [
 ?>
 
 <section class="py-5 pm-testimonial-section position-relative">
-    <div class="container py-lg-5">
+    <div class="container py-lg-5 position-relative z-2">
         <div class="row align-items-center g-5">
-            <!-- Left Column: Title, Trust Badges, Subtitle & Interactive Navigation Buttons -->
+            <!-- Left Column: Title, Trust Badges & Metrics -->
             <div class="col-lg-5 col-12 text-center text-lg-start">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase mb-3 pm-service-badge">
                     <i class="bi bi-chat-heart-fill me-1"></i> Customer Stories
@@ -41,7 +41,7 @@ $testimonials = [
                 </p>
 
                 <!-- 4.9/5 Rating & Verified Moves Trust Strip -->
-                <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 my-4 py-2 border-top border-bottom border-secondary border-opacity-25">
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 my-4 py-2 border-top border-bottom border-danger-subtle">
                     <div class="d-flex align-items-center gap-1 text-warning fs-5">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -49,14 +49,14 @@ $testimonials = [
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                     </div>
-                    <div class="border-start border-secondary border-opacity-50 ps-3 text-start">
-                        <div class="fw-bold text-white small">4.9 / 5.0 Rating</div>
-                        <div class="text-white-50 pm-testi-stat-sub">Based on 25,000+ verified moves</div>
+                    <div class="border-start border-danger-subtle ps-3 text-start">
+                        <div class="fw-bold text-dark small">4.9 / 5.0 Rating</div>
+                        <div class="text-muted pm-testi-stat-sub">Based on 25,000+ verified moves</div>
                     </div>
                 </div>
 
                 <!-- Trust Guarantee Chips -->
-                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mb-4">
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mb-3">
                     <span class="badge rounded-pill pm-testi-chip">
                         <i class="bi bi-shield-check text-warning me-1"></i> 100% Insured
                     </span>
@@ -68,22 +68,30 @@ $testimonials = [
                     </span>
                 </div>
 
-                <!-- Navigation Prompt & Page Switcher Buttons -->
-                <div class="pt-2">
-                    <p class="pm-testi-prompt mb-3">Read what our clients say.</p>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3">
+                <p class="pm-testi-prompt mb-0 d-none d-lg-block">
+                    <i class="bi bi-check2-circle text-danger me-1"></i> Read handwritten relocations diaries from our customers.
+                </p>
+            </div>
+
+            <!-- Right Column: The Spiral Ruled Notepad with Page Back & Page Forward on Top -->
+            <div class="col-lg-7 col-12">
+                <!-- Navigation Toolbar placed directly ABOVE the testimonial box -->
+                <div class="d-flex align-items-center justify-content-between mb-3 px-1 pm-testi-top-toolbar">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill px-3 py-2 small fw-bold">
+                            <i class="bi bi-journal-bookmark-fill me-1"></i> Verified Client Diary
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 ms-auto">
                         <button class="btn pm-btn-page-prev rounded-pill" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous Testimonial">
-                            Page Back
+                            <i class="bi bi-arrow-left me-1"></i> Page Back
                         </button>
                         <button class="btn pm-btn-page-next rounded-pill" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next Testimonial">
-                            Page Forward
+                            Page Forward <i class="bi bi-arrow-right ms-1"></i>
                         </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right Column: The Spiral Ruled Notepad -->
-            <div class="col-lg-7 col-12">
                 <div class="pm-notebook-wrapper">
                     <div class="pm-notebook-paper position-relative">
                         <!-- Spiral Binder Spine (9 Wire Coil Rings through Punched Holes) -->
