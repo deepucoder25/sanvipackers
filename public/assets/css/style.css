@@ -6635,6 +6635,109 @@ a.pm-cta-btn-whatsapp:hover {
   margin: 0;
 }
 
+/* Achievements & Milestones Cards */
+.pm-achievement-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 20px;
+  height: 100%;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.pm-achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  border-color: rgba(230, 25, 25, 0.3);
+}
+
+.pm-achievement-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
+}
+
+.pm-achievement-card:hover .pm-achievement-badge {
+  background: var(--pm-red);
+  color: #ffffff;
+}
+
+/* Core Values Cards */
+.pm-value-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 20px;
+  height: 100%;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.pm-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  border-color: rgba(230, 25, 25, 0.3);
+}
+
+.pm-value-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(230, 25, 25, 0.08);
+  color: var(--pm-red);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
+}
+
+.pm-value-card:hover .pm-value-icon {
+  background: var(--pm-red);
+  color: #ffffff;
+}
+
+.pm-value-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.pm-value-text {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pm-achievement-card .d-flex .pm-achievement-badge,
+.pm-value-card .d-flex .pm-value-icon {
+  margin-bottom: 0 !important;
+  flex-shrink: 0;
+}
+
+.pm-achievement-card .d-flex .pm-pillar-title,
+.pm-value-card .d-flex .pm-value-title {
+  margin-bottom: 0 !important;
+  line-height: 1.25;
+}
+
+.pm-about-hero-img-wrap {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0 !important;
+}
+
 /* 4-Step Process Section */
 .pm-step-box {
   background: #ffffff;

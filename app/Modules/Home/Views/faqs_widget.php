@@ -1,28 +1,36 @@
 <?php
 $faqs = [
     [
-        'q' => 'How are moving charges calculated? Are there any hidden costs?',
-        'a' => 'Our pricing is 100% upfront and transparent with zero hidden fees. Estimates are based on total volume of goods, transport distance between origin and destination, packaging tier (multi-layer bubble wrap, foam, crates), floor levels, and optional transit insurance. You receive a guaranteed written quote before booking.',
+        'q' => 'Which are the relocation services offered by Sanvi Packers and Movers?',
+        'a' => 'Sanvi Packers and Movers provides relocation services for household shifting, office relocation, car and bike transportation, warehousing, packing and moving, and loading and unloading. The requirements can be discussed to arrange suitable shifting services.',
     ],
     [
-        'q' => 'Is comprehensive transit insurance provided for all my goods?',
-        'a' => 'Yes, we provide 100% comprehensive all-India transit insurance covering unforeseen physical loss, road mishaps, or transit damage during intercity and intracity relocation. In the rare event of a claim, our dedicated claims desk facilitates fast documentation and settlement.',
+        'q' => 'Is Sanvi Packers and Movers a certified company?',
+        'a' => 'Yes, Sanvi Packers and Movers is ISO 9001:2015 Certified and IBA Approved relocation company. Organized relocation processes and professional moving assistance is ensured by our team.',
     ],
     [
-        'q' => 'How many days in advance should I book my relocation?',
-        'a' => 'For local within-city shifting, we suggest booking 2 to 3 days in advance. For intercity long-distance relocations, booking 5 to 7 days ahead guarantees dedicated container trailer reservation and your preferred loading time slot.',
+        'q' => 'Do Sanvi Packers and Movers provide relocation services throughout India?',
+        'a' => 'Yes, our relocation services cover more than 500 cities across India. The customers can get assistance for local or inter-city shifting services, depending on the destination and availability.',
     ],
     [
-        'q' => 'What packing materials are used for delicate glassware and TVs?',
-        'a' => 'We utilize heavy-duty multi-layer certified bubble wrap, corrugated sheets, edge protectors, and specialized wooden crates for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright red fragile tags and loaded with hydraulic cushioning.',
+        'q' => 'How do you pack belongings for transportation?',
+        'a' => 'Depending on the nature of the goods, various packing materials will be used. These may be multi-layer bubble sheets, cardboard boxes, protective wrapping materials, and suitable cartons. The fragile items, electronic appliances and furniture will be appropriately packed prior to the process of loading.',
     ],
     [
-        'q' => 'Can you transport my car or two-wheeler safely across cities?',
-        'a' => 'Yes! We operate specialized enclosed multi-car carrier trailers and custom bike crating systems. Every vehicle undergoes a detailed pre-loading inspection report (with photos and odometer reading) and is securely strapped with wheel stoppers during highway transit.',
+        'q' => 'How do you move heavy furniture and household appliances?',
+        'a' => 'Our moving team uses heavy mechanical dollies, ramps and appliance harness straps for moving the bulky items. Suitable practices are followed while lifting and handling the belongings and property to avoid damage.',
     ],
     [
-        'q' => 'What items are restricted or cannot be loaded into the moving truck?',
-        'a' => 'For safety and regulatory compliance, we do not transport flammable liquids, gas cylinders (unless completely emptied and certified), hazardous chemicals, jewellery, liquid cash, and perishable foodstuffs. Our survey team provides a complete pre-move safety checklist.',
+        'q' => 'Can I track my shipment during transportation?',
+        'a' => 'Yes, GPS live tracking facility is provided to update the customers regarding the status of their shipment during transportation. Coordinate with the moving team for relevant information.',
+    ],
+    [
+        'q' => 'Do Sanvi Packers and Movers provide transit insurance?',
+        'a' => 'Yes, transit insurance is offered to customers for getting extra protection against the risk involved during transportation. The insurance policy can be discussed prior to the relocation.',
+    ],
+    [
+        'q' => 'What factors affect the cost of hiring packers and movers?',
+        'a' => 'There are various factors such as quantity of goods, size of home or office, distance between locations, packing materials, labor and additional services which determine the cost of relocation. Informing us with the details help to prepare a suitable quotation.',
     ],
 ];
 ?>

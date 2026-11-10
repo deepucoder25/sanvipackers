@@ -100,8 +100,15 @@
                     </li>
                     <li>
                         <a href="<?= site_url('about') ?>" class="footer-nav-link">
-                            <span class="link-icon-box link-icon-quick"><i class="bi bi-shield-check"></i></span>
+                            <span class="link-icon-box link-icon-quick"><i class="bi bi-info-circle-fill"></i></span>
                             <span class="link-title">About Us</span>
+                            <i class="bi bi-chevron-right link-arrow"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('why-choose-us') ?>" class="footer-nav-link">
+                            <span class="link-icon-box link-icon-quick"><i class="bi bi-shield-check"></i></span>
+                            <span class="link-title">Why Choose Us</span>
                             <i class="bi bi-chevron-right link-arrow"></i>
                         </a>
                     </li>

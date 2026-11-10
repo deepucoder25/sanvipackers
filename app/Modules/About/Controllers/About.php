@@ -10,7 +10,7 @@ class About extends BaseController
     public function index(): string
     {
         $data['title']       = "About Us | " . $this->comp['company3'];
-        $data['description'] = "Learn more about " . $this->comp['company3'] . ", our legacy, infrastructure, expert team, mission, and vision in the packing and moving industry.";
+        $data['description'] = "About " . $this->comp['company3'] . " — ISO 9001:2015 Certified and IBA Approved relocation company providing safe household shifting, office relocation, vehicle transport, and warehousing across 500+ Indian cities.";
         $data['page']        = 'about';
         $data['module']      = 'about';
         $data['view_file']   = 'Modules\About\Views\about';
@@ -21,10 +21,10 @@ class About extends BaseController
     public function choose(): string
     {
         $data['title']       = "Why Choose Us | " . $this->comp['company3'];
-        $data['description'] = "Discover why customers trust " . $this->comp['company3'] . " for safe, reliable, and transparently priced shifting, vehicle transport, and corporate relocation services.";
+        $data['description'] = "Why Choose " . $this->comp['company3'] . " — Because the transportation of your belongings is about more than just transport. ISO 9001:2015 Certified and IBA Approved relocation across 500+ Indian cities.";
         $data['page']        = 'why-choose-us';
-        $data['module']      = 'whychooseus';
-        $data['view_file']   = 'Modules\WhyChooseUs\Views\why_choose_us';
+        $data['module']      = 'about';
+        $data['view_file']   = 'Modules\About\Views\choose';
 
         return Template::layout2($data);
     }

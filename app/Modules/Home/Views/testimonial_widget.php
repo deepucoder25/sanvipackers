@@ -1,24 +1,29 @@
 <?php
 $testimonials = [
     [
-        'quote'    => 'I was relocating my 3BHK household from Delhi to Bangalore and terrified of fragile glassware damage. Sanvi Packers team packed everything with multi-layer certified bubble wrap without a single scratch. The container truck arrived on schedule with live GPS tracking on WhatsApp. Doorstep unpacking and reassembly was completely smooth and stress-free. Best relocation service I have ever experienced!',
-        'name'     => 'Rajesh Sharma',
-        'role'     => 'Software Architect, Delhi to Bangalore',
+        'quote'    => 'Recently we shifted to our new 3BHK house, and there were many things to be packed. Our furniture, kitchenware and appliances have been taken care of by the Sanvi team very well.',
+        'name'     => 'Rahul Sharma',
+        'role'     => 'Kolkata, West Bengal (3BHK Shifting)',
     ],
     [
-        'quote'    => 'We shifted our 45-workstation corporate office over the weekend with zero disruption. The crew arrived Friday evening with hydraulic lifting equipment and heavy-duty file cartons. Every desktop and server rack was room-labeled and securely transported. By Monday 9 AM, our entire team resumed operations without an hour of downtime. Truly dependable corporate movers.',
-        'name'     => 'Amit Verma',
-        'role'     => 'Operations Director, Mumbai to Pune',
+        'quote'    => 'Our office equipment including the computers and workstations have been shifted by the team of Sanvi Packers and Movers. Proper planning of packing and loading has helped us get rid of unnecessary confusion. We are satisfied with their cooperation.',
+        'name'     => 'Ankit Verma',
+        'role'     => 'Gurugram, Haryana (Office Shifting)',
     ],
     [
-        'quote'    => 'I was extremely nervous about shipping my new SUV along with vintage wooden furniture across states. They loaded the vehicle in a dedicated enclosed car trailer with wheel locks. Safe transit with zero scratches, accurate odometer reading, and instant vehicle inspection report. Transparent quote with zero hidden fees at destination. Highly recommended!',
-        'name'     => 'Pooja Kulkarni',
-        'role'     => 'Senior HR Consultant, Pune to Hyderabad',
+        'quote'    => 'I was feeling worried about how to transport my newly bought car during relocation. But the team has guided me about the process and provided the facility of GPS tracking. My car reached safely.',
+        'name'     => 'Sandeep Mehta',
+        'role'     => 'Pune, Maharashtra (Car Shifting)',
     ],
     [
-        'quote'    => 'Having served across India in the defence forces, I have relocated eight times in my career. Sanvi Packers is hands down the most disciplined and polite moving crew I have hired. They handled our delicate brass temple idols, framed art, and antique furniture with genuine care and respect. 100% insured, timely, and honest pricing.',
-        'name'     => 'Col. R. K. Nair (Retd.)',
-        'role'     => 'Defence Relocation, Chandigarh to Kochi',
+        'quote'    => 'Some heavy furniture and a refrigerator needed special attention, and the team has used proper equipment for the job. The whole process has been done cautiously including handling through narrow doors.',
+        'name'     => 'Priya Agarwal',
+        'role'     => 'Jaipur, Rajasthan (Household Relocation)',
+    ],
+    [
+        'quote'    => 'Shifting of my entire household has been done to Bengaluru due to my job transfer. The GPS tracking and regular updates of transit have been useful for us during the long-distance shifting process.',
+        'name'     => 'Vikram Roy',
+        'role'     => 'Bengaluru, Karnataka (Long-Distance Move)',
     ],
 ];
 ?>

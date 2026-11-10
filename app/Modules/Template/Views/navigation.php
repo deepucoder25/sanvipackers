@@ -74,7 +74,7 @@
                 </a>
             </li>
             <?php 
-            $aboutPages = ['about', 'faqs', 'reviews', 'single-review', 'privacy', 'privacy-policy', 'terms', 'terms-and-conditions', 'photo-gallery', 'gallery'];
+            $aboutPages = ['about', 'why-choose-us', 'choose', 'faqs', 'reviews', 'single-review', 'privacy', 'privacy-policy', 'terms', 'terms-and-conditions', 'photo-gallery', 'gallery'];
             $isAboutActive = in_array($page, $aboutPages);
             ?>
             <li class="nav-item-dropdown">
@@ -89,6 +89,12 @@
                         <a href="<?= site_url('about') ?>" class="nav-dropdown-item <?= ($page === 'about') ? 'active' : '' ?>">
                             <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-info-circle-fill"></i></span>
                             <span class="nav-dropdown-text">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= site_url('why-choose-us') ?>" class="nav-dropdown-item <?= in_array($page, ['why-choose-us', 'choose']) ? 'active' : '' ?>">
+                            <span class="nav-dropdown-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+                            <span class="nav-dropdown-text">Why Choose Us</span>
                         </a>
                     </li>
                     <li>

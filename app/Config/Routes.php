@@ -14,6 +14,7 @@ $routes->get('home', '\Modules\Home\Controllers\Home::index');
 // Company / About Routes
 $routes->get('about-us', '\Modules\About\Controllers\About::index');
 $routes->get('about', '\Modules\About\Controllers\About::index');
+$routes->get('why-choose-us', '\Modules\About\Controllers\About::choose');
 $routes->get('faqs', '\Modules\About\Controllers\About::faqs');
 $routes->addRedirect('testimonials', 'reviews', 301);
 $routes->get('privacy-policy', '\Modules\About\Controllers\About::privacy');

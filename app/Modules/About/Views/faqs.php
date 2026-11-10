@@ -2,51 +2,71 @@
 
 $faqs = [
     [
-        'category' => 'Pricing & Estimates',
-        'q'        => 'How are moving charges calculated? Are there any hidden costs?',
-        'a'        => 'Our shifting charges are 100% upfront and transparent with zero hidden costs. The exact quotation is based on total cargo volume, moving distance between origin and destination cities, floor levels and elevator availability, packaging tier (customized multi-layer foam & bubble), and transit insurance coverage. You receive a guaranteed written invoice before pickup.',
+        'category' => 'Services',
+        'q'        => 'Which are the relocation services offered by Sanvi Packers and Movers?',
+        'a'        => 'Sanvi Packers and Movers provides relocation services for household shifting, office relocation, car and bike transportation, warehousing, packing and moving, and loading and unloading. The requirements can be discussed to arrange suitable shifting services.',
     ],
     [
-        'category' => 'Transit & Insurance',
-        'q'        => 'Is comprehensive transit insurance provided for all my goods?',
-        'a'        => 'Yes, ' . $company3 . ' provides 100% comprehensive all-India transit insurance covering unforeseen physical loss, road mishaps, or transit damage during intercity and intracity relocation. In the rare event of damage, our dedicated claims desk facilitates swift cashless settlement assistance.',
+        'category' => 'Certifications',
+        'q'        => 'Is Sanvi Packers and Movers a certified company?',
+        'a'        => 'Yes, Sanvi Packers and Movers is ISO 9001:2015 Certified and IBA Approved relocation company. Organized relocation processes and professional moving assistance is ensured by our team.',
     ],
     [
-        'category' => 'Booking & Scheduling',
-        'q'        => 'How many days in advance should I book my relocation?',
-        'a'        => 'For local within-city shifting, we suggest booking 2 to 3 days in advance. For intercity long-distance moves, booking 5 to 7 days ahead guarantees dedicated closed-body container trailer reservation and your preferred loading time slot.',
+        'category' => 'Coverage',
+        'q'        => 'Do Sanvi Packers and Movers provide relocation services throughout India?',
+        'a'        => 'Yes, our relocation services cover more than 500 cities across India. The customers can get assistance for local or inter-city shifting services, depending on the destination and availability.',
     ],
     [
         'category' => 'Packing & Safety',
-        'q'        => 'What packing materials are used for delicate glassware, electronics, and LED TVs?',
-        'a'        => 'We utilize heavy-duty multi-layer certified bubble wrap, corrugated sheets, foam rolls, edge protectors, and specialized wooden crates for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright red warning tags and loaded with hydraulic cushioning.',
+        'q'        => 'How do you pack belongings for transportation?',
+        'a'        => 'Depending on the nature of the goods, various packing materials will be used. These may be multi-layer bubble sheets, cardboard boxes, protective wrapping materials, and suitable cartons. The fragile items, electronic appliances and furniture will be appropriately packed prior to the process of loading.',
     ],
     [
-        'category' => 'Vehicle Transport',
-        'q'        => 'Can you relocate cars and two-wheelers safely across cities?',
-        'a'        => 'Yes! We operate specialized enclosed multi-car carrier trailers and custom bike crating systems. Every vehicle undergoes a detailed pre-loading inspection report (with photos and odometer reading) and is securely strapped with wheel stoppers during highway transit.',
+        'category' => 'Equipment',
+        'q'        => 'How do you move heavy furniture and household appliances?',
+        'a'        => 'Our moving team uses heavy mechanical dollies, ramps and appliance harness straps for moving the bulky items. Suitable practices are followed while lifting and handling the belongings and property to avoid damage.',
     ],
     [
-        'category' => 'Safety & Compliance',
-        'q'        => 'What items are restricted or cannot be loaded into the moving truck?',
-        'a'        => 'For safety and regulatory compliance, we do not transport flammable liquids, gas cylinders (unless completely emptied and certified), hazardous chemicals, jewellery, physical cash, and perishable foodstuffs. Our survey team provides a complete pre-move safety checklist.',
+        'category' => 'Tracking',
+        'q'        => 'Can I track my shipment during transportation?',
+        'a'        => 'Yes, GPS live tracking facility is provided to update the customers regarding the status of their shipment during transportation. Coordinate with the moving team for relevant information.',
     ],
     [
-        'category' => 'Live Tracking',
-        'q'        => 'How can I track the live location of my moving container?',
-        'a'        => 'All long-distance moving trucks in our fleet are equipped with real-time GPS tracking. Once your goods are dispatched, your dedicated move supervisor shares live location updates and milestone alerts via WhatsApp until delivery.',
+        'category' => 'Transit Insurance',
+        'q'        => 'Do Sanvi Packers and Movers provide transit insurance?',
+        'a'        => 'Yes, transit insurance is offered to customers for getting extra protection against the risk involved during transportation. The insurance policy can be discussed prior to the relocation.',
     ],
     [
-        'category' => 'Unpacking & Setup',
-        'q'        => 'Do you provide doorstep unpacking and furniture re-assembly?',
-        'a'        => 'Yes! Our comprehensive door-to-door shifting service includes unloading, unpacking delicate items, assembling dismantled beds/wardrobes, and placing heavy furniture in your designated rooms. We also remove all packing debris.',
+        'category' => 'Vehicle Moving',
+        'q'        => 'Do you provide car and bike transportation services?',
+        'a'        => 'Yes, our relocation team provides car and bike shifting services for customers moving from one city to another city. The vehicle transportation is carried out using the suitable transportation means.',
+    ],
+    [
+        'category' => 'Warehousing',
+        'q'        => 'Can I store my belongings before moving to the new place?',
+        'a'        => 'Yes, we have warehousing facilities for customers needing storage of belongings for a certain period before final relocation or delivery. Contact our team to know about storage and other details.',
+    ],
+    [
+        'category' => 'Pricing',
+        'q'        => 'What factors affect the cost of hiring packers and movers?',
+        'a'        => 'There are various factors such as quantity of goods, size of home or office, distance between locations, packing materials, labor and additional services which determine the cost of relocation. Informing us with the details help to prepare a suitable quotation.',
+    ],
+    [
+        'category' => 'Booking',
+        'q'        => 'How far ahead should I book packers and movers for the shifting date?',
+        'a'        => 'We suggest our customers contact us at least 5-7 days before the shifting date. This will give us sufficient time to plan transportation and arrange other things required for the same. Early booking is suggested especially during peak seasons.',
+    ],
+    [
+        'category' => 'Booking Process',
+        'q'        => 'How do I book Sanvi Packers and Movers for the shifting services?',
+        'a'        => 'You can reach out to Sanvi Packers and Movers either from our website or through the customer support desk. You need to communicate the location where you currently are, where you would like to shift, the date of shifting and the number of the items you want to move.',
     ],
 ];
 ?>
 
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Frequently Asked Questions (FAQs)',
-    'subtitle'    => 'Instant answers to common queries regarding moving charges, multi-layer packing, insurance, and vehicle transport.',
+    'subtitle'    => 'Get instant answers to all common questions about Sanvi Packers and Movers relocation services, pricing, packing, and booking.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'FAQs'],
@@ -84,14 +104,14 @@ $faqs = [
                     </div>
 
                     <p class="text-muted small mb-3">
-                        Skip reading &mdash; talk directly to our senior relocation supervisor for personalized price quotes and free survey scheduling.
+                        Skip reading &mdash; talk directly to our senior relocation supervisor for personalized price quotes and free moving consultation.
                     </p>
 
                     <!-- Direct Action Buttons -->
                     <div class="pm-faq-concierge-actions">
                         <a <?= $phonehtml ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
                             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                            <span class="d-none d-md-inline">Call <?= $phone ?></span>
+                            <span class="d-none d-md-inline">Call <?= esc($phone ?? '+91 99304 44433') ?></span>
                             <span class="d-md-none">Call Now</span>
                         </a>
                         <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
@@ -104,20 +124,20 @@ $faqs = [
                     <!-- Trust Checklist -->
                     <div class="pm-help-checklist d-flex flex-column gap-2 pt-2 border-top">
                         <div class="pm-help-check-item">
-                            <i class="bi bi-check-circle-fill text-danger" aria-hidden="true"></i>
-                            <span>100% Free Doorstep Survey</span>
+                            <i class="bi bi-patch-check-fill text-danger" aria-hidden="true"></i>
+                            <span>ISO 9001:2015 &amp; IBA Approved</span>
                         </div>
                         <div class="pm-help-check-item">
-                            <i class="bi bi-check-circle-fill text-warning" aria-hidden="true"></i>
-                            <span>Zero Hidden Charges Guarantee</span>
+                            <i class="bi bi-shield-fill-check text-warning" aria-hidden="true"></i>
+                            <span>Transit Insurance Options</span>
                         </div>
                         <div class="pm-help-check-item">
-                            <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
-                            <span>All-India Transit Insurance</span>
+                            <i class="bi bi-geo-alt-fill text-success" aria-hidden="true"></i>
+                            <span>500+ Indian Cities Network</span>
                         </div>
                         <div class="pm-help-check-item">
-                            <i class="bi bi-check-circle-fill text-danger" aria-hidden="true"></i>
-                            <span>ISO 9001:2015 Certified Movers</span>
+                            <i class="bi bi-truck text-danger" aria-hidden="true"></i>
+                            <span>GPS Live Fleet Tracking</span>
                         </div>
                     </div>
                 </div>
@@ -131,18 +151,18 @@ $faqs = [
                             <span class="section-badge mb-1">
                                 <i class="bi bi-question-circle-fill"></i> Clear &amp; Transparent
                             </span>
-                            <h2 class="section-title mb-0">Answers to Common Relocation Queries</h2>
+                            <h2 class="section-title mb-0">Frequently Asked Questions</h2>
                         </div>
-                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 rounded-pill small">
+                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 rounded-pill small fw-bold">
                             <?= count($faqs) ?> Answered Questions
                         </span>
                     </div>
 
                     <p class="text-muted small mb-4">
-                        Click on any question below to see detailed information regarding our pricing structure, multi-layer packing materials, delivery timelines, and transit insurance policies.
+                        Find answers to common questions about our packing materials, safety measures, vehicle shifting, pricing factors, and booking procedures with Sanvi Packers and Movers.
                     </p>
 
-                    <!-- Bootstrap Accordion -->
+                    <!-- Bootstrap Accordion with Semantic H3 Headers -->
                     <div class="accordion pm-faq-accordion" id="pmFaqAccordion">
                         <?php foreach ($faqs as $idx => $f): ?>
                             <?php
@@ -176,14 +196,14 @@ $faqs = [
                 <div class="col-lg-7">
                     <h2 class="pm-about-cta-title">Have a Specific Moving Question?</h2>
                     <p class="pm-about-cta-desc">
-                        Our relocation specialists are available round the clock to discuss inventory, route checkpoints, and custom wooden crating.
+                        Our relocation specialists are available round the clock to discuss inventory, shifting dates, route checkpoints, and custom packing requirements.
                     </p>
                 </div>
                 <div class="col-lg-5">
                     <div class="pm-about-cta-actions justify-content-lg-end">
                         <a <?= $phonehtml ?> class="pm-btn-red" title="Call Now" aria-label="Call Now">
                             <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                            <span class="d-none d-md-inline">Call <?= $phone ?></span>
+                            <span class="d-none d-md-inline">Call <?= esc($phone ?? '+91 99304 44433') ?></span>
                             <span class="d-md-none">Call Now</span>
                         </a>
                         <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-btn-whatsapp-pill" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
@@ -197,3 +217,23 @@ $faqs = [
         </div>
     </div>
 </div>
+
+<!-- SEO Schema.org FAQPage Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    <?php foreach ($faqs as $i => $item): ?>
+    {
+      "@type": "Question",
+      "name": <?= json_encode($item['q']) ?>,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": <?= json_encode($item['a']) ?>
+      }
+    }<?= ($i < count($faqs) - 1) ? ',' : '' ?>
+    <?php endforeach; ?>
+  ]
+}
+</script>

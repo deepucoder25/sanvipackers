@@ -133,10 +133,14 @@ $phoneHref     = !empty($phonehtml) ? $phonehtml : 'href="tel:+' . esc($cleanPho
                                 <span class="pm-review-date"><i class="bi bi-clock-history me-1"></i><?= esc($pDate) ?></span>
                             </div>
 
-                            <?php if (!empty($r->r_title) || !empty($r->city)): ?>
+                            <?php if (!empty($r->city)): ?>
                                 <span class="pm-review-city-chip">
-                                    <i class="bi bi-geo-alt-fill text-danger me-1"></i> <?= esc($r->city ?: $r->r_title) ?>
+                                    <i class="bi bi-geo-alt-fill text-danger me-1"></i> <?= esc($r->city) ?>
                                 </span>
+                            <?php endif; ?>
+
+                            <?php if (!empty($r->r_title)): ?>
+                                <h3 class="h6 fw-bold text-dark mt-2 mb-2 pm-review-card-title"><?= esc($r->r_title) ?></h3>
                             <?php endif; ?>
 
                             <p class="pm-review-text" itemprop="reviewBody">
