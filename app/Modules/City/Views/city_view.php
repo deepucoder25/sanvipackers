@@ -1,7 +1,7 @@
 <?php
 $city = !empty($city) ? $city : ($cityName ?? '');
 
-// Load custom city content variables ($htmlcontent, $htmlcontent1, etc.)
+// Load custom city content variables ($city_main_title, $city_intro_p1..p4, $city_why_choose_points, $city_process_steps, $city_case_study_*, $city_faqs, etc.)
 if (file_exists(__DIR__ . '/city_content.php')) {
     include __DIR__ . '/city_content.php';
 }
@@ -97,9 +97,9 @@ if (file_exists(__DIR__ . '/city_content.php')) {
 <section class="pm-city-detail-section">
     <div class="container">
         
-        <!-- 1. Hero Overview & Trust Metrics Banner (Left Content, Right Image) -->
+        <!-- 1. Main City Overview Section -->
         <div class="pm-cd-card">
-            <div class="row align-items-center g-4 g-lg-5">
+            <div class="row align-items-center g-4 g-lg-5 mb-4">
                 <!-- Left Side: Content -->
                 <div class="col-lg-7">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
@@ -111,8 +111,11 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         </span>
                     </div>
 
-                    <h2 class="pm-cd-title">Top-Rated Packers & Movers in <span class="text-danger"><?= esc($cityName) ?></span></h2>
-                    <?= $htmlcontent ?? '' ?>
+                    <h2 class="pm-cd-title"><?= esc($city_main_title) ?></h2>
+                    
+                    <p class="pm-cd-lead-text mb-3" style="color: #0f172a !important; font-size: 1.05rem; line-height: 1.8;">
+                        <?= esc($city_intro_p1) ?>
+                    </p>
 
                     <!-- Feature Tags (One Row) -->
                     <div class="pm-cd-feature-pills">
@@ -140,22 +143,55 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                 <!-- Right Side: Image -->
                 <div class="col-lg-5">
                     <div class="pm-cd-hero-img-wrap">
-                            <img src="<?= base_url('assets/img/city_about.jpg') ?>" 
-                                 alt="Packers and Movers in <?= esc($cityName) ?>, <?= esc($stateName) ?>" 
-                                 class="pm-cd-hero-img" 
-                                 loading="lazy" 
-                                 decoding="async" 
-                                 width="600" 
-                                 height="400">
-                            <div class="pm-state-placeholder">
-                                <div class="pm-state-placeholder-icon">
-                                    <i class="bi bi-buildings"></i>
-                                </div>
-                                <span class="pm-state-watermark"><?= esc($stateSlug) ?></span>
+                        <img src="<?= base_url('assets/img/city_about.jpg') ?>" 
+                             alt="Packers and Movers in <?= esc($cityName) ?>, <?= esc($stateName) ?>" 
+                             class="pm-cd-hero-img" 
+                             loading="lazy" 
+                             decoding="async" 
+                             width="600" 
+                             height="400">
+                        <div class="pm-state-placeholder">
+                            <div class="pm-state-placeholder-icon">
+                                <i class="bi bi-buildings"></i>
                             </div>
+                            <span class="pm-state-watermark"><?= esc($stateSlug) ?></span>
+                        </div>
                         <div class="pm-cd-hero-img-overlay"></div>
                         <div class="pm-cd-hero-floating-badge">
                             <i class="bi bi-award-fill"></i> #1 Mover in <?= esc($cityName) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continuation Details: Fleet & Rates, Route Survey, GPS Tracking & Support -->
+            <div class="border-top pt-4">
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <div class="p-3 p-md-4 rounded-4 bg-light border mb-2">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-truck text-danger fs-5"></i>
+                                <h3 class="h6 fw-bold text-dark mb-0">Transport Vehicles & Local Shifting Cost in <?= esc($cityName) ?></h3>
+                            </div>
+                            <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_intro_p2) ?></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 p-md-4 rounded-4 bg-light border h-100">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-clipboard2-check-fill text-danger fs-5"></i>
+                                <h3 class="h6 fw-bold text-dark mb-0">100% Free Doorstep Survey & Route Planning</h3>
+                            </div>
+                            <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_intro_p3) ?></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 p-md-4 rounded-4 bg-light border h-100">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="bi bi-geo-alt-fill text-danger fs-5"></i>
+                                <h3 class="h6 fw-bold text-dark mb-0">GPS Live Tracking, Insurance & Reliable Support</h3>
+                            </div>
+                            <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_intro_p4) ?></p>
                         </div>
                     </div>
                 </div>
@@ -169,7 +205,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <span class="section-badge mb-1">
                         <i class="bi bi-tags-fill"></i> Transparent Pricing
                     </span>
-                    <h3 class="pm-cd-subtitle mb-0">Estimated Shifting Charges in <?= esc($cityName) ?></h3>
+                    <h2 class="pm-cd-subtitle mb-0">Estimated Shifting Charges in <?= esc($cityName) ?></h2>
                 </div>
                 <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 rounded-pill small">
                     <i class="bi bi-check-circle-fill me-1"></i> 100% Upfront Estimates
@@ -200,11 +236,11 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-house-door-fill"></i></div>
                             <div>
-                                <span class="pm-cpt-title">1 BHK Complete Shifting</span>
+                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">1 BHK Complete Shifting</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
-                            <span class="pm-cpt-price-local">₹3,500 – ₹6,500</span>
+                            <span class="pm-cpt-price-local">₹3,000 – ₹5,000</span>
                         </div>
                         <div class="pm-cpt-col-price">
                             <span class="pm-cpt-price-domestic">₹8,500 – ₹16,000</span>
@@ -224,12 +260,12 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-buildings-fill"></i></div>
                             <div class="d-flex align-items-center gap-2">
-                                <span class="pm-cpt-title">2 BHK Complete Shifting</span>
+                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">2 BHK Complete Shifting</h3>
                                 <span class="pm-cpt-badge">Popular</span>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
-                            <span class="pm-cpt-price-local">₹6,000 – ₹11,500</span>
+                            <span class="pm-cpt-price-local">₹5,000 – ₹9,000</span>
                         </div>
                         <div class="pm-cpt-col-price">
                             <span class="pm-cpt-price-domestic">₹13,500 – ₹24,000</span>
@@ -249,17 +285,17 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-house-gear-fill"></i></div>
                             <div>
-                                <span class="pm-cpt-title">3 BHK / Villa Shifting</span>
+                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">3 BHK / Villa Shifting</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
-                            <span class="pm-cpt-price-local">₹10,500 – ₹18,000</span>
+                            <span class="pm-cpt-price-local">₹8,000 – ₹15,000+</span>
                         </div>
                         <div class="pm-cpt-col-price">
                             <span class="pm-cpt-price-domestic">₹19,000 – ₹35,000</span>
                         </div>
                         <div class="pm-cpt-col-pack">
-                            <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Full Wooden Crating + Film</span>
+                            <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Full Multi-Layer + Film</span>
                         </div>
                         <div class="pm-cpt-col-action">
                             <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 3 BHK Move">
@@ -273,7 +309,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-bicycle"></i></div>
                             <div>
-                                <span class="pm-cpt-title">Bike / Two-Wheeler Transport</span>
+                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">Bike / Two-Wheeler Transport</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
@@ -283,7 +319,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             <span class="pm-cpt-price-domestic">₹3,500 – ₹8,000</span>
                         </div>
                         <div class="pm-cpt-col-pack">
-                            <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Custom Crate + Scratch Wrap</span>
+                            <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Custom Packing + Scratch Wrap</span>
                         </div>
                         <div class="pm-cpt-col-action">
                             <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book Bike Transport">
@@ -297,7 +333,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-car-front-fill"></i></div>
                             <div>
-                                <span class="pm-cpt-title">Car Transportation</span>
+                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">Car Transportation</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
@@ -307,7 +343,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             <span class="pm-cpt-price-domestic">₹8,000 – ₹18,500</span>
                         </div>
                         <div class="pm-cpt-col-pack">
-                            <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Enclosed Carrier + Locks</span>
+                            <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Enclosed Carrier + Wheel Straps</span>
                         </div>
                         <div class="pm-cpt-col-action">
                             <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book Car Transport">
@@ -322,29 +358,117 @@ if (file_exists(__DIR__ . '/city_content.php')) {
             <div class="pm-pricing-note-strip">
                 <div class="d-flex align-items-center gap-2 text-muted small">
                     <i class="bi bi-info-circle-fill text-danger"></i>
-                    <span>Exact moving quote depends on floor level, elevator availability, packing tier, and travel distance.</span>
+                    <span>Exact moving quote depends on floor level, elevator availability, packing needs, and travel distance.</span>
                 </div>
                 <span class="badge bg-light text-dark border small px-3 py-1 rounded-pill">
-                    <i class="bi bi-shield-check text-success me-1"></i> Free In-Home Survey Included
+                    <i class="bi bi-shield-check text-success me-1"></i> 100% Free Doorstep Survey Included
                 </span>
             </div>
         </div>
 
-        <!-- 3. Local Service Area & Live Location Map Section (Col-6 / Col-6) -->
+        <!-- 3. Why People Choose Our Moving Company Sanvi Packers and Movers -->
+        <div class="pm-cd-card">
+            <div class="text-center mb-4">
+                <span class="section-badge mb-2">
+                    <i class="bi bi-award-fill"></i> Why Us
+                </span>
+                <h2 class="pm-cd-title mb-2"><?= esc($city_why_choose_title) ?></h2>
+                <p class="mx-auto mb-0" style="color: #0f172a !important; max-width: 760px; font-weight: 500;"><?= esc($city_why_choose_intro) ?></p>
+            </div>
+
+            <!-- 9 Core Advantages Grid -->
+            <div class="row g-3 g-lg-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <?php foreach ($city_why_choose_points as $idx => $point): ?>
+                    <div class="col d-flex">
+                        <div class="card w-100 border rounded-4 p-3 p-lg-4 bg-white shadow-sm transition-hover d-flex flex-column" style="border-color: #f1f5f9 !important;">
+                            <!-- Header Row: [Icon] [Title] [01 Badge] in One Line -->
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; background: #fff5f5; color: #dc2626; font-size: 1.2rem;">
+                                    <i class="bi <?= esc($point['icon']) ?>"></i>
+                                </div>
+                                <h3 class="h6 fw-bold text-dark mb-0 flex-grow-1" style="font-size: 0.95rem; line-height: 1.3;">
+                                    <?= esc($point['title']) ?>
+                                </h3>
+                                <span class="badge rounded-pill bg-light text-muted fw-bold px-2 py-1 flex-shrink-0" style="font-size: 0.72rem;">
+                                    0<?= $idx + 1 ?>
+                                </span>
+                            </div>
+                            <p class="small mb-0 flex-grow-1" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem;">
+                                <?= esc($point['desc']) ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <!-- 4. Our Process for Safe and Hassle-Free House Shifting -->
+        <div class="pm-cd-card">
+            <div class="text-center mb-4">
+                <span class="section-badge mb-2">
+                    <i class="bi bi-arrow-repeat"></i> How It Works
+                </span>
+                <h2 class="pm-cd-title mb-2"><?= esc($city_process_title) ?></h2>
+                <p class="mx-auto mb-0" style="color: #0f172a !important; max-width: 760px; font-weight: 500;"><?= esc($city_process_intro) ?></p>
+            </div>
+
+            <div class="row g-3 g-lg-4 row-cols-1 row-cols-md-2 row-cols-lg-5">
+                <?php foreach ($city_process_steps as $step): ?>
+                    <div class="col d-flex">
+                        <div class="card w-100 border rounded-4 p-3 bg-white shadow-sm transition-hover d-flex flex-column text-center" style="border-color: #f1f5f9 !important;">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge rounded-pill bg-danger text-white fw-bold px-2 py-1" style="font-size: 0.75rem;">
+                                    Step <?= esc($step['step']) ?>
+                                </span>
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background: #fff5f5; color: #dc2626; font-size: 1.1rem;">
+                                    <i class="bi <?= esc($step['icon']) ?>"></i>
+                                </div>
+                            </div>
+                            <h3 class="h6 fw-bold text-dark mb-2" style="font-size: 0.95rem; line-height: 1.35;">
+                                <?= esc($step['title']) ?>
+                            </h3>
+                            <p class="small mb-0 flex-grow-1" style="color: #0f172a !important; line-height: 1.55; font-size: 0.84rem;">
+                                <?= esc($step['desc']) ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- Bottom Quality Assurance Bar -->
+            <div class="pm-process-assurance-bar mt-4">
+                <div class="pm-assurance-item">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <span>100% Transit Insurance Coverage</span>
+                </div>
+                <div class="pm-assurance-divider"></div>
+                <div class="pm-assurance-item">
+                    <i class="bi bi-clock-history"></i>
+                    <span>On-Time Pickup & Delivery Guarantee</span>
+                </div>
+                <div class="pm-assurance-divider"></div>
+                <div class="pm-assurance-item">
+                    <i class="bi bi-headset"></i>
+                    <span>Dedicated Relocation Coordinator</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Local Service Area & Live Location Map Section (Col-6 / Col-6) -->
         <div class="pm-cd-card">
             <div class="row align-items-stretch g-4">
                 <!-- Col-6: Operational Coverage Details -->
                 <div class="col-lg-6 d-flex flex-column justify-content-between">
                     <div>
-                        <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
-                            <span class="section-badge mb-0">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+                            <span class="section-badge mb-0 text-nowrap">
                                 <i class="bi bi-geo-alt-fill"></i> Local Service Coverage
                             </span>
-                            <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-1 rounded-pill small">
+                            <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-1 rounded-pill small text-nowrap">
                                 <i class="bi bi-broadcast me-1"></i> 100% <?= esc($cityName) ?> Covered
                             </span>
                         </div>
-                        <h3 class="pm-cd-subtitle mb-2">Comprehensive Moving Coverage Across <?= esc($cityName) ?></h3>
+                        <h2 class="pm-cd-subtitle mb-2">Comprehensive Moving Coverage Across <?= esc($cityName) ?></h2>
                         <p class="text-muted small mb-4">
                             Operating active relocation fleets and certified packing teams across every sector, residential colony, and industrial belt in <strong><?= esc($cityName) ?>, <?= esc($stateName) ?></strong>. Guaranteed prompt vehicle dispatch with real-time GPS tracking.
                         </p>
@@ -356,7 +480,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     <i class="bi bi-truck"></i>
                                 </div>
                                 <div>
-                                    <h4 class="pm-map-feat-title">Prompt Local Fleet Dispatch</h4>
+                                    <h3 class="pm-map-feat-title" style="font-size: 0.95rem;">Prompt Local Fleet Dispatch</h3>
                                     <p class="pm-map-feat-desc">Dedicated closed-body moving trucks stationed within <?= esc($cityName) ?> for rapid on-time arrival.</p>
                                 </div>
                             </div>
@@ -366,7 +490,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     <i class="bi bi-pin-map-fill"></i>
                                 </div>
                                 <div>
-                                    <h4 class="pm-map-feat-title">Doorstep Pickup & Delivery</h4>
+                                    <h3 class="pm-map-feat-title" style="font-size: 0.95rem;">Doorstep Pickup & Delivery</h3>
                                     <p class="pm-map-feat-desc">Complete multi-layer packing, elevator handling, and doorstep unboxing in all <?= esc($cityName) ?> zones.</p>
                                 </div>
                             </div>
@@ -376,7 +500,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     <i class="bi bi-shield-check"></i>
                                 </div>
                                 <div>
-                                    <h4 class="pm-map-feat-title">100% Transit Insured Movement</h4>
+                                    <h3 class="pm-map-feat-title" style="font-size: 0.95rem;">100% Transit Insured Movement</h3>
                                     <p class="pm-map-feat-desc">All household goods, electronic appliances, and vehicles are fully insured during transit.</p>
                                 </div>
                             </div>
@@ -415,254 +539,45 @@ if (file_exists(__DIR__ . '/city_content.php')) {
             </div>
         </div>
 
-        <!-- 4. Relocation Process Journey (Different from Home Hexagons) -->
-        <div class="pm-cd-card">
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-2">
+        <!-- 6. Real Move Case Study: 2BHK Flat Shifting -->
+        <div class="pm-cd-card" style="background: linear-gradient(135deg, #fffaf9 0%, #ffffff 100%);">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
                 <div>
                     <span class="section-badge mb-1">
-                        <i class="bi bi-arrow-repeat"></i> How It Works
+                        <i class="bi bi-journal-text"></i> Real Move Experience
                     </span>
-                    <h3 class="pm-cd-subtitle mb-0">Seamless Relocation Process in <?= esc($cityName) ?></h3>
+                    <h2 class="pm-cd-title mb-0"><?= esc($city_case_study_title) ?></h2>
                 </div>
-                <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 rounded-pill small">
-                    <i class="bi bi-shield-check me-1"></i> 4-Step Verified Workflow
+                <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 rounded-pill small">
+                    <i class="bi bi-check-circle-fill me-1"></i> Successfully Completed Move
                 </span>
             </div>
-            <p class="text-muted small mb-0">From instant virtual survey to final unboxing at your destination — here is how our hassle-free relocation works in <?= esc($cityName) ?>.</p>
 
-            <div class="pm-process-journey-grid">
-                <!-- Step 01 -->
-                <div class="pm-journey-card">
-                    <div class="pm-journey-header">
-                        <div class="pm-journey-title-group">
-                            <span class="pm-journey-num">01</span>
-                            <h4 class="pm-journey-title">Instant Booking & Survey</h4>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="p-3 p-md-4 rounded-4 bg-white border shadow-sm">
+                        <div class="d-flex align-items-center gap-2 mb-2 text-danger fw-bold small">
+                            <i class="bi bi-flag-fill"></i> Step 1: The Move Requirement
                         </div>
-                        <div class="pm-journey-icon-wrap" aria-hidden="true">
-                            <i class="bi bi-clipboard2-check-fill"></i>
-                        </div>
-                    </div>
-                    <p class="pm-journey-desc">Share your move requirements. Our team conducts a free video or in-home survey and shares an all-inclusive upfront quote.</p>
-                    <div class="pm-journey-footer">
-                        <span class="pm-journey-tag">
-                            <i class="bi bi-check2-circle text-success"></i> Fixed Price Guarantee
-                        </span>
-                    </div>
-                </div>
+                        <p class="mb-3" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_case_study_p1) ?></p>
 
-                <!-- Step 02 -->
-                <div class="pm-journey-card">
-                    <div class="pm-journey-header">
-                        <div class="pm-journey-title-group">
-                            <span class="pm-journey-num">02</span>
-                            <h4 class="pm-journey-title">Multi-Layer Smart Packing</h4>
+                        <div class="d-flex align-items-center gap-2 mb-2 text-danger fw-bold small">
+                            <i class="bi bi-box-seam-fill"></i> Step 2: Survey & Multi-Layer Packing
                         </div>
-                        <div class="pm-journey-icon-wrap" aria-hidden="true">
-                            <i class="bi bi-box-seam-fill"></i>
-                        </div>
-                    </div>
-                    <p class="pm-journey-desc">Certified packers arrive on-time with high-density bubble roll, corrugated cartons, and anti-static wrapping.</p>
-                    <div class="pm-journey-footer">
-                        <span class="pm-journey-tag">
-                            <i class="bi bi-check2-circle text-success"></i> Multi-Layer Materials
-                        </span>
-                    </div>
-                </div>
+                        <p class="mb-3" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_case_study_p2) ?></p>
 
-                <!-- Step 03 -->
-                <div class="pm-journey-card">
-                    <div class="pm-journey-header">
-                        <div class="pm-journey-title-group">
-                            <span class="pm-journey-num">03</span>
-                            <h4 class="pm-journey-title">GPS-Tracked Safe Transit</h4>
+                        <div class="d-flex align-items-center gap-2 mb-2 text-success fw-bold small">
+                            <i class="bi bi-check2-circle"></i> Step 3: Transit, Delivery & Setup
                         </div>
-                        <div class="pm-journey-icon-wrap" aria-hidden="true">
-                            <i class="bi bi-truck-front-fill"></i>
-                        </div>
+                        <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_case_study_p3) ?></p>
                     </div>
-                    <p class="pm-journey-desc">Goods are transported in weather-proof sealed container carriers with live GPS tracking updates directly on your phone.</p>
-                    <div class="pm-journey-footer">
-                        <span class="pm-journey-tag">
-                            <i class="bi bi-check2-circle text-success"></i> 100% Insured Fleet
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Step 04 -->
-                <div class="pm-journey-card">
-                    <div class="pm-journey-header">
-                        <div class="pm-journey-title-group">
-                            <span class="pm-journey-num">04</span>
-                            <h4 class="pm-journey-title">Doorstep Setup & Handover</h4>
-                        </div>
-                        <div class="pm-journey-icon-wrap" aria-hidden="true">
-                            <i class="bi bi-house-check-fill"></i>
-                        </div>
-                    </div>
-                    <p class="pm-journey-desc">Safe delivery at your new home, room-by-room positioning, heavy furniture reassembly, and unboxing support.</p>
-                    <div class="pm-journey-footer">
-                        <span class="pm-journey-tag">
-                            <i class="bi bi-check2-circle text-success"></i> Zero Stress Settle
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Quality Assurance Bar -->
-            <div class="pm-process-assurance-bar">
-                <div class="pm-assurance-item">
-                    <i class="bi bi-shield-lock-fill"></i>
-                    <span>100% Transit Insurance Coverage</span>
-                </div>
-                <div class="pm-assurance-divider"></div>
-                <div class="pm-assurance-item">
-                    <i class="bi bi-clock-history"></i>
-                    <span>On-Time Pickup & Delivery Guarantee</span>
-                </div>
-                <div class="pm-assurance-divider"></div>
-                <div class="pm-assurance-item">
-                    <i class="bi bi-headset"></i>
-                    <span>Dedicated Relocation Coordinator</span>
                 </div>
             </div>
         </div>
 
-        <!-- 4. Testimonials (Col-5) & FAQs (Col-7) -->
+        <!-- 7. FAQs (Col-7) and Customer Feedback (Col-5) -->
         <div class="row g-4 mb-4">
-            <!-- Left: Customer Testimonials (col-lg-5) -->
-            <div class="col-lg-5 col-12">
-                <div class="pm-cd-card h-100 mb-0 d-flex flex-column">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <div>
-                            <span class="section-badge mb-1">
-                                <i class="bi bi-chat-quote-fill"></i> Customer Stories
-                            </span>
-                            <h3 class="pm-cd-subtitle mb-0">What <?= esc($cityName) ?> Clients Say</h3>
-                        </div>
-                        <!-- Up / Down Scroll Controls -->
-                        <div class="pm-testi-nav-arrows">
-                            <button type="button" class="pm-testi-arrow-btn" id="pmTestiPrev" aria-label="Previous Testimonial" title="Scroll Up">
-                                <i class="bi bi-chevron-up"></i>
-                            </button>
-                            <button type="button" class="pm-testi-arrow-btn" id="pmTestiNext" aria-label="Next Testimonial" title="Scroll Down">
-                                <i class="bi bi-chevron-down"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <p class="text-muted small mb-3">Verified shifting experiences from local residents and businesses in <?= esc($cityName) ?>.</p>
-
-                    <!-- Rating Summary -->
-                    <div class="pm-city-rating-summary mb-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="pm-rating-score-box">
-                                <span class="pm-rating-score">4.9</span>
-                                <div class="pm-rating-stars" role="img" aria-label="Rated 4.9 out of 5 stars">
-                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="fw-bold text-dark small">Verified Client Score</div>
-                                <div class="text-muted small">Based on 1,450+ moves in <?= esc($cityName) ?> & NCR</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vertical Scroll Testimonial Window (One Visible at a Time) -->
-                    <div class="pm-testi-scroll-viewport" id="pmTestiScroll">
-                        <!-- Review 1 -->
-                        <div class="pm-city-review-card pm-testi-snap-item">
-                            <div class="pm-city-review-header">
-                                <div class="d-flex align-items-center gap-2">
-                                    <div class="pm-review-avatar">RM</div>
-                                    <div>
-                                        <h4 class="pm-review-author">Rohit Malhotra</h4>
-                                        <span class="pm-review-loc"><i class="bi bi-geo-alt-fill text-danger"></i> <?= esc($cityName) ?> Resident</span>
-                                    </div>
-                                </div>
-                                <span class="pm-review-badge"><i class="bi bi-patch-check-fill"></i> Verified Move</span>
-                            </div>
-                            <p class="pm-review-text">"Relocated our 3 BHK within <?= esc($cityName) ?> seamlessly. The team was punctual, handled delicate glassware with multi-layer bubble packing, and reassembled all furniture before evening. Zero damages!"</p>
-                            <div class="pm-review-footer">
-                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Household Relocation</span>
-                                <span class="pm-review-stars small"><i class="bi bi-star-fill" aria-hidden="true"></i> 5.0</span>
-                            </div>
-                        </div>
-
-                        <!-- Review 2 -->
-                        <div class="pm-city-review-card pm-testi-snap-item">
-                            <div class="pm-city-review-header">
-                                <div class="d-flex align-items-center gap-2">
-                                    <div class="pm-review-avatar">SA</div>
-                                    <div>
-                                        <h4 class="pm-review-author">Sunita Aggarwal</h4>
-                                        <span class="pm-review-loc"><i class="bi bi-geo-alt-fill text-danger"></i> Corporate Relocation</span>
-                                    </div>
-                                </div>
-                                <span class="pm-review-badge"><i class="bi bi-patch-check-fill"></i> Verified Move</span>
-                            </div>
-                            <p class="pm-review-text">"Relocated our office electronics and workstations without a single hour of business downtime. Very polite and disciplined crew. Highly recommended in <?= esc($cityName) ?>!"</p>
-                            <div class="pm-review-footer">
-                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Office Corporate Move</span>
-                                <span class="pm-review-stars small"><i class="bi bi-star-fill" aria-hidden="true"></i> 5.0</span>
-                            </div>
-                        </div>
-
-                        <!-- Review 3 -->
-                        <div class="pm-city-review-card pm-testi-snap-item">
-                            <div class="pm-city-review-header">
-                                <div class="d-flex align-items-center gap-2">
-                                    <div class="pm-review-avatar">VM</div>
-                                    <div>
-                                        <h4 class="pm-review-author">Vikram Mehra</h4>
-                                        <span class="pm-review-loc"><i class="bi bi-geo-alt-fill text-danger"></i> Vehicle & Bike Shift</span>
-                                    </div>
-                                </div>
-                                <span class="pm-review-badge"><i class="bi bi-patch-check-fill"></i> Verified Move</span>
-                            </div>
-                            <p class="pm-review-text">"Transported my Royal Enfield and sedan from <?= esc($cityName) ?>. Heavy-duty wheel stoppers and custom wooden crate kept both scratchless throughout the journey. Highly recommended!"</p>
-                            <div class="pm-review-footer">
-                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Vehicle Transport</span>
-                                <span class="pm-review-stars small"><i class="bi bi-star-fill" aria-hidden="true"></i> 5.0</span>
-                            </div>
-                        </div>
-
-                        <!-- Review 4 -->
-                        <div class="pm-city-review-card pm-testi-snap-item">
-                            <div class="pm-city-review-header">
-                                <div class="d-flex align-items-center gap-2">
-                                    <div class="pm-review-avatar">PS</div>
-                                    <div>
-                                        <h4 class="pm-review-author">Pooja Sharma</h4>
-                                        <span class="pm-review-loc"><i class="bi bi-geo-alt-fill text-danger"></i> Interstate Shifting</span>
-                                    </div>
-                                </div>
-                                <span class="pm-review-badge"><i class="bi bi-patch-check-fill"></i> Verified Move</span>
-                            </div>
-                            <p class="pm-review-text">"Shifted our villa goods from <?= esc($cityName) ?> to another state. Their live GPS container tracking gave us peace of mind. Polite supervisor and flawless unpacking assistance at our destination."</p>
-                            <div class="pm-review-footer">
-                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Domestic Relocation</span>
-                                <span class="pm-review-stars small"><i class="bi bi-star-fill" aria-hidden="true"></i> 5.0</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Scroll Hint and Counter Bar -->
-                    <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top border-light">
-                        <span class="text-muted small">
-                            <i class="bi bi-arrow-down-up text-danger me-1"></i> Scroll up/down to read more
-                        </span>
-                        <span class="badge bg-light text-muted border small px-2 py-1 rounded-pill" id="pmTestiCounter">
-                            1 of 4 Stories
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Frequently Asked Questions (col-lg-7) -->
+            <!-- Left: FAQs (col-lg-7) -->
             <div class="col-lg-7 col-12">
                 <div class="pm-cd-card h-100 mb-0">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
@@ -670,134 +585,196 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             <span class="section-badge mb-1">
                                 <i class="bi bi-question-circle-fill"></i> Got Questions?
                             </span>
-                            <h3 class="pm-cd-subtitle mb-0">FAQs for <?= esc($cityName) ?> Shifting</h3>
+                            <h2 class="pm-cd-title mb-0"><?= esc($city_faqs_title) ?></h2>
                         </div>
                         <span class="badge bg-light text-dark border px-3 py-2 rounded-pill small">
-                            <i class="bi bi-patch-question-fill text-danger me-1"></i> Common Doubts
+                            <i class="bi bi-patch-question-fill text-danger me-1"></i> Verified Answers
                         </span>
                     </div>
-                    <p class="text-muted small mb-3">Answers to frequently asked questions about moving costs, insurance, and booking in <?= esc($cityName) ?>.</p>
+                    <p class="text-muted small mb-3">Clear, transparent answers to help you plan a safe and stress-free relocation in <?= esc($cityName) ?>.</p>
 
-                    <!-- City FAQ Accordion -->
+                    <!-- City FAQ Accordion with Semantic H3 tags -->
                     <div class="accordion pm-cd-faq-accordion" id="cityFaqAccordion">
-                        <!-- FAQ 1 -->
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="cfaqHead1">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1" aria-expanded="true" aria-controls="cfaq1">
-                                    <span class="pm-cd-faq-num">01</span>
-                                    <span>How are moving charges calculated in <?= esc($cityName) ?>?</span>
-                                </button>
-                            </h4>
-                            <div id="cfaq1" class="accordion-collapse collapse show" aria-labelledby="cfaqHead1" data-bs-parent="#cityFaqAccordion">
-                                <div class="accordion-body">
-                                    Moving costs depend on total volume of household items, packaging tier (customized multi-layer protective packing), vehicle carrier size, elevator availability/floor levels, and total transit distance. We provide a guaranteed, written quote with zero hidden charges after a quick survey.
+                        <?php foreach ($city_faqs as $fidx => $faq): ?>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="cfaqHead<?= $fidx + 1 ?>">
+                                    <button class="accordion-button <?= $fidx === 0 ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq<?= $fidx + 1 ?>" aria-expanded="<?= $fidx === 0 ? 'true' : 'false' ?>" aria-controls="cfaq<?= $fidx + 1 ?>">
+                                        <span class="pm-cd-faq-num">0<?= $fidx + 1 ?></span>
+                                        <span><?= esc($faq['q']) ?></span>
+                                    </button>
+                                </h3>
+                                <div id="cfaq<?= $fidx + 1 ?>" class="accordion-collapse collapse <?= $fidx === 0 ? 'show' : '' ?>" aria-labelledby="cfaqHead<?= $fidx + 1 ?>" data-bs-parent="#cityFaqAccordion">
+                                    <div class="accordion-body" style="color: #0f172a !important; line-height: 1.65; font-size: 0.95rem;">
+                                        <?= esc($faq['a']) ?>
+                                    </div>
                                 </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Customer Testimonials (col-lg-5) -->
+            <div class="col-lg-5 col-12">
+                <div class="pm-cd-card h-100 mb-0 d-flex flex-column">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                        <div>
+                            <span class="section-badge mb-1">
+                                <i class="bi bi-chat-quote-fill"></i> Customer Feedback
+                            </span>
+                            <h3 class="pm-cd-subtitle mb-0">What <?= esc($cityName) ?> Clients Say</h3>
+                        </div>
+                        <div class="pm-testi-nav-arrows">
+                            <button type="button" class="pm-testi-arrow-btn" id="pmTestiPrev" aria-label="Previous Testimonial" title="Previous">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button type="button" class="pm-testi-arrow-btn" id="pmTestiNext" aria-label="Next Testimonial" title="Next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-muted small mb-3">Verified shifting experiences from residents and businesses in <?= esc($cityName) ?>.</p>
+
+                    <!-- Responsive Rating Summary Box -->
+                    <div class="pm-city-rating-summary mb-3 p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="pm-rating-score-box text-center flex-shrink-0" style="padding: 6px 12px; min-width: 62px;">
+                                <div class="d-flex align-items-center justify-content-center gap-1">
+                                    <span class="pm-rating-score mb-0" style="font-size: 1.4rem; font-weight: 800;">4.9</span>
+                                    <i class="bi bi-star-fill text-warning" style="font-size: 1.05rem;"></i>
+                                </div>
+                                <span class="badge bg-danger bg-opacity-10 text-danger p-0 fw-bold" style="font-size: 0.65rem;">Top Rated</span>
+                            </div>
+                            <div class="flex-grow-1" style="min-width: 0;">
+                                <div class="d-flex align-items-center gap-1 text-warning mb-1" style="font-size: 0.82rem;">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <span class="text-dark fw-bold ms-1" style="font-size: 0.78rem;">(4.9/5)</span>
+                                </div>
+                                <div class="fw-bold text-dark small" style="line-height: 1.25; font-size: 0.88rem;">Verified Client Score</div>
+                                <div class="text-muted small" style="font-size: 0.78rem; line-height: 1.3;">Based on 1,450+ moves across India</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Responsive Swipe Testimonial Window -->
+                    <div class="pm-testi-scroll-viewport" id="pmTestiScroll">
+                        <div class="pm-city-review-card pm-testi-snap-item">
+                            <div class="pm-city-review-header d-flex align-items-center justify-content-between gap-2 mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="pm-review-avatar">RS</div>
+                                    <div>
+                                        <h4 class="pm-review-author mb-0" style="font-size: 0.95rem;">Rahul Sharma</h4>
+                                        <span class="pm-review-loc small text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> Verified Move</span>
+                                    </div>
+                                </div>
+                                <span class="pm-review-badge flex-shrink-0"><i class="bi bi-patch-check-fill"></i> 5.0 Star</span>
+                            </div>
+                            <p class="pm-review-text mb-3" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem; font-style: italic;">
+                                "Recently shifted our 3BHK house. Our furniture, kitchenware and appliances were taken care of by the team very well with multi-layer bubble packing. Zero stress!"
+                            </p>
+                            <div class="pm-review-footer d-flex align-items-center justify-content-between pt-2 border-top border-light">
+                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Household Relocation</span>
+                                <span class="pm-review-stars small fw-bold text-dark"><i class="bi bi-star-fill text-warning me-1"></i> 5.0</span>
                             </div>
                         </div>
 
-                        <!-- FAQ 2 -->
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="cfaqHead2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2" aria-expanded="false" aria-controls="cfaq2">
-                                    <span class="pm-cd-faq-num">02</span>
-                                    <span>Do you provide transit insurance for household goods?</span>
-                                </button>
-                            </h4>
-                            <div id="cfaq2" class="accordion-collapse collapse" aria-labelledby="cfaqHead2" data-bs-parent="#cityFaqAccordion">
-                                <div class="accordion-body">
-                                    Yes, we provide 100% comprehensive all-India transit insurance covering unforeseen physical loss, road mishaps, or accidental transit damage. In the rare event of a claim, our dedicated claims desk facilitates swift documentation and hassle-free settlement.
+                        <div class="pm-city-review-card pm-testi-snap-item">
+                            <div class="pm-city-review-header d-flex align-items-center justify-content-between gap-2 mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="pm-review-avatar">AV</div>
+                                    <div>
+                                        <h4 class="pm-review-author mb-0" style="font-size: 0.95rem;">Ankit Verma</h4>
+                                        <span class="pm-review-loc small text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> Office Relocation</span>
+                                    </div>
                                 </div>
+                                <span class="pm-review-badge flex-shrink-0"><i class="bi bi-patch-check-fill"></i> 5.0 Star</span>
+                            </div>
+                            <p class="pm-review-text mb-3" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem; font-style: italic;">
+                                "Our office computers and workstations have been shifted smoothly. Proper planning of packing and loading helped avoid confusion. Highly satisfied with their cooperation."
+                            </p>
+                            <div class="pm-review-footer d-flex align-items-center justify-content-between pt-2 border-top border-light">
+                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Office Shifting</span>
+                                <span class="pm-review-stars small fw-bold text-dark"><i class="bi bi-star-fill text-warning me-1"></i> 5.0</span>
                             </div>
                         </div>
 
-                        <!-- FAQ 3 -->
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="cfaqHead3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3" aria-expanded="false" aria-controls="cfaq3">
-                                    <span class="pm-cd-faq-num">03</span>
-                                    <span>How many days in advance should I book shifting in <?= esc($cityName) ?>?</span>
-                                </button>
-                            </h4>
-                            <div id="cfaq3" class="accordion-collapse collapse" aria-labelledby="cfaqHead3" data-bs-parent="#cityFaqAccordion">
-                                <div class="accordion-body">
-                                    For local within-city shifting in <?= esc($cityName) ?>, booking 24 to 48 hours in advance is adequate. For intercity domestic moves, booking 3 to 5 days ahead guarantees dedicated container trailer reservation and your preferred loading time slot.
+                        <div class="pm-city-review-card pm-testi-snap-item">
+                            <div class="pm-city-review-header d-flex align-items-center justify-content-between gap-2 mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="pm-review-avatar">SM</div>
+                                    <div>
+                                        <h4 class="pm-review-author mb-0" style="font-size: 0.95rem;">Sandeep Mehta</h4>
+                                        <span class="pm-review-loc small text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> Vehicle Transport</span>
+                                    </div>
                                 </div>
+                                <span class="pm-review-badge flex-shrink-0"><i class="bi bi-patch-check-fill"></i> 5.0 Star</span>
+                            </div>
+                            <p class="pm-review-text mb-3" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem; font-style: italic;">
+                                "I was worried about moving my car during relocation. The team guided me clearly and provided GPS live tracking. Car reached safely without a single scratch."
+                            </p>
+                            <div class="pm-review-footer d-flex align-items-center justify-content-between pt-2 border-top border-light">
+                                <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Car Shifting</span>
+                                <span class="pm-review-stars small fw-bold text-dark"><i class="bi bi-star-fill text-warning me-1"></i> 5.0</span>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- FAQ 4 -->
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="cfaqHead4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq4" aria-expanded="false" aria-controls="cfaq4">
-                                    <span class="pm-cd-faq-num">04</span>
-                                    <span>What packing materials are used for fragile electronics & furniture?</span>
-                                </button>
-                            </h4>
-                            <div id="cfaq4" class="accordion-collapse collapse" aria-labelledby="cfaqHead4" data-bs-parent="#cityFaqAccordion">
-                                <div class="accordion-body">
-                                    We utilize heavy-duty multi-layer certified bubble wrap, corrugated sheets, edge guards, and specialized wooden crating for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright fragile tags and loaded with hydraulic cushioning.
-                                </div>
-                            </div>
+                    <!-- Slide Controls / Indicator Bar -->
+                    <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top border-light">
+                        <div class="d-flex align-items-center gap-1" id="pmTestiDots">
+                            <span class="pm-testi-dot active"></span>
+                            <span class="pm-testi-dot"></span>
+                            <span class="pm-testi-dot"></span>
                         </div>
-
-                        <!-- FAQ 5 -->
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="cfaqHead5">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq5" aria-expanded="false" aria-controls="cfaq5">
-                                    <span class="pm-cd-faq-num">05</span>
-                                    <span>Can you transport my car or two-wheeler safely?</span>
-                                </button>
-                            </h4>
-                            <div id="cfaq5" class="accordion-collapse collapse" aria-labelledby="cfaqHead5" data-bs-parent="#cityFaqAccordion">
-                                <div class="accordion-body">
-                                    Yes! We operate specialized enclosed car carrier trailers and custom bike crating systems. Every vehicle undergoes a detailed pre-loading inspection report (with photos and odometer reading) and is securely strapped with wheel stoppers during transit.
-                                </div>
-                            </div>
-                        </div>
+                        <span class="badge bg-light text-dark border small px-2 py-1 rounded-pill" id="pmTestiCounter">
+                            1 of 3 Stories
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 5. Full-Width Direct Action Banner (Redesigned) -->
+        <!-- 8. Contact Sanvi Packers and Movers for a Free Quotation in City -->
         <div class="pm-cd-action-banner">
-            <div class="pm-cta-content-wrap">
-                <div class="pm-cta-icon-avatar" aria-hidden="true">
+            <div class="pm-cta-content-wrap col-12 w-100">
+                <div class="pm-cta-icon-avatar flex-shrink-0" aria-hidden="true">
                     <i class="bi bi-headset"></i>
                 </div>
-                <div>
-                    <div class="pm-cta-live-pill">
+                <div class="flex-grow-1">
+                    <div class="pm-cta-live-pill mb-2">
                         <span class="pm-live-dot"></span> 24/7 Relocation Support
                     </div>
-                    <h3 class="pm-cta-heading">Planning to Relocate in <span class="text-danger"><?= esc($cityName) ?></span>?</h3>
-                    <p class="pm-cta-text">Speak with our certified relocation coordinator for instant transparent pricing, preferred date reservation, and a free survey.</p>
-                    <div class="pm-cta-trust-tags">
-                        <span><i class="bi bi-lightning-charge-fill text-warning"></i> 60-Sec Fast Callback</span>
+                    <h2 class="pm-cta-heading mb-2 text-dark fw-bold" style="color: #0f172a !important; font-size: 1.45rem;"><?= esc($city_cta_title) ?></h2>
+                    <p class="pm-cta-text mb-3" style="color: #0f172a !important; font-size: 0.95rem; font-weight: 500; line-height: 1.6;"><?= esc($city_cta_desc) ?></p>
+                    <div class="pm-cta-trust-tags" style="color: #0f172a !important; font-weight: 600;">
+                        <span><i class="bi bi-lightning-charge-fill text-warning"></i> 100% Free Doorstep Survey</span>
                         <span><i class="bi bi-shield-check text-success"></i> Fixed Price Guarantee</span>
                         <span><i class="bi bi-check-circle-fill text-danger"></i> Zero Hidden Charges</span>
                     </div>
                 </div>
             </div>
-            <div class="pm-cta-actions-wrap">
+            <div class="pm-cta-actions-wrap col-12 w-100">
                 <a <?= $phonehtml ?> class="pm-cta-btn-call" title="Call Now" aria-label="Call Now">
                     <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                    <span class="d-none d-sm-inline"><?= $phone ?></span>
-                    <span class="d-sm-none">Call Now</span>
+                    <span>Call <?= $phone ?></span>
                 </a>
                 <a href="<?= $whatsapphtml ?>" target="_blank" rel="noopener noreferrer" class="pm-cta-btn-whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
                     <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                    <span class="d-none d-sm-inline">Chat on WhatsApp</span>
-                    <span class="d-sm-none">WhatsApp</span>
+                    <span>Chat on WhatsApp</span>
                 </a>
             </div>
         </div>
 
-        <!-- 5. Other Nearby Cities Navigation (Full Width) -->
+        <!-- 9. Other Nearby Cities Navigation (Full Width) -->
         <?php if (!empty($nearbyCities)): ?>
             <div class="pm-cd-card mb-0">
-                <h4 class="pm-cd-subtitle">
+                <h2 class="pm-cd-subtitle" style="font-size: 1.15rem;">
                     <i class="bi bi-geo-alt-fill text-danger me-2"></i>Other Nearby Cities in <?= esc($stateName) ?>
-                </h4>
+                </h2>
                 <div class="pm-cd-nearby-pills">
                     <?php foreach ($nearbyCities as $nc): 
                         $nName = is_array($nc) ? ($nc['nm'] ?? 'City') : (string)$nc;
@@ -814,12 +791,33 @@ if (file_exists(__DIR__ . '/city_content.php')) {
     </div>
 </section>
 
+<!-- Schema.org FAQPage Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    <?php foreach ($city_faqs as $i => $faq): ?>
+    {
+      "@type": "Question",
+      "name": <?= json_encode($faq['q']) ?>,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": <?= json_encode($faq['a']) ?>
+      }
+    }<?= $i < count($city_faqs) - 1 ? ',' : '' ?>
+    <?php endforeach; ?>
+  ]
+}
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var viewport = document.getElementById('pmTestiScroll');
     var btnPrev = document.getElementById('pmTestiPrev');
     var btnNext = document.getElementById('pmTestiNext');
     var counter = document.getElementById('pmTestiCounter');
+    var dotsContainer = document.getElementById('pmTestiDots');
     if (!viewport) return;
 
     var items = viewport.querySelectorAll('.pm-testi-snap-item');
@@ -827,25 +825,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCounter() {
         if (!counter || total === 0) return;
-        var scrollTop = viewport.scrollTop;
-        var itemHeight = items[0] ? (items[0].offsetHeight + 14) : 234;
-        var currentIdx = Math.min(total, Math.max(1, Math.round(scrollTop / itemHeight) + 1));
+        var scrollLeft = viewport.scrollLeft;
+        var itemWidth = viewport.offsetWidth || 280;
+        var currentIdx = Math.min(total, Math.max(1, Math.round(scrollLeft / itemWidth) + 1));
         counter.textContent = currentIdx + ' of ' + total + ' Stories';
+        
+        if (dotsContainer) {
+            var dots = dotsContainer.querySelectorAll('.pm-testi-dot');
+            dots.forEach(function(dot, i) {
+                if (i === currentIdx - 1) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
     }
 
     viewport.addEventListener('scroll', updateCounter, { passive: true });
 
     if (btnPrev) {
         btnPrev.addEventListener('click', function() {
-            var itemHeight = items[0] ? (items[0].offsetHeight + 14) : 234;
-            viewport.scrollBy({ top: -itemHeight, behavior: 'smooth' });
+            var itemWidth = viewport.offsetWidth || 280;
+            viewport.scrollBy({ left: -itemWidth, behavior: 'smooth' });
         });
     }
 
     if (btnNext) {
         btnNext.addEventListener('click', function() {
-            var itemHeight = items[0] ? (items[0].offsetHeight + 14) : 234;
-            viewport.scrollBy({ top: itemHeight, behavior: 'smooth' });
+            var itemWidth = viewport.offsetWidth || 280;
+            viewport.scrollBy({ left: itemWidth, behavior: 'smooth' });
         });
     }
 });

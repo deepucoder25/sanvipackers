@@ -783,6 +783,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   border: 1px solid rgba(185, 28, 28, 0.22);
   border-radius: 50px;
   margin-bottom: 12px;
+  white-space: nowrap !important;
 }
 .section-title {
   font-size: 2.1rem;
@@ -5797,11 +5798,38 @@ a.pm-btn-whatsapp-pill:hover {
 
 @media (max-width: 575.98px) {
   .pm-cd-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .pm-cd-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.35;
   }
 
   .pm-cd-card {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-badge {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    white-space: nowrap !important;
+  }
+
+  .pm-city-rating-summary {
+    padding: 10px 12px;
+  }
+
+  .pm-rating-score-box {
+    padding: 6px 10px;
+    min-width: 56px;
+  }
+
+  .pm-rating-score {
+    font-size: 1.25rem;
   }
 }
 
@@ -5817,9 +5845,9 @@ a.pm-btn-whatsapp-pill:hover {
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .pm-cd-action-banner::after {
@@ -5839,7 +5867,7 @@ a.pm-btn-whatsapp-pill:hover {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  flex: 1;
+  width: 100%;
 }
 
 .pm-cta-icon-avatar {
@@ -5881,15 +5909,15 @@ a.pm-btn-whatsapp-pill:hover {
 .pm-cta-heading {
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--dark);
+  color: #0f172a !important;
   margin-bottom: 6px;
   line-height: 1.3;
 }
 
 .pm-cta-text {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.55;
+  font-size: 0.95rem;
+  color: #0f172a !important;
+  line-height: 1.6;
   margin-bottom: 12px;
 }
 
@@ -5911,9 +5939,12 @@ a.pm-btn-whatsapp-pill:hover {
 
 .pm-cta-actions-wrap {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
+  gap: 14px;
+  width: 100%;
+  padding-top: 18px;
+  border-top: 1px solid #fee2e2;
 }
 
 .pm-cta-btn-call,
@@ -6055,7 +6086,7 @@ a.pm-cta-btn-whatsapp:hover {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 12px 16px;
 }
 
 .pm-rating-score-box {
@@ -6066,8 +6097,8 @@ a.pm-cta-btn-whatsapp:hover {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 8px 14px;
-  min-width: 84px;
+  padding: 8px 12px;
+  min-width: 72px;
   flex-shrink: 0;
 }
 
@@ -6090,58 +6121,67 @@ a.pm-cta-btn-whatsapp:hover {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
-  padding: 18px;
+  padding: 16px;
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 .pm-city-review-card:hover {
   border-color: rgba(230, 25, 25, 0.3);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  transform: translateY(-2px);
 }
 
-/* Vertical Testimonial Viewport (One visible at a time with Up/Down scroll) */
+/* Horizontal Responsive Testimonial Viewport (Swipeable on Mobile, Zero Scrollbars) */
 .pm-testi-scroll-viewport {
-  height: 220px;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-right: 4px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(230, 25, 25, 0.4) transparent;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  flex-direction: row;
+  gap: 12px;
+  padding: 2px 2px 6px 2px;
+  touch-action: pan-y pinch-zoom;
 }
 
 .pm-testi-scroll-viewport::-webkit-scrollbar {
-  width: 5px;
-}
-
-.pm-testi-scroll-viewport::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 10px;
-}
-
-.pm-testi-scroll-viewport::-webkit-scrollbar-thumb {
-  background: rgba(230, 25, 25, 0.35);
-  border-radius: 10px;
-}
-
-.pm-testi-scroll-viewport::-webkit-scrollbar-thumb:hover {
-  background: var(--pm-red);
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .pm-city-review-card.pm-testi-snap-item {
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  flex-shrink: 0;
-  height: 220px;
-  min-height: 220px;
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  min-height: 180px;
+}
+
+.pm-testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.pm-testi-dot.active {
+  width: 20px;
+  border-radius: 10px;
+  background: var(--pm-red);
 }
 
 .pm-testi-nav-arrows {
