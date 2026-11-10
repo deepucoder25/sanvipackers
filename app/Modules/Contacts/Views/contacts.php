@@ -14,7 +14,7 @@ $servicesList = [
 <!-- Dynamic Breadcrumb -->
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Contact Us & Get In Touch',
-    'subtitle'    => 'Get a transparent, itemized moving estimate within 15 minutes. Our relocation coordinators are available 24/7.',
+    'subtitle'    => 'Get a transparent, itemized moving estimate within 60 seconds. Our relocation coordinators are available 24/7.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Contact Us'],
@@ -41,7 +41,7 @@ $servicesList = [
         <!-- Quick Trust Strip -->
         <div class="d-flex align-items-center justify-content-center flex-wrap pm-contact-trust-strip mb-5">
             <span class="pm-contact-trust-pill">
-                <i class="bi bi-clock-history text-danger"></i> 15-Minute Fast Estimate
+                <i class="bi bi-clock-history text-danger"></i> 60-Second Fast Estimate
             </span>
             <span class="pm-contact-trust-pill">
                 <i class="bi bi-shield-fill-check text-success"></i> 100% Insured Transit
@@ -245,7 +245,7 @@ $servicesList = [
                     </h3>
                     <div id="cfaqCollapse1" class="accordion-collapse collapse show" data-bs-parent="#contactFaqAccordion">
                         <div class="accordion-body text-muted small">
-                            Our moving coordinators review incoming inquiries within 15 to 30 minutes during working hours and call you directly with a customized itemized estimate.
+                            Our moving coordinators review incoming inquiries within 60 seconds during working hours and call you directly with a customized itemized estimate.
                         </div>
                     </div>
                 </div>

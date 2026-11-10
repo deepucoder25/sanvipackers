@@ -8,7 +8,7 @@ $serviceMeta = [
         'chip1_icon' => 'bi-shield-check text-danger',
         'chip1_text' => 'Zero Damage Move',
         'chip2_icon' => 'bi-box-seam text-warning',
-        'chip2_text' => '3-Layer Bubble Pack',
+        'chip2_text' => 'Multi-Layer Bubble Pack',
     ],
     'office-relocation' => [
         'title'      => 'Office Relocation',
@@ -141,7 +141,7 @@ $serviceMeta = [
         </div>
 
         <!-- Bottom Assistance Strip -->
-        <div class="mt-5 p-4 rounded-4 shadow-sm pm-service-bottom-strip d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div class="mt-5 p-3 p-md-4 rounded-4 shadow-sm pm-service-bottom-strip d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
             <div class="d-flex align-items-center gap-3 text-start">
                 <div class="pm-strip-icon-box rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-shield-check fs-4"></i>
@@ -151,11 +151,11 @@ $serviceMeta = [
                     <p class="text-muted small mb-0">Our relocation specialists provide free on-site survey &amp; accurate quotes.</p>
                 </div>
             </div>
-            <div class="d-flex gap-2 flex-nowrap justify-content-center pm-strip-btn-group">
-                <a <?= $phonehtml ?> class="btn btn-outline-dark rounded-pill px-4 fw-bold pm-strip-btn" aria-label="Call relocation specialist for customized moving plan">
+            <div class="d-flex gap-2 flex-wrap flex-sm-nowrap justify-content-center pm-strip-btn-group">
+                <a <?= $phonehtml ?> class="btn btn-outline-dark rounded-pill fw-bold pm-strip-btn" aria-label="Call relocation specialist for customized moving plan">
                     <i class="bi bi-telephone-fill me-1"></i> Call Specialist
                 </a>
-                <button type="button" class="btn btn-danger rounded-pill px-4 fw-bold pm-btn-red pm-strip-btn" data-bs-toggle="modal" data-bs-target="#qteModal">
+                <button type="button" class="btn btn-danger rounded-pill fw-bold pm-btn-red pm-strip-btn" data-bs-toggle="modal" data-bs-target="#qteModal">
                     Get Instant Quote <i class="bi bi-arrow-right ms-1"></i>
                 </button>
             </div>

@@ -25,7 +25,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         </li>
                         <li class="pm-hb-sep" aria-hidden="true"><i class="bi bi-chevron-right"></i></li>
                         <li class="pm-hb-item">
-                            <a href="<?= site_url('city') ?>" class="pm-hb-link">All States</a>
+                            <a href="<?= site_url('city') ?>" class="pm-hb-link">Cities</a>
                         </li>
                         <li class="pm-hb-sep" aria-hidden="true"><i class="bi bi-chevron-right"></i></li>
                         <li class="pm-hb-item pm-hb-static">
@@ -39,23 +39,20 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                 </nav>
 
                 <h1 class="pm-hero-title mb-2 mb-md-3">
+                    <span class="pm-hero-script-kicker d-block">Welcome to</span>
                     Best Packers and Movers in <span class="pm-text-accent-red"><?= esc($cityName) ?>, <?= esc($stateName) ?></span>
                 </h1>
 
                 <p class="lead pm-hero-lead mb-3">
-                    Professional packaging with 3-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee in <?= esc($cityName) ?>.
+                    Sanvi Packers and Movers delivers safe, careful, and timely shifting services for homes and offices across <?= esc($cityName) ?> and beyond. We handle every item with the utmost care — so you can move with peace of mind.
                 </p>
 
                 <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-3">
-                    <a href="<?= site_url('about') ?>" class="btn pm-hero-btn-outline px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
-                        <i class="bi bi-info-circle-fill text-danger"></i>
-                        <span>About Us</span>
-                    </a>
                     <a href="<?= site_url('contact') ?>" class="btn pm-hero-btn-outline px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
                         <i class="bi bi-envelope-fill text-danger"></i>
                         <span>Contact Us</span>
                     </a>
-                    <a <?= $phonehtml ?> class="btn pm-hero-btn-phone px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto" title="Call Now" aria-label="Call Now">
+                    <a <?= $phonehtml ?> class="btn pm-hero-btn-phone px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0" title="Call Now" aria-label="Call Now">
                         <i class="bi bi-telephone-fill"></i>
                         <span><?= $phone ?></span>
                     </a>
@@ -119,7 +116,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
 
                     <!-- Feature Tags (One Row) -->
                     <div class="pm-cd-feature-pills">
-                        <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> 3-Layer Packing</span>
+                        <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> Multi-Layer Packing</span>
                         <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> 100% Transit Insurance</span>
                         <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> GPS Tracked Fleet</span>
                         <span class="pm-cd-feature-pill"><i class="bi bi-check-circle-fill"></i> Zero Hidden Costs</span>
@@ -213,7 +210,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             <span class="pm-cpt-price-domestic">₹8,500 – ₹16,000</span>
                         </div>
                         <div class="pm-cpt-col-pack">
-                            <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> 3-Layer Cartons + Bubble</span>
+                            <span class="pm-cpt-pack-text"><i class="bi bi-box-seam text-danger me-1"></i> Multi-Layer Cartons + Bubble</span>
                         </div>
                         <div class="pm-cpt-col-action">
                             <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 1 BHK Move">
@@ -238,7 +235,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             <span class="pm-cpt-price-domestic">₹13,500 – ₹24,000</span>
                         </div>
                         <div class="pm-cpt-col-pack">
-                            <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Heavy 3-Layer + Foam</span>
+                            <span class="pm-cpt-pack-text"><i class="bi bi-shield-check text-success me-1"></i> Heavy Multi-Layer + Foam</span>
                         </div>
                         <div class="pm-cpt-col-action">
                             <button type="button" class="pm-cpt-btn" data-bs-toggle="modal" data-bs-target="#qteModal" title="Book 2 BHK Move">
@@ -467,7 +464,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <p class="pm-journey-desc">Certified packers arrive on-time with high-density bubble roll, corrugated cartons, and anti-static wrapping.</p>
                     <div class="pm-journey-footer">
                         <span class="pm-journey-tag">
-                            <i class="bi bi-check2-circle text-success"></i> 3-Layer Materials
+                            <i class="bi bi-check2-circle text-success"></i> Multi-Layer Materials
                         </span>
                     </div>
                 </div>
@@ -588,7 +585,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 </div>
                                 <span class="pm-review-badge"><i class="bi bi-patch-check-fill"></i> Verified Move</span>
                             </div>
-                            <p class="pm-review-text">"Relocated our 3 BHK within <?= esc($cityName) ?> seamlessly. The team was punctual, handled delicate glassware with 3-layer bubble packing, and reassembled all furniture before evening. Zero damages!"</p>
+                            <p class="pm-review-text">"Relocated our 3 BHK within <?= esc($cityName) ?> seamlessly. The team was punctual, handled delicate glassware with multi-layer bubble packing, and reassembled all furniture before evening. Zero damages!"</p>
                             <div class="pm-review-footer">
                                 <span class="text-muted small"><i class="bi bi-shield-check text-success me-1"></i> Household Relocation</span>
                                 <span class="pm-review-stars small"><i class="bi bi-star-fill" aria-hidden="true"></i> 5.0</span>
@@ -693,7 +690,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             </h4>
                             <div id="cfaq1" class="accordion-collapse collapse show" aria-labelledby="cfaqHead1" data-bs-parent="#cityFaqAccordion">
                                 <div class="accordion-body">
-                                    Moving costs depend on total volume of household items, packaging tier (customized 3-layer protective packing), vehicle carrier size, elevator availability/floor levels, and total transit distance. We provide a guaranteed, written quote with zero hidden charges after a quick survey.
+                                    Moving costs depend on total volume of household items, packaging tier (customized multi-layer protective packing), vehicle carrier size, elevator availability/floor levels, and total transit distance. We provide a guaranteed, written quote with zero hidden charges after a quick survey.
                                 </div>
                             </div>
                         </div>
@@ -738,7 +735,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                             </h4>
                             <div id="cfaq4" class="accordion-collapse collapse" aria-labelledby="cfaqHead4" data-bs-parent="#cityFaqAccordion">
                                 <div class="accordion-body">
-                                    We utilize heavy-duty 3-layer certified bubble wrap, corrugated sheets, edge guards, and specialized wooden crating for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright fragile tags and loaded with hydraulic cushioning.
+                                    We utilize heavy-duty multi-layer certified bubble wrap, corrugated sheets, edge guards, and specialized wooden crating for large LED TVs, glass dining tables, and delicate artworks. Every fragile box is marked with bright fragile tags and loaded with hydraulic cushioning.
                                 </div>
                             </div>
                         </div>
@@ -775,7 +772,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <h3 class="pm-cta-heading">Planning to Relocate in <span class="text-danger"><?= esc($cityName) ?></span>?</h3>
                     <p class="pm-cta-text">Speak with our certified relocation coordinator for instant transparent pricing, preferred date reservation, and a free survey.</p>
                     <div class="pm-cta-trust-tags">
-                        <span><i class="bi bi-lightning-charge-fill text-warning"></i> 15-Min Fast Callback</span>
+                        <span><i class="bi bi-lightning-charge-fill text-warning"></i> 60-Sec Fast Callback</span>
                         <span><i class="bi bi-shield-check text-success"></i> Fixed Price Guarantee</span>
                         <span><i class="bi bi-check-circle-fill text-danger"></i> Zero Hidden Charges</span>
                     </div>

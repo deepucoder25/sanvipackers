@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $allServicesList = $allServices ?? \Modules\Services\Controllers\Services::getServicesList();
 // Filter out current service for the "Other Services" section
 $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !== 'loading-unloading');
@@ -265,24 +265,25 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
         </div>
     </section>
 
-    <!-- 5. CREW TIERS (4 TIERS) -->
+    <!-- 5. CREW TIERS (4 TIERS & COMPLETE RATE CHARTS) -->
     <section class="py-5 pm-srv-pricing-sec">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase pm-srv-hero-badge mb-2">
-                    <i class="bi bi-people-fill me-1"></i> Labor Configuration
+                    <i class="bi bi-people-fill me-1"></i> Cost Overview &amp; Rates
                 </span>
-                <h2 class="display-6 fw-bold text-dark mb-2">Loading &amp; Handling Team Sizes</h2>
+                <h2 class="display-6 fw-bold text-dark mb-2">Loading &amp; Unloading Charges &amp; Team Plans</h2>
                 <p class="text-muted mx-auto mb-0 pm-srv-section-sub-650">
-                    Hire professional loaders tailored to small apartments, multi-story villas, or commercial warehouses.
+                    Hire background-verified, certified moving handlers equipped with heavy-duty dollies, belts, and ramps.
                 </p>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5">
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">2 HANDLERS</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Small Assist</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">2 HANDLERS</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Small Assist</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹1,500 – ₹3,000 <span class="text-muted small fw-normal d-block fs-6">Up to 3 Hours</span></div>
                         <p class="text-muted small mb-3">1 BHK flat or small truck loading/unloading assistance.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -299,8 +300,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
-                        <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">4 Handlers Team</h3>
+                        <span class="badge bg-danger text-white fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">4 Handlers Team</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹3,000 – ₹6,000 <span class="text-muted small fw-normal d-block fs-6">Up to 6 Hours</span></div>
                         <p class="text-muted small mb-3">Standard 2-3 BHK apartment complete loading and unloading.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -317,8 +319,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">6 HANDLERS</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Large Villa / Floor</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">6 HANDLERS</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Large Villa / Floor</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹5,000 – ₹10,000 <span class="text-muted small fw-normal d-block fs-6">Full Day Operation</span></div>
                         <p class="text-muted small mb-3">Multi-story home or high-volume 3-4 BHK without lift access.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -335,8 +338,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">SPECIAL MACHINERY</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Vault &amp; Heavy Gear</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">SPECIAL MACHINERY</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Vault &amp; Heavy Gear</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹6,000 – ₹15,000 <span class="text-muted small fw-normal d-block fs-6">Special Equipment Job</span></div>
                         <p class="text-muted small mb-3">Safes, pianos, medical equipment, and heavy industrial cargo.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -351,6 +355,73 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </div>
                 </div>
             </div>
+
+            <!-- Table 1: Loading & Labor Charges Breakdown -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-person-arms-up"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Loading &amp; Unloading Labor Rate Breakdown</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Certified &amp; Insured Handlers</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 25%;">Crew Configuration</th>
+                                <th scope="col" class="text-center" style="width: 30%;">Recommended Home / Move Size</th>
+                                <th scope="col" class="text-center" style="width: 20%;">Standard Duration</th>
+                                <th scope="col" class="text-center" style="width: 25%;">Estimated Charges</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>2 Handlers (Small Assist)</strong></td>
+                                <td class="text-center text-muted">1 RK / 1 BHK or Partial Shift</td>
+                                <td class="text-center text-muted">Up to 3 Hours</td>
+                                <td class="text-center fw-bold text-dark">₹1,500 - ₹3,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>4 Handlers Team</strong></td>
+                                <td class="text-center text-muted">2 BHK – 3 BHK Standard Flat</td>
+                                <td class="text-center text-muted">Up to 6 Hours</td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹6,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>6 Handlers Squad</strong></td>
+                                <td class="text-center text-muted">3+ BHK, Duplex / No-Lift Floors</td>
+                                <td class="text-center text-muted">Full Day (8 Hours)</td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹10,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heavy Machinery / Riggers</strong></td>
+                                <td class="text-center text-muted">Pianos, Heavy Safes, Industrial Racks</td>
+                                <td class="text-center text-muted">Custom Shift Basis</td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹15,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Localities For Packers And Movers in Mumbai (Clickable Area Links) -->
+            <?= view('Modules\Home\Views\mumbai_localities') ?>
         </div>
     </section>
 

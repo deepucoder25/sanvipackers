@@ -265,24 +265,25 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
         </div>
     </section>
 
-    <!-- 5. VEHICLE CATEGORIES (4 TIERS) -->
+    <!-- 5. VEHICLE CATEGORIES (4 TIERS & COMPLETE RATE CHARTS) -->
     <section class="py-5 pm-srv-pricing-sec">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase pm-srv-hero-badge mb-2">
-                    <i class="bi bi-tag-fill me-1"></i> Vehicle Types
+                    <i class="bi bi-tag-fill me-1"></i> Cost Overview &amp; Rates
                 </span>
-                <h2 class="display-6 fw-bold text-dark mb-2">Vehicle Shipping Categories</h2>
+                <h2 class="display-6 fw-bold text-dark mb-2">Vehicle Shipping Rates &amp; Distance Plans</h2>
                 <p class="text-muted mx-auto mb-0 pm-srv-section-sub-650">
-                    Customized freight arrangements suited for two-wheelers, executive sedans, and luxury SUVs.
+                    Transparent shipping charges for two-wheelers, hatchbacks, premium sedans, and luxury SUVs across India.
                 </p>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5">
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">TWO-WHEELER</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Scooters &amp; Bikes</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">TWO-WHEELER</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Scooters &amp; Bikes</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹1,500 – ₹3,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Activa, Jupiter, Splendor, Pulsar &amp; daily commuter bikes.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -299,14 +300,15 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
-                        <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">POPULAR CAR PLAN</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Hatchback &amp; Sedan</h3>
+                        <span class="badge bg-danger text-white fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">POPULAR CAR PLAN</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Hatchback &amp; Sedan</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹3,000 – ₹7,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Swift, Baleno, Honda City, Verna, Ciaz &amp; sedans.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
                             <li><i class="bi bi-check-circle-fill text-danger me-2"></i> Enclosed Car Carrier Trailer</li>
                             <li><i class="bi bi-check-circle-fill text-danger me-2"></i> 4-Wheel Lock Clamp Fasteners</li>
-                            <li><i class="bi bi-check-circle-fill text-danger me-2"></i> Pre-Move 360Â° Photo Inspection</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-2"></i> Pre-Move 360° Photo Inspection</li>
                             <li><i class="bi bi-check-circle-fill text-danger me-2"></i> Real-Time GPS Tracking Link</li>
                         </ul>
                         <button type="button" class="btn pm-srv-btn-primary w-100 rounded-pill fw-bold text-white" data-bs-toggle="modal" data-bs-target="#qteModal">
@@ -317,8 +319,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">COMPACT &amp; FULL SUV</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Mid-Size &amp; Big SUV</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">COMPACT &amp; FULL SUV</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Mid-Size &amp; Big SUV</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹5,000 – ₹9,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Creta, Seltos, Scorpio, Safari, Fortuner &amp; Thar.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -335,8 +338,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">LUXURY &amp; CRATES</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Super-Bike &amp; Luxury</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">LUXURY &amp; CRATES</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Super-Bike &amp; Luxury</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">From ₹3,000 <span class="text-muted small fw-normal d-block fs-6">Enclosed / Crated</span></div>
                         <p class="text-muted small mb-3">Harley, BMW, Mercedes, Audi &amp; high-value vehicles.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -351,6 +355,127 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </div>
                 </div>
             </div>
+
+            <!-- Table 1: Car Transportation Charges (Car Type vs Distance) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper mb-4">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-car-front-fill"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Car Transportation Charges by Distance</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Enclosed Car Carrier Logistics</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 26%;">Car Type / Distance</th>
+                                <th scope="col" class="text-center">Up to 10 km</th>
+                                <th scope="col" class="text-center">Up to 150 km</th>
+                                <th scope="col" class="text-center">Up to 500 km</th>
+                                <th scope="col" class="text-center">1200 km &amp; Above</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hatchback</strong></td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹6,000</td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹10,000</td>
+                                <td class="text-center fw-bold text-dark">₹10,000 - ₹18,000</td>
+                                <td class="text-center fw-bold text-dark">₹18,000 - ₹30,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sedan</strong></td>
+                                <td class="text-center fw-bold text-dark">₹4,000 - ₹7,000</td>
+                                <td class="text-center fw-bold text-dark">₹7,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹12,000 - ₹22,000</td>
+                                <td class="text-center fw-bold text-dark">₹22,000 - ₹35,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SUV</strong></td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹9,000</td>
+                                <td class="text-center fw-bold text-dark">₹9,000 - ₹15,000</td>
+                                <td class="text-center fw-bold text-dark">₹15,000 - ₹25,000</td>
+                                <td class="text-center fw-bold text-dark">₹25,000 - ₹40,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Table 2: Bike Transportation Charges (Bike Type vs Distance) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-bicycle"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Bike &amp; Two-Wheeler Transportation Charges by Distance</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Bubble Wrap &amp; Stand Support</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 26%;">Bike Type / Distance</th>
+                                <th scope="col" class="text-center">Up to 10 km</th>
+                                <th scope="col" class="text-center">Up to 150 km</th>
+                                <th scope="col" class="text-center">Up to 500 km</th>
+                                <th scope="col" class="text-center">1200 km &amp; Above</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Standard Bike / Scooter</strong></td>
+                                <td class="text-center fw-bold text-dark">₹1,500 - ₹3,000</td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹5,000</td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹8,000</td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹15,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sports Bike (150cc - 400cc)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹2,000 - ₹4,000</td>
+                                <td class="text-center fw-bold text-dark">₹4,000 - ₹7,000</td>
+                                <td class="text-center fw-bold text-dark">₹7,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹12,000 - ₹20,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Premium Bike / Cruiser (500cc+)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹5,000</td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹9,000</td>
+                                <td class="text-center fw-bold text-dark">₹9,000 - ₹15,000</td>
+                                <td class="text-center fw-bold text-dark">₹15,000 - ₹25,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Localities For Packers And Movers in Mumbai (Clickable Area Links) -->
+            <?= view('Modules\Home\Views\mumbai_localities') ?>
         </div>
     </section>
 

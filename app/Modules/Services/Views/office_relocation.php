@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $allServicesList = $allServices ?? \Modules\Services\Controllers\Services::getServicesList();
 // Filter out current service for the "Other Services" section
 $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !== 'office-relocation');
@@ -265,24 +265,25 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
         </div>
     </section>
 
-    <!-- 5. CORPORATE MOVE CAPACITY GUIDE (4 TIERS) -->
+    <!-- 5. CORPORATE MOVE CAPACITY GUIDE (4 TIERS & COMPLETE RATE CHARTS) -->
     <section class="py-5 pm-srv-pricing-sec">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase pm-srv-hero-badge mb-2">
-                    <i class="bi bi-buildings me-1"></i> Workplace Scale
+                    <i class="bi bi-buildings me-1"></i> Cost Overview &amp; Rates
                 </span>
-                <h2 class="display-6 fw-bold text-dark mb-2">Office Moving Capacity Plans</h2>
+                <h2 class="display-6 fw-bold text-dark mb-2">Office Relocation Charges &amp; Capacity Plans</h2>
                 <p class="text-muted mx-auto mb-0 pm-srv-section-sub-650">
-                    Tailored shifting frameworks for startups, regional offices, and multinational corporate headquarters.
+                    Transparent shifting rates tailored for startups, regional commercial branches, and multinational corporate headquarters.
                 </p>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5">
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">1-10 DESKS</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Startup Office</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">1-10 DESKS</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Startup Office</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹10,000 – ₹20,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Ideal for co-working expansions, branch offices, and boutique firms.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -299,8 +300,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
-                        <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">10-30 Workstations</h3>
+                        <span class="badge bg-danger text-white fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">10-30 Workstations</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹20,000 – ₹35,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Standard corporate branch shift with servers, cubicles &amp; files.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -317,8 +319,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">30-80 DESKS</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Corporate Floor</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">30-80 DESKS</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Corporate Floor</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹35,000 – ₹60,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Complete office floor relocation with conference centers and pantry.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -335,8 +338,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">80+ DESKS / CAMPUS</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Enterprise HQ</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">80+ DESKS / CAMPUS</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Enterprise HQ</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">Custom Quote <span class="text-muted small fw-normal d-block fs-6">Dedicated Corporate Plan</span></div>
                         <p class="text-muted small mb-3">Multi-phase corporate enterprise migration across buildings or cities.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -351,6 +355,68 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </div>
                 </div>
             </div>
+
+            <!-- Table 1: Office Relocation Charges (Office Size vs Distance) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-briefcase-fill"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Office Relocation Charges by Distance</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Corporate &amp; Commercial Rates</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 26%;">Office Size / Distance</th>
+                                <th scope="col" class="text-center">Up to 10 km</th>
+                                <th scope="col" class="text-center">Up to 150 km</th>
+                                <th scope="col" class="text-center">Up to 500 km</th>
+                                <th scope="col" class="text-center">1200 km &amp; Above</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Small Office (1-10 Desks)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹10,000 - ₹20,000</td>
+                                <td class="text-center fw-bold text-dark">₹18,000 - ₹35,000</td>
+                                <td class="text-center fw-bold text-dark">₹35,000 - ₹70,000</td>
+                                <td class="text-center fw-bold text-dark">₹70,000 - ₹1,40,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Medium Office (10-30 Desks)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹20,000 - ₹35,000</td>
+                                <td class="text-center fw-bold text-dark">₹35,000 - ₹60,000</td>
+                                <td class="text-center fw-bold text-dark">₹60,000 - ₹1,10,000</td>
+                                <td class="text-center fw-bold text-dark">₹1,10,000 - ₹2,00,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Large Office (30-80 Desks)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹35,000 - ₹60,000</td>
+                                <td class="text-center fw-bold text-dark">₹60,000 - ₹1,00,000</td>
+                                <td class="text-center fw-bold text-dark">₹1,00,000 - ₹1,80,000</td>
+                                <td class="text-center fw-bold text-dark">₹1,80,000 - ₹3,00,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Localities For Packers And Movers in Mumbai (Clickable Area Links) -->
+            <?= view('Modules\Home\Views\mumbai_localities') ?>
         </div>
     </section>
 

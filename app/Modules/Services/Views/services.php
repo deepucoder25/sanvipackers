@@ -19,7 +19,7 @@
                 All-in-One <span class="pm-text-red">Packers &amp; Movers</span> Services
             </h2>
             <p class="lead text-muted mx-auto pm-srv-hero-sub">
-                From 3-layer customized packing to enclosed vehicle trailers and climate-controlled storage, explore our complete suite of relocation services tailored for total peace of mind.
+                From multi-layer customized packing to enclosed vehicle trailers and climate-controlled storage, explore our complete suite of relocation services tailored for total peace of mind.
             </p>
             <div class="d-inline-flex align-items-center justify-content-center flex-wrap gap-2 mt-3">
                 <span class="pm-srv-pill-stat"><i class="bi bi-patch-check-fill text-danger me-1"></i> ISO 9001:2015 Certified</span>
@@ -110,7 +110,7 @@
                             <div class="pm-pillar-icon flex-shrink-0">
                                 <i class="bi bi-box-seam-fill"></i>
                             </div>
-                            <h3 class="h6 fw-bold mb-0 text-dark">3-Layer Bubble Packing</h3>
+                            <h3 class="h6 fw-bold mb-0 text-dark">Multi-Layer Bubble Packing</h3>
                         </div>
                         <p class="small text-muted mb-0">High-grade double-ply corrugated boxes, stretch wrap, and foam edge protectors for fragile items.</p>
                     </div>

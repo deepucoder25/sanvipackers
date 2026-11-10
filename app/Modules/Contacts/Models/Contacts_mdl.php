@@ -32,7 +32,21 @@ class Contacts_mdl extends Model
         $phone   = $request->getPost('phone');
         $mfrom   = $request->getPost('mfrom');
         $mto     = $request->getPost('mto');
-        $msg     = $request->getPost('message');
+        $service = $request->getPost('service') ?: $request->getPost('mtype');
+        $size    = $request->getPost('shifting_size');
+        $rawMsg  = $request->getPost('message');
+
+        $parts = [];
+        if (!empty($service)) {
+            $parts[] = "Service: " . $service;
+        }
+        if (!empty($size)) {
+            $parts[] = "Size: " . $size;
+        }
+        if (!empty($rawMsg)) {
+            $parts[] = $rawMsg;
+        }
+        $msg = !empty($parts) ? implode(" | ", $parts) : '';
 
         // Insert booking data into the database (Config/Database.php se auto-connect)
         $this->db->table('bookings')->insert([

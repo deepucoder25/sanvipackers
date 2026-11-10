@@ -14,8 +14,8 @@
             <span class="section-badge">
                 <i class="bi bi-geo-alt-fill"></i> Nationwide Network
             </span>
-            <h2 class="section-title">Select Your State / Union Territory</h2>
-            <p class="section-subtitle">Click on your state below to explore verified packers and movers operating in your local city.</p>
+            <h2 class="section-title">Select Your Pickup Location</h2>
+            <p class="section-subtitle">Click on your pickup location below to explore verified packers and movers operating in your local city.</p>
         </div>
 
         <!-- States Grid -->

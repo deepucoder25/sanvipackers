@@ -7,7 +7,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 <!-- Dynamic Breadcrumb -->
 <?= view('Modules\About\Views\dynamic_breadcrumb', [
     'title'       => 'Household Moving Services',
-    'subtitle'    => 'Complete door-to-door home relocation with 3-layer bubble packaging, specialized wardrobe cartons, and careful furniture assembly.',
+    'subtitle'    => 'Complete door-to-door home relocation with multi-layer bubble packaging, specialized wardrobe cartons, and careful furniture assembly.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
         ['title' => 'Services', 'url' => site_url('services')],
@@ -33,12 +33,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </h1>
 
                     <p class="lead text-muted mb-4 pm-srv-hero-desc">
-                        Relocating your home means entrusting your memories, fragile glassware, and precious furniture to dependable hands. At <strong><?= $company3 ?></strong>, our dedicated residential relocation crew manages everything from 3-layer bubble packaging and custom wooden crating to GPS-tracked container transport and doorstep unpacking at your new destination.
+                        Relocating your home means entrusting your memories, fragile glassware, and precious furniture to dependable hands. At <strong><?= $company3 ?></strong>, our dedicated residential relocation crew manages everything from multi-layer bubble packaging and custom wooden crating to GPS-tracked container transport and doorstep unpacking at your new destination.
                     </p>
 
                     <!-- Key Advantage Chips -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="pm-hero-chip"><i class="bi bi-box-seam text-danger me-1"></i> 3-Layer Bubble Packing</span>
+                        <span class="pm-hero-chip"><i class="bi bi-box-seam text-danger me-1"></i> Multi-Layer Bubble Packing</span>
                         <span class="pm-hero-chip"><i class="bi bi-check-circle-fill text-success me-1"></i> Zero Damage Guarantee</span>
                         <span class="pm-hero-chip"><i class="bi bi-truck text-warning me-1"></i> All-Weather Container Fleet</span>
                         <span class="pm-hero-chip"><i class="bi bi-people-fill text-danger me-1"></i> Police-Verified Packing Crew</span>
@@ -119,7 +119,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             <div class="pm-srv-card-icon flex-shrink-0">
                                 <i class="bi bi-box-seam-fill"></i>
                             </div>
-                            <h3 class="h5 fw-bold text-dark mb-0">3-Layer Bubble Cushioning</h3>
+                            <h3 class="h5 fw-bold text-dark mb-0">Multi-Layer Bubble Cushioning</h3>
                         </div>
                         <p class="text-muted small mb-0">
                             Double-wall virgin kraft cartons, heavy air-bubble rolls, stretch wrap, and foam edge protectors shield furniture and appliances from transit impact.
@@ -230,7 +230,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <div class="p-4 rounded-4 h-100 bg-light border pm-process-step-box position-relative text-start">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <div class="pm-step-num-badge flex-shrink-0">2</div>
-                            <h3 class="h6 fw-bold text-dark mb-0">3-Layer Bubble Packing</h3>
+                            <h3 class="h6 fw-bold text-dark mb-0">Multi-Layer Bubble Packing</h3>
                         </div>
                         <p class="text-muted small mb-0">
                             Certified packing team arrives with premium cartons, bubble wrap rolls, and custom labels to safely pack every room.
@@ -265,24 +265,26 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
         </div>
     </section>
 
-    <!-- 5. HOME SIZE PRICING GUIDE (4 TIERS) -->
+    <!-- 5. HOME SIZE PRICING GUIDE (4 TIERS & COMPLETE RATE CHARTS) -->
     <section class="py-5 pm-srv-pricing-sec">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase pm-srv-hero-badge mb-2">
-                    <i class="bi bi-cash-stack me-1"></i> Cost Overview
+                    <i class="bi bi-cash-stack me-1"></i> Cost Overview &amp; Rates
                 </span>
-                <h2 class="display-6 fw-bold text-dark mb-2">Home Shifting Volume Estimates</h2>
+                <h2 class="display-6 fw-bold text-dark mb-2">Home Shifting Rates &amp; Volume Estimates</h2>
                 <p class="text-muted mx-auto mb-0 pm-srv-section-sub-650">
-                    Indicative capacity and vehicle configuration tailored to standard Indian residential floor plans.
+                    Transparent rates tailored for studio flats, family apartments, luxury villas, and long-distance home moves.
                 </p>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <!-- 4 Tier Capacity Cards with Starting Price Tags -->
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5">
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">1 RK / 1 BHK</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Studio / Small Flat</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">1 RK / 1 BHK</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Studio / Small Flat</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹4,000 – ₹8,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Ideal for singles, bachelors or small 1-bedroom apartments.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -299,8 +301,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
-                        <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">2 BHK Apartment</h3>
+                        <span class="badge bg-danger text-white fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">2 BHK Apartment</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹5,000 – ₹9,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Standard family home relocation with electronics &amp; master bedroom furniture.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -317,8 +320,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">3 BHK FLAT</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Large Family Home</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">3 BHK FLAT</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Large Family Home</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹6,000 – ₹11,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Comprehensive shift including multiple bedrooms, sofa set, modular kitchen items.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -335,8 +339,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">4+ BHK / VILLA</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Luxury Bungalow</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">4+ BHK / VILLA</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Luxury Bungalow</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹8,000 – ₹12,000 <span class="text-muted small fw-normal d-block fs-6">Local (0-10 Km)</span></div>
                         <p class="text-muted small mb-3">Multi-floor shifting with heavy artifacts, outdoor furniture, and vehicle carrier option.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -351,6 +356,134 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </div>
                 </div>
             </div>
+
+            <!-- Table 1: Home Relocation Charges (House Size vs Distance) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper mb-4">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-house-door-fill"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Home Relocation Charges by Distance</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Local &amp; Intercity Distance Tiers</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 26%;">House Size / Distance</th>
+                                <th scope="col" class="text-center">Up to 10 km</th>
+                                <th scope="col" class="text-center">Up to 150 km</th>
+                                <th scope="col" class="text-center">Up to 500 km</th>
+                                <th scope="col" class="text-center">1200 km &amp; Above</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1 BHK House</strong></td>
+                                <td class="text-center fw-bold text-dark">₹4,000 - ₹7,000</td>
+                                <td class="text-center fw-bold text-dark">₹7,000 - ₹15,000</td>
+                                <td class="text-center fw-bold text-dark">₹15,000 - ₹25,000</td>
+                                <td class="text-center fw-bold text-dark">₹25,000 - ₹50,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>2 BHK House</strong></td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹15,000 - ₹35,000</td>
+                                <td class="text-center fw-bold text-dark">₹35,000 - ₹75,000</td>
+                                <td class="text-center fw-bold text-dark">₹75,000 - ₹1,50,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>3 BHK House</strong></td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹18,000</td>
+                                <td class="text-center fw-bold text-dark">₹22,000 - ₹40,000</td>
+                                <td class="text-center fw-bold text-dark">₹50,000 - ₹90,000</td>
+                                <td class="text-center fw-bold text-dark">₹90,000 - ₹1,60,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>4+ BHK / Villa</strong></td>
+                                <td class="text-center fw-bold text-dark">₹9,000 - ₹14,000</td>
+                                <td class="text-center fw-bold text-dark">₹40,000 - ₹80,000</td>
+                                <td class="text-center fw-bold text-dark">₹80,000 - ₹1,50,000</td>
+                                <td class="text-center fw-bold text-dark">₹1,50,000 - ₹3,00,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Table 2: Detailed Local Shifting Rates (0-50km) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-speedometer2"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Detailed Local Shifting Rates by Distance (0-50km)</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Within City &amp; Metro Moves</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 30%;">Type of Relocation</th>
+                                <th scope="col" class="text-center" style="width: 22%;">0Km - 10Km</th>
+                                <th scope="col" class="text-center" style="width: 22%;">10Km - 30Km</th>
+                                <th scope="col" class="text-center" style="width: 26%;">30Km - 50Km</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1BHK Shifting</strong></td>
+                                <td class="text-center fw-bold text-dark">₹4,000 - ₹8,000</td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹10,000</td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹15,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2BHK Shifting</strong></td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹9,000</td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹11,000</td>
+                                <td class="text-center fw-bold text-dark">₹7,500 - ₹17,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3BHK Shifting</strong></td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹11,000</td>
+                                <td class="text-center fw-bold text-dark">₹7,500 - ₹13,000</td>
+                                <td class="text-center fw-bold text-dark">₹9,000 - ₹19,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4BHK Shifting</strong></td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹10,000 - ₹14,500</td>
+                                <td class="text-center fw-bold text-dark">₹12,000 - ₹22,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Localities For Packers And Movers in Mumbai (Clickable Area Links) -->
+            <?= view('Modules\Home\Views\mumbai_localities') ?>
         </div>
     </section>
 

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $allServicesList = $allServices ?? \Modules\Services\Controllers\Services::getServicesList();
 // Filter out current service for the "Other Services" section
 $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !== 'warehouse-storage');
@@ -267,24 +267,25 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
         </div>
     </section>
 
-    <!-- 5. STORAGE PACKAGES (4 TIERS) -->
+    <!-- 5. STORAGE PACKAGES (4 TIERS & COMPLETE RATE CHARTS) -->
     <section class="py-5 pm-srv-pricing-sec">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase pm-srv-hero-badge mb-2">
-                    <i class="bi bi-box2-heart me-1"></i> Rental Plans
+                    <i class="bi bi-box2-heart me-1"></i> Cost Overview &amp; Rates
                 </span>
-                <h2 class="display-6 fw-bold text-dark mb-2">Flexible Monthly Storage Packages</h2>
+                <h2 class="display-6 fw-bold text-dark mb-2">Warehouse Storage Charges &amp; Flexible Plans</h2>
                 <p class="text-muted mx-auto mb-0 pm-srv-section-sub-650">
-                    Cost-effective warehousing space customized for luggage boxes, apartments, or corporate stock.
+                    Secure, CCTV-monitored, pest-controlled storage facilities for short-term and long-term storage needs.
                 </p>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5">
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">STUDENTS &amp; TRAVEL</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Box &amp; Luggage</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">STUDENTS &amp; TRAVEL</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Box &amp; Luggage</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹1,500 – ₹3,000 <span class="text-muted small fw-normal d-block fs-6">Per Week (From ₹5,000/mo)</span></div>
                         <p class="text-muted small mb-3">5 - 15 Cartons, suitcases &amp; small study room furniture.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -301,8 +302,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
-                        <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">1 BHK Home Storage</h3>
+                        <span class="badge bg-danger text-white fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">1 BHK Home Storage</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹3,000 – ₹5,000 <span class="text-muted small fw-normal d-block fs-6">Per 15 Days (₹8,000/mo)</span></div>
                         <p class="text-muted small mb-3">Bed, fridge, washing machine, TV, sofa &amp; kitchen boxes.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -319,8 +321,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">2-3 BHK FAMILY</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">2-3 BHK Entire House</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">2-3 BHK FAMILY</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">2-3 BHK Entire House</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹5,000 – ₹8,000 <span class="text-muted small fw-normal d-block fs-6">Per Week (From ₹12,000/mo)</span></div>
                         <p class="text-muted small mb-3">Complete family home furnishings, multiple beds, almirahs &amp; electronics.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -337,8 +340,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">COMMERCIAL</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Business &amp; Stock</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">COMMERCIAL</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Business &amp; Stock</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">₹12,000 – ₹18,000 <span class="text-muted small fw-normal d-block fs-6">Monthly Pallet Storage</span></div>
                         <p class="text-muted small mb-3">Retail surplus inventory, equipment, and archive document storage.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -353,6 +357,68 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </div>
                 </div>
             </div>
+
+            <!-- Table 1: Warehouse Storage Charges (Storage Size vs Duration) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-shield-check"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Warehouse Storage Charges by Duration</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Fire, Pest &amp; 24/7 Security Protected</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 26%;">Storage Size / Duration</th>
+                                <th scope="col" class="text-center">1 Week</th>
+                                <th scope="col" class="text-center">15 Days</th>
+                                <th scope="col" class="text-center">1 Month</th>
+                                <th scope="col" class="text-center">3 Months</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Small Storage (Boxes &amp; Few Goods)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹1,500 - ₹3,000</td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹5,000</td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹8,000</td>
+                                <td class="text-center fw-bold text-dark">₹12,000 - ₹20,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Medium Storage (1-2 BHK Household)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹5,000</td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹8,000</td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹20,000 - ₹35,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Large Storage (3+ BHK / Commercial Stock)</strong></td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹8,000</td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹12,000 - ₹18,000</td>
+                                <td class="text-center fw-bold text-dark">₹35,000 - ₹60,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Localities For Packers And Movers in Mumbai (Clickable Area Links) -->
+            <?= view('Modules\Home\Views\mumbai_localities') ?>
         </div>
     </section>
 

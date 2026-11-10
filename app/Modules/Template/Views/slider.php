@@ -16,25 +16,21 @@
 
                 <!-- Main Heading matching screenshot -->
                 <h1 class="pm-hero-title mb-2 mb-md-3">
-                    Mumbai's Most Trusted <br class="d-none d-md-inline"><span class="pm-text-accent-red">Packers and Movers</span>
+                    Welcome to Mumbai's Most Trusted <span class="pm-text-accent-red">Packers and Movers</span>
                 </h1>
 
                 <!-- Subtitle paragraph matching screenshot -->
                 <p class="lead pm-hero-lead mb-3">
-                    Professional packaging with 3-layer corrugated protection, certified handlers, and 100% damage-free delivery guarantee across Mumbai, Navi Mumbai and Thane.
+                    Sanvi Packers and Movers delivers safe, careful, and timely shifting services for homes and offices across Mumbai and beyond. We handle every item with the utmost care — so you can move with peace of mind.
                 </p>
 
                 <!-- Action Buttons matching screenshot -->
                 <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-3">
-                    <a href="<?= site_url('about') ?>" class="btn pm-hero-btn-outline px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
-                        <i class="bi bi-info-circle-fill text-danger"></i>
-                        <span>About Us</span>
-                    </a>
                     <a href="<?= site_url('contact') ?>" class="btn pm-hero-btn-outline px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
                         <i class="bi bi-envelope-fill text-danger"></i>
                         <span>Contact Us</span>
                     </a>
-                    <a <?= $phonehtml ?> class="btn pm-hero-btn-phone px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap w-100 w-sm-auto">
+                    <a <?= $phonehtml ?> class="btn pm-hero-btn-phone px-3 py-2 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap flex-grow-1 flex-sm-grow-0">
                         <i class="bi bi-telephone-fill"></i>
                         <span><?= $phone ?></span>
                     </a>

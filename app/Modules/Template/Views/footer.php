@@ -60,7 +60,6 @@
 
                 <!-- Trust Metric Chips -->
                 <div class="footer-trust-chips mb-3">
-                    <span class="trust-chip"><i class="bi bi-shield-fill-check text-warning"></i> IBA Approved</span>
                     <span class="trust-chip"><i class="bi bi-star-fill text-warning"></i> 4.9/5 Rating</span>
                     <span class="trust-chip"><i class="bi bi-shield-lock-fill text-danger"></i> 100% Insured</span>
                 </div>
@@ -116,7 +115,7 @@
                     <li>
                         <a href="<?= site_url('city') ?>" class="footer-nav-link">
                             <span class="link-icon-box link-icon-quick"><i class="bi bi-geo-alt-fill"></i></span>
-                            <span class="link-title">States / Cities</span>
+                            <span class="link-title">Cities</span>
                             <i class="bi bi-chevron-right link-arrow"></i>
                         </a>
                     </li>

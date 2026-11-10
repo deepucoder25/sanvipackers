@@ -33,12 +33,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </h1>
 
                     <p class="lead text-muted mb-4 pm-srv-hero-desc">
-                        Over 90% of relocation damages happen because of substandard or lightweight packaging. At <strong><?= $company3 ?></strong>, we engineer packaging as an exact science. Our specialized crew utilizes heavy-duty 3-layer corrugated cartons, thick air bubble wrap, high-density foam corners, waterproof stretch film, and custom wooden crates to safeguard your assets against vibrations, impacts, and dust.
+                        Over 90% of relocation damages happen because of substandard or lightweight packaging. At <strong><?= $company3 ?></strong>, we engineer packaging as an exact science. Our specialized crew utilizes heavy-duty multi-layer corrugated cartons, thick air bubble wrap, high-density foam corners, waterproof stretch film, and custom wooden crates to safeguard your assets against vibrations, impacts, and dust.
                     </p>
 
                     <!-- Key Advantage Chips -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="pm-hero-chip"><i class="bi bi-layers-fill text-danger me-1"></i> 3-Layer Corrugated Cartons</span>
+                        <span class="pm-hero-chip"><i class="bi bi-layers-fill text-danger me-1"></i> Multi-Layer Corrugated Cartons</span>
                         <span class="pm-hero-chip"><i class="bi bi-tags-fill text-warning me-1"></i> Color-Coded Room Tagging</span>
                         <span class="pm-hero-chip"><i class="bi bi-water text-primary me-1"></i> Waterproof Stretch Wrapping</span>
                         <span class="pm-hero-chip"><i class="bi bi-shield-check text-success me-1"></i> Zero Damage Guarantee</span>
@@ -70,7 +70,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
             <div class="row g-3 text-center align-items-center">
                 <div class="col-6 col-lg-3">
                     <div class="pm-stat-box p-3 rounded-4">
-                        <div class="h2 fw-bold text-dark mb-0">3-Layer</div>
+                        <div class="h2 fw-bold text-dark mb-0">Multi-Layer</div>
                         <div class="small text-muted fw-semibold">Heavy Duty Multi-Ply Kraft</div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             <div class="pm-srv-card-icon flex-shrink-0">
                                 <i class="bi bi-box-seam-fill"></i>
                             </div>
-                            <h3 class="h5 fw-bold text-dark mb-0">3-Layer Virgin Kraft Cartons</h3>
+                            <h3 class="h5 fw-bold text-dark mb-0">Multi-Layer Virgin Kraft Cartons</h3>
                         </div>
                         <p class="text-muted small mb-0">
                             High-bursting-test double-wall corrugated cartons capable of stacking without crushing or buckling under weight.
@@ -265,24 +265,25 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
         </div>
     </section>
 
-    <!-- 5. PACKING TIERS (4 TIERS) -->
+    <!-- 5. PACKING TIERS (4 TIERS & COMPLETE RATE CHARTS) -->
     <section class="py-5 pm-srv-pricing-sec">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="badge px-3 py-2 rounded-pill text-uppercase pm-srv-hero-badge mb-2">
-                    <i class="bi bi-box2-fill me-1"></i> Packing Plans
+                    <i class="bi bi-box2-fill me-1"></i> Cost Overview &amp; Rates
                 </span>
-                <h2 class="display-6 fw-bold text-dark mb-2">Packaging Packages &amp; Supplies</h2>
+                <h2 class="display-6 fw-bold text-dark mb-2">Packing Services Charges &amp; Packages</h2>
                 <p class="text-muted mx-auto mb-0 pm-srv-section-sub-650">
-                    Choose from essential packing supplies, complete home wrapping, or white-glove VIP crating.
+                    Transparent pricing across packing supplies, professional labor, full container loading, and complete moves.
                 </p>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5">
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">BASIC ESSENTIAL</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Standard Cartons</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">BASIC ESSENTIAL</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Standard Cartons</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">From ₹2,000 <span class="text-muted small fw-normal d-block fs-6">Packing Only (1 BHK)</span></div>
                         <p class="text-muted small mb-3">Suitable for clothes, books, toys, and non-fragile household items.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -299,8 +300,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border-2 border-danger rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card position-relative">
-                        <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">3-Layer Bubble Pack</h3>
+                        <span class="badge bg-danger text-white fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">MOST POPULAR</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Multi-Layer Bubble Pack</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">From ₹4,000 <span class="text-muted small fw-normal d-block fs-6">Packing + Loading</span></div>
                         <p class="text-muted small mb-3">Full apartment packaging with bubble wrap and furniture stretch film.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -310,15 +312,16 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             <li><i class="bi bi-check-circle-fill text-danger me-2"></i> Master Manifest Logging</li>
                         </ul>
                         <button type="button" class="btn pm-srv-btn-primary w-100 rounded-pill fw-bold text-white" data-bs-toggle="modal" data-bs-target="#qteModal">
-                            Choose 3-Layer
+                            Choose Multi-Layer
                         </button>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">FRAGILE SPECIAL</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Glassware &amp; Decor</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">FRAGILE SPECIAL</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Glassware &amp; Decor</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">From ₹7,000 <span class="text-muted small fw-normal d-block fs-6">Packing + Transport</span></div>
                         <p class="text-muted small mb-3">Specialized focus on delicate crockery, porcelain, glassware and TV.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -335,8 +338,9 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
 
                 <div class="col">
                     <div class="card h-100 border rounded-4 shadow-sm p-4 bg-white text-center pm-tier-card">
-                        <span class="badge bg-light text-dark fw-bold mb-3 px-3 py-1 rounded-pill mx-auto">WHITE GLOVE</span>
-                        <h3 class="h5 fw-bold text-dark mb-2">Luxury Crates</h3>
+                        <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-1 rounded-pill mx-auto">WHITE GLOVE</span>
+                        <h3 class="h5 fw-bold text-dark mb-1">Luxury Crates</h3>
+                        <div class="text-danger fw-bold fs-5 mb-2">From ₹12,000 <span class="text-muted small fw-normal d-block fs-6">Complete Move</span></div>
                         <p class="text-muted small mb-3">Bespoke wooden crating for art, marble, antiques, and high-value villas.</p>
                         <hr class="my-3">
                         <ul class="list-unstyled text-start small text-muted mb-4 d-flex flex-column gap-2">
@@ -351,6 +355,119 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     </div>
                 </div>
             </div>
+
+            <!-- Table 1: Packing Services Charges (House Size vs Service Type) -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper mb-4">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-box-seam-fill"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Packing Services Charges by Service Scope</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Materials &amp; Professional Labor Included</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 20%;">House Size</th>
+                                <th scope="col" class="text-center">Packing Only</th>
+                                <th scope="col" class="text-center">Packing + Loading</th>
+                                <th scope="col" class="text-center">Packing + Transport</th>
+                                <th scope="col" class="text-center">Complete Packing</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1 BHK</strong></td>
+                                <td class="text-center fw-bold text-dark">₹2,000 - ₹4,000</td>
+                                <td class="text-center fw-bold text-dark">₹4,000 - ₹7,000</td>
+                                <td class="text-center fw-bold text-dark">₹7,000 - ₹12,000</td>
+                                <td class="text-center fw-bold text-dark">₹12,000 - ₹18,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>2 BHK</strong></td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹6,000</td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹10,000</td>
+                                <td class="text-center fw-bold text-dark">₹10,000 - ₹18,000</td>
+                                <td class="text-center fw-bold text-dark">₹18,000 - ₹28,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>3 BHK</strong></td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹8,000</td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹14,000</td>
+                                <td class="text-center fw-bold text-dark">₹14,000 - ₹22,000</td>
+                                <td class="text-center fw-bold text-dark">₹22,000 - ₹35,000</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Table 2: Local vs. Long-Distance Shifting Charges -->
+            <div class="card border shadow-sm rounded-3 overflow-hidden bg-white pm-clean-rate-wrapper">
+                <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-danger rounded-circle p-2 text-white">
+                            <i class="bi bi-arrows-expand"></i>
+                        </span>
+                        <h3 class="h6 fw-bold mb-0 text-dark">Local vs. Long-Distance Shifting Charges</h3>
+                    </div>
+                    <span class="badge bg-light text-secondary border small">Distance-Based Comparison</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 30%;">Service Type</th>
+                                <th scope="col" class="text-center" style="width: 32%;">Local Shifting Charges (Up to 50Km)</th>
+                                <th scope="col" class="text-center" style="width: 32%;">Long Distance Charges (Up to 999 Km)</th>
+                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1 BHK</strong></td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹10,000</td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹27,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2 BHK</strong></td>
+                                <td class="text-center fw-bold text-dark">₹5,000 - ₹15,000</td>
+                                <td class="text-center fw-bold text-dark">₹6,000 - ₹36,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3+ BHK</strong></td>
+                                <td class="text-center fw-bold text-dark">₹8,000 - ₹22,000</td>
+                                <td class="text-center fw-bold text-dark">₹9,000 - ₹50,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Few Household Goods</strong></td>
+                                <td class="text-center fw-bold text-dark">₹1,000 - ₹6,000</td>
+                                <td class="text-center fw-bold text-dark">₹3,000 - ₹20,000</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger btn-sm rounded-pill px-3 py-1 fw-semibold text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">Book Now</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Localities For Packers And Movers in Mumbai (Clickable Area Links) -->
+            <?= view('Modules\Home\Views\mumbai_localities') ?>
         </div>
     </section>
 
@@ -449,7 +566,7 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                             </h3>
                             <div id="faqPackCollapse4" class="accordion-collapse collapse" data-bs-parent="#packingFaqAccordion">
                                 <div class="accordion-body text-muted small">
-                                    We strictly use brand-new, fresh virgin-kraft 3-layer corrugated carton boxes. We never use recycled, weakened, or unhygienic grocery boxes.
+                                    We strictly use brand-new, fresh virgin-kraft multi-layer corrugated carton boxes. We never use recycled, weakened, or unhygienic grocery boxes.
                                 </div>
                             </div>
                         </div>

@@ -42,6 +42,9 @@ class Contacts extends BaseController
             'name' => 'required|trim',
             'phone' => 'required|trim|numeric|min_length[10]|max_length[13]',
             'email' => 'permit_empty|valid_email',
+            'service' => 'permit_empty',
+            'mtype' => 'permit_empty',
+            'shifting_size' => 'permit_empty',
             'message' => 'permit_empty',
         ];
 

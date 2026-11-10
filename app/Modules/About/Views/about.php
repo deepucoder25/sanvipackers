@@ -16,14 +16,14 @@
                     <span class="section-badge mb-2">
                         <i class="bi bi-clock-history"></i> Our Story &amp; Heritage
                     </span>
-                    <h2 class="section-title mb-3">Redefining Moving Standards Across India</h2>
+                    <h2 class="section-title mb-3">Redefining Moving Standards Across Mumbai, Navi Mumbai and Thane</h2>
                     
                     <p class="pm-about-lead">
-                        Founded with a mission to make packing and shifting completely transparent, predictable, and stress-free, <strong><?= $company3 ?></strong> has grown into one of India’s most trusted logistics networks.
+                        Welcome to <strong><?= $company3 ?></strong> — your trusted relocation partner dedicated to making home and office shifting completely safe, transparent, and stress-free across Mumbai, Navi Mumbai, and Thane.
                     </p>
                     
                     <p class="pm-about-body">
-                        From our humble beginnings with 2 dedicated transport trucks, we now manage a nationwide fleet, climate-controlled warehousing facilities, and over 150+ trained packing professionals serving residential and commercial clients across Mumbai, Navi Mumbai, Thane, and all major routes.
+                        Founded with a mission to deliver 100% damage-free moves, we have grown into the most reliable moving network across Mumbai, Navi Mumbai, and Thane. From dedicated container transport trucks and climate-controlled warehousing to over 150+ certified packing professionals, we handle every household and corporate relocation with utmost care — giving you complete peace of mind.
                     </p>
 
                     <!-- Mission & Vision Bento Cards -->
@@ -45,7 +45,7 @@
                                 </div>
                                 <h3 class="pm-mv-title">Our Vision</h3>
                             </div>
-                            <p class="pm-mv-desc">To be India’s most customer-centric logistics and relocation brand through integrity and transparent pricing.</p>
+                            <p class="pm-mv-desc">To be the most customer-centric logistics and relocation brand across Mumbai, Navi Mumbai, and Thane through integrity, care, and transparent pricing.</p>
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@
                             <div class="pm-pillar-icon-box" aria-hidden="true">
                                 <i class="bi bi-layers-fill"></i>
                             </div>
-                            <h3 class="pm-pillar-title">3-Layer Smart Packing</h3>
+                            <h3 class="pm-pillar-title">Multi-Layer Smart Packing</h3>
                         </div>
                         <p class="pm-pillar-text">Heavy-duty bubble wrap, corrugated sheets, foam rolls, and stretch film guarantee scratch-free protection for fragile goods.</p>
                     </div>
@@ -185,7 +185,7 @@
                 <div class="col-lg-7">
                     <h2 class="pm-about-cta-title">Ready for a Smooth Move with <?= $company3 ?>?</h2>
                     <p class="pm-about-cta-desc">
-                        Get in touch with our moving coordinators for an upfront estimate with zero hidden fees. Experience India’s most reliable relocation service.
+                        Get in touch with our moving coordinators for an upfront estimate with zero hidden fees. Experience Mumbai, Navi Mumbai &amp; Thane’s most reliable relocation service.
                     </p>
                 </div>
                 <div class="col-lg-5">

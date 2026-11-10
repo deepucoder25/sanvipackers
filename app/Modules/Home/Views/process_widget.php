@@ -95,7 +95,7 @@ $steps = [
         </div>
 
         <!-- Bottom Assistance Strip (Responsive 1-Row Mobile Layout) -->
-        <div class="mt-5 p-4 rounded-4 shadow-sm pm-process-cta-box d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div class="mt-5 p-3 p-md-4 rounded-4 shadow-sm pm-process-cta-box d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
             <div class="d-flex align-items-center gap-3 text-start">
                 <div class="pm-strip-icon-box rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
                     <i class="bi bi-shield-check fs-4"></i>
@@ -105,11 +105,11 @@ $steps = [
                     <p class="text-muted small mb-0">Book your shifting slot today and get free on-site survey with upfront pricing.</p>
                 </div>
             </div>
-            <div class="d-flex gap-2 pm-bottom-buttons-wrap">
-                <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="btn rounded-pill px-4 fw-bold pm-btn-dark" aria-label="Call relocation specialist for weekend moving slots">
+            <div class="d-flex gap-2 flex-wrap flex-sm-nowrap pm-bottom-buttons-wrap">
+                <a href="tel:<?= esc($phone1 ?? '+919876543210') ?>" class="btn rounded-pill fw-bold pm-btn-dark pm-strip-btn" aria-label="Call relocation specialist for weekend moving slots">
                     <i class="bi bi-telephone-fill me-1"></i> Call Specialist
                 </a>
-                <button type="button" class="btn btn-danger rounded-pill px-4 fw-bold pm-btn-red" data-bs-toggle="modal" data-bs-target="#qteModal">
+                <button type="button" class="btn btn-danger rounded-pill fw-bold pm-btn-red pm-strip-btn" data-bs-toggle="modal" data-bs-target="#qteModal">
                     Get Instant Quote <i class="bi bi-arrow-right ms-1"></i>
                 </button>
             </div>

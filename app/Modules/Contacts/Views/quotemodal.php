@@ -71,6 +71,45 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $whatsappNum);
                             </div>
                         </div>
 
+                        <!-- Select Service Dropdown with Floating Label -->
+                        <div class="col-6 form-group">
+                            <div class="form-floating pm-modal-floating">
+                                <select class="form-select pm-modal-input" id="qteService" name="service">
+                                    <option value="" selected disabled>Select Service</option>
+                                    <option value="Household Relocation">Household Relocation</option>
+                                    <option value="Office Relocation">Office Relocation</option>
+                                    <option value="Vehicle Transportation">Vehicle Transportation</option>
+                                    <option value="Warehouse & Storage">Warehouse & Storage</option>
+                                    <option value="Packing & Moving">Packing & Moving</option>
+                                    <option value="Loading & Unloading">Loading & Unloading</option>
+                                </select>
+                                <label for="qteService" class="pm-modal-flabel">
+                                    <i class="bi bi-truck me-1 text-danger"></i> Select Service
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Shifting Size Dropdown with Floating Label -->
+                        <div class="col-6 form-group">
+                            <div class="form-floating pm-modal-floating">
+                                <select class="form-select pm-modal-input" id="qteSize" name="shifting_size">
+                                    <option value="" selected disabled>Shifting Size</option>
+                                    <option value="1 BHK">1 BHK</option>
+                                    <option value="2 BHK">2 BHK</option>
+                                    <option value="3 BHK">3 BHK</option>
+                                    <option value="4+ BHK / Villa">4+ BHK / Villa</option>
+                                    <option value="1 RK / Studio">1 RK / Studio</option>
+                                    <option value="Few Household Items">Few Household Items</option>
+                                    <option value="Complete Office">Complete Office</option>
+                                    <option value="Vehicle (Car/Bike)">Vehicle (Car/Bike)</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label for="qteSize" class="pm-modal-flabel">
+                                    <i class="bi bi-box-seam-fill me-1 text-danger"></i> Shifting Size
+                                </label>
+                            </div>
+                        </div>
+
                         <!-- Email Address with Floating Label -->
                         <div class="col-12 form-group">
                             <div class="form-floating pm-modal-floating">
@@ -80,23 +119,13 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $whatsappNum);
                                 </label>
                             </div>
                         </div>
-
-                        <!-- Relocation Details / Message with Floating Label -->
-                        <div class="col-12 form-group">
-                            <div class="form-floating pm-modal-floating">
-                                <textarea class="form-control pm-modal-input pm-modal-textarea" id="qteMessage" name="message" placeholder="Move Description / Inventory"></textarea>
-                                <label for="qteMessage" class="pm-modal-flabel">
-                                    <i class="bi bi-chat-left-dots-fill me-1 text-danger"></i> Move Description / Inventory Notes
-                                </label>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Micro Trust Strip -->
                     <div class="pm-modal-trust-strip d-flex align-items-center justify-content-center flex-wrap gap-2 py-1 px-2 mb-2 rounded-2">
                         <span class="pm-modal-trust-item"><i class="bi bi-shield-check text-success me-1"></i> 100% Privacy</span>
                         <span class="text-muted opacity-50">&bull;</span>
-                        <span class="pm-modal-trust-item"><i class="bi bi-clock-history text-warning me-1"></i> 15 Min Reply</span>
+                        <span class="pm-modal-trust-item"><i class="bi bi-clock-history text-warning me-1"></i> 60 Seconds Reply</span>
                         <span class="text-muted opacity-50">&bull;</span>
                         <span class="pm-modal-trust-item"><i class="bi bi-patch-check-fill text-danger me-1"></i> Zero Obligation</span>
                     </div>

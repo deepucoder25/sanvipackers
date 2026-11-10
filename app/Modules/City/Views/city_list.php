@@ -3,7 +3,7 @@
     'subtitle'    => 'Verified, background-checked moving services connecting households and offices across ' . esc($stateName) . '.',
     'breadcrumbs' => [
         ['title' => 'Home', 'url' => site_url('/')],
-        ['title' => 'All States', 'url' => site_url('city')],
+        ['title' => 'Cities', 'url' => site_url('city')],
         ['title' => $stateName],
     ],
 ]) ?>

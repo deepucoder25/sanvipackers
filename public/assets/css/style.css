@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@600;700&display=swap');
+
 /* ==========================================================================
    Global Variables & Design Tokens
    ========================================================================== */
@@ -49,8 +51,12 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-html, body {
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -174,12 +180,24 @@ a {
    ========================================================================== */
 .site-navbar {
   background: #ffffff;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1050;
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
   border-bottom: 1px solid #f1f5f9;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-navbar.navbar-scrolled,
+.site-navbar.is-sticky {
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.15) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .navbar-accent-line {
   position: absolute;
@@ -972,6 +990,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   background: var(--pm-white) !important;
   border: 1px solid var(--border-color) !important;
   border-left: 5px solid var(--pm-red) !important;
+  overflow: hidden;
 }
 
 .pm-strip-icon-box {
@@ -996,16 +1015,47 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   box-shadow: 0 6px 18px var(--pm-red-glow);
 }
 
-/* Bottom Assistance Strip - Mobile 1-Row Only (Desktop Size Unchanged) */
+/* Bottom Assistance Strip - Mobile Responsive */
 @media (max-width: 767.98px) {
+  .pm-service-bottom-strip,
+  .pm-process-cta-box {
+    padding: 1rem 0.85rem !important;
+  }
   .pm-strip-btn-group {
     width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
   }
   .pm-strip-btn {
-    flex: 1 1 0 !important;
+    flex: 1 1 130px !important;
+    min-width: 0 !important;
     padding: 8px 10px !important;
-    font-size: 0.82rem !important;
+    font-size: 0.8rem !important;
     white-space: nowrap !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    letter-spacing: -0.2px;
+  }
+  .pm-strip-btn i {
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .pm-strip-btn-group {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .pm-strip-btn {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    padding: 9px 12px !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0;
   }
 }
 
@@ -1384,6 +1434,7 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   background: var(--pm-white) !important;
   border: 1px solid var(--border-color) !important;
   border-left: 5px solid var(--pm-red) !important;
+  overflow: hidden;
 }
 
 .pm-bottom-buttons-wrap {
@@ -1395,16 +1446,37 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
     width: 100%;
     display: flex !important;
     flex-direction: row !important;
+    flex-wrap: wrap !important;
     gap: 8px !important;
   }
   .pm-bottom-buttons-wrap .btn {
-    flex: 1 1 0 !important;
+    flex: 1 1 130px !important;
     min-width: 0 !important;
-    padding: 10px 12px !important;
-    font-size: 0.85rem !important;
+    padding: 8px 10px !important;
+    font-size: 0.8rem !important;
     white-space: nowrap !important;
     text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
+    letter-spacing: -0.2px;
+  }
+  .pm-bottom-buttons-wrap .btn i {
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .pm-bottom-buttons-wrap {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .pm-bottom-buttons-wrap .btn {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    padding: 9px 12px !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0;
   }
 }
 
@@ -1525,6 +1597,29 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   background: linear-gradient(135deg, #ff2626 0%, #cc1616 100%) !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px var(--pm-red-glow) !important;
+}
+
+@media (max-width: 575.98px) {
+  .pm-testi-top-toolbar {
+    width: 100%;
+  }
+  .pm-testi-nav-btns {
+    width: 100% !important;
+    display: flex !important;
+    gap: 8px !important;
+  }
+  .pm-btn-page-prev,
+  .pm-btn-page-next {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 8px 10px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }
 
 /* Spiral Notebook / Notepad Container */
@@ -3175,9 +3270,11 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
   .nav-links {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 1px);
     left: 0;
     width: 100%;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
     background: #ffffff;
     flex-direction: column;
     align-items: stretch;
@@ -4056,6 +4153,18 @@ a.pm-bc-chip:hover .pm-bc-icon-badge {
 }
 
 /* Hero Typography matching screenshot */
+.pm-hero-script-kicker,
+.pm-hero-kicker {
+  font-family: inherit !important;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  font-weight: 700 !important;
+  color: #334155 !important;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  margin-bottom: 0.25rem;
+  text-transform: none !important;
+}
+
 .pm-hero-title {
   color: #0f172a !important;
   font-weight: 800 !important;
@@ -9341,10 +9450,11 @@ a.pm-cta-btn-whatsapp:hover {
   position: relative;
 }
 
-.pm-modal-floating > .form-control.pm-modal-input {
+.pm-modal-floating > .form-control.pm-modal-input,
+.pm-modal-floating > .form-select.pm-modal-input {
   height: 44px !important;
   min-height: 44px !important;
-  padding: 17px 12px 3px 12px !important;
+  padding: 17px 32px 3px 12px !important;
   font-size: 0.85rem !important;
   font-weight: 500;
   color: #0f172a;
@@ -9353,12 +9463,25 @@ a.pm-cta-btn-whatsapp:hover {
   border-radius: 9px !important;
   line-height: 1.25;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
 }
 
-.pm-modal-floating > .form-control.pm-modal-input:focus {
+.pm-modal-floating > .form-control.pm-modal-input {
+  padding-right: 12px !important;
+  cursor: text;
+}
+
+.pm-modal-floating > .form-control.pm-modal-input:focus,
+.pm-modal-floating > .form-select.pm-modal-input:focus {
   border-color: var(--pm-red) !important;
   box-shadow: 0 0 0 3px rgba(230, 25, 25, 0.12) !important;
   background-color: #ffffff;
+}
+
+.pm-modal-floating > .form-select.pm-modal-input option {
+  font-size: 0.85rem;
+  color: #0f172a;
+  padding: 6px 10px;
 }
 
 /* Floating Textarea */
@@ -9399,7 +9522,8 @@ a.pm-cta-btn-whatsapp:hover {
 
 /* Floating Label Active State (Focus or Value present) */
 .pm-modal-floating > .form-control.pm-modal-input:focus ~ label.pm-modal-flabel,
-.pm-modal-floating > .form-control.pm-modal-input:not(:placeholder-shown) ~ label.pm-modal-flabel {
+.pm-modal-floating > .form-control.pm-modal-input:not(:placeholder-shown) ~ label.pm-modal-flabel,
+.pm-modal-floating > .form-select.pm-modal-input ~ label.pm-modal-flabel {
   transform: translateY(-7px) scale(0.76);
   color: var(--pm-red) !important;
   font-weight: 700 !important;
@@ -9676,4 +9800,52 @@ a.pm-cta-btn-whatsapp:hover {
     gap: 6px;
     text-align: center;
   }
+}
+
+/* ==========================================================================
+   Top Localities For Packers And Movers in Mumbai
+   ========================================================================== */
+.pm-localities-card {
+  border-color: #e2e8f0 !important;
+}
+.pm-locality-link {
+  text-decoration: none !important;
+  display: block;
+  height: 100%;
+}
+.pm-locality-item {
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  height: 100%;
+}
+.pm-locality-item i {
+  color: #0f172a;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.pm-locality-name {
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+.pm-locality-link:hover .pm-locality-item {
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
+  transform: translateY(-1px);
+}
+.pm-locality-link:hover .pm-locality-item i {
+  color: #dc2626;
+  transform: scale(1.1);
+}
+.pm-locality-link:hover .pm-locality-name {
+  color: #dc2626;
 }

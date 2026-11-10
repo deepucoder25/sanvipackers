@@ -54,7 +54,7 @@
                         Making Relocations <span class="pm-text-red">Smooth, Safe</span> &amp; Stress-Free
                     </h2>
                     <p class="text-muted mb-4 pm-about-desc">
-                        Founded with a mission to eliminate moving stress, <?= esc($company ?? 'Sanvi Packers & Movers') ?> provides comprehensive home shifting, office relocation, warehousing, and vehicle transport across Mumbai, Navi Mumbai, Thane, and nationwide. Our certified crew, heavy-duty 3-layer bubble packaging, and dedicated move coordinators ensure your valuables arrive in pristine condition.
+                        Founded with a mission to eliminate moving stress, <?= esc($company ?? 'Sanvi Packers & Movers') ?> provides comprehensive home shifting, office relocation, warehousing, and vehicle transport across Mumbai, Navi Mumbai, Thane, and nationwide. Our certified crew, heavy-duty multi-layer bubble packaging, and dedicated move coordinators ensure your valuables arrive in pristine condition.
                     </p>
 
                     <!-- 4 Key Value Pillars (2x2 Grid) -->
@@ -76,7 +76,7 @@
                                     <i class="bi bi-box-seam-fill"></i>
                                 </span>
                                 <div>
-                                    <h3 class="h6 fw-bold mb-0 text-dark">3-Layer Packaging</h3>
+                                    <h3 class="h6 fw-bold mb-0 text-dark">Multi-Layer Packaging</h3>
                                     <span class="text-muted small">Bubble wrap &amp; cartons</span>
                                 </div>
                             </div>

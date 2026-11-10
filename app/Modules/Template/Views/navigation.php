@@ -214,7 +214,7 @@
             <li>
                 <a href="<?= site_url('city') ?>" class="<?= ($page === 'city') ? 'active' : '' ?>">
                     <span class="nav-link-icon"><i class="bi bi-geo-alt-fill"></i></span>
-                    <span class="nav-link-text">States</span>
+                    <span class="nav-link-text">Cities</span>
                     <i class="bi bi-chevron-right nav-link-arrow"></i>
                 </a>
             </li>
@@ -264,6 +264,24 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    // Sticky Navbar on Scroll
+    const navbar = document.querySelector('.site-navbar');
+    const topbar = document.querySelector('.site-topbar');
+
+    function checkStickyNavbar() {
+        if (!navbar) return;
+        const topbarHeight = topbar ? topbar.offsetHeight : 0;
+        if (window.scrollY > topbarHeight) {
+            navbar.classList.add('is-sticky', 'navbar-scrolled');
+        } else {
+            navbar.classList.remove('is-sticky', 'navbar-scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', checkStickyNavbar, { passive: true });
+    window.addEventListener('resize', checkStickyNavbar, { passive: true });
+    checkStickyNavbar();
+
     const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
     
     dropdownItems.forEach(function (item) {

@@ -1,7 +1,7 @@
 <?php
 $testimonials = [
     [
-        'quote'    => 'I was relocating my 3BHK household from Delhi to Bangalore and terrified of fragile glassware damage. Sanvi Packers team packed everything with 3-layer certified bubble wrap without a single scratch. The container truck arrived on schedule with live GPS tracking on WhatsApp. Doorstep unpacking and reassembly was completely smooth and stress-free. Best relocation service I have ever experienced!',
+        'quote'    => 'I was relocating my 3BHK household from Delhi to Bangalore and terrified of fragile glassware damage. Sanvi Packers team packed everything with multi-layer certified bubble wrap without a single scratch. The container truck arrived on schedule with live GPS tracking on WhatsApp. Doorstep unpacking and reassembly was completely smooth and stress-free. Best relocation service I have ever experienced!',
         'name'     => 'Rajesh Sharma',
         'role'     => 'Software Architect, Delhi to Bangalore',
     ],
@@ -63,9 +63,6 @@ $testimonials = [
                     <span class="badge rounded-pill pm-testi-chip">
                         <i class="bi bi-geo-alt-fill text-danger me-1"></i> Verified Movers
                     </span>
-                    <span class="badge rounded-pill pm-testi-chip">
-                        <i class="bi bi-patch-check-fill text-warning me-1"></i> IBA Approved
-                    </span>
                 </div>
 
                 <p class="pm-testi-prompt mb-0 d-none d-lg-block">
@@ -76,13 +73,13 @@ $testimonials = [
             <!-- Right Column: The Spiral Ruled Notepad with Page Back & Page Forward on Top -->
             <div class="col-lg-7 col-12">
                 <!-- Navigation Toolbar placed directly ABOVE the testimonial box -->
-                <div class="d-flex align-items-center justify-content-between mb-3 px-1 pm-testi-top-toolbar">
-                    <div class="d-flex align-items-center gap-2">
+                <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2 mb-3 px-1 pm-testi-top-toolbar">
+                    <div class="d-flex align-items-center">
                         <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill px-3 py-2 small fw-bold">
                             <i class="bi bi-journal-bookmark-fill me-1"></i> Verified Client Diary
                         </span>
                     </div>
-                    <div class="d-flex align-items-center gap-2 ms-auto">
+                    <div class="d-flex align-items-center gap-2 ms-sm-auto w-100 w-sm-auto justify-content-between justify-content-sm-end pm-testi-nav-btns">
                         <button class="btn pm-btn-page-prev rounded-pill" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous Testimonial">
                             <i class="bi bi-arrow-left me-1"></i> Page Back
                         </button>
