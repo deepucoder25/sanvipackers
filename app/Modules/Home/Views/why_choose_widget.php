@@ -1,29 +1,81 @@
 <?php
-$advantages = [
-    ['icon' => 'fa-shield-halved', 'title' => '100% Insured Transit', 'desc' => 'Comprehensive transit insurance policy for complete peace of mind throughout the journey.'],
-    ['icon' => 'fa-clock', 'title' => 'On-Time Guarantee', 'desc' => 'Strict schedule compliance with live GPS updates and committed delivery windows.'],
-    ['icon' => 'fa-tags', 'title' => 'Transparent Rates', 'desc' => 'Zero hidden charges, upfront transparent quotes with no surprise toll or packaging costs.'],
-    ['icon' => 'fa-user-tie', 'title' => 'Trained & Verified Crew', 'desc' => 'Background-checked movers who handle delicate electronics, antiques, and heavy furniture.'],
-    ['icon' => 'fa-truck-fast', 'title' => 'Safe Container Fleet', 'desc' => 'Modern fleet of weatherproof enclosed container trucks for local and domestic shifting.'],
-    ['icon' => 'fa-headset', 'title' => '24x7 Personal Support', 'desc' => 'A dedicated relocation officer assigned to guide you from pickup survey until final unboxing.'],
+$whyPoints = [
+    [
+        'icon'  => 'bi-patch-check-fill text-danger',
+        'title' => 'ISO & IBA Approved',
+        'desc'  => 'ISO 9001:2015 certified and IBA approved relocation services.',
+    ],
+    [
+        'icon'  => 'bi-layers-fill text-warning',
+        'title' => 'Multi-Layer Protection',
+        'desc'  => 'Multi-layer protection for packing household and commercial goods.',
+    ],
+    [
+        'icon'  => 'bi-geo-alt-fill text-danger',
+        'title' => 'Live GPS Tracking',
+        'desc'  => 'Live GPS tracking of transportation across all moving routes.',
+    ],
+    [
+        'icon'  => 'bi-shield-fill-check text-success',
+        'title' => 'Transit Insurance',
+        'desc'  => 'Transit insurance options for additional protection of goods.',
+    ],
+    [
+        'icon'  => 'bi-person-badge-fill text-primary',
+        'title' => 'Police-Verified Crew',
+        'desc'  => 'Police-verified uniformed moving professionals.',
+    ],
+    [
+        'icon'  => 'bi-headset text-danger',
+        'title' => 'Dedicated Support',
+        'desc'  => 'Dedicated moving coordinators and customer support.',
+    ],
+    [
+        'icon'  => 'bi-gear-wide-connected text-warning',
+        'title' => 'Professional Equipment',
+        'desc'  => 'Professional equipment for heavy lifting and proper weight balancing.',
+    ],
+    [
+        'icon'  => 'bi-map-fill text-success',
+        'title' => '500+ Indian Cities',
+        'desc'  => 'Relocation services across 500+ Indian cities nationwide.',
+    ],
 ];
 ?>
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-badge">Core Advantages</span>
-            <h2 class="section-title">Why Choose Us For Your Move?</h2>
-            <p class="section-subtitle">We combine proven field experience with modern logistics practices for a safe shifting experience.</p>
+
+<section class="py-5 pm-why-choose-section position-relative bg-light">
+    <div class="container py-lg-3">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <span class="badge px-3 py-2 rounded-pill text-uppercase mb-2 pm-service-badge">
+                <i class="bi bi-award-fill me-1"></i> Core Advantages
+            </span>
+            <h2 class="display-6 fw-bold text-dark mb-3 pm-section-title">
+                Why Choose <span class="pm-text-red">Sanvi Packers and Movers</span>?
+            </h2>
+            <p class="lead text-muted mx-auto mb-0 pm-section-subtitle" style="max-width: 760px;">
+                Choosing the right moving company makes a real difference to your relocation experience. It is all about making suitable arrangements to protect your belongings at every stage of the moving process.
+            </p>
         </div>
-        <div class="card-grid">
-            <?php foreach ($advantages as $w): ?>
-                <div style="background: #ffffff; padding: 25px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); display: flex; gap: 18px; align-items: flex-start;">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
-                        <i class="fa-solid <?= $w['icon'] ?>"></i>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 6px;"><?= $w['title'] ?></h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;"><?= $w['desc'] ?></p>
+
+        <!-- 8 Core Points Grid (4 Columns on Desktop, 2 on Tablet/Mobile) -->
+        <div class="row g-3 g-lg-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+            <?php foreach ($whyPoints as $idx => $item): ?>
+                <div class="col d-flex">
+                    <div class="card w-100 border-0 rounded-4 shadow-sm p-3 p-lg-3 bg-white d-flex flex-column transition-hover" style="border: 1px solid #e2e8f0 !important;">
+                        <!-- 3 Things in One Line: [Icon] [Title] [01 Badge] -->
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; background: #fff5f5; font-size: 1.2rem;">
+                                <i class="bi <?= esc($item['icon']) ?>"></i>
+                            </div>
+                            <h3 class="h6 fw-bold text-dark mb-0 flex-grow-1" style="font-size: 0.92rem; line-height: 1.25;">
+                                <?= esc($item['title']) ?>
+                            </h3>
+                            <span class="badge rounded-pill bg-light text-muted fw-bold px-2 py-1 flex-shrink-0" style="font-size: 0.72rem;">
+                                0<?= $idx + 1 ?>
+                            </span>
+                        </div>
+                        <p class="text-muted small mb-0 flex-grow-1" style="line-height: 1.5; font-size: 0.84rem;"><?= esc($item['desc']) ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>

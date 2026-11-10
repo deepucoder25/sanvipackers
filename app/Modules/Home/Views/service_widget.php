@@ -5,40 +5,40 @@ $serviceMeta = [
         'icon'       => 'bi-house-heart-fill',
         'tag'        => 'Doorstep',
         'tagIcon'    => 'bi-door-open-fill',
-        'chip1_icon' => 'bi-shield-check text-danger',
-        'chip1_text' => 'Zero Damage Move',
-        'chip2_icon' => 'bi-box-seam text-warning',
-        'chip2_text' => 'Multi-Layer Bubble Pack',
+        'chip1_icon' => 'bi-box-seam text-danger',
+        'chip1_text' => 'Packing & Loading',
+        'chip2_icon' => 'bi-house-check text-warning',
+        'chip2_text' => 'Unloading & Setup',
     ],
     'office-relocation' => [
         'title'      => 'Office Relocation',
         'icon'       => 'bi-buildings-fill',
         'tag'        => 'Corporate',
         'tagIcon'    => 'bi-briefcase-fill',
-        'chip1_icon' => 'bi-clock-history text-danger',
-        'chip1_text' => 'Zero Downtime',
-        'chip2_icon' => 'bi-server text-warning',
-        'chip2_text' => 'IT & Server Care',
+        'chip1_icon' => 'bi-server text-danger',
+        'chip1_text' => 'Desks & Servers',
+        'chip2_icon' => 'bi-clock-history text-warning',
+        'chip2_text' => 'Zero Downtime',
     ],
     'vehicle-transportation' => [
-        'title'      => 'Car & Bike Shifting',
+        'title'      => 'Vehicle Moving',
         'icon'       => 'bi-car-front-fill',
         'tag'        => 'GPS Live',
         'tagIcon'    => 'bi-geo-alt-fill',
         'chip1_icon' => 'bi-truck text-danger',
-        'chip1_text' => 'Covered Trailers',
+        'chip1_text' => 'Car & Bike Carrier',
         'chip2_icon' => 'bi-shield-fill-check text-warning',
         'chip2_text' => 'Transit Insured',
     ],
     'warehouse-storage' => [
-        'title'      => 'Warehouse Storage',
+        'title'      => 'Storage Services',
         'icon'       => 'bi-archive-fill',
         'tag'        => 'Secure',
         'tagIcon'    => 'bi-lock-fill',
         'chip1_icon' => 'bi-camera-video-fill text-danger',
-        'chip1_text' => '24/7 CCTV Monitored',
-        'chip2_icon' => 'bi-fire text-warning',
-        'chip2_text' => 'Pest & Fire Safe',
+        'chip1_text' => 'CCTV Surveillance',
+        'chip2_icon' => 'bi-shield-check text-warning',
+        'chip2_text' => 'Suitable Warehouse',
     ],
     'packing-moving' => [
         'title'      => 'Packing & Moving',
@@ -46,19 +46,19 @@ $serviceMeta = [
         'tag'        => 'Safe Pack',
         'tagIcon'    => 'bi-patch-check-fill',
         'chip1_icon' => 'bi-box2-heart-fill text-danger',
-        'chip1_text' => 'Heavy Duty Cartons',
-        'chip2_icon' => 'bi-tags-fill text-warning',
-        'chip2_text' => 'Item Label Tagging',
+        'chip1_text' => 'Heavy-Duty Cartons',
+        'chip2_icon' => 'bi-layers-fill text-warning',
+        'chip2_text' => 'Bubble & Labelling',
     ],
     'loading-unloading' => [
-        'title'      => 'Loading & Unloading',
+        'title'      => 'Loading/Unloading',
         'icon'       => 'bi-truck-front-fill',
         'tag'        => 'Equipped',
         'tagIcon'    => 'bi-gear-fill',
-        'chip1_icon' => 'bi-wrench-adjustable text-danger',
-        'chip1_text' => 'Hydraulic Equipment',
-        'chip2_icon' => 'bi-people-fill text-warning',
-        'chip2_text' => 'Trained Ground Crew',
+        'chip1_icon' => 'bi-people-fill text-danger',
+        'chip1_text' => 'Trained Manpower',
+        'chip2_icon' => 'bi-wrench-adjustable text-warning',
+        'chip2_text' => 'Suitable Equipment',
     ],
 ];
 ?>
@@ -74,7 +74,7 @@ $serviceMeta = [
                 Our Professional <span class="pm-text-red">Relocation Services</span>
             </h2>
             <p class="lead text-muted mx-auto mb-0 pm-section-subtitle">
-                Comprehensive, door-to-door relocation and storage solutions tailored to your schedule.
+                We provide different types of relocation services to meet residential, commercial and vehicle-shifting requirements.
             </p>
         </div>
 
