@@ -17,6 +17,17 @@ app.controller('ctrl_booking',function($scope,$http){
 		$scope.x=y;
 	}
 
+	$scope.selectedLead = null;
+	$scope.viewLead = function(item) {
+		$scope.selectedLead = item;
+		$('#leadDetailModal').modal('show');
+	};
+
+	$scope.cleanPhone = function(phone) {
+		if (!phone) return '';
+		return phone.toString().replace(/[^0-9]/g, '');
+	};
+
 	$scope.statusFilter = "";
 	$scope.dateFilter = "";
 	$scope.sortBy = "-timestamp";

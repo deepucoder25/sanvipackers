@@ -11,63 +11,85 @@
             <form id="quoteform" class="ajax-form" data-url="<?php echo site_url('contacts/booking') ?>" data-result="quoteformresults" onsubmit="return false;">
 
                 <div class="form-row-custom">
-                    <!-- Name Input with Floating Label -->
+                    <!-- 1. Name Input with Floating Label -->
                     <div class="form-floating pm-floating-wrap">
                         <input type="text" name="name" class="form-control pm-form-control" id="floatingName" placeholder="Your Name" required>
                         <label for="floatingName" class="pm-floating-label">
                             <i class="bi bi-person-fill pm-floating-icon text-danger"></i>
-                            <span>Your Name</span>
+                            <span>Your Name *</span>
                         </label>
                     </div>
 
-                    <!-- Phone Input with Floating Label -->
+                    <!-- 2. Phone Input with Floating Label -->
                     <div class="form-floating pm-floating-wrap">
-                        <input type="tel" name="phone" class="form-control pm-form-control" id="floatingPhone" placeholder="Phone Number" required>
+                        <input type="tel" name="phone" class="form-control pm-form-control" id="floatingPhone" placeholder="Phone Number" required maxlength="10">
                         <label for="floatingPhone" class="pm-floating-label">
                             <i class="bi bi-telephone-fill pm-floating-icon text-danger"></i>
-                            <span>Phone Number</span>
+                            <span>Phone Number *</span>
                         </label>
                     </div>
 
-                    <!-- Email Input with Floating Label -->
+                    <!-- 3. Moving From with Floating Label -->
                     <div class="form-floating pm-floating-wrap">
-                        <input type="email" name="email" class="form-control pm-form-control" id="floatingEmail" placeholder="Email Address">
-                        <label for="floatingEmail" class="pm-floating-label">
-                            <i class="bi bi-envelope-fill pm-floating-icon text-danger"></i>
-                            <span>Email Address</span>
+                        <input type="text" name="mfrom" class="form-control pm-form-control" id="floatingFrom" value="<?= esc($city ?? '') ?>" placeholder="Moving From" required>
+                        <label for="floatingFrom" class="pm-floating-label">
+                            <i class="bi bi-geo-alt-fill pm-floating-icon text-danger"></i>
+                            <span>Moving From *</span>
                         </label>
                     </div>
 
-                    <!-- Select Service with Floating Label -->
+                    <!-- 4. Moving To with Floating Label -->
                     <div class="form-floating pm-floating-wrap">
-                        <select name="mtype" class="form-select pm-form-control" id="floatingService" required>
+                        <input type="text" name="mto" class="form-control pm-form-control" id="floatingTo" placeholder="Moving To" required>
+                        <label for="floatingTo" class="pm-floating-label">
+                            <i class="bi bi-pin-map-fill pm-floating-icon text-danger"></i>
+                            <span>Moving To *</span>
+                        </label>
+                    </div>
+
+                    <!-- 5. Select Service with Floating Label -->
+                    <div class="form-floating pm-floating-wrap">
+                        <select name="service" class="form-select pm-form-control" id="floatingService" required>
                             <option value="" selected disabled></option>
                             <option value="Household Relocation">Household Relocation</option>
                             <option value="Office Relocation">Office Relocation</option>
-                            <option value="Car/Bike Shifting">Car/Bike Shifting</option>
-                            <option value="Warehousing">Warehousing</option>
+                            <option value="Vehicle Transportation">Vehicle Transportation</option>
+                            <option value="Warehouse & Storage">Warehouse & Storage</option>
+                            <option value="Packing & Moving">Packing & Moving</option>
+                            <option value="Loading & Unloading">Loading & Unloading</option>
                         </select>
                         <label for="floatingService" class="pm-floating-label">
-                            <i class="bi bi-list-task pm-floating-icon text-danger"></i>
-                            <span>Select Service</span>
+                            <i class="bi bi-truck pm-floating-icon text-danger"></i>
+                            <span>Select Service *</span>
                         </label>
                     </div>
 
-                    <!-- Moving From with Floating Label -->
+                    <!-- 6. Shifting Size with Floating Label -->
                     <div class="form-floating pm-floating-wrap">
-                        <input type="text" name="mfrom" class="form-control pm-form-control" id="floatingFrom" value="<?= esc($city ?? '') ?>" placeholder="Moving From">
-                        <label for="floatingFrom" class="pm-floating-label">
-                            <i class="bi bi-geo-alt-fill pm-floating-icon text-danger"></i>
-                            <span>Moving From</span>
+                        <select name="shifting_size" class="form-select pm-form-control" id="floatingSize">
+                            <option value="" selected disabled></option>
+                            <option value="1 BHK">1 BHK</option>
+                            <option value="2 BHK">2 BHK</option>
+                            <option value="3 BHK">3 BHK</option>
+                            <option value="4+ BHK / Villa">4+ BHK / Villa</option>
+                            <option value="1 RK / Studio">1 RK / Studio</option>
+                            <option value="Few Household Items">Few Household Items</option>
+                            <option value="Complete Office">Complete Office</option>
+                            <option value="Vehicle (Car/Bike)">Vehicle (Car/Bike)</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="floatingSize" class="pm-floating-label">
+                            <i class="bi bi-box-seam pm-floating-icon text-danger"></i>
+                            <span>Shifting Size</span>
                         </label>
                     </div>
 
-                    <!-- Moving To with Floating Label -->
-                    <div class="form-floating pm-floating-wrap">
-                        <input type="text" name="mto" class="form-control pm-form-control" id="floatingTo" placeholder="Moving To">
-                        <label for="floatingTo" class="pm-floating-label">
-                            <i class="bi bi-geo-alt-fill pm-floating-icon text-danger"></i>
-                            <span>Moving To</span>
+                    <!-- 7. Email Input with Floating Label (Full Width on Desktop) -->
+                    <div class="form-floating pm-floating-wrap" style="grid-column: span 2;">
+                        <input type="email" name="email" class="form-control pm-form-control" id="floatingEmail" placeholder="Email Address">
+                        <label for="floatingEmail" class="pm-floating-label">
+                            <i class="bi bi-envelope-fill pm-floating-icon text-danger"></i>
+                            <span>Email Address (Optional)</span>
                         </label>
                     </div>
 

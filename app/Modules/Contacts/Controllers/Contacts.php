@@ -41,6 +41,8 @@ class Contacts extends BaseController
         $rules = [
             'name' => 'required|trim',
             'phone' => 'required|trim|numeric|min_length[10]|max_length[13]',
+            'mfrom' => 'permit_empty',
+            'mto' => 'permit_empty',
             'email' => 'permit_empty|valid_email',
             'service' => 'permit_empty',
             'mtype' => 'permit_empty',

@@ -127,8 +127,8 @@ if (!function_exists('get_booking_label')) {
                         <!-- Freight / Service -->
                         <td>
                             <div class="service-cell">
-                                <span ng-if="y.mtype" class="service-tag">{{y.mtype}}</span>
-                                <div ng-if="y.item_type" class="items-text"><i class="fa fa-cube"></i> {{y.item_type}}</div>
+                                <span ng-if="y.service || y.mtype" class="service-tag"><i class="fa fa-truck"></i> {{y.service || y.mtype}}</span>
+                                <div ng-if="y.shifting_size || y.item_type" class="items-text"><i class="fa fa-cube"></i> {{y.shifting_size || y.item_type}}</div>
                                 <div ng-if="y.msg" class="msg-tooltip-text" title="{{y.msg}}">
                                     <i class="fa fa-comment-o"></i> {{y.msg}}
                                 </div>
@@ -170,9 +170,14 @@ if (!function_exists('get_booking_label')) {
 
                         <!-- Action -->
                         <td class="text-center">
-                            <button type="button" class="btn-action-pill pill-delete" ng-click="deleteBooking(y.id)" title="Delete Booking">
-                                <i class="fa fa-trash-o"></i>
-                            </button>
+                            <div style="display: inline-flex; gap: 5px; align-items: center; justify-content: center;">
+                                <button type="button" class="btn-action-pill pill-view" ng-click="viewLead(y)" title="View All 7 Details">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                                <button type="button" class="btn-action-pill pill-delete" ng-click="deleteBooking(y.id)" title="Delete Booking">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
 
@@ -195,6 +200,108 @@ if (!function_exists('get_booking_label')) {
             <dir-pagination-controls boundary-links="true" pagination-id="booking" on-page-change="pageChangeHandler(newPageNumber)" template-url="app/pagination"></dir-pagination-controls>
         </div>
 
+    </div>
+</div>
+
+<!-- 3D Glass Modal for Full Lead Details (All 7 Fields) -->
+<div class="modal fade" id="leadDetailModal" tabindex="-1" role="dialog" aria-labelledby="leadDetailModalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 580px; margin: 30px auto;">
+        <div class="modal-content glass-modal-content">
+            <div class="modal-header glass-modal-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 class="modal-title" id="leadDetailModalLabel" style="margin: 0; font-size: 14px; font-weight: 700; color: #0f172a;">
+                    <i class="fa fa-id-card-o text-danger"></i> Moving Quote Lead #{{selectedLead.id}}
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 22px; color: #64748b; background: transparent; border: none; cursor: pointer; line-height: 1;">&times;</button>
+            </div>
+            <div class="modal-body glass-modal-body" style="padding: 16px 20px;">
+                <div class="lead-meta-pill" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; font-size: 11px; color: #64748b; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span><i class="fa fa-calendar-check-o text-primary"></i> <strong>Received:</strong> {{selectedLead.timestamp | formatDateTime}}</span>
+                    <span class="badge" ng-class="{'badge-success': selectedLead.status==='converted', 'badge-warning': selectedLead.status!=='converted'}" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; font-weight: 700;">{{selectedLead.status === 'converted' ? 'Converted' : 'Pending'}}</span>
+                </div>
+
+                <!-- 7 Fields Detail List -->
+                <div class="lead-details-grid">
+                    <!-- 1. Full Name -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-user text-danger"></i> 1. Full Name</div>
+                        <div class="lead-item-value font-weight-bold" style="font-size: 13px; font-weight: 700; color: #0f172a;">{{selectedLead.name || 'Not provided'}}</div>
+                    </div>
+
+                    <!-- 2. Mobile Number -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-phone text-danger"></i> 2. Mobile Number</div>
+                        <div class="lead-item-value">
+                            <a href="tel:{{selectedLead.phone}}" style="color: #dc2626; font-weight: 700; font-size: 13px; text-decoration: none;">
+                                {{selectedLead.phone || 'Not provided'}}
+                            </a>
+                            <div class="lead-contact-quick-btns" style="display: flex; gap: 8px; margin-top: 6px;" ng-if="selectedLead.phone">
+                                <a href="tel:{{selectedLead.phone}}" class="lead-quick-btn lead-btn-call">
+                                    <i class="fa fa-phone"></i> Call Now
+                                </a>
+                                <a href="https://wa.me/91{{cleanPhone(selectedLead.phone)}}?text=Hello%20{{selectedLead.name || 'Customer'}}%2C%20thank%20you%20for%20contacting%20Sanvi%20Packers%20and%20Movers" target="_blank" class="lead-quick-btn lead-btn-wa">
+                                    <i class="fa fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Moving From -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-map-marker text-danger"></i> 3. Moving From</div>
+                        <div class="lead-item-value" style="color: #0f172a; font-weight: 600;">{{selectedLead.mfrom || 'Not specified'}}</div>
+                    </div>
+
+                    <!-- 4. Moving To -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-map-pin text-danger"></i> 4. Moving To</div>
+                        <div class="lead-item-value" style="color: #0f172a; font-weight: 600;">{{selectedLead.mto || 'Not specified'}}</div>
+                    </div>
+
+                    <!-- 5. Select Service -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-truck text-danger"></i> 5. Select Service</div>
+                        <div class="lead-item-value">
+                            <span class="lead-badge-service" ng-if="selectedLead.service || selectedLead.mtype">
+                                {{selectedLead.service || selectedLead.mtype}}
+                            </span>
+                            <span class="text-muted" ng-if="!selectedLead.service && !selectedLead.mtype">Not specified</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Shifting Size -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-cube text-danger"></i> 6. Shifting Size</div>
+                        <div class="lead-item-value">
+                            <span class="lead-badge-size" ng-if="selectedLead.shifting_size || selectedLead.item_type">
+                                {{selectedLead.shifting_size || selectedLead.item_type}}
+                            </span>
+                            <span class="text-muted" ng-if="!selectedLead.shifting_size && !selectedLead.item_type">Not specified</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Email Address -->
+                    <div class="lead-item-row">
+                        <div class="lead-item-label"><i class="fa fa-envelope-o text-danger"></i> 7. Email Address</div>
+                        <div class="lead-item-value">
+                            <a href="mailto:{{selectedLead.email}}" ng-if="selectedLead.email" style="color: #2563eb; text-decoration: none; font-weight: 600;">
+                                <i class="fa fa-envelope-o"></i> {{selectedLead.email}}
+                            </a>
+                            <span class="text-muted" ng-if="!selectedLead.email">Not provided</span>
+                        </div>
+                    </div>
+
+                    <!-- Message / Goods (if present) -->
+                    <div class="lead-item-row" ng-if="selectedLead.msg">
+                        <div class="lead-item-label"><i class="fa fa-comment-o text-danger"></i> Message / Goods</div>
+                        <div class="lead-item-value" style="color: #334155; line-height: 1.5; white-space: pre-wrap;">{{selectedLead.msg}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer glass-modal-footer" style="padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+                <span class="text-muted" style="font-size: 11px;">Sanvi Packers &amp; Movers Lead Portal</span>
+                <button type="button" class="btn-action-pill pill-secondary-modal" data-dismiss="modal" style="width: auto; padding: 6px 14px; font-weight: 600;">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -684,6 +791,128 @@ if (!function_exists('get_booking_label')) {
     color: #fff;
     transform: translateY(-1px);
     box-shadow: 0 3px 8px rgba(220, 38, 38, 0.3);
+}
+
+.pill-view {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.pill-view:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Modal Styling */
+.glass-modal-content {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.35) !important;
+}
+
+.glass-modal-header {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 20px;
+}
+
+.lead-details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lead-item-row {
+    display: flex;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 8px;
+    align-items: flex-start;
+}
+
+.lead-item-label {
+    width: 36%;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.lead-item-value {
+    flex: 1;
+    font-size: 12.5px;
+    color: #1e293b;
+    word-break: break-word;
+}
+
+.lead-badge-service {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: #fee2e2;
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.lead-badge-size {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.lead-quick-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.lead-btn-call {
+    background: #dc2626;
+    color: #ffffff !important;
+}
+
+.lead-btn-call:hover {
+    background: #b91c1c;
+}
+
+.lead-btn-wa {
+    background: #16a34a;
+    color: #ffffff !important;
+}
+
+.lead-btn-wa:hover {
+    background: #15803d;
+}
+
+.pill-secondary-modal {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pill-secondary-modal:hover {
+    background: #e2e8f0;
 }
 
 /* Empty State */
