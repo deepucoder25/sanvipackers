@@ -27,6 +27,8 @@ class App extends BaseConfig
         if (!empty($_SERVER['HTTP_HOST'])) {
             $scheme = (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER['HTTPS'] === '1')) ? 'https://' : 'http://';
             $scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '')), '/');
+            // Ensure '/public' is never part of baseURL on localhost or live domain
+            $scriptDir = preg_replace('#/public$#i', '', $scriptDir);
             $this->baseURL = $scheme . $_SERVER['HTTP_HOST'] . ($scriptDir !== '' ? $scriptDir . '/' : '/');
         }
     }

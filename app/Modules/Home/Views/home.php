@@ -5,4 +5,3 @@
 <?= view('Modules\Home\Views\process_widget') ?>
 <?= view('Modules\Home\Views\testimonial_widget') ?>
 <?= view('Modules\Home\Views\faqs_widget') ?>
-<?= view('Modules\Home\Views\mumbai_localities') ?>

@@ -130,8 +130,8 @@
                         <button type="button" class="btn btn-danger rounded-pill px-4 fw-bold pm-btn-red" data-bs-toggle="modal" data-bs-target="#qteModal">
                             Get Free Quote
                         </button>
-                        <a href="tel:<?= esc(preg_replace('/[^0-9+]/', '', $phone ?? '+919930444433')) ?>" class="text-decoration-none text-dark fw-bold small d-inline-flex align-items-center gap-1 ms-sm-auto">
-                            <i class="bi bi-telephone-fill text-danger"></i> <?= esc($phone ?? '+91 99304 44433') ?>
+                        <a <?= $phonehtml ?> class="text-decoration-none text-dark fw-bold small d-inline-flex align-items-center gap-1 ms-sm-auto">
+                            <i class="bi bi-telephone-fill text-danger"></i> <?= $phone ?>
                         </a>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                                     <span class="pm-handling-icon rounded-3 bg-danger-subtle text-danger d-inline-flex align-items-center justify-content-center flex-shrink-0">
                                         <i class="bi bi-layers-fill"></i>
                                     </span>
-                                    <h4 class="h6 fw-bold mb-0 text-dark">Multi-Layer Bubble Packing</h4>
+                                    <h4 class="h6 fw-bold mb-0 text-dark">Multi-Layer Packing</h4>
                                 </div>
                                 <p class="text-muted small mb-0">Heavy-duty cartons, corrugated sheets, and bubble packaging for maximum impact resistance.</p>
                             </div>

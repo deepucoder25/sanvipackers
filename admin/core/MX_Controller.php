@@ -891,6 +891,8 @@ class CI3_Loader_Bridge
             $candidates[] = ROOTPATH . "admin/modules/{$modUc}/views/{$normalizedView}.php";
             $candidates[] = ROOTPATH . "admin/modules/{$mod}/Views/{$normalizedView}";
             $candidates[] = ROOTPATH . "admin/modules/{$mod}/Views/{$normalizedView}.php";
+            $candidates[] = ROOTPATH . "admin/modules/{$modUc}/Views/{$normalizedView}";
+            $candidates[] = ROOTPATH . "admin/modules/{$modUc}/Views/{$normalizedView}.php";
         }
 
         // 3. Search in app module views
@@ -940,6 +942,8 @@ class CI3_Loader_Bridge
             ROOTPATH . "admin/modules/{$module}/models/" . $model . ".php",
             ROOTPATH . "admin/modules/{$module}/Models/" . ucfirst($model) . ".php",
             ROOTPATH . "admin/modules/" . ucfirst($module) . "/models/" . ucfirst($model) . ".php",
+            ROOTPATH . "admin/modules/" . ucfirst($module) . "/Models/" . ucfirst($model) . ".php",
+            ROOTPATH . "admin/modules/" . ucfirst($module) . "/models/" . $model . ".php",
         ];
 
         $modelFile = null;

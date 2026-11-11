@@ -1,11 +1,15 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # If the file or directory exists in root, serve it directly (e.g. assets/)
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
+    # 1. Redirect requests with /public/ directly in URL to clean URL (301 redirect)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ (.*)/public/([^\ \?]*)(.*)\ HTTP/ [NC]
+    RewriteRule ^public/(.*)$ %1/$1 [R=301,L]
+
+    # 2. Serve real files directly if they exist in the root
+    RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
+    # 3. Silently rewrite all other requests to the public/ folder behind the scenes
     RewriteCond %{REQUEST_URI} !^/public/
-    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
 </IfModule>

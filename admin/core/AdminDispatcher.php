@@ -14,24 +14,37 @@ class AdminDispatcher extends BaseController
         $module = strtolower($module);
         $method = strtolower($method);
 
-        // Find controller file
-        $candidates = [
-            ROOTPATH . "admin/modules/{$module}/controllers/" . ucfirst($module) . ".php",
-            ROOTPATH . "admin/modules/{$module}/controllers/{$module}.php",
-            ROOTPATH . "admin/modules/{$module}/Controllers/" . ucfirst($module) . ".php",
-        ];
+        // Find controller file with case-insensitive permutations for Linux servers
+        $modVariants  = array_unique([$module, ucfirst($module), strtolower($module)]);
+        $ctrlVariants = ['controllers', 'Controllers'];
+        $fileVariants = array_unique([ucfirst($module) . '.php', strtolower($module) . '.php', $module . '.php']);
 
         $controllerFile = null;
-        foreach ($candidates as $c) {
-            if (file_exists($c)) {
-                $controllerFile = $c;
-                break;
+        foreach ($modVariants as $mv) {
+            foreach ($ctrlVariants as $cv) {
+                foreach ($fileVariants as $fv) {
+                    $testPath = ROOTPATH . "admin/modules/{$mv}/{$cv}/{$fv}";
+                    if (is_file($testPath)) {
+                        $controllerFile = $testPath;
+                        break 3;
+                    }
+                }
             }
         }
 
         if (!$controllerFile) {
-            // Check fallback to login
-            $controllerFile = ROOTPATH . "admin/modules/login/controllers/Login.php";
+            // Robust fallback to Login controller checking all casing variants
+            foreach (['Login', 'login'] as $lm) {
+                foreach (['Controllers', 'controllers'] as $lc) {
+                    foreach (['Login.php', 'login.php'] as $lf) {
+                        $testPath = ROOTPATH . "admin/modules/{$lm}/{$lc}/{$lf}";
+                        if (is_file($testPath)) {
+                            $controllerFile = $testPath;
+                            break 3;
+                        }
+                    }
+                }
+            }
             $className = "Login";
             $method = "index";
         } else {

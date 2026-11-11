@@ -14,11 +14,6 @@
                     <span class="pm-hero-badge-text">Safe, Swift &amp; Stress-Free Shifting</span>
                 </div>
 
-                <!-- Main Heading matching screenshot -->
-                <h1 class="pm-hero-title mb-2 mb-md-3">
-                    Welcome to Mumbai's Most Trusted <span class="pm-text-accent-red">Packers and Movers</span>
-                </h1>
-
                 <!-- Subtitle paragraph matching screenshot -->
                 <p class="lead pm-hero-lead mb-3">
                     Sanvi Packers and Movers delivers safe, careful, and timely shifting services for homes and offices across Mumbai and beyond. We handle every item with the utmost care — so you can move with peace of mind.
