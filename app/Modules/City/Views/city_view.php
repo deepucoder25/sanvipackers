@@ -113,7 +113,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
 
                     <h2 class="pm-cd-title"><?= esc($city_main_title) ?></h2>
                     
-                    <p class="pm-cd-lead-text mb-3" style="color: #0f172a !important; font-size: 1.05rem; line-height: 1.8;">
+                    <p class="pm-cd-lead-text mb-3 pm-cd-lead-styled">
                         <?= esc($city_intro_p1) ?>
                     </p>
 
@@ -173,7 +173,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 <i class="bi bi-truck text-danger fs-5"></i>
                                 <h3 class="h6 fw-bold text-dark mb-0">Transport Vehicles & Local Shifting Cost in <?= esc($cityName) ?></h3>
                             </div>
-                            <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_intro_p2) ?></p>
+                            <p class="mb-0 pm-city-intro-p"><?= esc($city_intro_p2) ?></p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -182,7 +182,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 <i class="bi bi-clipboard2-check-fill text-danger fs-5"></i>
                                 <h3 class="h6 fw-bold text-dark mb-0">100% Free Doorstep Survey & Route Planning</h3>
                             </div>
-                            <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_intro_p3) ?></p>
+                            <p class="mb-0 pm-city-intro-p"><?= esc($city_intro_p3) ?></p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -191,7 +191,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 <i class="bi bi-geo-alt-fill text-danger fs-5"></i>
                                 <h3 class="h6 fw-bold text-dark mb-0">GPS Live Tracking, Insurance & Reliable Support</h3>
                             </div>
-                            <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_intro_p4) ?></p>
+                            <p class="mb-0 pm-city-intro-p"><?= esc($city_intro_p4) ?></p>
                         </div>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-house-door-fill"></i></div>
                             <div>
-                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">1 BHK Complete Shifting</h3>
+                                <h3 class="pm-cpt-title mb-0 pm-cpt-title-styled">1 BHK Complete Shifting</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
@@ -260,7 +260,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-buildings-fill"></i></div>
                             <div class="d-flex align-items-center gap-2">
-                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">2 BHK Complete Shifting</h3>
+                                <h3 class="pm-cpt-title mb-0 pm-cpt-title-styled">2 BHK Complete Shifting</h3>
                                 <span class="pm-cpt-badge">Popular</span>
                             </div>
                         </div>
@@ -285,7 +285,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-house-gear-fill"></i></div>
                             <div>
-                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">3 BHK / Villa Shifting</h3>
+                                <h3 class="pm-cpt-title mb-0 pm-cpt-title-styled">3 BHK / Villa Shifting</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
@@ -309,7 +309,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-bicycle"></i></div>
                             <div>
-                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">Bike / Two-Wheeler Transport</h3>
+                                <h3 class="pm-cpt-title mb-0 pm-cpt-title-styled">Bike / Two-Wheeler Transport</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
@@ -333,7 +333,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="pm-cpt-col-service">
                             <div class="pm-cpt-icon" aria-hidden="true"><i class="bi bi-car-front-fill"></i></div>
                             <div>
-                                <h3 class="pm-cpt-title mb-0" style="font-size: 0.95rem;">Car Transportation</h3>
+                                <h3 class="pm-cpt-title mb-0 pm-cpt-title-styled">Car Transportation</h3>
                             </div>
                         </div>
                         <div class="pm-cpt-col-price">
@@ -373,27 +373,27 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <i class="bi bi-award-fill"></i> Why Us
                 </span>
                 <h2 class="pm-cd-title mb-2"><?= esc($city_why_choose_title) ?></h2>
-                <p class="mx-auto mb-0" style="color: #0f172a !important; max-width: 760px; font-weight: 500;"><?= esc($city_why_choose_intro) ?></p>
+                <p class="mx-auto mb-0 pm-city-why-intro"><?= esc($city_why_choose_intro) ?></p>
             </div>
 
             <!-- 9 Core Advantages Grid -->
             <div class="row g-3 g-lg-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <?php foreach ($city_why_choose_points as $idx => $point): ?>
                     <div class="col d-flex">
-                        <div class="card w-100 border rounded-4 p-3 p-lg-4 bg-white shadow-sm transition-hover d-flex flex-column" style="border-color: #f1f5f9 !important;">
+                        <div class="card w-100 border rounded-4 p-3 p-lg-4 bg-white shadow-sm transition-hover d-flex flex-column pm-city-why-card">
                             <!-- Header Row: [Icon] [Title] [01 Badge] in One Line -->
                             <div class="d-flex align-items-center gap-2 mb-2">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; background: #fff5f5; color: #dc2626; font-size: 1.2rem;">
+                                <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0 pm-city-why-icon">
                                     <i class="bi <?= esc($point['icon']) ?>"></i>
                                 </div>
-                                <h3 class="h6 fw-bold text-dark mb-0 flex-grow-1" style="font-size: 0.95rem; line-height: 1.3;">
+                                <h3 class="h6 fw-bold text-dark mb-0 flex-grow-1 pm-city-why-title">
                                     <?= esc($point['title']) ?>
                                 </h3>
-                                <span class="badge rounded-pill bg-light text-muted fw-bold px-2 py-1 flex-shrink-0" style="font-size: 0.72rem;">
+                                <span class="badge rounded-pill bg-light text-muted fw-bold px-2 py-1 flex-shrink-0 pm-city-why-badge">
                                     0<?= $idx + 1 ?>
                                 </span>
                             </div>
-                            <p class="small mb-0 flex-grow-1" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem;">
+                            <p class="small mb-0 flex-grow-1 pm-city-why-desc">
                                 <?= esc($point['desc']) ?>
                             </p>
                         </div>
@@ -409,25 +409,25 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <i class="bi bi-arrow-repeat"></i> How It Works
                 </span>
                 <h2 class="pm-cd-title mb-2"><?= esc($city_process_title) ?></h2>
-                <p class="mx-auto mb-0" style="color: #0f172a !important; max-width: 760px; font-weight: 500;"><?= esc($city_process_intro) ?></p>
+                <p class="mx-auto mb-0 pm-city-proc-intro"><?= esc($city_process_intro) ?></p>
             </div>
 
             <div class="row g-3 g-lg-4 row-cols-1 row-cols-md-2 row-cols-lg-5">
                 <?php foreach ($city_process_steps as $step): ?>
                     <div class="col d-flex">
-                        <div class="card w-100 border rounded-4 p-3 bg-white shadow-sm transition-hover d-flex flex-column text-center" style="border-color: #f1f5f9 !important;">
+                        <div class="card w-100 border rounded-4 p-3 bg-white shadow-sm transition-hover d-flex flex-column text-center pm-city-proc-card">
                             <div class="d-flex align-items-center justify-content-between mb-3">
-                                <span class="badge rounded-pill bg-danger text-white fw-bold px-2 py-1" style="font-size: 0.75rem;">
+                                <span class="badge rounded-pill bg-danger text-white fw-bold px-2 py-1 pm-city-proc-step">
                                     Step <?= esc($step['step']) ?>
                                 </span>
-                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background: #fff5f5; color: #dc2626; font-size: 1.1rem;">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center pm-city-proc-icon">
                                     <i class="bi <?= esc($step['icon']) ?>"></i>
                                 </div>
                             </div>
-                            <h3 class="h6 fw-bold text-dark mb-2" style="font-size: 0.95rem; line-height: 1.35;">
+                            <h3 class="h6 fw-bold text-dark mb-2 pm-city-proc-title">
                                 <?= esc($step['title']) ?>
                             </h3>
-                            <p class="small mb-0 flex-grow-1" style="color: #0f172a !important; line-height: 1.55; font-size: 0.84rem;">
+                            <p class="small mb-0 flex-grow-1 pm-city-proc-desc">
                                 <?= esc($step['desc']) ?>
                             </p>
                         </div>
@@ -480,7 +480,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     <i class="bi bi-truck"></i>
                                 </div>
                                 <div>
-                                    <h3 class="pm-map-feat-title" style="font-size: 0.95rem;">Prompt Local Fleet Dispatch</h3>
+                                    <h3 class="pm-map-feat-title pm-map-feat-title-styled">Prompt Local Fleet Dispatch</h3>
                                     <p class="pm-map-feat-desc">Dedicated closed-body moving trucks stationed within <?= esc($cityName) ?> for rapid on-time arrival.</p>
                                 </div>
                             </div>
@@ -490,7 +490,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     <i class="bi bi-pin-map-fill"></i>
                                 </div>
                                 <div>
-                                    <h3 class="pm-map-feat-title" style="font-size: 0.95rem;">Doorstep Pickup & Delivery</h3>
+                                    <h3 class="pm-map-feat-title pm-map-feat-title-styled">Doorstep Pickup & Delivery</h3>
                                     <p class="pm-map-feat-desc">Complete multi-layer packing, elevator handling, and doorstep unboxing in all <?= esc($cityName) ?> zones.</p>
                                 </div>
                             </div>
@@ -500,7 +500,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     <i class="bi bi-shield-check"></i>
                                 </div>
                                 <div>
-                                    <h3 class="pm-map-feat-title" style="font-size: 0.95rem;">100% Transit Insured Movement</h3>
+                                    <h3 class="pm-map-feat-title pm-map-feat-title-styled">100% Transit Insured Movement</h3>
                                     <p class="pm-map-feat-desc">All household goods, electronic appliances, and vehicles are fully insured during transit.</p>
                                 </div>
                             </div>
@@ -540,7 +540,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
         </div>
 
         <!-- 6. Real Move Case Study: 2BHK Flat Shifting -->
-        <div class="pm-cd-card" style="background: linear-gradient(135deg, #fffaf9 0%, #ffffff 100%);">
+        <div class="pm-cd-card pm-cd-card-case-bg">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
                 <div>
                     <span class="section-badge mb-1">
@@ -559,17 +559,17 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                         <div class="d-flex align-items-center gap-2 mb-2 text-danger fw-bold small">
                             <i class="bi bi-flag-fill"></i> Step 1: The Move Requirement
                         </div>
-                        <p class="mb-3" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_case_study_p1) ?></p>
+                        <p class="mb-3 pm-case-study-p"><?= esc($city_case_study_p1) ?></p>
 
                         <div class="d-flex align-items-center gap-2 mb-2 text-danger fw-bold small">
                             <i class="bi bi-box-seam-fill"></i> Step 2: Survey & Multi-Layer Packing
                         </div>
-                        <p class="mb-3" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_case_study_p2) ?></p>
+                        <p class="mb-3 pm-case-study-p"><?= esc($city_case_study_p2) ?></p>
 
                         <div class="d-flex align-items-center gap-2 mb-2 text-success fw-bold small">
                             <i class="bi bi-check2-circle"></i> Step 3: Transit, Delivery & Setup
                         </div>
-                        <p class="mb-0" style="color: #0f172a !important; line-height: 1.7;"><?= esc($city_case_study_p3) ?></p>
+                        <p class="mb-0 pm-case-study-p"><?= esc($city_case_study_p3) ?></p>
                     </div>
                 </div>
             </div>
@@ -604,7 +604,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                     </button>
                                 </h3>
                                 <div id="cfaq<?= $fidx + 1 ?>" class="accordion-collapse collapse <?= $fidx === 0 ? 'show' : '' ?>" aria-labelledby="cfaqHead<?= $fidx + 1 ?>" data-bs-parent="#cityFaqAccordion">
-                                    <div class="accordion-body" style="color: #0f172a !important; line-height: 1.65; font-size: 0.95rem;">
+                                    <div class="accordion-body pm-city-accordion-body">
                                         <?= esc($faq['a']) ?>
                                     </div>
                                 </div>
@@ -638,24 +638,24 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <!-- Responsive Rating Summary Box -->
                     <div class="pm-city-rating-summary mb-3 p-3">
                         <div class="d-flex align-items-center gap-3">
-                            <div class="pm-rating-score-box text-center flex-shrink-0" style="padding: 6px 12px; min-width: 62px;">
+                            <div class="pm-rating-score-box text-center flex-shrink-0 pm-rating-score-box-styled">
                                 <div class="d-flex align-items-center justify-content-center gap-1">
-                                    <span class="pm-rating-score mb-0" style="font-size: 1.4rem; font-weight: 800;">4.9</span>
-                                    <i class="bi bi-star-fill text-warning" style="font-size: 1.05rem;"></i>
+                                    <span class="pm-rating-score mb-0 pm-rating-score-styled">4.9</span>
+                                    <i class="bi bi-star-fill text-warning pm-rating-star-icon"></i>
                                 </div>
-                                <span class="badge bg-danger bg-opacity-10 text-danger p-0 fw-bold" style="font-size: 0.65rem;">Top Rated</span>
+                                <span class="badge bg-danger bg-opacity-10 text-danger p-0 fw-bold pm-rating-top-rated">Top Rated</span>
                             </div>
-                            <div class="flex-grow-1" style="min-width: 0;">
-                                <div class="d-flex align-items-center gap-1 text-warning mb-1" style="font-size: 0.82rem;">
+                            <div class="flex-grow-1 min-w-0">
+                                <div class="d-flex align-items-center gap-1 text-warning mb-1 pm-rating-stars-row">
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
-                                    <span class="text-dark fw-bold ms-1" style="font-size: 0.78rem;">(4.9/5)</span>
+                                    <span class="text-dark fw-bold ms-1 pm-rating-stars-score">(4.9/5)</span>
                                 </div>
-                                <div class="fw-bold text-dark small" style="line-height: 1.25; font-size: 0.88rem;">Verified Client Score</div>
-                                <div class="text-muted small" style="font-size: 0.78rem; line-height: 1.3;">Based on 1,450+ moves across India</div>
+                                <div class="fw-bold text-dark small pm-rating-client-score">Verified Client Score</div>
+                                <div class="text-muted small pm-rating-moves-count">Based on 1,450+ moves across India</div>
                             </div>
                         </div>
                     </div>
@@ -667,13 +667,13 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 <div class="d-flex align-items-center gap-2">
                                     <div class="pm-review-avatar">RS</div>
                                     <div>
-                                        <h4 class="pm-review-author mb-0" style="font-size: 0.95rem;">Rahul Sharma</h4>
+                                        <h4 class="pm-review-author mb-0 pm-review-author-styled">Rahul Sharma</h4>
                                         <span class="pm-review-loc small text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> Verified Move</span>
                                     </div>
                                 </div>
                                 <span class="pm-review-badge flex-shrink-0"><i class="bi bi-patch-check-fill"></i> 5.0 Star</span>
                             </div>
-                            <p class="pm-review-text mb-3" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem; font-style: italic;">
+                            <p class="pm-review-text mb-3 pm-review-text-styled">
                                 "Recently shifted our 3BHK house. Our furniture, kitchenware and appliances were taken care of by the team very well with multi-layer bubble packing. Zero stress!"
                             </p>
                             <div class="pm-review-footer d-flex align-items-center justify-content-between pt-2 border-top border-light">
@@ -687,13 +687,13 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 <div class="d-flex align-items-center gap-2">
                                     <div class="pm-review-avatar">AV</div>
                                     <div>
-                                        <h4 class="pm-review-author mb-0" style="font-size: 0.95rem;">Ankit Verma</h4>
+                                        <h4 class="pm-review-author mb-0 pm-review-author-styled">Ankit Verma</h4>
                                         <span class="pm-review-loc small text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> Office Relocation</span>
                                     </div>
                                 </div>
                                 <span class="pm-review-badge flex-shrink-0"><i class="bi bi-patch-check-fill"></i> 5.0 Star</span>
                             </div>
-                            <p class="pm-review-text mb-3" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem; font-style: italic;">
+                            <p class="pm-review-text mb-3 pm-review-text-styled">
                                 "Our office computers and workstations have been shifted smoothly. Proper planning of packing and loading helped avoid confusion. Highly satisfied with their cooperation."
                             </p>
                             <div class="pm-review-footer d-flex align-items-center justify-content-between pt-2 border-top border-light">
@@ -707,13 +707,13 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                                 <div class="d-flex align-items-center gap-2">
                                     <div class="pm-review-avatar">SM</div>
                                     <div>
-                                        <h4 class="pm-review-author mb-0" style="font-size: 0.95rem;">Sandeep Mehta</h4>
+                                        <h4 class="pm-review-author mb-0 pm-review-author-styled">Sandeep Mehta</h4>
                                         <span class="pm-review-loc small text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> Vehicle Transport</span>
                                     </div>
                                 </div>
                                 <span class="pm-review-badge flex-shrink-0"><i class="bi bi-patch-check-fill"></i> 5.0 Star</span>
                             </div>
-                            <p class="pm-review-text mb-3" style="color: #0f172a !important; line-height: 1.6; font-size: 0.88rem; font-style: italic;">
+                            <p class="pm-review-text mb-3 pm-review-text-styled">
                                 "I was worried about moving my car during relocation. The team guided me clearly and provided GPS live tracking. Car reached safely without a single scratch."
                             </p>
                             <div class="pm-review-footer d-flex align-items-center justify-content-between pt-2 border-top border-light">
@@ -748,9 +748,9 @@ if (file_exists(__DIR__ . '/city_content.php')) {
                     <div class="pm-cta-live-pill mb-2">
                         <span class="pm-live-dot"></span> 24/7 Relocation Support
                     </div>
-                    <h2 class="pm-cta-heading mb-2 text-dark fw-bold" style="color: #0f172a !important; font-size: 1.45rem;"><?= esc($city_cta_title) ?></h2>
-                    <p class="pm-cta-text mb-3" style="color: #0f172a !important; font-size: 0.95rem; font-weight: 500; line-height: 1.6;"><?= esc($city_cta_desc) ?></p>
-                    <div class="pm-cta-trust-tags" style="color: #0f172a !important; font-weight: 600;">
+                    <h2 class="pm-cta-heading mb-2 text-dark fw-bold pm-cta-heading-styled"><?= esc($city_cta_title) ?></h2>
+                    <p class="pm-cta-text mb-3 pm-cta-text-styled"><?= esc($city_cta_desc) ?></p>
+                    <div class="pm-cta-trust-tags pm-cta-trust-tags-styled">
                         <span><i class="bi bi-lightning-charge-fill text-warning"></i> 100% Free Doorstep Survey</span>
                         <span><i class="bi bi-shield-check text-success"></i> Fixed Price Guarantee</span>
                         <span><i class="bi bi-check-circle-fill text-danger"></i> Zero Hidden Charges</span>
@@ -772,7 +772,7 @@ if (file_exists(__DIR__ . '/city_content.php')) {
         <!-- 9. Other Nearby Cities Navigation (Full Width) -->
         <?php if (!empty($nearbyCities)): ?>
             <div class="pm-cd-card mb-0">
-                <h2 class="pm-cd-subtitle" style="font-size: 1.15rem;">
+                <h2 class="pm-cd-subtitle pm-cd-subtitle-styled">
                     <i class="bi bi-geo-alt-fill text-danger me-2"></i>Other Nearby Cities in <?= esc($stateName) ?>
                 </h2>
                 <div class="pm-cd-nearby-pills">

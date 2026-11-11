@@ -52,7 +52,6 @@
                         <img src="<?= base_url('assets/img/city_about.jpg') ?>" 
                              alt="Sanvi Packers and Movers Relocation Team" 
                              class="img-fluid w-100 h-100 object-fit-cover" 
-                             style="min-height: 380px; max-height: 440px;" 
                              loading="lazy">
                         <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white d-flex align-items-center gap-3">
                             <i class="bi bi-shield-check fs-2 text-danger"></i>

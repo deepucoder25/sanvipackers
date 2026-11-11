@@ -53,7 +53,7 @@ $whyPoints = [
             <h2 class="display-6 fw-bold text-dark mb-3 pm-section-title">
                 Why Choose <span class="pm-text-red">Sanvi Packers and Movers</span>?
             </h2>
-            <p class="lead text-muted mx-auto mb-0 pm-section-subtitle" style="max-width: 760px;">
+            <p class="lead text-muted mx-auto mb-0 pm-section-subtitle pm-why-subtitle">
                 Choosing the right moving company makes a real difference to your relocation experience. It is all about making suitable arrangements to protect your belongings at every stage of the moving process.
             </p>
         </div>
@@ -62,20 +62,20 @@ $whyPoints = [
         <div class="row g-3 g-lg-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
             <?php foreach ($whyPoints as $idx => $item): ?>
                 <div class="col d-flex">
-                    <div class="card w-100 border-0 rounded-4 shadow-sm p-3 p-lg-3 bg-white d-flex flex-column transition-hover" style="border: 1px solid #e2e8f0 !important;">
+                    <div class="card w-100 border-0 rounded-4 shadow-sm p-3 p-lg-3 bg-white d-flex flex-column transition-hover pm-why-card">
                         <!-- 3 Things in One Line: [Icon] [Title] [01 Badge] -->
                         <div class="d-flex align-items-center gap-2 mb-2">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; background: #fff5f5; font-size: 1.2rem;">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0 pm-why-icon-box">
                                 <i class="bi <?= esc($item['icon']) ?>"></i>
                             </div>
-                            <h3 class="h6 fw-bold text-dark mb-0 flex-grow-1" style="font-size: 0.92rem; line-height: 1.25;">
+                            <h3 class="h6 fw-bold text-dark mb-0 flex-grow-1 pm-why-card-title">
                                 <?= esc($item['title']) ?>
                             </h3>
-                            <span class="badge rounded-pill bg-light text-muted fw-bold px-2 py-1 flex-shrink-0" style="font-size: 0.72rem;">
+                            <span class="badge rounded-pill bg-light text-muted fw-bold px-2 py-1 flex-shrink-0 pm-why-step-badge">
                                 0<?= $idx + 1 ?>
                             </span>
                         </div>
-                        <p class="text-muted small mb-0 flex-grow-1" style="line-height: 1.5; font-size: 0.84rem;"><?= esc($item['desc']) ?></p>
+                        <p class="text-muted small mb-0 flex-grow-1 pm-why-card-desc"><?= esc($item['desc']) ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -371,11 +371,11 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 25%;">Crew Configuration</th>
-                                <th scope="col" class="text-center" style="width: 30%;">Recommended Home / Move Size</th>
-                                <th scope="col" class="text-center" style="width: 20%;">Standard Duration</th>
-                                <th scope="col" class="text-center" style="width: 25%;">Estimated Charges</th>
-                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                <th scope="col" class="col-w-25">Crew Configuration</th>
+                                <th scope="col" class="text-center col-w-30">Recommended Home / Move Size</th>
+                                <th scope="col" class="text-center col-w-20">Standard Duration</th>
+                                <th scope="col" class="text-center col-w-25">Estimated Charges</th>
+                                <th scope="col" class="text-center col-w-action-md">Action</th>
                             </tr>
                         </thead>
                         <tbody>

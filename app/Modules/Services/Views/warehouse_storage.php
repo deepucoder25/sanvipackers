@@ -373,12 +373,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 26%;">Storage Size / Duration</th>
+                                <th scope="col" class="col-w-26">Storage Size / Duration</th>
                                 <th scope="col" class="text-center">1 Week</th>
                                 <th scope="col" class="text-center">15 Days</th>
                                 <th scope="col" class="text-center">1 Month</th>
                                 <th scope="col" class="text-center">3 Months</th>
-                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                <th scope="col" class="text-center col-w-action-md">Action</th>
                             </tr>
                         </thead>
                         <tbody>

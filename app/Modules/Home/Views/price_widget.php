@@ -143,11 +143,11 @@ $typicalCharges = [
                         <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width: 30%;">Type of Relocation</th>
-                                    <th scope="col" class="text-center" style="width: 22%;">0Km - 10Km</th>
-                                    <th scope="col" class="text-center" style="width: 22%;">10Km - 30Km</th>
-                                    <th scope="col" class="text-center" style="width: 26%;">30Km - 50Km</th>
-                                    <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                    <th scope="col" class="col-w-30">Type of Relocation</th>
+                                    <th scope="col" class="text-center col-w-22">0Km - 10Km</th>
+                                    <th scope="col" class="text-center col-w-22">10Km - 30Km</th>
+                                    <th scope="col" class="text-center col-w-26">30Km - 50Km</th>
+                                    <th scope="col" class="text-center col-w-action-md">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -191,7 +191,7 @@ $typicalCharges = [
                                     <th scope="col">Service Type</th>
                                     <th scope="col" class="text-center">Local (Up to 50Km)</th>
                                     <th scope="col" class="text-center">Long Distance (Up to 999Km)</th>
-                                    <th scope="col" class="text-center" style="width: 90px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -231,7 +231,7 @@ $typicalCharges = [
                                 <tr>
                                     <th scope="col">Move Type</th>
                                     <th scope="col" class="text-center">Price Range</th>
-                                    <th scope="col" class="text-center" style="width: 90px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -275,7 +275,7 @@ $typicalCharges = [
                                     <th scope="col" class="text-center">Up to 150 km</th>
                                     <th scope="col" class="text-center">Up to 500 km</th>
                                     <th scope="col" class="text-center">1200 km &amp; Above</th>
-                                    <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action-md">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -322,7 +322,7 @@ $typicalCharges = [
                                     <th scope="col" class="text-center">Up to 150 km</th>
                                     <th scope="col" class="text-center">Up to 500 km</th>
                                     <th scope="col" class="text-center">1200 km &amp; Above</th>
-                                    <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action-md">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -369,7 +369,7 @@ $typicalCharges = [
                                     <th scope="col" class="text-center">Up to 150 km</th>
                                     <th scope="col" class="text-center">Up to 500 km</th>
                                     <th scope="col" class="text-center">1200 km+</th>
-                                    <th scope="col" class="text-center" style="width: 85px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -413,7 +413,7 @@ $typicalCharges = [
                                     <th scope="col" class="text-center">Up to 150 km</th>
                                     <th scope="col" class="text-center">Up to 500 km</th>
                                     <th scope="col" class="text-center">1200 km+</th>
-                                    <th scope="col" class="text-center" style="width: 85px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -460,7 +460,7 @@ $typicalCharges = [
                                     <th scope="col" class="text-center">15 Days</th>
                                     <th scope="col" class="text-center">1 Month</th>
                                     <th scope="col" class="text-center">3 Months</th>
-                                    <th scope="col" class="text-center" style="width: 85px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -504,7 +504,7 @@ $typicalCharges = [
                                     <th scope="col" class="text-center">Packing + Load</th>
                                     <th scope="col" class="text-center">Pack + Transport</th>
                                     <th scope="col" class="text-center">Complete</th>
-                                    <th scope="col" class="text-center" style="width: 85px;">Action</th>
+                                    <th scope="col" class="text-center col-w-action-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -550,12 +550,12 @@ $typicalCharges = [
                             </caption>
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width: 25%;">Moving Items / Distance</th>
-                                    <th scope="col" class="text-center" style="width: 18%;">Up to 400 Km</th>
-                                    <th scope="col" class="text-center" style="width: 18%;">400 - 800 Km</th>
-                                    <th scope="col" class="text-center" style="width: 18%;">800 - 1300 Km</th>
-                                    <th scope="col" class="text-center" style="width: 21%;">1300 - 1900 Km</th>
-                                    <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                    <th scope="col" class="col-w-25">Moving Items / Distance</th>
+                                    <th scope="col" class="text-center col-w-18">Up to 400 Km</th>
+                                    <th scope="col" class="text-center col-w-18">400 - 800 Km</th>
+                                    <th scope="col" class="text-center col-w-18">800 - 1300 Km</th>
+                                    <th scope="col" class="text-center col-w-21">1300 - 1900 Km</th>
+                                    <th scope="col" class="text-center col-w-action-md">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

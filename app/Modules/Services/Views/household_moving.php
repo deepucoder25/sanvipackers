@@ -372,12 +372,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 26%;">House Size / Distance</th>
+                                <th scope="col" class="col-w-26">House Size / Distance</th>
                                 <th scope="col" class="text-center">Up to 10 km</th>
                                 <th scope="col" class="text-center">Up to 150 km</th>
                                 <th scope="col" class="text-center">Up to 500 km</th>
                                 <th scope="col" class="text-center">1200 km &amp; Above</th>
-                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                <th scope="col" class="text-center col-w-action-md">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -441,11 +441,11 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 30%;">Type of Relocation</th>
-                                <th scope="col" class="text-center" style="width: 22%;">0Km - 10Km</th>
-                                <th scope="col" class="text-center" style="width: 22%;">10Km - 30Km</th>
-                                <th scope="col" class="text-center" style="width: 26%;">30Km - 50Km</th>
-                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                <th scope="col" class="col-w-30">Type of Relocation</th>
+                                <th scope="col" class="text-center col-w-22">0Km - 10Km</th>
+                                <th scope="col" class="text-center col-w-22">10Km - 30Km</th>
+                                <th scope="col" class="text-center col-w-26">30Km - 50Km</th>
+                                <th scope="col" class="text-center col-w-action-md">Action</th>
                             </tr>
                         </thead>
                         <tbody>

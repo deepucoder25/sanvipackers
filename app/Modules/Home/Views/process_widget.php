@@ -105,7 +105,7 @@ $cleanHelpline = preg_replace('/[^0-9]/', '', $helplinePhone);
                 </div>
                 <div>
                     <div class="h5 fw-bold mb-1">Plan Your Next Move with Us!</div>
-                    <p class="text-muted small mb-0" style="max-width: 680px;">
+                    <p class="text-muted small mb-0 pm-process-cta-text">
                         We assist you whether you plan to shift locally or inter-city. At Sanvi Packers and Movers, you will get trained manpower and suitable transportation to ease your shifting process. Contact Sanvi Packers and Movers on <?= $phone ?> for a free quote and start your move!
                     </p>
                 </div>

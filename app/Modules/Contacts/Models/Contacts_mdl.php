@@ -111,7 +111,7 @@ class Contacts_mdl extends Model
             $email->initialize($this->emailConfig);
 
             $email->setFrom($this->emailConfig['SMTPUser'], 'Sanvi Packers & Movers');
-            $email->setTo('info@sanvipackers.com');
+            $email->setTo('sanvimoversandpackers@gmail.com');
             $email->setSubject($subject);
             $email->setMessage($message);
 

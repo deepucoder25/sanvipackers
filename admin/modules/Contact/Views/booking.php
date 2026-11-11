@@ -84,14 +84,14 @@ if (!function_exists('get_booking_label')) {
             <table class="glass-table-modern">
                 <thead>
                     <tr>
-                        <th style="width: 110px;"><?= get_booking_label($labels, 'book_label_date', 'Date & Time') ?></th>
+                        <th class="col-w-date"><?= get_booking_label($labels, 'book_label_date', 'Date & Time') ?></th>
                         <th><?= get_booking_label($labels, 'book_label_client', 'Client') ?></th>
                         <th><?= get_booking_label($labels, 'book_label_contact', 'Contact') ?></th>
                         <th><?= get_booking_label($labels, 'book_label_freight', 'Service / Cargo') ?></th>
                         <th><?= get_booking_label($labels, 'book_label_route', 'Route') ?></th>
-                        <th style="width: 140px;"><?= get_booking_label($labels, 'book_label_lead', 'Lead Status') ?></th>
-                        <th style="width: 150px;"><?= get_booking_label($labels, 'book_label_loss', 'Loss Reason') ?></th>
-                        <th style="width: 65px;" class="text-center"><?= get_booking_label($labels, 'book_label_action', 'Action') ?></th>
+                        <th class="col-w-lead"><?= get_booking_label($labels, 'book_label_lead', 'Lead Status') ?></th>
+                        <th class="col-w-loss"><?= get_booking_label($labels, 'book_label_loss', 'Loss Reason') ?></th>
+                        <th class="text-center col-w-action"><?= get_booking_label($labels, 'book_label_action', 'Action') ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -170,7 +170,7 @@ if (!function_exists('get_booking_label')) {
 
                         <!-- Action -->
                         <td class="text-center">
-                            <div style="display: inline-flex; gap: 5px; align-items: center; justify-content: center;">
+                            <div class="btn-action-group">
                                 <button type="button" class="btn-action-pill pill-view" ng-click="viewLead(y)" title="View All 7 Details">
                                     <i class="fa fa-eye"></i>
                                 </button>
@@ -205,18 +205,18 @@ if (!function_exists('get_booking_label')) {
 
 <!-- 3D Glass Modal for Full Lead Details (All 7 Fields) -->
 <div class="modal fade" id="leadDetailModal" tabindex="-1" role="dialog" aria-labelledby="leadDetailModalLabel">
-    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 580px; margin: 30px auto;">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-lead" role="document">
         <div class="modal-content glass-modal-content">
-            <div class="modal-header glass-modal-header" style="display: flex; justify-content: space-between; align-items: center;">
-                <h4 class="modal-title" id="leadDetailModalLabel" style="margin: 0; font-size: 14px; font-weight: 700; color: #0f172a;">
+            <div class="modal-header glass-modal-header">
+                <h4 class="modal-title glass-modal-title" id="leadDetailModalLabel">
                     <i class="fa fa-id-card-o text-danger"></i> Moving Quote Lead #{{selectedLead.id}}
                 </h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 22px; color: #64748b; background: transparent; border: none; cursor: pointer; line-height: 1;">&times;</button>
+                <button type="button" class="close glass-modal-close" data-dismiss="modal" aria-label="Close">&times;</button>
             </div>
-            <div class="modal-body glass-modal-body" style="padding: 16px 20px;">
-                <div class="lead-meta-pill" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; font-size: 11px; color: #64748b; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div class="modal-body glass-modal-body">
+                <div class="lead-meta-pill">
                     <span><i class="fa fa-calendar-check-o text-primary"></i> <strong>Received:</strong> {{selectedLead.timestamp | formatDateTime}}</span>
-                    <span class="badge" ng-class="{'badge-success': selectedLead.status==='converted', 'badge-warning': selectedLead.status!=='converted'}" style="font-size: 10px; padding: 4px 8px; border-radius: 4px; font-weight: 700;">{{selectedLead.status === 'converted' ? 'Converted' : 'Pending'}}</span>
+                    <span class="badge lead-status-pill" ng-class="{'badge-success': selectedLead.status==='converted', 'badge-warning': selectedLead.status!=='converted'}">{{selectedLead.status === 'converted' ? 'Converted' : 'Pending'}}</span>
                 </div>
 
                 <!-- 7 Fields Detail List -->
@@ -224,17 +224,17 @@ if (!function_exists('get_booking_label')) {
                     <!-- 1. Full Name -->
                     <div class="lead-item-row">
                         <div class="lead-item-label"><i class="fa fa-user text-danger"></i> 1. Full Name</div>
-                        <div class="lead-item-value font-weight-bold" style="font-size: 13px; font-weight: 700; color: #0f172a;">{{selectedLead.name || 'Not provided'}}</div>
+                        <div class="lead-item-value lead-name-text">{{selectedLead.name || 'Not provided'}}</div>
                     </div>
 
                     <!-- 2. Mobile Number -->
                     <div class="lead-item-row">
                         <div class="lead-item-label"><i class="fa fa-phone text-danger"></i> 2. Mobile Number</div>
                         <div class="lead-item-value">
-                            <a href="tel:{{selectedLead.phone}}" style="color: #dc2626; font-weight: 700; font-size: 13px; text-decoration: none;">
+                            <a href="tel:{{selectedLead.phone}}" class="lead-phone-link">
                                 {{selectedLead.phone || 'Not provided'}}
                             </a>
-                            <div class="lead-contact-quick-btns" style="display: flex; gap: 8px; margin-top: 6px;" ng-if="selectedLead.phone">
+                            <div class="lead-contact-quick-btns" ng-if="selectedLead.phone">
                                 <a href="tel:{{selectedLead.phone}}" class="lead-quick-btn lead-btn-call">
                                     <i class="fa fa-phone"></i> Call Now
                                 </a>
@@ -248,13 +248,13 @@ if (!function_exists('get_booking_label')) {
                     <!-- 3. Moving From -->
                     <div class="lead-item-row">
                         <div class="lead-item-label"><i class="fa fa-map-marker text-danger"></i> 3. Moving From</div>
-                        <div class="lead-item-value" style="color: #0f172a; font-weight: 600;">{{selectedLead.mfrom || 'Not specified'}}</div>
+                        <div class="lead-item-value lead-route-text">{{selectedLead.mfrom || 'Not specified'}}</div>
                     </div>
 
                     <!-- 4. Moving To -->
                     <div class="lead-item-row">
                         <div class="lead-item-label"><i class="fa fa-map-pin text-danger"></i> 4. Moving To</div>
-                        <div class="lead-item-value" style="color: #0f172a; font-weight: 600;">{{selectedLead.mto || 'Not specified'}}</div>
+                        <div class="lead-item-value lead-route-text">{{selectedLead.mto || 'Not specified'}}</div>
                     </div>
 
                     <!-- 5. Select Service -->
@@ -283,7 +283,7 @@ if (!function_exists('get_booking_label')) {
                     <div class="lead-item-row">
                         <div class="lead-item-label"><i class="fa fa-envelope-o text-danger"></i> 7. Email Address</div>
                         <div class="lead-item-value">
-                            <a href="mailto:{{selectedLead.email}}" ng-if="selectedLead.email" style="color: #2563eb; text-decoration: none; font-weight: 600;">
+                            <a href="mailto:{{selectedLead.email}}" ng-if="selectedLead.email" class="lead-email-link">
                                 <i class="fa fa-envelope-o"></i> {{selectedLead.email}}
                             </a>
                             <span class="text-muted" ng-if="!selectedLead.email">Not provided</span>
@@ -293,13 +293,13 @@ if (!function_exists('get_booking_label')) {
                     <!-- Message / Goods (if present) -->
                     <div class="lead-item-row" ng-if="selectedLead.msg">
                         <div class="lead-item-label"><i class="fa fa-comment-o text-danger"></i> Message / Goods</div>
-                        <div class="lead-item-value" style="color: #334155; line-height: 1.5; white-space: pre-wrap;">{{selectedLead.msg}}</div>
+                        <div class="lead-item-value lead-msg-text">{{selectedLead.msg}}</div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer glass-modal-footer" style="padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
-                <span class="text-muted" style="font-size: 11px;">Sanvi Packers &amp; Movers Lead Portal</span>
-                <button type="button" class="btn-action-pill pill-secondary-modal" data-dismiss="modal" style="width: auto; padding: 6px 14px; font-weight: 600;">Close</button>
+            <div class="modal-footer glass-modal-footer">
+                <span class="text-muted glass-modal-footer-brand">Sanvi Packers &amp; Movers Lead Portal</span>
+                <button type="button" class="btn-action-pill pill-secondary-modal" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -818,6 +818,90 @@ if (!function_exists('get_booking_label')) {
 .glass-modal-header {
     border-bottom: 1px solid #e2e8f0;
     padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-w-date { width: 110px; }
+.col-w-lead { width: 140px; }
+.col-w-loss { width: 150px; }
+.col-w-action { width: 65px; text-align: center; }
+
+.btn-action-group {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-dialog-lead {
+    max-width: 580px;
+    margin: 30px auto;
+}
+
+.glass-modal-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.glass-modal-close {
+    font-size: 22px;
+    color: #64748b;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lead-status-pill {
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.lead-name-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.lead-phone-link {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.lead-route-text {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.lead-email-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.lead-msg-text {
+    color: #334155;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.glass-modal-footer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.glass-modal-footer-brand {
+    font-size: 11px;
 }
 
 .lead-details-grid {

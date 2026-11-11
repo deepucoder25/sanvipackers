@@ -85,7 +85,7 @@
                     </div>
 
                     <!-- 7. Email Input with Floating Label (Full Width on Desktop) -->
-                    <div class="form-floating pm-floating-wrap" style="grid-column: span 2;">
+                    <div class="form-floating pm-floating-wrap pm-floating-full">
                         <input type="email" name="email" class="form-control pm-form-control" id="floatingEmail" placeholder="Email Address">
                         <label for="floatingEmail" class="pm-floating-label">
                             <i class="bi bi-envelope-fill pm-floating-icon text-danger"></i>

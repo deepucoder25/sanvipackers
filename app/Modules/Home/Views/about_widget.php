@@ -30,7 +30,7 @@
                                      alt="Multi-Layer Bubble Packing and Cartons" 
                                      class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
                                      loading="lazy">
-                                <span class="position-absolute bottom-0 start-0 end-0 p-2 text-center text-white small fw-bold bg-dark bg-opacity-50" style="font-size:0.75rem;">
+                                <span class="position-absolute bottom-0 start-0 end-0 p-2 text-center text-white small fw-bold bg-dark bg-opacity-50 pm-about-caption-badge">
                                     Multi-Layer Packing
                                 </span>
                             </div>
@@ -40,7 +40,7 @@
                                      alt="Dedicated Moving Trucks and Logistics Fleet" 
                                      class="img-fluid w-100 h-100 object-fit-cover pm-about-img" 
                                      loading="lazy">
-                                <span class="position-absolute bottom-0 start-0 end-0 p-2 text-center text-white small fw-bold bg-dark bg-opacity-50" style="font-size:0.75rem;">
+                                <span class="position-absolute bottom-0 start-0 end-0 p-2 text-center text-white small fw-bold bg-dark bg-opacity-50 pm-about-caption-badge">
                                     Safe Fleet Transport
                                 </span>
                             </div>
@@ -54,7 +54,7 @@
                         </div>
                         <div>
                             <div class="fw-bold text-dark fs-6 line-height-1">100% Safe Shifting</div>
-                            <small class="text-muted" style="font-size:0.78rem;">500+ Indian Cities Network</small>
+                            <small class="text-muted pm-about-stat-subtitle">500+ Indian Cities Network</small>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                                 </span>
                                 <div>
                                     <h4 class="h6 fw-bold mb-0 text-dark small">ISO 9001:2015 &amp; IBA</h4>
-                                    <span class="text-muted" style="font-size:0.75rem;">Certified Relocation</span>
+                                    <span class="text-muted pm-pillar-desc">Certified Relocation</span>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                 </span>
                                 <div>
                                     <h4 class="h6 fw-bold mb-0 text-dark small">Multi-Layer Bubble Packing</h4>
-                                    <span class="text-muted" style="font-size:0.75rem;">Corrugated sheets &amp; cartons</span>
+                                    <span class="text-muted pm-pillar-desc">Corrugated sheets &amp; cartons</span>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                 </span>
                                 <div>
                                     <h4 class="h6 fw-bold mb-0 text-dark small">Police-Verified Movers</h4>
-                                    <span class="text-muted" style="font-size:0.75rem;">Uniformed trained crew</span>
+                                    <span class="text-muted pm-pillar-desc">Uniformed trained crew</span>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                                 </span>
                                 <div>
                                     <h4 class="h6 fw-bold mb-0 text-dark small">500+ Indian Cities</h4>
-                                    <span class="text-muted" style="font-size:0.75rem;">Nationwide network</span>
+                                    <span class="text-muted pm-pillar-desc">Nationwide network</span>
                                 </div>
                             </div>
                         </div>
@@ -147,11 +147,14 @@
                         <i class="bi bi-shield-check me-1"></i> Professional Protection
                     </span>
                     <h3 class="h3 fw-bold text-dark mb-3">About Sanvi Packers and Movers</h3>
-                    <p class="text-muted mb-3" style="line-height: 1.75; font-size: 0.95rem;">
-                        There are many things to be considered in moving service apart from packing and transport of the goods in a van. Your furniture, electronics, appliances and other belongings have to be handled properly during the moving process. Taking this into account, we adopt appropriate packing and organised moving services to help you with your belongings.
+                    <p class="text-muted mb-3 pm-about-handling-desc">
+                        Sanvi Packers And Movers is a reputable and efficient packers and movers service provider in Mumbai, Navi Mumbai, and Thane. We are known for their exceptional services, commitment, and dedication towards ensuring that our clients have a smooth and hassle-free relocation experience.
                     </p>
-                    <p class="text-muted mb-0" style="line-height: 1.75; font-size: 0.95rem;">
-                        We use <strong>multi-layer bubble packing</strong>, corrugated sheets, protective cartons and suitable packing materials for household and commercial items. Our police-verified uniformed moving crew follows proper handling procedures to reduce the risk of damage to your belongings and property.
+                    <p class="text-muted mb-0 pm-about-handling-desc">
+                        We have a team of experienced and skilled professionals who make use of the latest techniques and methods to ensure our clients’ belongings are packed, transported, and delivered to their new destination safely and in a timely manner. The company offers a wide range of services, including residential and commercial relocation, car transportation, and storage services.
+                    </p>
+                    <p class="text-muted mb-0 pm-about-handling-desc">
+                        We also provide customized solutions to meet our clients’ specific needs and preferences. Our cost-effective pricing, reliability, and customer-centric approach set us apart from other Packers and Movers service providers in the region.
                     </p>
                 </div>
 

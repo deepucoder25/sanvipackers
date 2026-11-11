@@ -52,7 +52,7 @@ class Contacts extends BaseController
 
         if (!$this->validate($rules)) {
             $errors = $this->validator->getErrors();
-            $errorHtml = "<div class='alert alert-danger' style='color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; padding:10px 15px; border-radius:6px; margin-top:10px;'><ul style='margin-bottom:0; padding-left:18px;'>";
+            $errorHtml = "<div class='alert alert-danger pm-alert-danger'><ul>";
             foreach ($errors as $err) {
                 $errorHtml .= "<li>" . esc($err) . "</li>";
             }
@@ -65,7 +65,7 @@ class Contacts extends BaseController
             return $this->response->setBody("1");
         }
 
-        return $this->response->setBody("<div class='alert alert-danger' style='color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; padding:10px 15px; border-radius:6px; margin-top:10px;'>Failed to submit booking enquiry. Please try again.</div>");
+        return $this->response->setBody("<div class='alert alert-danger pm-alert-danger'>Failed to submit booking enquiry. Please try again.</div>");
     }
 
     /**
@@ -81,7 +81,7 @@ class Contacts extends BaseController
 
         if (!$this->validate($rules)) {
             $errors = $this->validator->getErrors();
-            $errorHtml = "<div class='alert alert-danger' style='color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; padding:10px 15px; border-radius:6px; margin-top:10px;'><ul style='margin-bottom:0; padding-left:18px;'>";
+            $errorHtml = "<div class='alert alert-danger pm-alert-danger'><ul>";
             foreach ($errors as $err) {
                 $errorHtml .= "<li>" . esc($err) . "</li>";
             }
@@ -94,7 +94,7 @@ class Contacts extends BaseController
             return $this->response->setBody("1");
         }
 
-        return $this->response->setBody("<div class='alert alert-danger' style='color:#dc2626; background:#fee2e2; border:1px solid #fca5a5; padding:10px 15px; border-radius:6px; margin-top:10px;'>Failed to submit inquiry. Please try again.</div>");
+        return $this->response->setBody("<div class='alert alert-danger pm-alert-danger'>Failed to submit inquiry. Please try again.</div>");
     }
 
     /**

@@ -371,12 +371,12 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 20%;">House Size</th>
+                                <th scope="col" class="col-w-20">House Size</th>
                                 <th scope="col" class="text-center">Packing Only</th>
                                 <th scope="col" class="text-center">Packing + Loading</th>
                                 <th scope="col" class="text-center">Packing + Transport</th>
                                 <th scope="col" class="text-center">Complete Packing</th>
-                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                <th scope="col" class="text-center col-w-action-md">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -430,10 +430,10 @@ $otherServices = array_filter($allServicesList, fn($s) => ($s['slug'] ?? '') !==
                     <table class="table table-bordered table-striped table-hover align-middle mb-0 pm-clean-rate-table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 30%;">Service Type</th>
-                                <th scope="col" class="text-center" style="width: 32%;">Local Shifting Charges (Up to 50Km)</th>
-                                <th scope="col" class="text-center" style="width: 32%;">Long Distance Charges (Up to 999 Km)</th>
-                                <th scope="col" class="text-center" style="width: 100px;">Action</th>
+                                <th scope="col" class="col-w-30">Service Type</th>
+                                <th scope="col" class="text-center col-w-32">Local Shifting Charges (Up to 50Km)</th>
+                                <th scope="col" class="text-center col-w-32">Long Distance Charges (Up to 999 Km)</th>
+                                <th scope="col" class="text-center col-w-action-md">Action</th>
                             </tr>
                         </thead>
                         <tbody>
